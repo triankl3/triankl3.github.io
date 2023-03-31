@@ -4,13 +4,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+        {{ $css := "css/normalize.css" | relURL }}
+        <link rel="stylesheet" href="{{ $css }}">
+
         {{ $main_options := (dict "targetPath" "css/site.css" "outputStyle" "compressed") }}
         {{ $main_template := resources.Get "sass/main.scss" }}
         {{ $main_style := $main_template | resources.ExecuteAsTemplate "main_parsed.scss" . | toCSS $main_options | resources.Minify }}
         <link rel="stylesheet" href="{{ $main_style.RelPermalink }}">
-    
-        {{ $css := "css/normalize.css" | relURL }}
-        <link rel="stylesheet" href="{{ $css }}">    
     </head>
     <body>
         <main>
