@@ -1,0 +1,27 @@
+{
+  "name": "triankl3.github.io",
+  "version": "0.0.1",
+  "description": "Freelance portfolio website built using HuGo and a completely custom theme.",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run hugo:build",
+    "serve": "npm run hugo:serve",
+    "clean": "npm run hugo:clean",
+    "hugo:build": "hugo -d build",
+    "hugo:serve": "hugo server",
+    "hugo:clean": "rm -rf build resources public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/triankl3/triankl3.github.io.git"
+  },
+  "author": "triankl3",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/triankl3/triankl3.github.io/issues"
+  },
+  "homepage": "https://github.com/triankl3/triankl3.github.io#readme",
+  "dependencies": {
+    "hugo-extended": "^0.111.3"
+  }
+}
