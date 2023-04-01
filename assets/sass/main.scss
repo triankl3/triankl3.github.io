@@ -1,7 +1,21 @@
 $text-color: #fff;
 $background-color: #000;
 
-@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700');
+$yellow-color: #e7bf26;
+$purple-color: #bf26e7;
+$cyan-color: #26e7bf;
+.yellow-color {
+    color: $yellow-color;
+}
+.purple-color {
+    color: $purple-color;
+}
+.cyan-color {
+    color: $cyan-color;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100..900');
+// @import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700');
 @import
     "general",
     "index",

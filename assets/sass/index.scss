@@ -1,16 +1,97 @@
-header {
-    h1, h2 {
+$nav-width: 48px;
+$nav-font-size: 22px;
+nav {
+    ul {
+        list-style-type: none;
+        user-select: none;
+
+        padding: 0;
+        margin: 0;
+
+        text-align: center;
+        text-transform: uppercase;
+
+        // letter-spacing: 4px;
+        width: $nav-width;
+
+        li {
+            padding: 10px (($nav-width - $nav-font-size) / 2);
+            margin: 0;
+            font-size: $nav-font-size;
+            writing-mode: vertical-rl;
+
+            a {
+                color: $text-color;
+                text-decoration: none;
+                font-weight: 160;
+                transition: font-weight 0.2s linear;
+            }
+            a:visited {
+                color: $text-color;
+            }
+            a:hover {
+                font-weight: 700;
+            }
+        }
+    }
+
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+
+    background-color: $background-color;
+}
+
+#about {
+    h1, h2, h3, p {
         padding: 0;
         margin: 0;
     }
-
     h1 {
-        font-size: 116px;
+        font-size: 128px;
         font-weight: 700;
+        text-transform: uppercase;
     }
-
     h2 {
         font-size: 32px;
-        font-weight: 200;
+        font-weight: 160;
     }
+    h3 {
+        font-size: 128px;
+        font-weight: 600;
+    }
+
+    p {
+        font-size: 24px;
+        font-weight: 200;
+        text-align: justify;
+    }
+
+    span { //span is used for the .com text after triankl3
+        font-size: 32px;
+    }
+
+    margin: 0 10%;
+}
+#projects {
+
+}
+#contact {
+
+}
+
+.section-full, .section-infinite, .section-short {
+    margin-right: $nav-width;
+}
+.section-full {
+    height: 100vh;
+}
+.section-infinite {
+    min-height: 100vh;
+}
+.section-short {
+    min-height: 512px;
 }

@@ -1,24 +1,83 @@
 {{ define "main" }}
 
-<header>
-    <h2>Hey! I'm Nikola, better known as</h2>
-    <h1>triankl3</h1>
+<nav>
+    <ul>
+        <li><a onclick="scollElement('#about', 400)" class="yellow-color-selected">/ about /</a></li>
+        <li><a onclick="scollElement('#projects', 400)" class="purple-color-selected">/ projects /<a></li>
+        <li><a onclick="scollElement('#contact', 400)" class="cyan-color-selected">/ contact /</a></li>
+    </ul>
+</nav>
 
-    <nav>
-        <ul>
-            <li>about</li>
-            <li>projects</li>
-            <li>contact</li>
-        </ul>
-    </nav>
-</header>
+<div id="about"> <!-- This wrapper makes sure we look at all of the sections inside as "about" -->
+    <section class="section-full">
+        <h1>Exploring technology, creating art.</h1>
+        <p>Take a look at my projects to see how I bring ideas to life.</p>
+    </section>
+    <section class="section-full">
+        <h2>Hey! I'm Nikola, better known online as</h2>
+        <h1>triankl3<span>.com</span></h1>
+    </section>
+    <section class="section-full">
+        <p>Currently studying Video Game Design at the Novi Sad Academy of Arts, Serbia. Determined to push the boundaries of what video games can do as an art form and create fresh experiences that will leave impact.</p>
+    </section>
+    <section class="section-full">
+        <p>Graduated graphic design at Bogdan Šuput art school, Novi Sad. Exploring ways to provide form to function without sacrificing anything. This portfolio was built from scratch, the source code is available on GitHub.</p>
+    </section>
+    <section class="section-full">
+        <p>The moment I knew game development was my dream is when I completed my first commission at 13 for a Garry's Mod server. The rest is history and I spent years freelancing Source Engine maps. Today I'm more interested in procedural generation and other advanced methods of creating worlds for players to explore.</p>
+    </section>
+    <section class="section-full">
+        <p>With over three years of experience working on Roblox games, I'm more than capable at programming complex systems. Combined with my experience in Game Design and Graphic Design, I can deliver fun, performant and beautiful solutions.</p>
+    </section>
+</div>
 
-<main>
 
-</main>
+<section id="projects" class="section-infinite">
+    <h1>projects</h1>
+</section>
 
-<footer>
+<section id="contact" class="section-short">
+    <h1>contact</h1>
+</section>
 
-</footer>
+<script>
+    //Code from https://stackoverflow.com/questions/17722497/scroll-smoothly-to-specific-element-on-page
+    //This gives us smooth scrolling in the navbar on a single page without using #ids in the links
+    function getElementY(query) {
+        return window.pageYOffset + document.querySelector(query).getBoundingClientRect().top
+    }
+    function scollElement(targetElement, duration) {
+        var startingY = window.pageYOffset
+        var elementY = getElementY(targetElement)
+        // If element is close to page's bottom then window will scroll only to some position above the element.
+        var targetY = document.body.scrollHeight - elementY < window.innerHeight ? document.body.scrollHeight - window.innerHeight : elementY
+        var diff = targetY - startingY //- document.getElementsByTagName('nav')[0].clientHeight; //accounts for the sticky navbar height
+        // Easing function: easeInOutCubic
+        // From: https://gist.github.com/gre/1650294
+        var easing = function (t) { return t<.5 ? 4*t*t*t : (t-1)*(2*t-2)*(2*t-2)+1 }
+        var start
+
+        if (!diff) return
+
+        // Bootstrap our animation - it will get called right before next frame shall be rendered.
+        window.requestAnimationFrame(function step(timestamp) {
+            if (!start) start = timestamp
+            // Elapsed miliseconds since start of scrolling.
+            var time = timestamp - start
+            // Get percent of completion in range [0, 1].
+            var percent = Math.min(time / duration, 1)
+            // Apply the easing.
+            // It can cause bad-looking slow frames in browser performance tool, so be careful.
+            percent = easing(percent)
+
+            window.scrollTo(0, startingY + diff * percent)
+
+            // Proceed with animation as long as we wanted it to.
+            if (time < duration) {
+                window.requestAnimationFrame(step)
+            }
+        })
+    }
+</script>
 
 {{ end }}
