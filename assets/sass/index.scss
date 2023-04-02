@@ -138,11 +138,13 @@ $nav-font-size: 24px;
 }
 .slide-sideimg {
     height: 60vh;
-    margin: 5% 5% 5% 0;
+    margin: 5% 5% 0 0;
 
     background-repeat: no-repeat;
     background-position: left;
-    background-size: contain;
+    background-size:auto;
+
+    background-attachment: fixed;
 }
 
 //color the side titles specifically based on the section
