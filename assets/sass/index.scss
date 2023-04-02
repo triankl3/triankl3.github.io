@@ -50,32 +50,32 @@ $nav-font-size: 24px;
 //Split index into sections, which are also navigatable using the navbar
 .section-index {
     //Just reset these, we'll position them as needed
-    h1, h2, h3, h4, h5, h6, img {
+    h1, h2, h3, h4, h6 {
         margin: 0;
         padding: 0;
     }
 
-    h1 { //Absolutely huge text
+    h1 {
         font-size: 128px;
         font-weight: 800;
         text-transform: uppercase;
         line-height: 95%;
     }
-    h2 { //Medium scale text
+    h2 {
         font-size: 128px;
         font-weight: 600;
     }
-    h3 { //Small scale text
+    h3 {
         font-size: 32px;
         font-weight: 400;
     }
-    h4 { //Paragraph like text
+    h4 {
         font-size: 24px;
-        font-weight: 200;
+        font-weight: 300;
     }
 
-    p { //longer text obviously
-        font-size: 24px;
+    p {
+        font-size: 22px;
         font-weight: 200;
         text-align: justify;
         max-width: 756px;
@@ -88,13 +88,6 @@ $nav-font-size: 24px;
     h6 { //h6 is used for the downwards arrow symbol
         font-size: 64px;
         margin-top: 64px;
-    }
-
-    > img { //make sure we only select images that are part of the section index and not any image
-        margin-top: 5%;
-        height: 60vh;
-        margin-left: calc(-72px - 5%);
-        float:none;
     }
 
     padding: 5%;
@@ -117,11 +110,11 @@ $nav-font-size: 24px;
 
 // Vertical rotated text slide titles, we have to wrap the h1 to be able to have inverted colors if images are put underneath
 .slide-title {
-    // filter: invert(1);
     mix-blend-mode: difference;
 
     h1 {
         font-size: 72px;
+        height: 72px;
         font-weight: 600;
         text-transform: uppercase;
         text-align: right;
@@ -140,9 +133,17 @@ $nav-font-size: 24px;
 }
 
 .slide-content {
-    margin-left: calc(5% + 72px);
+    margin-left: 72px;
+    padding-left: 5%;
 }
+.slide-sideimg {
+    height: 60vh;
+    margin: 5% 5% 5% 0;
 
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+}
 
 //color the side titles specifically based on the section
 #section-about .slide-title h1 {
