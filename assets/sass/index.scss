@@ -1,25 +1,26 @@
+// Sticky, vertical, rotated text, right side navbar with variable font effects
 $nav-width: 48px;
 $nav-font-size: 24px;
-nav {
+.nav-index {
     ul {
         list-style-type: none;
         user-select: none;
 
-        padding: 0;
-        margin: 0;
-
         text-align: center;
         text-transform: uppercase;
 
-        // letter-spacing: 4px;
+        padding: 0;
+        margin: 0;
         width: $nav-width;
 
         li {
-            padding: 10px (($nav-width - $nav-font-size) / 2);
-            margin: 0;
             font-size: $nav-font-size;
             writing-mode: vertical-rl;
             letter-spacing: 3px;
+
+            //calclate padding so the text fits in the horizontal middle
+            padding: 10px (($nav-width - $nav-font-size) / 2);
+            margin: 0;
 
             a {
                 color: $text-color;
@@ -41,50 +42,36 @@ nav {
     top: 0;
     right: 0;
     margin: 0;
-    padding: 0;
+    padding: 5% 0 0 0;
 
     background-color: $background-color;
 }
 
-#about {
-    h1, h2, h3, h4, h6, p {
-        padding: 0;
+//Split index into sections, which are also navigatable using the navbar
+.section-index {
+    //Just reset these, we'll position them as needed
+    h1, h2, h3, h4, h5, h6, img {
         margin: 0;
+        padding: 0;
     }
-    h1 { //huge splash text
+
+    h1 { //Absolutely huge text
         font-size: 128px;
-        font-weight: 700;
+        font-weight: 800;
         text-transform: uppercase;
         line-height: 95%;
     }
-    h2 { //medium splash text
+    h2 { //Medium scale text
         font-size: 128px;
         font-weight: 600;
     }
-    h3 { //smallest splash text
+    h3 { //Small scale text
         font-size: 32px;
-        font-weight: 160;
+        font-weight: 400;
     }
-
-    .about-sidetext {
-        // filter: invert(1);
-        mix-blend-mode: difference;
-
-        h1 {
-            font-size: 72px;
-            font-weight: 600;
-            text-transform: uppercase;
-            transform: rotate(-90deg);
-            transform-origin: top left;
-            width: 100vh;
-            text-align: right;
-            position: relative;
-            top: 100vh;
-            background-color: $yellow-color;
-            color: black;
-            padding: 0 5vh;
-            // color: $yellow-color;
-        }
+    h4 { //Paragraph like text
+        font-size: 24px;
+        font-weight: 200;
     }
 
     p { //longer text obviously
@@ -103,58 +90,72 @@ nav {
         margin-top: 64px;
     }
 
-    img {
+    > img { //make sure we only select images that are part of the section index and not any image
         margin-top: 5%;
         height: 60vh;
         margin-left: calc(-72px - 5%);
         float:none;
     }
 
-    margin: 5%;
-
-    .about-segment {
-        margin-left: calc(72px + 5%);
-    }
-
-    #logo-wrapper {
-        width: 50vh;
-        height: 50vh;
-        margin-left: calc(50% - 25vh);
-        padding: 0;
-        img {
-            width: 50vh;
-            height: 50vh;
-            margin: 0;
-            padding: 0;
-            position: relative;
-        }
-        #logo-part1 {
-
-        }
-        #logo-part2 {
-            top: -50.5vh; //weird i know, but it works, otherwise there is a tiny gap vertically
-        }
-        #logo-part3 {
-            top: -101vh; //same weirdness applies here
-        }
-    }
-}
-#projects {
-
-}
-#contact {
-
+    padding: 5%;
 }
 
-.section-full, .section-infinite, .section-short {
+// Easily define how tall we want our full width slides to be
+.slide-full, .slide-infinite, .slide-short {
     margin-right: $nav-width;
+    width: 100%;
 }
-.section-full {
+.slide-full {
     height: 100vh;
 }
-.section-infinite {
+.slide-short {
+    height: 512px;
+}
+.slide-infinite {
     min-height: 100vh;
 }
-.section-short {
-    min-height: 512px;
+
+// Vertical rotated text slide titles, we have to wrap the h1 to be able to have inverted colors if images are put underneath
+.slide-title {
+    // filter: invert(1);
+    mix-blend-mode: difference;
+
+    h1 {
+        font-size: 72px;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-align: right;
+        color: black;
+        background-color: $text-color;
+
+        transform: rotate(-90deg);
+        transform-origin: top left;
+
+        position: relative;
+        width: 100vh;
+        top: 100vh;
+
+        padding: 0 5%;
+    }
+}
+
+.slide-content {
+    margin-left: calc(5% + 72px);
+}
+
+
+//color the side titles specifically based on the section
+#section-about .slide-title h1 {
+    background-color: $yellow-color;
+}
+#section-projects .slide-title h1 {
+    background-color: $purple-color;
+}
+#section-contact .slide-title h1 {
+    background-color: $cyan-color;
+}
+//make sure the side titles don't exceed the shorter slide length
+.slide-short .slide-title h1 {
+    width: 512px;
+    top: 512px;
 }

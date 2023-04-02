@@ -5,3 +5,27 @@ body {
     color: $text-color;
     background-color: $background-color;
 }
+
+// Allows us to have a logo composed of multiple images for interesting animations
+.logo-wrapper {
+    position: relative;
+    top: 0;
+    left: calc(50% - 25vh);
+    height: 50vh;
+    width: 50vh;
+
+    img {
+        top: 0;
+        left: 0;
+    }
+
+    #logo-part1 {
+        position: relative;
+    }
+    #logo-part2 {
+        position: absolute;
+    }
+    #logo-part3 {
+        position: absolute;
+    }
+}
