@@ -2,35 +2,59 @@
 
 <nav>
     <ul>
-        <li><a onclick="scollElement('#about', 400)" class="yellow-color-selected">/ about /</a></li>
-        <li><a onclick="scollElement('#projects', 400)" class="purple-color-selected">/ projects /<a></li>
-        <li><a onclick="scollElement('#contact', 400)" class="cyan-color-selected">/ contact /</a></li>
+        <li><a onclick="scollElement('#about', 400)" class="yellow-color-selected">about</a></li>
+        <li><a onclick="scollElement('#projects', 400)" class="purple-color-selected">projects<a></li>
+        <li><a onclick="scollElement('#contact', 400)" class="cyan-color-selected">contact</a></li>
     </ul>
 </nav>
 
 <div id="about"> <!-- This wrapper makes sure we look at all of the sections inside as "about" -->
     <section class="section-full">
-        <h1>Exploring technology, creating art.</h1>
+        <h1>Exploring technology,<br> creating art.</h1>
         <p>Take a look at my projects to see how I bring ideas to life.</p>
+        <h6>&#8595;</h6>
     </section>
     <section class="section-full">
-        <h2>Hey! I'm Nikola, better known online as</h2>
-        <h1>triankl3<span>.com</span></h1>
+        <div id="logo-wrapper">
+            <img id="logo-part1" src="/img/logo-part1.svg" alt="logo-part1"><br><img id="logo-part2" src="/img/logo-part2.svg" alt="logo-part2"><br><img id="logo-part3" src="/img/logo-part3.svg" alt="logo-part3">
+        </div>
     </section>
     <section class="section-full">
-        <p>Currently studying Video Game Design at the Novi Sad Academy of Arts, Serbia. Determined to push the boundaries of what video games can do as an art form and create fresh experiences that will leave impact.</p>
+        <div class="about-sidetext"><h1>First things first</h1></div>
+        <div class="about-segment">
+            <h3>Hi! I'm Nikola, better known online as</h3>
+            <h2 class="yellow-color">triankl3<span>.com</span></h2>
+        </div>
     </section>
     <section class="section-full">
-        <p>Graduated graphic design at Bogdan Šuput art school, Novi Sad. Exploring ways to provide form to function without sacrificing anything. This portfolio was built from scratch, the source code is available on GitHub.</p>
+        <div class="about-sidetext"><h1>Game Design</h1></div>
+        <div class="about-segment">
+            <p>Currently studying Video Game Design at the Novi Sad Academy of Arts, Serbia. Determined to push the boundaries of what video games can do as an art form. Working on the creation of fresh experiences that will leave an impact.</p>
+            <img src="/img/about-gamedesign.png" alt="">
+        </div>
     </section>
     <section class="section-full">
-        <p>The moment I knew game development was my dream is when I completed my first commission at 13 for a Garry's Mod server. The rest is history and I spent years freelancing Source Engine maps. Today I'm more interested in procedural generation and other advanced methods of creating worlds for players to explore.</p>
+        <div class="about-sidetext"><h1>Graphic Design</h1></div>
+        <div class="about-segment">
+            <p>Graduated graphic design at Bogdan Šuput Art School, Novi Sad. Exploring ways to provide form to function without sacrificing anything. Even though it isn't my primary interest, it has significant influence on all of my other projects.</p>
+            <img src="/img/about-graphicdesign.png" alt="">
+        </div>
     </section>
     <section class="section-full">
-        <p>With over three years of experience working on Roblox games, I'm more than capable at programming complex systems. Combined with my experience in Game Design and Graphic Design, I can deliver fun, performant and beautiful solutions.</p>
+        <div class="about-sidetext"><h1>Level Design</h1></div>
+        <div class="about-segment">
+            <p>The moment I knew game development is my dream was when I completed the first commission at thirteen for a Garry's Mod server. The rest is history and I spent years freelancing Source Engine maps. Today I'm more interested in procedural generation and other advanced methods of creating worlds for players to explore.</p>
+            <img src="/img/about-leveldesign.png" alt="">
+        </div>
+    </section>
+    <section class="section-full">
+        <div class="about-sidetext"><h1>Scripting</h1></div>
+        <div class="about-segment">
+            <p>With over three years of experience working on Roblox games, I'm more than capable at programming complex systems. Combined with my expertise in the above mentioned fields, I can deliver fun, performant and beautiful solutions.</p>
+            <img src="/img/about-scripting.png" alt="">
+        </div>
     </section>
 </div>
-
 
 <section id="projects" class="section-infinite">
     <h1>projects</h1>

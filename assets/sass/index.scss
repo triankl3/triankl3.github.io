@@ -19,18 +19,19 @@ nav {
             margin: 0;
             font-size: $nav-font-size;
             writing-mode: vertical-rl;
+            letter-spacing: 3px;
 
             a {
                 color: $text-color;
                 text-decoration: none;
-                font-weight: 160;
+                font-weight: 300;
                 transition: font-weight 0.2s linear;
             }
             a:visited {
                 color: $text-color;
             }
             a:hover {
-                font-weight: 700;
+                font-weight: 900;
             }
         }
     }
@@ -46,35 +47,97 @@ nav {
 }
 
 #about {
-    h1, h2, h3, p {
+    h1, h2, h3, h4, h6, p {
         padding: 0;
         margin: 0;
     }
-    h1 {
+    h1 { //huge splash text
         font-size: 128px;
         font-weight: 700;
         text-transform: uppercase;
+        line-height: 95%;
     }
-    h2 {
-        font-size: 32px;
-        font-weight: 160;
-    }
-    h3 {
+    h2 { //medium splash text
         font-size: 128px;
         font-weight: 600;
     }
+    h3 { //smallest splash text
+        font-size: 32px;
+        font-weight: 160;
+    }
 
-    p {
+    .about-sidetext {
+        // filter: invert(1);
+        mix-blend-mode: difference;
+
+        h1 {
+            font-size: 72px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transform: rotate(-90deg);
+            transform-origin: top left;
+            width: 100vh;
+            text-align: right;
+            position: relative;
+            top: 100vh;
+            background-color: $yellow-color;
+            color: black;
+            padding: 0 5vh;
+            // color: $yellow-color;
+        }
+    }
+
+    p { //longer text obviously
         font-size: 24px;
         font-weight: 200;
         text-align: justify;
+        max-width: 756px;
     }
 
     span { //span is used for the .com text after triankl3
         font-size: 32px;
     }
 
-    margin: 0 10%;
+    h6 { //h6 is used for the downwards arrow symbol
+        font-size: 64px;
+        margin-top: 64px;
+    }
+
+    img {
+        margin-top: 5%;
+        height: 60vh;
+        margin-left: calc(-72px - 5%);
+        float:none;
+    }
+
+    margin: 5%;
+
+    .about-segment {
+        margin-left: calc(72px + 5%);
+    }
+
+    #logo-wrapper {
+        width: 50vh;
+        height: 50vh;
+        margin-left: calc(50% - 25vh);
+        padding: 0;
+        img {
+            width: 50vh;
+            height: 50vh;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        #logo-part1 {
+
+        }
+        #logo-part2 {
+            top: -50.5vh; //weird i know, but it works, otherwise there is a tiny gap vertically
+        }
+        #logo-part3 {
+            top: -101vh; //same weirdness applies here
+        }
+    }
 }
 #projects {
 
