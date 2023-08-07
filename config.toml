@@ -2,4 +2,4 @@ baseURL = 'https://triankl3.github.io/'
 languageCode = 'en-us'
 title = 'triankl3'
 copyright = 'WRITE COPYRIGHT HERE'
-disableKinds = ["page", "home", "section", "taxonomy", "term", "RSS", "sitemap"]
+disableKinds = ["section", "taxonomy", "term", "RSS"]
