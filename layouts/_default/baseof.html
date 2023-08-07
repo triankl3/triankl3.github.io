@@ -13,6 +13,21 @@
         <link rel="stylesheet" href="{{ $main_style.RelPermalink }}">
     </head>
     <body>
+        <div class="noise-bg"></div>
+
+        {{ partial "grid.html" . }}
+        
+        <div class="cube-container" style="top: 25%; left: 30%;">
+            {{ partial "cube.html" . }}
+        </div>
+        <div class="cube-container" style="top: 75%; right: 30%;">
+            {{ partial "cube.html" . }}
+        </div>
+
         {{ block "main" . }}{{ end }}
+
+        <footer>
+            <p>Design and content subject to copyright. Website source code available on GitHub. Designed and created by Nikola Pešević - triankl3.com</p>
+        </footer>
     </body>
 </html>

@@ -1,123 +1,34 @@
 {{ define "main" }}
 
-<nav class="nav-index">
-    <ul>
-        <li><a onclick="scollElement('#section-home', 400)" class="text-color-selected">home</a></li>
-        <li><a onclick="scollElement('#section-about', 400)" class="yellow-color-selected">about</a></li>
-        <li><a onclick="scollElement('#section-projects', 400)" class="purple-color-selected">projects<a></li>
-        <li><a onclick="scollElement('#section-contact', 400)" class="cyan-color-selected">contact</a></li>
-    </ul>
-</nav>
+{{ partial "nav.html" . }}
 
-<section class="section-index" id="section-home">
-    <div class="slide-full">
-        <h1>Exploring technology,<br> creating art.</h1>
-        <h4>Take a look at my projects to see how I bring ideas to life.</h4>
-        <h6>&#8595;</h6> <!-- Downwards arrow unicode symbol -->
+<div class="content-wrapper">
+    <div id="about">
+        <img src="/img/about-main.svg" style="user-select: none;" draggable="false">
     </div>
-    <div class="slide-full">
-        <div class="logo-wrapper">
-            <img id="logo-part1" src="/img/logo-part1.svg" alt="logo-part1">
-            <img id="logo-part2" src="/img/logo-part2.svg" alt="logo-part2">
-            <img id="logo-part3" src="/img/logo-part3.svg" alt="logo-part3">
+    
+    <div id="projects">
+        <div class="posts-wrapper">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat unde voluptatum perspiciatis odit officia impedit dignissimos quo excepturi perferendis omnis fuga, corporis enim magni eaque nobis deleniti ad voluptates suscipit?</p>
+
+            <!-- 
+                We need to do the following here somehow using HuGo and JS probably
+
+                1. Get all tags/taxonomies that exist in the content/posts folder and show them as buttons
+                2. Include and select by default an all button that shows all posts
+                3. When a button is clicked, show only the posts that have that tag/taxonomy
+                4. When the all button is clicked, show all posts again
+                5. Make it display post widgets in a grid with the according style based on post properties
+                6. Add effects, styling and animations
+             -->
         </div>
+
+        <img src="/img/about-extended.svg" style="user-select: none;" draggable="false">
     </div>
-</section>
-
-<section class="section-index" id="section-about">
-    <div class="slide-full">
-        <div class="slide-title"><h1>About</h1></div>
-        <div class="slide-content">
-            <h3>Hi! I'm Nikola, better known online as</h3>
-            <h2 class="yellow-color">triankl3<span>.com</span></h2>
-        </div>
+    
+    <div id="contact">
+        <!-- INCLUDE CONTACT HERE --> 
     </div>
-    <div class="slide-full">
-        <div class="slide-title"><h1>Game Design</h1></div>
-        <div class="slide-content">
-            <p>Currently studying Video Game Design at the Novi Sad Academy of Arts, Serbia. Determined to push the boundaries of what video games can do as an art form. Working on the creation of fresh experiences that will leave an impact.</p>
-        </div>
-        <div class="slide-sideimg" style="background-image:url(/img/about-gamedesign.png);"></div>
-    </div>
-    <div class="slide-full">
-        <div class="slide-title"><h1>Graphic Design</h1></div>
-        <div class="slide-content">
-            <p>Graduated graphic design at Bogdan Šuput Art School, Novi Sad. Exploring ways to provide form to function without sacrificing anything. Even though it isn't my primary interest, it has significant influence on all of my other projects.</p>
-        </div>
-        <div class="slide-sideimg" style="background-image:url(/img/about-graphicdesign.png);"></div>
-    </div>
-    <div class="slide-full">
-        <div class="slide-title"><h1>Level Design</h1></div>
-        <div class="slide-content">
-            <p>The moment I knew game development is my dream was when I completed the first commission at thirteen for a Garry's Mod server. The rest is history and I spent years freelancing Source Engine maps. Today I'm more interested in procedural generation and other advanced methods of creating worlds for players to explore.</p>
-        </div>
-        <div class="slide-sideimg" style="background-image:url(/img/about-leveldesign.png);"></div>
-    </div>
-    <div class="slide-full">
-        <div class="slide-title"><h1>Scripting</h1></div>
-        <div class="slide-content">
-            <p>With over three years of experience working on Roblox games, I'm more than capable at programming complex systems. Combined with my expertise in the above mentioned fields, I can deliver fun, performant and beautiful solutions.</p>
-        </div>
-        <div class="slide-sideimg" style="background-image:url(/img/about-scripting.png);"></div>
-    </div>
-</section>
-
-<section class="section-index" id="section-projects">
-    <div class="slide-infinite">
-        <div class="slide-title"><h1>Projects</h1></div>
-        <div class="slide-content">
-
-        </div>
-    </div>
-</section>
-
-<section class="section-index" id="section-contact">
-    <div class="slide-short">
-        <div class="slide-title"><h1>Contact</h1></div>
-        <div class="slide-content">
-
-        </div>
-    </div>
-</section>
-
-<script>
-    //Code from https://stackoverflow.com/questions/17722497/scroll-smoothly-to-specific-element-on-page
-    //This gives us smooth scrolling in the navbar on a single page without using #ids in the links
-    function getElementY(query) {
-        return window.pageYOffset + document.querySelector(query).getBoundingClientRect().top
-    }
-    function scollElement(targetElement, duration) {
-        var startingY = window.pageYOffset
-        var elementY = getElementY(targetElement)
-        // If element is close to page's bottom then window will scroll only to some position above the element.
-        var targetY = document.body.scrollHeight - elementY < window.innerHeight ? document.body.scrollHeight - window.innerHeight : elementY
-        var diff = targetY - startingY //- document.getElementsByTagName('nav')[0].clientHeight; //accounts for the sticky navbar height
-        // Easing function: easeInOutCubic
-        // From: https://gist.github.com/gre/1650294
-        var easing = function (t) { return t<.5 ? 4*t*t*t : (t-1)*(2*t-2)*(2*t-2)+1 }
-        var start
-
-        if (!diff) return
-
-        // Bootstrap our animation - it will get called right before next frame shall be rendered.
-        window.requestAnimationFrame(function step(timestamp) {
-            if (!start) start = timestamp
-            // Elapsed miliseconds since start of scrolling.
-            var time = timestamp - start
-            // Get percent of completion in range [0, 1].
-            var percent = Math.min(time / duration, 1)
-            // Apply the easing.
-            // It can cause bad-looking slow frames in browser performance tool, so be careful.
-            percent = easing(percent)
-
-            window.scrollTo(0, startingY + diff * percent)
-
-            // Proceed with animation as long as we wanted it to.
-            if (time < duration) {
-                window.requestAnimationFrame(step)
-            }
-        })
-    }
-</script>
+</div>
 
 {{ end }}

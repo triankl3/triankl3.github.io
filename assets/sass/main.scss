@@ -1,20 +1,10 @@
-$text-color: #fff;
-$background-color: #000;
+$color-text: #fff;
+$color-background: #111111;
+$content-width: 1024px;
 
-$yellow-color: #B58A1C;
-$purple-color: #8A1CB5;
-$cyan-color: #1CB58A;
-.yellow-color {
-    color: $yellow-color;
-}
-.purple-color {
-    color: $purple-color;
-}
-.cyan-color {
-    color: $cyan-color;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100..900');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700'); //Oswald
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800'); //Manrope
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap'); //Michroma
 @import
     "general",
     "index",
