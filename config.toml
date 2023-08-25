@@ -2,4 +2,13 @@ baseURL = 'https://triankl3.github.io/'
 languageCode = 'en-us'
 title = 'triankl3'
 copyright = 'WRITE COPYRIGHT HERE'
-disableKinds = ["section", "taxonomy", "term", "RSS"]
+disableKinds = ["RSS"]
+
+[module]
+    [[module.mounts]]
+    source = "assets"
+    target = "assets"
+
+    [[module.mounts]]
+    source = "node_modules/modern-normalize/modern-normalize.css"
+    target = "assets/css/modern-normalize.css"

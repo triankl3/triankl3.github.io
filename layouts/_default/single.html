@@ -1,0 +1,14 @@
+{{ define "main" }}
+
+<div class="content-wrapper">
+    <h1>{{ .Title }}</h1>
+    <h2>{{ .Description }}</h2>
+    <h3>{{ .Date.Format "Mon Jan 2, 2006" }}</h3>
+    {{.GetTerms "tags"}}
+    
+    <article>
+        {{ .Content }}
+    </article>
+</div>
+
+{{ end }}

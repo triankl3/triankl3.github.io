@@ -1,27 +1,36 @@
 {
-  "name": "triankl3.github.io",
-  "version": "0.0.1",
-  "description": "Freelance portfolio website built using HuGo and a completely custom theme.",
-  "main": "index.js",
-  "scripts": {
-    "build": "npm run hugo:build",
-    "serve": "npm run hugo:serve",
-    "clean": "npm run hugo:clean",
-    "hugo:build": "hugo -d build",
-    "hugo:serve": "hugo server",
-    "hugo:clean": "rm -rf build resources public"
+  "author": "triankl3",
+  "bugs": {
+    "url": "https://github.com/triankl3/triankl3.github.io/issues"
   },
+  "comments": {
+    "dependencies": {
+      "hugo-extended": "project",
+      "modern-normalize": "project"
+    },
+    "devDependencies": {}
+  },
+  "dependencies": {
+    "hugo-extended": "^0.111.3",
+    "modern-normalize": "^2.0.0"
+  },
+  "description": "Freelance portfolio website built using HuGo and a completely custom theme.",
+  "devDependencies": {},
+  "homepage": "https://github.com/triankl3/triankl3.github.io#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "name": "triankl3.github.io",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/triankl3/triankl3.github.io.git"
   },
-  "author": "triankl3",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/triankl3/triankl3.github.io/issues"
+  "scripts": {
+    "build": "npm run hugo:build",
+    "clean": "npm run hugo:clean",
+    "hugo:build": "hugo -d build",
+    "hugo:clean": "rm -rf build resources public",
+    "hugo:serve": "hugo server",
+    "serve": "npm run hugo:serve"
   },
-  "homepage": "https://github.com/triankl3/triankl3.github.io#readme",
-  "dependencies": {
-    "hugo-extended": "^0.111.3"
-  }
+  "version": "0.0.1"
 }

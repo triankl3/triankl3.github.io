@@ -4,30 +4,29 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        {{ $css := "css/normalize.css" | relURL }}
-        <link rel="stylesheet" href="{{ $css }}">
+        {{ $normalize_style := resources.Get "css/modern-normalize.css" | resources.Minify }}
+        <link rel="stylesheet" href="{{ $normalize_style.RelPermalink }}">
 
-        {{ $main_options := (dict "targetPath" "css/site.css" "outputStyle" "compressed") }}
-        {{ $main_template := resources.Get "sass/main.scss" }}
-        {{ $main_style := $main_template | resources.ExecuteAsTemplate "main_parsed.scss" . | toCSS $main_options | resources.Minify }}
+        {{ $main_style := resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "main_parsed.scss" . | resources.ToCSS (dict "targetPath" "css/site.css" "outputStyle" "compressed") | resources.Minify }}
         <link rel="stylesheet" href="{{ $main_style.RelPermalink }}">
+
+        <title>
+            {{- if .IsHome -}}
+              Home | {{ .Site.Title }}
+            {{- else if .Page.Title -}}
+              {{ .Page.Title }} | {{ .Site.Title }}
+            {{- else -}}
+              {{ .Site.Title }}
+            {{- end -}}
+           </title> 
     </head>
     <body>
         <div class="noise-bg"></div>
 
-        {{ partial "grid.html" . }}
-        
-        <div class="cube-container" style="top: 25%; left: 30%;">
-            {{ partial "cube.html" . }}
-        </div>
-        <div class="cube-container" style="top: 75%; right: 30%;">
-            {{ partial "cube.html" . }}
-        </div>
-
         {{ block "main" . }}{{ end }}
 
         <footer>
-            <p>Design and content subject to copyright. Website source code available on GitHub. Designed and created by Nikola Pešević - triankl3.com</p>
+            <p>Design and content subject to copyright Nikola Pešević - triankl3.com. Source code available on GitHub.</p>
         </footer>
     </body>
 </html>

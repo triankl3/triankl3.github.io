@@ -2,25 +2,40 @@
 
 {{ partial "nav.html" . }}
 
+{{ partial "grid.html" . }}
+
+<div class="cube-container" style="top: 25%; left: 30%;">
+    {{ partial "cube.html" . }}
+</div>
+<div class="cube-container" style="top: 75%; right: 30%;">
+    {{ partial "cube.html" . }}
+</div>
+
+
 <div class="content-wrapper">
     <div id="about">
         <img src="/img/about-main.svg" style="user-select: none;" draggable="false">
     </div>
     
     <div id="projects">
-        <div class="posts-wrapper">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat unde voluptatum perspiciatis odit officia impedit dignissimos quo excepturi perferendis omnis fuga, corporis enim magni eaque nobis deleniti ad voluptates suscipit?</p>
+        <div class="post-wrapper">
+            <div class="post-tags">
+                <ul>
+                    {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+                        <li>{{ $name }}</li>
+                    {{ end }}
+                </ul>
+            </div>
 
-            <!-- 
-                We need to do the following here somehow using HuGo and JS probably
-
-                1. Get all tags/taxonomies that exist in the content/posts folder and show them as buttons
-                2. Include and select by default an all button that shows all posts
-                3. When a button is clicked, show only the posts that have that tag/taxonomy
-                4. When the all button is clicked, show all posts again
-                5. Make it display post widgets in a grid with the according style based on post properties
-                6. Add effects, styling and animations
-             -->
+            {{ range (where .Site.Pages "Section" "projects") }}
+                {{ range .Pages }}
+                    <div class="post">
+                        <h1>{{ .Title }}</h1>
+                        <h2>{{ .Description }}</h2>
+                        <h3>{{ .Date.Format "Mon Jan 2, 2006" }}</h3>
+                    </div>
+                {{ end }}
+            {{ end }}
         </div>
 
         <img src="/img/about-extended.svg" style="user-select: none;" draggable="false">
