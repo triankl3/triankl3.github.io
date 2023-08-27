@@ -10,15 +10,19 @@ disableKinds = ["RSS"]
     target = "assets"
 
     [[module.mounts]]
+    source = "static"
+    target = "static"
+
+    [[module.mounts]]
     source = "node_modules/modern-normalize/modern-normalize.css"
     target = "assets/css/modern-normalize.css"
 
     [[module.mounts]]
     source = "node_modules/masonry-layout/dist/masonry.pkgd.min.js"
-    target = "assets/js/masonry.pkgd.min.js"
+    target = "static/js/masonry.pkgd.min.js"
 
 [imaging]
-    bfColor = "#ffffff"
+    bgColor = "#111111"
     hint = 'photo'
-    quality = 75
-    resampleFilter = "lanczos"
+    quality = 95
+    resampleFilter = "Lanczos"

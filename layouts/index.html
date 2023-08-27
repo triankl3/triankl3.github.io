@@ -28,18 +28,20 @@
                 </ul>
             </div>
 
-            {{ range (where .Site.Pages "Section" "projects") }}
-                {{ range .Pages }}
-                    <div class="posts-post">
-                        <h1>{{ .Title }}</h1>
-                        {{ range $name, $tag := .Site.Taxonomies.tags }}
-                            <li class="posts-tag">{{ $name }}</li>
-                        {{ end }}
-                        <h2>{{ .Description }}</h2>
-                        <h3>{{ .Date.Format "Mon Jan 2, 2006" }}</h3>
-                    </div>
+            <div class="msnry-grid">
+                {{ range (where .Site.Pages "Section" "projects") }}
+                    {{ range .Pages }}
+                        <div class="posts-post msnry-grid-item">
+                            <h1>{{ .Title }}</h1>
+                            <span>{{ .Date.Format "Mon Jan 2, 2006" }}</span>
+                            {{ range $name, $tag := .Site.Taxonomies.tags }}
+                                <li class="posts-tag">{{ $name }}</li>
+                            {{ end }}
+                            <h2>{{ .Description }}</h2>
+                        </div>
+                    {{ end }}
                 {{ end }}
-            {{ end }}
+            </div>
         </div>
 
         <img src="/img/about-extended.svg" style="user-select: none;" draggable="false">

@@ -7,4 +7,6 @@ tags: ["test", "post", "level design"]
 accent: "#fff"
 ---
 
+{{< img src="background.webp" alt="Test screenshot" >}}
+
 This is some content for the test post. aedas

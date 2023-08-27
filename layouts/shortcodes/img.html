@@ -1,0 +1,52 @@
+<!-- Code nicely taken and modified from Laura Kalbag's blogpost https://laurakalbag.com/processing-responsive-images-with-hugo/ :) -->
+
+<!-- Get file that matches the filename as specified as src="" in shortcode -->
+{{ $src := .Page.Resources.GetMatch (printf "*%s*" (.Get "src")) }}
+
+{{ print $src }}
+
+<!-- Set image sizes, these are hardcoded for now, x dictates that images are resized to this width -->
+
+{{ $tinyw := default "x480" }}
+{{ $smallw := default "x720" }}
+{{ $mediumw := default "x1080" }}
+{{ $largew := default "x2160" }}
+
+<!-- Resize the src image to the given sizes -->
+
+{{ .Scratch.Set "tiny" ($src.Resize $tinyw) }}
+{{ .Scratch.Set "small" ($src.Resize $smallw) }}
+{{ .Scratch.Set "medium" ($src.Resize $mediumw) }}
+{{ .Scratch.Set "large" ($src.Resize $largew) }}
+
+<!-- Add the processed images to the scratch -->
+
+{{ $tiny := .Scratch.Get "tiny" }}
+{{ $small := .Scratch.Get "small" }}
+{{ $medium := .Scratch.Get "medium" }}
+{{ $large := .Scratch.Get "large" }}
+
+<!-- Only use images smaller than or equal to the src (original) image size, as Hugo will upscale small images -->
+<!-- Set the sizes attribute to (min-width: 35em) 1200px, 100vw unless overridden in shortcode -->
+
+<img 
+  {{ with .Get "sizes" }}sizes='{{.}}'{{ else }}sizes="100vw"{{ end }}
+  srcset='
+  {{ if ge $src.Height "480" }}
+    {{ with $tiny.RelPermalink }}{{.}} 480h{{ end }}
+  {{ end }}
+  {{ if ge $src.Height "720" }}
+    {{ with $small.RelPermalink }}, {{.}} 720h{{ end }}
+  {{ end }}
+  {{ if ge $src.Height "1080" }}
+    {{ with $medium.RelPermalink }}, {{.}} 1080h{{ end }}
+  {{ end }}
+  {{ if ge $src.Height "2160" }}
+    {{ with $large.RelPermalink }}, {{.}} 2160h{{ end }}
+  {{ end }}'
+  {{ if .Get (print $medium) }}
+    src="{{ $medium.RelPermalink }}" 
+  {{ else }}
+    src="{{ $src.RelPermalink }}" 
+  {{ end }}
+  {{ with .Get "alt" }}alt="{{.}}"{{ else }}alt=""{{ end }}>
