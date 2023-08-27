@@ -13,6 +13,10 @@ disableKinds = ["RSS"]
     source = "node_modules/modern-normalize/modern-normalize.css"
     target = "assets/css/modern-normalize.css"
 
+    [[module.mounts]]
+    source = "node_modules/masonry-layout/dist/masonry.pkgd.min.js"
+    target = "assets/js/masonry.pkgd.min.js"
+
 [imaging]
     bfColor = "#ffffff"
     hint = 'photo'

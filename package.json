@@ -12,10 +12,10 @@
   },
   "dependencies": {
     "hugo-extended": "^0.111.3",
+    "masonry-layout": "^4.2.2",
     "modern-normalize": "^2.0.0"
   },
   "description": "Freelance portfolio website built using HuGo and a completely custom theme.",
-  "devDependencies": {},
   "homepage": "https://github.com/triankl3/triankl3.github.io#readme",
   "license": "MIT",
   "main": "index.js",
