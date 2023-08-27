@@ -15,23 +15,42 @@
         z-index: 2;
         width: 88%;
     }
-
+    
     .posts-tags {
+            .posts-tags-selected {
+                border-style: solid;
+                font-weight: 800;
+                background-color: rgba($color-background, 1);
+            }
         ul {
             margin: 24px 0 24px 0;
             padding: 0;
 
             list-style: none;
         }
+
         li {
-            margin-right: 12px;
-            padding: 6px 12px;
             display: inline;
-            background-color: rgba($color-background, 0.9);
-            border-radius: 6px;
+            margin-right: 12px;
+            padding: 3px 12px;
+
+            font-family: 'Oswald', sans-serif;
+            font-size: 18px;
+            font-weight: 400;            
+            
+            background-color: rgba($color-background, 0.75);
+            // border-radius: 6px;
             border-width: 1px;
             border-color: white;
             border-style: dashed;
+
+            user-select: none;
+            transition: all .2s ease-in-out;
+            
+            text-transform: uppercase;
+        }
+        li:hover {
+            font-weight: 800;
         }
     }
 

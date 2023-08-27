@@ -21,7 +21,7 @@
         <div class="posts-wrapper">
             <div class="posts-tags">
                 <ul>
-                    <li>all</li>
+                    <li class="posts-tags-selected">all</li>
                     {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
                         <li>{{ $name }}</li>
                     {{ end }}
