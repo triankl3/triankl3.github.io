@@ -21,9 +21,9 @@
         <div class="posts-wrapper">
             <div class="posts-tags">
                 <ul>
-                    <li class="posts-tags-selected">all</li>
+                    <li class="posts-tag posts-tag-selected">all</li>
                     {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-                        <li>{{ $name }}</li>
+                        <li class="posts-tag">{{ $name }}</li>
                     {{ end }}
                 </ul>
             </div>
@@ -33,7 +33,7 @@
                     <div class="posts-post">
                         <h1>{{ .Title }}</h1>
                         {{ range $name, $tag := .Site.Taxonomies.tags }}
-                            <li>{{ $name }}</li>
+                            <li class="posts-tag">{{ $name }}</li>
                         {{ end }}
                         <h2>{{ .Description }}</h2>
                         <h3>{{ .Date.Format "Mon Jan 2, 2006" }}</h3>

@@ -6,55 +6,78 @@
 
 #projects {
     position: relative;
+}
 
-    .posts-wrapper {
-        padding: 0 24px 24px 0px;
+.posts-wrapper {
+    padding: 0 24px 24px 0px;
 
-        position: absolute;
-        top: 0;
-        z-index: 2;
-        width: 88%;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    width: 88%;
+}
+
+.posts-tags {
+    ul {
+        margin: 24px 0 24px 0;
+        padding: 0;
+
+        list-style: none;
+    }
+}
+
+.posts-tag {
+    display: inline;
+    margin-right: 12px;
+    padding: 3px 12px;
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    
+    background-color: rgba($color-background, 0.75);
+    border-width: 1px;
+    border-color: white;
+    border-style: dashed;
+
+    user-select: none;
+    transition: all .2s ease-in-out;
+}
+.posts-tag:hover {
+    font-weight: 800;
+}
+.posts-tag-selected {
+    border-style: solid;
+    font-weight: 800;
+    background-color: rgba($color-background, 1);
+}
+
+.posts-post {
+    h1 { // Title
+    }
+
+    h2 { // Description
+
+    }
+
+    h3 { // Date
+
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
     }
     
-    .posts-tags {
-            .posts-tags-selected {
-                border-style: solid;
-                font-weight: 800;
-                background-color: rgba($color-background, 1);
-            }
-        ul {
-            margin: 24px 0 24px 0;
-            padding: 0;
-
-            list-style: none;
-        }
-
-        li {
-            display: inline;
-            margin-right: 12px;
-            padding: 3px 12px;
-
-            font-family: 'Oswald', sans-serif;
-            font-size: 18px;
-            font-weight: 400;            
-            
-            background-color: rgba($color-background, 0.75);
-            // border-radius: 6px;
-            border-width: 1px;
-            border-color: white;
-            border-style: dashed;
-
-            user-select: none;
-            transition: all .2s ease-in-out;
-            
-            text-transform: uppercase;
-        }
-        li:hover {
-            font-weight: 800;
-        }
+    // Copy the tags style, but make them smaller and non interactible
+    .posts-tag {
+        font-size: 12px;
+        margin-right: 6px;
+        border-style: solid;
     }
-
-    .posts-post {
-
+    .posts-tag:hover {
+        font-weight: 400;
     }
 }
