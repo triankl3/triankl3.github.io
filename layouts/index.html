@@ -18,9 +18,10 @@
     </div>
     
     <div id="projects">
-        <div class="post-wrapper">
-            <div class="post-tags">
+        <div class="posts-wrapper">
+            <div class="posts-tags">
                 <ul>
+                    <li>all</li>
                     {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
                         <li>{{ $name }}</li>
                     {{ end }}
@@ -29,8 +30,11 @@
 
             {{ range (where .Site.Pages "Section" "projects") }}
                 {{ range .Pages }}
-                    <div class="post">
+                    <div class="posts-post">
                         <h1>{{ .Title }}</h1>
+                        {{ range $name, $tag := .Site.Taxonomies.tags }}
+                            <li>{{ $name }}</li>
+                        {{ end }}
                         <h2>{{ .Description }}</h2>
                         <h3>{{ .Date.Format "Mon Jan 2, 2006" }}</h3>
                     </div>

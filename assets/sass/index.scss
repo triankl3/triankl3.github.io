@@ -7,12 +7,35 @@
 #projects {
     position: relative;
 
-    .post-wrapper {
+    .posts-wrapper {
         padding: 0 24px 24px 0px;
 
         position: absolute;
         top: 0;
         z-index: 2;
         width: 88%;
+    }
+
+    .posts-tags {
+        ul {
+            margin: 24px 0 24px 0;
+            padding: 0;
+
+            list-style: none;
+        }
+        li {
+            margin-right: 12px;
+            padding: 6px 12px;
+            display: inline;
+            background-color: rgba($color-background, 0.9);
+            border-radius: 6px;
+            border-width: 1px;
+            border-color: white;
+            border-style: dashed;
+        }
+    }
+
+    .posts-post {
+
     }
 }
