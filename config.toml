@@ -4,6 +4,9 @@ title = 'triankl3'
 copyright = 'WRITE COPYRIGHT HERE'
 disableKinds = ["RSS"]
 
+[permalinks]
+    projects = "/:filename/"
+
 [module]
     [[module.mounts]]
     source = "assets"
