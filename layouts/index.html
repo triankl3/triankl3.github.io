@@ -31,7 +31,12 @@
             <div class="msnry-grid">
                 {{ range (where .Site.Pages "Section" "projects") }}
                     {{ range .Pages }}
-                        <div class="posts-post msnry-grid-item">
+                        <!-- Prepare a compressed version of the feature image to use as a background -->
+                        {{ $bg_img_path := print "img/" .Params.image }}
+                        {{ $bg_img := resources.Get $bg_img_path}}
+                        {{ $bg_img_compressed := $bg_img.Resize "x480" }}
+
+                        <div class="posts-post msnry-grid-item" style="background-image: url('{{ $bg_img_compressed.RelPermalink }}')">
                             <h1>{{ .Title }}</h1>
                             <h3>{{ .Date.Format "Mon Jan 2, 2006" }}</h3>
                             <h2>{{ .Description }}</h2>

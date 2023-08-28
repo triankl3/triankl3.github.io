@@ -5,8 +5,9 @@ date: 2023-08-07T18:54:11+02:00
 description: "Hello world this is a test pofdssfst description."
 tags: ["test", "post", "level design"]
 accent: "#fff"
+image: "featured1.webp"
 ---
 
-{{< img src="background.webp" alt="Test screenshot" >}}
+{{< img src="background.webp" alt="" >}}
 
 This is some content for the test post. aedas
