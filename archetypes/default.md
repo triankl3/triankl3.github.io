@@ -5,5 +5,6 @@ date: {{ .Date }}
 description: ""
 tags: []
 accent: "#fff"
+featured-image: ""
 ---
 
