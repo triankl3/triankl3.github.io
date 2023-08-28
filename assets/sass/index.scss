@@ -55,19 +55,29 @@
 }
 
 .posts-post {
-    padding: 12px 0;
+    padding: 12px;
     width: 100%;
     height: 200px;
+    margin: 0 0 12px 0;
 
-    transition: transform .2s ease-in-out;
+    user-select: none;
+    cursor: pointer;
+
+    transition: all .2s ease-in-out;
+
+    h1, h2, h3 {
+        margin: 0 0 6px 0;
+        padding: 0;
+    }
 
     h1 { // Title
-        font-size: 32px;
-        font-family: 'Michroma', sans-serif;
+        font-size: 38px;
+        font-family: 'Oswald', sans-serif;
         text-transform: uppercase;
+        font-weight: 300;
 
-        margin: 0 0 12px 0;
-        padding: 0;
+        filter: saturate(0) brightness(2);
+        transition: all .2s ease-in-out;
     }
 
     h2 { // Description
@@ -83,23 +93,58 @@
 
     ul {
         position: absolute;
-        bottom: 16px;
-        left: 0;
+        bottom: 12px;
+        left: 12px;
         list-style: none;
         margin: 0;
         padding: 0;
     }
     
-    // Copy the tags style, but make them smaller and non interactible
+    // Copy the tags style, but make them smaller and non animated/interactible
     .posts-tag {
+        font-weight: 600;
+
         font-size: 12px;
         margin-right: 6px;
+
         border-style: solid;
+
+        color: $color-background;
+        background-color: rgba($color-text, 1);
     }
     .posts-tag:hover {
-        font-weight: 400;
+        font-weight: 600;
+    }
+
+    .posts-post-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 200px;
+        z-index: -1;
+
+        filter: saturate(20%);
+        opacity: 0.9;
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        transition: all .2s ease-in-out;
     }
 }
-.posts-post:hover {
-    transform: scale(1.05);
+.posts-post:hover {    
+    h1 {
+        filter: saturate(1);
+        font-weight: 700;
+    }
+
+    .posts-post-background{
+        box-shadow: inset 0 60px 60px 0 rgba($color-background, 0.8);
+
+        filter: none;
+        transform: scale(1.025);
+        opacity: 1;
+    }
 }

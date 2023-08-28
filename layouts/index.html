@@ -36,16 +36,20 @@
                         {{ $bg_img := resources.Get $bg_img_path}}
                         {{ $bg_img_compressed := $bg_img.Resize "x480" }}
 
-                        <div class="posts-post msnry-grid-item" style="background-image: url('{{ $bg_img_compressed.RelPermalink }}')">
-                            <h1>{{ .Title }}</h1>
-                            <h3>{{ .Date.Format "Mon Jan 2, 2006" }}</h3>
-                            <h2>{{ .Description }}</h2>
-                            <ul>
-                                {{ range $name, $tag := .Site.Taxonomies.tags }}
-                                    <li class="posts-tag">{{ $name }}</li>
-                                {{ end }}
-                            </ul>
-                        </div>
+                        <a href=" {{ .RelPermalink }} ">
+                            <div class="posts-post msnry-grid-item">
+                                <div class="posts-post-background" style="background-image: url('{{ $bg_img_compressed.RelPermalink }}')"></div>
+                                <h1 style="color: color-mix(in srgb, {{ index $bg_img_compressed.Colors 1}} 75%, white)">{{ .Title }}</h1>
+
+                                <h3>{{ .Date.Format "Mon Jan 2, 2006" }}</h3>
+                                <h2>{{ .Description }}</h2>
+                                <ul>
+                                    {{ range $name, $tag := .Site.Taxonomies.tags }}
+                                        <li class="posts-tag">{{ $name }}</li>
+                                    {{ end }}
+                                </ul>
+                            </div>
+                        </a>
                     {{ end }}
                 {{ end }}
             </div>
