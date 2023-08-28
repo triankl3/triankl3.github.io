@@ -59,6 +59,8 @@
     width: 100%;
     height: 200px;
 
+    transition: transform .2s ease-in-out;
+
     h1 { // Title
         font-size: 32px;
         font-family: 'Michroma', sans-serif;
@@ -72,7 +74,7 @@
         font-size: 16px;
     }
 
-    span { // Date
+    h3 { // Date
         font-size: 14px;
         font-family: 'Michroma', sans-serif;
         text-transform: uppercase;
@@ -80,6 +82,9 @@
     }
 
     ul {
+        position: absolute;
+        bottom: 16px;
+        left: 0;
         list-style: none;
         margin: 0;
         padding: 0;
@@ -94,4 +99,7 @@
     .posts-tag:hover {
         font-weight: 400;
     }
+}
+.posts-post:hover {
+    transform: scale(1.05);
 }

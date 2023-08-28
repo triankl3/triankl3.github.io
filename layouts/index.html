@@ -33,11 +33,13 @@
                     {{ range .Pages }}
                         <div class="posts-post msnry-grid-item">
                             <h1>{{ .Title }}</h1>
-                            <span>{{ .Date.Format "Mon Jan 2, 2006" }}</span>
-                            {{ range $name, $tag := .Site.Taxonomies.tags }}
-                                <li class="posts-tag">{{ $name }}</li>
-                            {{ end }}
+                            <h3>{{ .Date.Format "Mon Jan 2, 2006" }}</h3>
                             <h2>{{ .Description }}</h2>
+                            <ul>
+                                {{ range $name, $tag := .Site.Taxonomies.tags }}
+                                    <li class="posts-tag">{{ $name }}</li>
+                                {{ end }}
+                            </ul>
                         </div>
                     {{ end }}
                 {{ end }}
