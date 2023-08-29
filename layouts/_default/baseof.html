@@ -10,8 +10,14 @@
         {{ $main_style := resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "main_parsed.scss" . | resources.ToCSS (dict "targetPath" "css/site.css" "outputStyle" "compressed") | resources.Minify }}
         <link rel="stylesheet" href="{{ $main_style.RelPermalink }}">
 
-        <script src="/js/masonry.pkgd.min.js"></script>
-        <script src="/js/fitty.min.js"></script>
+        {{ $masonry_js := resources.Get "js/masonry.js" | minify }}
+        <script src="{{ $masonry_js.RelPermalink }}"></script>
+
+        {{ $fitty_js := resources.Get "js/fitty.js" | minify }}
+        <script src="{{ $fitty_js.RelPermalink }}"></script>
+
+        {{ $scrollToElement_js := resources.Get "js/scrollToElement.js" | minify }}
+        <script src="{{ $scrollToElement_js.RelPermalink }}"></script>
 
         <title>
             {{- if .IsHome -}}

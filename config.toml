@@ -30,11 +30,15 @@ disableKinds = ["RSS"]
 
     [[module.mounts]]
     source = "node_modules/masonry-layout/dist/masonry.pkgd.min.js"
-    target = "static/js/masonry.pkgd.min.js"
+    target = "assets/js/masonry.js"
 
     [[module.mounts]]
     source = "node_modules/fitty/dist/fitty.min.js"
-    target = "static/js/fitty.min.js"
+    target = "assets/js/fitty.js"
+
+    [[module.mounts]]
+    source = "node_modules/scroll-to-element/build/scrollToElement.js"
+    target = "assets/js/scrollToElement.js"
 
 [imaging]
     bgColor = "#111111"
