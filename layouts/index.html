@@ -40,9 +40,8 @@
                             <div class="posts-post msnry-grid-item">
                                 <div class="posts-post-background" style="background-image: url('{{ $bg_img_compressed.RelPermalink }}')"></div>
                                 <h1 style=" -webkit-text-stroke: 1px color-mix(in srgb, {{ index $bg_img_compressed.Colors 1}} 50%, white)">{{ .Title }}</h1>
-
-                                <h3>{{ .Date.Format "Mon Jan 2, 2006" }}</h3>
-                                <h2>{{ .Description }}</h2>
+                                <time>{{ .Date.Format "Mon Jan 2, 2006" }}</time>
+                                <p>{{ .Description }}</p>
                                 <ul>
                                     {{ range $name, $tag := .Site.Taxonomies.tags }}
                                         <li class="posts-tag">{{ $name }}</li>

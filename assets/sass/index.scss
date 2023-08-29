@@ -64,7 +64,7 @@
     
         transition: all .2s ease-in-out;
     
-        h1, h2, h3 {
+        h1, time, p {
             margin: 0 0 6px 0;
             padding: 0;
         }
@@ -82,11 +82,11 @@
             transition: all .2s ease-in-out;
         }
     
-        h2 { // Description
+        p { // Description
             font-size: 16px;
         }
     
-        h3 { // Date
+        time { // Date
             font-size: 14px;
             text-transform: uppercase;
             margin-right: 6px;
