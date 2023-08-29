@@ -13,8 +13,8 @@
         {{ $masonry_js := resources.Get "js/masonry.js" | minify }}
         <script src="{{ $masonry_js.RelPermalink }}"></script>
 
-        {{ $fitty_js := resources.Get "js/fitty.js" | minify }}
-        <script src="{{ $fitty_js.RelPermalink }}"></script>
+        {{ $fitTextWebComponent_js := resources.Get "js/fitTextWebComponent.js" | minify }}
+        <script src="{{ $fitTextWebComponent_js.RelPermalink }}"></script>
 
         {{ $scrollToElement_js := resources.Get "js/scrollToElement.js" | minify }}
         <script src="{{ $scrollToElement_js.RelPermalink }}"></script>
@@ -45,11 +45,6 @@
         // options
         itemSelector: '.msnry-grid-item',
         columnWidth: 200
-      });
-
-      fitty('.fit-fitty', {
-        minSize: 24,
-        maxSize: 256,
       });
     </script>
 </html>

@@ -11,7 +11,7 @@
     "devDependencies": {}
   },
   "dependencies": {
-    "fitty": "^2.3.7",
+    "fit-text-webcomponent": "^1.1.0",
     "hugo-extended": "^0.111.3",
     "masonry-layout": "^4.2.2",
     "modern-normalize": "^2.0.0",
