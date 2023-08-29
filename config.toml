@@ -4,6 +4,7 @@ title = 'triankl3'
 copyright = 'WRITE COPYRIGHT HERE'
 disableKinds = ["RSS"]
 enableRobotsTXT = true
+enableEmoji = true
 
 [params]
     [params.contact]
