@@ -165,27 +165,24 @@
     fit-text {
         margin: 0;
         padding: 0;
+        width: 100%;
 
         user-select: none;
         pointer-events: none;
 
+        font-family: 'Oswald', sans-serif;
+        font-weight: 800;
+
+        mix-blend-mode: difference;
+
         span {
-            line-height: 2px;
-            margin: 0;
             padding: 0;
-            width: 100%;
-    
-            font-family: 'Oswald', sans-serif;
+            margin: 0;
+
             font-weight: 800;
 
-            mix-blend-mode: difference;
-
-            span {
-                margin: 0;
-                padding: 0;
-                color: rgba(0, 0, 0, 0);
-                -webkit-text-stroke: 1px #fff;
-            }
+            color: rgba(0, 0, 0, 0);
+            -webkit-text-stroke: 1px #fff;
         }
     }
 
@@ -193,9 +190,9 @@
         margin: -16px 0 0 0;
         padding: 0;
         
-        text-align: justify;
         font-family: 'Michroma', sans-serif;
         font-size: 16px;
+        text-align: justify;
         letter-spacing: 1px;
     }
 }
