@@ -257,3 +257,31 @@ nav {
         font-size: 24px;
     }
 }
+
+.post-tags {
+    margin: 24px 0 24px 0;
+    padding: 0;
+
+    list-style: none;
+
+    .post-tag {
+        display: inline;
+        margin-right: 6px;
+        padding: 3px 12px;
+    
+        font-family: 'Oswald', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        
+        color: $color-text;
+        background-color: rgba($color-background, 0.75);
+        
+        border-width: 1px;
+        border-color: $color-text;
+        border-style: solid;
+    
+        user-select: none;
+        transition: all .2s ease-in-out;
+    }
+}

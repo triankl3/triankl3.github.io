@@ -18,41 +18,39 @@
     </div>
     
     <div id="projects">
-        <div class="posts-wrapper">
-            <div class="posts-tags">
-                <ul>
-                    <li class="posts-tag posts-tag-selected">all</li>
+        <div class="posts-showcase">
+            <div class="posts-showcase-alltags">
+                <ul class="post-tags">
+                    <li class="post-tag post-tag-selected">all</li>
                     {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-                        <li class="posts-tag">{{ $name }}</li>
+                        <li class="post-tag">{{ $name }}</li>
                     {{ end }}
                 </ul>
             </div>
 
-            <div class="msnry-grid">
                 {{ range (where .Site.Pages "Section" "projects") }}
                     {{ range .Pages }}
-                        <!-- Prepare a compressed version of the feature image to use as a background -->
+                        <!-- Prepare a compressed version of the feature image to use as a background/thumbnail -->
                         {{ $bg_img_path := print "img/" .Params.image }}
                         {{ $bg_img := resources.Get $bg_img_path}}
                         {{ $bg_img_compressed := $bg_img.Resize "x480" }}
 
-                        <a href=" {{ .RelPermalink }} ">
-                            <div class="posts-post msnry-grid-item">
-                                <div class="posts-post-background" style="background-image: url('{{ $bg_img_compressed.RelPermalink }}')"></div>
-                                <h1 style=" -webkit-text-stroke: 1px color-mix(in srgb, {{ index $bg_img_compressed.Colors 1}} 50%, white)">{{ .Title }}</h1>
-                                <time>{{ .Date.Format "Mon Jan 2, 2006" }}</time>
-                                <p>{{ .Description }}</p>
-                                <ul>
-                                    {{ range $name, $tag := .Site.Taxonomies.tags }}
-                                        <li class="posts-tag">{{ $name }}</li>
-                                    {{ end }}
-                                </ul>
-                            </div>
-                        </a>
+                        <div class="posts-showcase-post">
+                                <a href=" {{ .RelPermalink }} ">
+                                    <div style="background-image: url('{{ $bg_img_compressed.RelPermalink }}')"></div>
+                                    <h1 style=" -webkit-text-stroke: 1px color-mix(in srgb, {{ index $bg_img_compressed.Colors 1}} 50%, white)">{{ .Title }}</h1>
+                                    <time>{{ .Date.Format "Mon Jan 2, 2006" }}</time>
+                                    <p>{{ .Description }}</p>
+                                    <ul class="post-tags">
+                                        {{ range $name, $tag := .Site.Taxonomies.tags }}
+                                        <li class="post-tag">{{ $name }}</li>
+                                        {{ end }}
+                                    </ul>
+                            </a>
+                        </div>
                     {{ end }}
                 {{ end }}
             </div>
-        </div>
 
         <img src="/img/about-extended.svg" style="user-select: none;" draggable="false">
     </div>
