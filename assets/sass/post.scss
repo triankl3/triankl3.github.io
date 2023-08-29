@@ -1,0 +1,91 @@
+article {
+    .content-wrapper {
+        background-color: $color-background;
+    }
+
+    header {
+        height: 512px;
+    }
+
+    h1 {
+        font-size: 64px;
+    }
+    
+    h2 {
+        font-size: 56px;
+    }
+    
+    h3 {
+        font-size: 48px;
+    }
+    
+    h4 {
+        font-size: 40px;
+    }
+    
+    h5 {
+        font-size: 32px;
+    }
+    
+    h6 {
+        font-size: 24px;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        padding: 0;
+        margin: 0 0 16px 0;
+    
+        font-family: 'Oswald', sans-serif;
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+    
+    strong {
+        font-weight: 800;
+    }
+
+    blockquote {
+        margin: 0;
+        padding: 2px 2px 2px 16px;
+        background-color: $color-text;
+        color: $color-background;
+        * {
+            font-weight: 600;
+        }
+    }
+
+    ol, ul {
+        margin: 0;
+        padding: 4px 4px 4px 16px;
+    }
+    li {
+        margin: 0;
+        padding: 0 4px 4px 4px;
+    }
+
+    table {
+        width: 100%;
+    
+        border-collapse: collapse;
+
+        th, td {
+            border: 1px solid $color-text;
+            padding: 8px 16px 8px 16px;
+        }
+
+        th {
+            font-weight: 800;
+            color: $color-background;
+            background-color: $color-text;
+        }
+    }
+
+    figure {
+        margin: 0;
+        padding: 0;
+    }
+
+    img {
+        cursor: pointer;
+    }
+}

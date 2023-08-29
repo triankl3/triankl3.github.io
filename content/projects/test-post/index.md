@@ -9,19 +9,17 @@ image: "featured2.webp"
 
 # First chapter title
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. This is a paragraph.
+There might be other markdown elements which are *technically supported*, but are not here. This means the blog is not accounting for them and you should avoid using them with this theme. There are a bunch of shortcodes which can be used to create interesting layouts in your blogpost, use them wisely. This is a paragraph.
 
-# Heading level 1
-## Heading level 2
-### Heading level 3
-#### Heading level 4
-##### Heading level 5
-###### Heading level 6
+# Heading level one
+## Heading level two
+### Heading level three
+#### Heading level four
+##### Heading level five
+###### Heading level six
 
-To create lines with breaks simply add leave two spaces after a line.  
-We love using **bold** text sometimes.  
-Using *italic* is also really interesting.  
-But both are ***amazing***!  
+To create lines with breaks simply leave two spaces after a line.  
+We **love using bold** text sometimes. Using *italic* is also really interesting. But together they are ***fabulous***!  
 ~~The world is flat.~~ We now know that the world is round.
 
 > Jerry can be a jerk sometimes, Dorothy says after following him around for 5 minutes.
@@ -29,46 +27,30 @@ But both are ***amazing***!
 Have you ever used [github](https://github.com/)?  
 Links are also automagically created like this https://example.com.
 
-Emoji's work :skull:
+Emoji's work :skull:.
 
-1. First item
-2. Second item
-3. Third item
-4. Fourth item 
-
-- [x] Write the press release
-- [ ] Update the website
-- [ ] Contact the media
+Here's a simple footnote,[^1] and here's a another one.[^textnote]
 
 1. First item
 2. Second item
 3. Third item
     1. First indented item
     2. Second indented item
+4. Fourth item 
     - An unordered indented item
     - We can mix and match
-        - And go even deeper
-4. Fourth item 
-
-- Milk
-- Eggs
-- Mushroom stew
-- Long truck 
-
-Here's a simple footnote,[^1] and here's a longer one.[^bignote]
+        - And go even deeper :moai:
 
 [^1]: This is the first footnote.
 
-[^bignote]: Here's one with multiple paragraphs and code.
-
----
+[^textnote]: This is the other footnote.
 
 | Syntax      | Description | Test Text     |
 | :---        |    :----:   |          ---: |
 | Header      | Title       | Here's this   |
 | Paragraph   | Text        | And more      |
 
-In your command prompt you should type: `bundle exec jekyll serve`.
+In your command prompt you should type: `npm run serve`.
 
 ```lua
     --please don't take this code seriously
@@ -89,7 +71,7 @@ In your command prompt you should type: `bundle exec jekyll serve`.
     return module
 ```
 
-{{< img src="background.webp" alt="This is how alt-text / figure captions looks apparently." >}}
+{{< img src="background.webp" alt="This is how alt-text / figure captions look apparently." >}}
 
 {% include youtube.html id="iUtnZpzkbG8" %}
 

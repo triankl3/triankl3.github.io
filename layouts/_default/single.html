@@ -1,13 +1,15 @@
 {{ define "main" }}
 
-<div class="content-wrapper">
-    <h1>{{ .Title }}</h1>
-    <h2>{{ .Description }}</h2>
-    <h3>{{ .Date.Format "Mon Jan 2, 2006" }}</h3>
+<article>
+    <header>
+        <h1>{{ .Title }}</h1>
+        <time>{{ .Date.Format "Mon Jan 2, 2006" }}</time>
+        <p>{{ .Description }}</p>
+    </header>
     
-    <article>
+    <div class="content-wrapper">    
         {{ .Content }}
-    </article>
-</div>
+    </div>
+</article>
 
 {{ end }}

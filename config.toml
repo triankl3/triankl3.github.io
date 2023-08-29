@@ -42,6 +42,10 @@ enableEmoji = true
     source = "node_modules/scroll-to-element/build/scrollToElement.js"
     target = "assets/js/scrollToElement.js"
 
+    [[module.mounts]]
+    source = "node_modules/vanilla-tilt/dist/vanilla-tilt.min.js"
+    target = "assets/js/vanillaTilt.js"
+
 [imaging]
     bgColor = "#111111"
     hint = 'photo'

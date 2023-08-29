@@ -15,7 +15,8 @@
     "hugo-extended": "^0.111.3",
     "masonry-layout": "^4.2.2",
     "modern-normalize": "^2.0.0",
-    "scroll-to-element": "^2.0.3"
+    "scroll-to-element": "^2.0.3",
+    "vanilla-tilt": "^1.8.1"
   },
   "description": "Freelance portfolio website built using HuGo and a completely custom theme.",
   "homepage": "https://github.com/triankl3/triankl3.github.io#readme",
