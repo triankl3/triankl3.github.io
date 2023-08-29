@@ -28,14 +28,14 @@ footer {
     position: fixed;
     top: -50%;
     left: -50%;
-    right: -50%;
     bottom: -50%;
-    width: 500vw;
-    height: 500vh;
+    right: -50%;
+    width: 200%;
+    height: 200%;
     background: transparent url('/img/noise-transparent.png') repeat 0 0;
     background-repeat: repeat;
     animation: noise-bg-animation .2s infinite;
-    opacity: .9;
+    opacity: .7;
     visibility: visible;
     z-index: -999;
 }
