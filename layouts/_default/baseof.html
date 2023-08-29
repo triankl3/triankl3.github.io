@@ -1,60 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-		<head>
-				<meta charset="utf-8">
-				<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-				{{ $normalize_style := resources.Get "css/modern-normalize.css" | resources.Minify }}
-				<link rel="stylesheet" href="{{ $normalize_style.RelPermalink }}">
+        {{ $normalize_style := resources.Get "css/modern-normalize.css" | resources.Minify }}
+        <link rel="stylesheet" href="{{ $normalize_style.RelPermalink }}">
 
-				{{ $main_style := resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "main_parsed.scss" . | resources.ToCSS (dict "targetPath" "css/site.css" "outputStyle" "compressed") | resources.Minify }}
-				<link rel="stylesheet" href="{{ $main_style.RelPermalink }}">
+        {{ $main_style := resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "main_parsed.scss" . | resources.ToCSS (dict "targetPath" "css/site.css" "outputStyle" "compressed") | resources.Minify }}
+        <link rel="stylesheet" href="{{ $main_style.RelPermalink }}">
 
-				<title>
-						{{- if .IsHome -}}
-							Home | {{ .Site.Title }}
-						{{- else if .Page.Title -}}
-							{{ .Page.Title }} | {{ .Site.Title }}
-						{{- else -}}
-							{{ .Site.Title }}
-						{{- end -}}
-				</title> 
-		</head>
-		<body>
-				<div class="noise-bg"></div>
+        <title>
+            {{- if .IsHome -}}
+                Home | {{ .Site.Title }}
+            {{- else if .Page.Title -}}
+                {{ .Page.Title }} | {{ .Site.Title }}
+            {{- else -}}
+                {{ .Site.Title }}
+            {{- end -}}
+        </title> 
+    </head>
+    <body>
+        <div class="noise-bg"></div>
 
-				{{ block "main" . }}{{ end }}
+        {{ block "main" . }}{{ end }}
 
-				<footer>
-						<p>Design and content subject to copyright Nikola Pešević - triankl3.com. Source code available on GitHub.</p>
-				</footer>
-		</body>
+        <footer>
+            <p>Design and content subject to copyright Nikola Pešević - triankl3.com. Source code available on GitHub.</p>
+        </footer>
+    </body>
 
-        {{ $masonry_js := resources.Get "js/masonry.js" | minify }}
-		<script src="{{ $masonry_js.RelPermalink }}"></script>
+    {{ $masonry_js := resources.Get "js/masonry.js" | minify }}
+    <script src="{{ $masonry_js.RelPermalink }}"></script>
 
-		{{ $fitTextWebComponent_js := resources.Get "js/fitTextWebComponent.js" | minify }}
-		<script src="{{ $fitTextWebComponent_js.RelPermalink }}"></script>
+    {{ $fitTextWebComponent_js := resources.Get "js/fitTextWebComponent.js" | minify }}
+    <script src="{{ $fitTextWebComponent_js.RelPermalink }}"></script>
 
-		{{ $scrollToElement_js := resources.Get "js/scrollToElement.js" | minify }}
-		<script src="{{ $scrollToElement_js.RelPermalink }}"></script>
+    {{ $scrollToElement_js := resources.Get "js/scrollToElement.js" | minify }}
+    <script src="{{ $scrollToElement_js.RelPermalink }}"></script>
 
-		{{ $vanillaTilt_js := resources.Get "js/vanillaTilt.js" | minify }}
-		<script src="{{ $vanillaTilt_js.RelPermalink }}"></script>
+    {{ $vanillaTilt_js := resources.Get "js/vanillaTilt.js" | minify }}
+    <script src="{{ $vanillaTilt_js.RelPermalink }}"></script>
 
-		<script> //Initialize scripts here
-			var elem = document.querySelector('.msnry-grid');
-			var msnry = new Masonry(elem, {
-				// options
-				itemSelector: '.msnry-grid-item',
-				columnWidth: 200
-			});
+    <script> // Initialize scripts here
+        var elem = document.querySelector('.msnry-grid');
+        var msnry = new Masonry(elem, {
+            itemSelector: '.msnry-grid-item',
+            columnWidth: 200
+        });
 
-            VanillaTilt.init(document.querySelector(".tilt-img"), {
-                reverse: true,
-                max: 8,
-                scale: 0.95,
-                speed: 1000,
-            });
-		</script>
+        VanillaTilt.init(document.querySelector(".tilt-img"), {
+            reverse: true,
+            max: 8,
+            scale: 0.95,
+            speed: 1000,
+        });
+    </script>
 </html>
