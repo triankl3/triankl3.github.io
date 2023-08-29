@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="{{ $main_style.RelPermalink }}">
 
         <script src="/js/masonry.pkgd.min.js"></script>
+        <script src="/js/fitty.min.js"></script>
 
         <title>
             {{- if .IsHome -}}
@@ -32,12 +33,17 @@
         </footer>
     </body>
 
-    <script> //Initialize masonry
+    <script> //Initialize scripts here
       var elem = document.querySelector('.msnry-grid');
       var msnry = new Masonry( elem, {
         // options
         itemSelector: '.msnry-grid-item',
         columnWidth: 200
+      });
+
+      fitty('.fit-fitty', {
+        minSize: 24,
+        maxSize: 256,
       });
     </script>
 </html>

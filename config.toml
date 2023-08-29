@@ -4,6 +4,14 @@ title = 'triankl3'
 copyright = 'WRITE COPYRIGHT HERE'
 disableKinds = ["RSS"]
 
+[params]
+    [params.contact]
+        github = 'https://github.com/triankl3'
+        twitter = 'https://twitter.com/triankl3'
+        linkedin = 'https://www.linkedin.com/in/triankl3/'
+        discord = '@triankl3'
+        email = 'triankl3@gmail.com'
+
 [permalinks]
     projects = "/:filename/"
 
@@ -23,6 +31,10 @@ disableKinds = ["RSS"]
     [[module.mounts]]
     source = "node_modules/masonry-layout/dist/masonry.pkgd.min.js"
     target = "static/js/masonry.pkgd.min.js"
+
+    [[module.mounts]]
+    source = "node_modules/fitty/dist/fitty.min.js"
+    target = "static/js/fitty.min.js"
 
 [imaging]
     bgColor = "#111111"

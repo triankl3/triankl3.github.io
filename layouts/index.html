@@ -7,7 +7,7 @@
 <div class="cube-container" style="top: 25%; left: 30%;">
     {{ partial "cube.html" . }}
 </div>
-<div class="cube-container" style="top: 75%; right: 30%;">
+<div class="cube-container" style="bottom: 25%; right: 30%;">
     {{ partial "cube.html" . }}
 </div>
 
@@ -39,7 +39,7 @@
                         <a href=" {{ .RelPermalink }} ">
                             <div class="posts-post msnry-grid-item">
                                 <div class="posts-post-background" style="background-image: url('{{ $bg_img_compressed.RelPermalink }}')"></div>
-                                <h1 style="color: color-mix(in srgb, {{ index $bg_img_compressed.Colors 1}} 75%, white)">{{ .Title }}</h1>
+                                <h1 style=" -webkit-text-stroke: 1px color-mix(in srgb, {{ index $bg_img_compressed.Colors 1}} 50%, white)">{{ .Title }}</h1>
 
                                 <h3>{{ .Date.Format "Mon Jan 2, 2006" }}</h3>
                                 <h2>{{ .Description }}</h2>
@@ -59,7 +59,8 @@
     </div>
     
     <div id="contact">
-        <!-- INCLUDE CONTACT HERE --> 
+        <div class="fit-fitty"><span>CONTACT <span>ME</span></span></div>
+        <h3>The best method to reach me is via e-mail at <a href="mailto:{{ .Site.Params.contact.email }}">{{ .Site.Params.contact.email }}</a>, for more urgent inquires you can contact me through Discord <span style="font-weight: 400;">{{ .Site.Params.contact.discord }}</span>.</h3>
     </div>
 </div>
 
