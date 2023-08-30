@@ -28,16 +28,14 @@ footer {
     position: fixed;
     top: -50%;
     left: -50%;
-    bottom: -50%;
-    right: -50%;
     width: 200%;
     height: 200%;
     background: transparent url('/img/noise-transparent.png') repeat 0 0;
     background-repeat: repeat;
     animation: noise-bg-animation .2s infinite;
-    opacity: .7;
+    opacity: .4;
     visibility: visible;
-    z-index: -999;
+    z-index: -1;
 }
 
 @keyframes noise-bg-animation {
@@ -65,7 +63,7 @@ $cube-color: $color-text;
 	perspective-origin: 50% $cube-size/4;
 
     position: absolute;
-    z-index: -1;
+    z-index: -2;
 
     .cube {
         position: relative;
@@ -141,7 +139,7 @@ $cube-color: $color-text;
     left: 0;
     height: 100vh;
     width: 100vw;
-    z-index: -1;
+    z-index: -3;
 }
 .grid {
 	width: 100%;

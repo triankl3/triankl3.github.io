@@ -23,6 +23,23 @@
     <body>
         <div class="noise-bg"></div>
 
+        <nav>
+            <ul id="nav-left"> <!-- Use JS for navigation here  -->
+                <img src="/img/logo.svg"> 
+                {{ if (.IsHome) }}
+                    <li onclick="scrollToElement('#about', {offset: -64, duration:750})">about</li>
+                    <li onclick="scrollToElement('#projects', {offset: -64, duration:750})">projects</li>
+                    <li onclick="scrollToElement('#contact', {offset: -64, duration:750})">contact</li>
+                {{ end }}
+            </ul>
+            <ul id="nav-right">
+                <li><a target="_blank" href="{{ site.Params.contact.github }}"><img src="/img/github.svg"></a></li>
+                <li><a target="_blank" href="{{ site.Params.contact.linkedin }}"><img src="/img/linkedin.svg"></a></li>
+                <li><a target="_blank" href="{{ site.Params.contact.twitter }}"><img src="/img/twitter.svg"></a></li>
+                <li><a href="mailto:{{ site.Params.contact.email }}"><img src="/img/email.svg"></a></li>
+            </ul>
+        </nav>
+
         {{ block "main" . }}{{ end }}
 
         <footer>
@@ -53,6 +70,13 @@
             reverse: true,
             max: 8,
             scale: 0.95,
+            speed: 1000,
+        });
+
+        VanillaTilt.init(document.querySelector(".tilt-post"), {
+            reverse: true,
+            max: 8,
+            scale: 1.05,
             speed: 1000,
         });
     </script>

@@ -8,6 +8,10 @@
     position: relative;
 
     .posts-showcase {
+        a {
+            text-decoration: none;
+        }
+
         position: absolute;
         width: 88%;
         top: 0;
@@ -54,12 +58,6 @@
     
         user-select: none;
         cursor: pointer;
-    
-        transition: all .2s ease-in-out;
-    
-        a {
-            text-decoration: none;
-        }
     
         div { // Background
             position: absolute;
@@ -120,11 +118,10 @@
         div { // Backgrond
             filter: none;
             box-shadow: inset 0 60px 60px 0 rgba($color-background, 0.8);
-            transform: scale(1.025);
             opacity: 1;
             background-position: right;
     
-            transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out, background-position 2s linear;
+            transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out, background-position 10s linear;
         }
     
         h1 { // Title

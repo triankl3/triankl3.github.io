@@ -1,8 +1,11 @@
 {{ define "main" }}
 
-{{ partial "nav.html" . }}
-
-{{ partial "grid.html" . }}
+<div class="grid-container">
+    <div class="grid">
+        <div class="grid-fade"></div>
+        <div class="grid-lines"></div>
+    </div>
+</div>
 
 <div class="cube-container" style="top: 25%; left: 30%;">
     {{ partial "cube.html" . }}
@@ -35,8 +38,8 @@
                     {{ $bg_img := resources.Get $bg_img_path}}
                     {{ $bg_img_compressed := $bg_img.Resize "x480" }}
 
-                    <div class="posts-showcase-post">
-                        <a href=" {{ .RelPermalink }} ">
+                    <a href=" {{ .RelPermalink }} ">
+                        <div class="posts-showcase-post tilt-img">
                             <div style="background-image: url('{{ $bg_img_compressed.RelPermalink }}')"></div>
                             <h1 style=" -webkit-text-stroke: 1px color-mix(in srgb, {{ index $bg_img_compressed.Colors 1}} 50%, white)">{{ .Title }}</h1>
                             <time>{{ .Date.Format "Mon Jan 2, 2006" }}</time>
@@ -51,8 +54,8 @@
                                     {{- end -}}
                                 {{- end -}}
                             </ul>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 {{ end }}
             {{ end }}
         </div>
