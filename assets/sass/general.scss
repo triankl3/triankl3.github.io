@@ -225,6 +225,12 @@ nav {
 
         img {
             height: 24px;
+            transform-origin: center;
+            transition: transform .1s ease-in-out;
+        }
+
+        img:hover {
+            transform: scale(1.1);
         }
     }
 }
