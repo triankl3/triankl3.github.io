@@ -123,6 +123,10 @@ article {
         margin: 16px 0;
         background-color: lighten($color-background, 2.5%);
 
+        code {
+            padding: 0;
+        }
+
         * {
             background-color: lighten($color-background, 2.5%);
         }
