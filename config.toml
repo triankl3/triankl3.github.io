@@ -17,6 +17,11 @@ enableEmoji = true
 [permalinks]
     projects = "/:filename/"
 
+[markup]
+  [markup.tableOfContents]
+    pre = ""
+    post = ""
+
 [module]
     [[module.mounts]]
     source = "assets"

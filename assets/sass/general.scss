@@ -186,42 +186,79 @@ $cube-color: $color-text;
 nav {
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
-    font-size: 32px;
-    line-height: 40px;
     mix-blend-mode: difference;
 
-    ul {
-        width: 128px;
-        padding: 0;
-        margin: 0;
-        list-style: none;
+    #nav-left, #nav-right {
         position: fixed;
         top: 5%;
+
+        width: $nav-width;
+        padding: 0;
+        margin: 0;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
     }
 
     li {
         width: 100%;
         user-select: none;
         font-weight: 400;
-        transition: font-weight .1s ease-in-out;
     }
 
-    li:hover {
-        font-weight: 600;
-    }
 
-    #nav-left {
-        left: calc(50% - (#{$content-width} / 2) - (128px / 2) - 128px);
+    #nav-left { // Logo(Homepage), Home navigation or Post ToC
+        left: calc(50% - (#{$content-width} / 2) - #{$nav-margin} - #{$nav-width});
         text-align: right;
 
         img {
-            width: 128px;
+            width: $nav-width;
+        }
+
+        #nav-home {
+            li {
+                font-size: 32px;
+                line-height: 40px;
+                text-align: justify;
+                transition: font-weight .1s ease-in-out;
+            }
+            li:hover {
+                font-weight: 600;
+            }
+        }
+    
+        #nav-post {
+            li {
+                font-size: 16px;
+                padding: 0 0 8px 0;
+                text-align: left;
+
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            li:hover {
+                transform: scaleX(1.05);
+            }
+
+            ul {
+                li {
+                    padding: 0 0 4px 8px;
+                }
+            }
         }
     }
 
-    #nav-right {
-        right: calc(50% - (#{$content-width} / 2) - (128px / 2) - 128px);
-        text-align: left;
+    #nav-right { // Socials
+        right: calc(50% - (#{$content-width} / 2) - #{$nav-margin} - #{$nav-width});
+
+        ul {
+            text-align: center;
+            line-height: 40px;
+        }
 
         img {
             height: 24px;
@@ -287,5 +324,32 @@ nav {
     
         user-select: none;
         transition: all .2s ease-in-out;
+    }
+}
+
+// Small screen optimizations
+@media screen and (max-width: calc((#{$nav-width} + (#{$nav-margin} * 2)) * 2 + #{$content-width})) {
+    .content-wrapper {
+        max-width: $content-width-narrow;
+    }
+
+    nav {
+        #nav-left {
+            left: calc(50% - (#{$content-width-narrow} / 2) - #{$nav-margin} - #{$nav-width});
+        }
+        
+        #nav-right {
+            right: calc(50% - (#{$content-width-narrow} / 2) - #{$nav-margin} - #{$nav-width});
+        }
+    }
+}
+
+@media screen and (max-width: calc((#{$nav-width} + (#{$nav-margin} * 2)) * 2 + #{$content-width-narrow})) {
+    .content-wrapper {
+        max-width: $content-width;
+    }
+
+    nav {
+        display: none; //CHANGE THIS (TEMPORARY FIX)
     }
 }
