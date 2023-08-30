@@ -23,6 +23,15 @@
     <body>
         <div class="noise-bg"></div>
 
+        {{ if (.IsPage) }}
+            <!-- Prepare a compressed version of the feature image to use if on a post -->
+            {{ $featured_img_path := print "img/" .Params.image }}
+            {{ $featured_img := resources.Get $featured_img_path }}
+            {{ $featured_img := $featured_img.Resize "x1024"}}
+
+            {{ .Scratch.Set "featured_img" $featured_img }}
+        {{ end }}
+
         <nav>
             <div id="nav-left"> <!-- Use JS for navigation here  -->
                 <a href="/"><img src="/img/logo.svg"></a>

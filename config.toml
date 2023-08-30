@@ -21,6 +21,10 @@ enableEmoji = true
   [markup.tableOfContents]
     pre = ""
     post = ""
+  [markup.highlight]
+    lineNos = true
+    lineNumbersInTable = false
+    style = 'github-dark'
 
 [module]
     [[module.mounts]]

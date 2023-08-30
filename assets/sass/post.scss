@@ -6,6 +6,24 @@ article {
 
     header {
         height: 512px;
+
+        #featured-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 512px;
+            width: 100%;
+            z-index: -1;
+
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .content-wrapper {
+            background-color: initial;
+            height: 512px;
+        }
     }
 
     h1 {
@@ -88,5 +106,25 @@ article {
 
     img {
         cursor: pointer;
+    }
+
+    div.highlight pre {
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
+
+    code {
+        padding: 3px;
+        background-color: lighten($color-background, 2.5%);
+    }
+    
+    .highlight {
+        padding: 1px 0;
+        margin: 16px 0;
+        background-color: lighten($color-background, 2.5%);
+
+        * {
+            background-color: lighten($color-background, 2.5%);
+        }
     }
 }

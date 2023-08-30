@@ -1,10 +1,14 @@
 {{ define "main" }}
 
 <article>
-    <header>
-        <h1>{{ .Title }}</h1>
-        <time>{{ .Date.Format "Mon Jan 2, 2006" }}</time>
-        <p>{{ .Description }}</p>
+    <header>        
+        {{ $featured_img := .Scratch.Get "featured_img" }}
+        <div id="featured-image" style="background-image: url('{{ $featured_img.RelPermalink }}')"></div>
+        <div class="content-wrapper">
+            <h1>{{ .Title }}</h1>
+            <time>{{ .Date.Format "Mon Jan 2, 2006" }}</time>
+            <p>{{ .Description }}</p>
+        </div>
     </header>
 
     <div class="content-wrapper">    
