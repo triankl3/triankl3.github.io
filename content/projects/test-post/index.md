@@ -4,7 +4,7 @@ title: "Test Post"
 date: 2023-08-07T18:54:11+02:00
 description: "Hello world this is a test post description."
 tags: ["test", "post"]
-image: "featured2.webp"
+image: "featured1.webp"
 ---
 
 # First chapter title ADASD
