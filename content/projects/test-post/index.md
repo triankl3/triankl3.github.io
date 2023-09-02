@@ -7,7 +7,7 @@ tags: ["test", "post"]
 image: "featured1.webp"
 ---
 
-# First chapter title ADASD
+# First chapter title
 
 There might be other markdown elements which are *technically supported*, but are not here. This means the blog is not accounting for them and you should avoid using them with this theme. There are a bunch of shortcodes which can be used to create interesting layouts in your blogpost, use them wisely. This is a paragraph.
 
