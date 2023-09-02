@@ -1,8 +1,8 @@
 ---
 draft: false
-title: "Test Post"
+title: "The biography of a test post"
 date: 2023-08-07T18:54:11+02:00
-description: "Hello world this is a test post description."
+description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore recusandae aperiam rerum ipsa accusantium reiciendis doloremque voluptas, officia dolorem et expedita quaerat nam explicabo non iure? Cupiditate, ea nulla?"
 tags: ["test", "post"]
 image: "featured1.webp"
 ---
