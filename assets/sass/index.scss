@@ -49,8 +49,7 @@
     
     .posts-showcase-post {
         position: relative;
-    
-        height: 200px;
+
         width: 100%;
     
         padding: 8px 16px;
@@ -64,7 +63,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 200px;
+            height: 100%;
             z-index: -1;
     
             filter: saturate(40%);
@@ -81,36 +80,38 @@
             margin: 0 0 6px 0;
             padding: 0;
         }
+        
+        time { // Date
+            font-family: 'Michroma', sans-serif;
+            font-size: 10px;
+            text-transform: uppercase;
+        }
     
+        p { // Description
+            font-size: 14px;
+            text-align: justify;
+            letter-spacing: 1px;
+
+            background-color: rgba($color-background, 0.75);
+            box-shadow: 0 0 32px 32px rgba($color-background, 0.75);
+        }
+
         h1 { // Title
-            font-size: 48px;
+            font-size: 32px;
             text-transform: uppercase;
             font-weight: 600;
             font-family: 'Oswald', sans-serif;
     
             color: $color-text;
-            letter-spacing: 8px;
+            letter-spacing: 2px;
     
             filter: saturate(0) brightness(2);
             transition: all .2s ease-in-out;
         }
     
-        p { // Description
-            font-size: 16px;
-        }
-    
-        time { // Date
-            font-size: 14px;
-            text-transform: uppercase;
-            margin-right: 6px;
-        }
-    
         .post-tags { // Position post tags at the bottom left
-            position: absolute;
-            bottom: 12px;
-            left: 12px;
             list-style: none;
-            margin: 0;
+            margin: 32px 0 8px 0;
             padding: 0;
         }
     }
