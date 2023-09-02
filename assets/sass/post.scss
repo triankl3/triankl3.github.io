@@ -52,7 +52,7 @@ article {
 
             background-color: initial;
             
-            h1, time, p {
+            h1, time, .post-tags {
                 text-align: center;
             }
 
@@ -82,12 +82,11 @@ article {
                 text-align: justify;
                 letter-spacing: 1px;
 
-                background-color: rgba($color-background, 0.75);
-                box-shadow: 0 0 32px 32px rgba($color-background, 0.75);
+                background-color: rgba($color-background, 0.6);
+                box-shadow: 0 0 32px 32px rgba($color-background, 0.6);
             }
             
             .post-tags {
-                text-align: center;
                 margin: 0;
                 padding: 0;
 
@@ -135,7 +134,7 @@ article {
         font-weight: 800;
         text-transform: uppercase;
     }
-    
+
     strong {
         font-weight: 800;
     }

@@ -77,7 +77,7 @@
         }
     
         h1, time, p {
-            margin: 0 0 6px 0;
+            margin: 0;
             padding: 0;
         }
         
@@ -92,8 +92,8 @@
             text-align: justify;
             letter-spacing: 1px;
 
-            background-color: rgba($color-background, 0.75);
-            box-shadow: 0 0 32px 32px rgba($color-background, 0.75);
+            background-color: rgba($color-background, 0.6);
+            box-shadow: 0 0 32px 32px rgba($color-background, 0.6);
         }
 
         h1 { // Title
