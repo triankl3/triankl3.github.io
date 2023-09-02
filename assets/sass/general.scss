@@ -216,6 +216,12 @@ nav {
 
         img {
             width: $nav-width;
+
+            transform-origin: center left;
+            transition: transform .1s ease-in-out;
+        }
+        img:hover {
+            transform: scale(1.05);
         }
 
         #nav-home {
@@ -239,9 +245,11 @@ nav {
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
+
+                transition: transform .1s ease-in-out;
             }
             li:hover {
-                transform: scaleX(1.05);
+                transform: scale(1.05);
             }
 
             ul {
