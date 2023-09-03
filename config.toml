@@ -1,7 +1,7 @@
 baseURL = 'https://triankl3.github.io/'
 languageCode = 'en-us'
 title = 'triankl3'
-copyright = 'WRITE COPYRIGHT HERE'
+copyright = 'Design and content subject to copyright Nikola Pešević - triankl3.com.'
 disableKinds = ["RSS"]
 enableRobotsTXT = true
 enableEmoji = true
