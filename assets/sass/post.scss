@@ -68,7 +68,7 @@ article {
 
             time {
                 display: block;
-                font-size: 16px;
+                font-size: $content-spacer;
                 font-weight: 800;
                 font-family: 'Michroma', sans-serif;
                 text-transform: uppercase;
@@ -128,7 +128,7 @@ article {
     
     h1, h2, h3, h4, h5, h6 {
         padding: 0;
-        margin: 0 0 16px 0;
+        margin: $content-spacer 0 $content-spacer / 4 0;
     
         font-family: 'Oswald', sans-serif;
         font-weight: 800;
@@ -141,7 +141,7 @@ article {
 
     blockquote {
         margin: 0;
-        padding: 2px 2px 2px 16px;
+        padding: 2px 2px 2px $content-spacer;
         background-color: $color-text;
         color: $color-background;
         * {
@@ -151,7 +151,7 @@ article {
 
     ol, ul {
         margin: 0;
-        padding: 4px 4px 4px 16px;
+        padding: 4px 4px 4px $content-spacer;
     }
     li {
         margin: 0;
@@ -165,7 +165,7 @@ article {
 
         th, td {
             border: 1px solid $color-text;
-            padding: 8px 16px 8px 16px;
+            padding: $content-spacer / 2 $content-spacer $content-spacer / 2 $content-spacer;
         }
 
         th {
@@ -196,7 +196,7 @@ article {
     
     .highlight {
         padding: 1px 0;
-        margin: 16px 0;
+        margin: $content-spacer 0;
         background-color: lighten($color-background, 2.5%);
 
         code {
@@ -213,7 +213,7 @@ article {
         overflow: hidden;
         width: 100%;
         padding-top: 56.25%;
-        margin-top: 16px;
+        margin-top: $content-spacer;
       
         iframe {
             position: absolute;
@@ -241,7 +241,7 @@ article {
 
     video {
         width: 100%;
-        margin: 16px 0;
+        margin: $content-spacer 0;
     }
 
     .wideimg {
