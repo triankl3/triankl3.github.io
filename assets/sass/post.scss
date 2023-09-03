@@ -216,13 +216,26 @@ article {
         margin-top: 16px;
       
         iframe {
-          position: absolute;
-          top: 0;
-          left: 0;
-          bottom: 0;
-          right: 0;
-          width: 100%;
-          height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
         }
-      }
+    }
+
+    .footnotes {
+        border-top: $color-text 2px solid;
+
+        hr {
+            display: none;
+        }
+
+        li {
+            padding: 0;
+            margin: 0;
+        }
+    }
 }
