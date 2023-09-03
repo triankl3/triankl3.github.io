@@ -71,8 +71,8 @@ In your command prompt you should type: `npm run serve`.
     return module
 ```
 
-{{< img src="background.webp" alt="This is how alt-text / figure captions look apparently." >}}
+{{< img src="exampleimg1.webp" alt="This is how alt-text / figure captions look apparently." >}}
 
 {{< youtube id="iUtnZpzkbG8" >}}
 
-{{< video src="/vid/example.mp4" >}}
+{{< video src="examplevid1.mp4" >}}
