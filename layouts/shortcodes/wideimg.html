@@ -1,0 +1,5 @@
+{{- $res := .Page.Resources.GetMatch (printf "*%s*" (.Get "src")) -}}
+{{- $res := $res.Resize "x1080" -}}
+
+<div class="wideimg" style="background-image: url('{{ $res.Permalink }}')"></div>
+<div class="wideimg-spacer"></div>

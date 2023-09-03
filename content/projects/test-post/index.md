@@ -27,6 +27,8 @@ We **love using bold** text sometimes. Using *italic* is also really interesting
 Have you ever used [github](https://github.com/)?  
 Links are also automagically created like this https://example.com.
 
+{{< wideimg src="exampleimg2.webp" >}}
+
 Emoji's work :skull:.
 
 Here's a simple footnote,[^1] and here's a another one.[^textnote]

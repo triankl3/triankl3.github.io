@@ -242,5 +242,20 @@ article {
     video {
         width: 100%;
         margin: 16px 0;
-      }
+    }
+
+    .wideimg {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 720px;
+
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    .wideimg-spacer {
+        height: 720px;
+    }
 }
