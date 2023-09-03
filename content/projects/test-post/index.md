@@ -75,4 +75,4 @@ In your command prompt you should type: `npm run serve`.
 
 {{< youtube id="iUtnZpzkbG8" >}}
 
-{% include video.html path="/assets/vid/example.mp4" %}
+{{< video src="/vid/example.mp4" >}}
