@@ -7,8 +7,6 @@ tags: ["test", "post"]
 image: "featured1.webp"
 ---
 
-# First chapter title
-
 There might be other markdown elements which are *technically supported*, but are not here. This means the blog is not accounting for them and you should avoid using them with this theme. There are a bunch of shortcodes which can be used to create interesting layouts in your blogpost, use them wisely. This is a paragraph.
 
 # Heading level one
@@ -28,6 +26,9 @@ Have you ever used [github](https://github.com/)?
 Links are also automagically created like this https://example.com.
 
 {{< wideimg src="exampleimg2.webp" >}}
+
+# First chapter title
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore recusandae aperiam rerum ipsa accusantium reiciendis doloremque voluptas, officia dolorem et expedita quaerat nam explicabo non iure? Cupiditate, ea nulla?
 
 Emoji's work :skull:.
 
