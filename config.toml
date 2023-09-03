@@ -7,6 +7,7 @@ enableRobotsTXT = true
 enableEmoji = true
 
 [params]
+    description = 'Personal blog and portfolio in one. Showcasing projects and celebrating the process alongside the solution.'
     [params.contact]
         github = 'https://github.com/triankl3'
         twitter = 'https://twitter.com/triankl3'

@@ -4,6 +4,37 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+        {{ $featured_img := "" }}
+        {{ if (.IsPage) }}
+            <!-- Prepare a compressed version of the feature image to use if on a post -->
+            {{ $featured_img_path := print "img/" .Params.image }}
+            {{ $featured_img = resources.Get $featured_img_path }}
+            {{ $featured_img = $featured_img.Resize "x1024"}}
+
+            {{ .Scratch.Set "featured_img" $featured_img }}
+        {{- end -}}
+
+        {{ $pageTitle := .Site.Title }}
+        {{ if (.IsHome) }}
+            {{ $pageTitle = print "Home | " .Site.Title }}
+        {{ else if (.Page.Title) }}
+            {{ $pageTitle = print .Page.Title " | " .Site.Title }}
+        {{- end -}}
+
+        <!-- Facebook Meta Tags -->
+        <meta property="og:title" content="{{ $pageTitle }}">
+        <meta property="og:description" content="{{- if (.IsPage) -}} {{- .Description -}} {{- else -}} {{- .Site.Params.Description -}} {{- end -}}">
+        <meta property="og:image" content='{{- if (.IsPage) -}} {{- $featured_img.Permalink -}} {{- end -}}'>
+        <meta property="og:url" content="{{ .Page.Permalink }}">
+        <meta property="og:site_name" content="{{ .Site.Title }}">
+        <meta property="og:type" content="article">
+                
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="{{ .Page.Title }}">
+        <meta name="twitter:description" content="{{- if (.IsPage) -}} {{- .Description -}} {{- else -}} {{- .Site.Params.Description -}} {{- end -}}">
+        <meta name="twitter:image" content="{{- if (.IsPage) -}} {{- $featured_img.Permalink -}} {{ end -}}">
+
         {{ $normalize_style := resources.Get "css/modern-normalize.css" | resources.Minify }}
         <link rel="stylesheet" href="{{ $normalize_style.RelPermalink }}">
 
@@ -11,26 +42,11 @@
         <link rel="stylesheet" href="{{ $main_style.RelPermalink }}">
 
         <title>
-            {{- if .IsHome -}}
-                Home | {{ .Site.Title }}
-            {{- else if .Page.Title -}}
-                {{ .Page.Title }} | {{ .Site.Title }}
-            {{- else -}}
-                {{ .Site.Title }}
-            {{- end -}}
+            {{- $pageTitle -}}
         </title> 
     </head>
     <body>
         <div class="noise-bg"></div>
-
-        {{ if (.IsPage) }}
-            <!-- Prepare a compressed version of the feature image to use if on a post -->
-            {{ $featured_img_path := print "img/" .Params.image }}
-            {{ $featured_img := resources.Get $featured_img_path }}
-            {{ $featured_img := $featured_img.Resize "x1024"}}
-
-            {{ .Scratch.Set "featured_img" $featured_img }}
-        {{ end }}
 
         <nav>
             <div id="nav-left"> <!-- Use JS for navigation here  -->
