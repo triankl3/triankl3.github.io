@@ -47,6 +47,9 @@
         {{ $main_style := resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "main_parsed.scss" . | resources.ToCSS (dict "targetPath" "css/site.css" "outputStyle" "compressed") | resources.Minify }}
         <link rel="stylesheet" href="{{ $main_style.RelPermalink }}">
 
+        {{ $photoswipe_style := resources.Get "css/photoswipe.css"  | resources.Minify }}
+        <link rel="stylesheet" href="{{ $photoswipe_style.RelPermalink }}">
+
         <title>
             {{- $pageTitle -}}
         </title> 
@@ -109,6 +112,12 @@
     {{ $vanillaTilt_js := resources.Get "js/vanillaTilt.js" | minify }}
     <script src="{{ $vanillaTilt_js.RelPermalink }}"></script>
 
+    {{ $photoswipe_js := resources.Get "js/photoswipe.js" | minify }}
+    <script src="{{ $photoswipe_js.RelPermalink }}"></script>
+
+    {{ $photoswipe_lightbox_js := resources.Get "js/photoswipe-lightbox.js" | minify }}
+    <script src="{{ $photoswipe_lightbox_js.RelPermalink }}"></script>
+
     <script> // Initialize scripts here
         var elem = document.querySelector('.msnry-grid');
         var msnry = new Masonry(elem, {
@@ -129,5 +138,21 @@
             scale: 0.95,
             speed: 1000,
         });
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallery: '.pspw-lightbox',
+            children: 'a',
+
+            initialZoomLevel: 'fit',
+            secondaryZoomLevel: 3,
+            maxZoomLevel: 3,
+
+            showAnimationDuration: 200,
+            hideAnimationDuration: 200,
+
+            pswpModule: PhotoSwipe
+        });
+        
+        lightbox.init();          
     </script>
 </html>

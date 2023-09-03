@@ -4,27 +4,29 @@
 {{- $ws := slice 720 1080 2160 2560 -}}
 
 {{- $srcset := slice -}}
-  {{- range $ws -}}
+    {{- range $ws -}}
 
-  {{/* To avoid creating an image that is larger than the source */}}
-  {{- if (le . $res.Width) -}}
-    {{- $w := printf "%dx" . -}}
-    {{- $url := ($res.Resize $w).RelPermalink | safeURL -}}
-    {{- $fmt := printf "%s %dw" $url . -}}
-    {{- $srcset = $srcset | append $fmt -}}
-  {{- end -}}
+    {{/* To avoid creating an image that is larger than the source */}}
+    {{- if (le . $res.Width) -}}
+        {{- $w := printf "%dx" . -}}
+        {{- $url := ($res.Resize $w).RelPermalink | safeURL -}}
+        {{- $fmt := printf "%s %dw" $url . -}}
+        {{- $srcset = $srcset | append $fmt -}}
+    {{- end -}}
 {{- end -}}
 
 {{- $set := delimit $srcset "," -}}
 
-<figure>
-  <img
-    class="tilt-img"
-    srcset="{{ $set }}"
-    sizes="(max-width: 720px) 720px, 100vw"
-    src="{{ $res.RelPermalink }}"
-    alt="{{ $alt }}"
-    width="100%"
-    height="auto"/>
-  <figcaption>{{ $alt }}</figcaption>
+<figure class="pspw-lightbox">
+    <a href="{{ $res.RelPermalink }}" data-pswp-width="{{ $res.Width }}" data-pswp-height="{{ $res.Height }}" target="_blank">
+        <img
+            class="tilt-img"
+            srcset="{{ $set }}"
+            sizes="(max-width: 720px) 720px, 100vw"
+            src="{{ $res.RelPermalink }}"
+            alt="{{ $alt }}"
+            width="100%"
+            height="auto"/>
+        </a>
+    <figcaption>{{ $alt }}</figcaption>
 </figure>

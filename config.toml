@@ -56,6 +56,19 @@ enableEmoji = true
     source = "node_modules/vanilla-tilt/dist/vanilla-tilt.min.js"
     target = "assets/js/vanillaTilt.js"
 
+    [[module.mounts]]
+    source = "node_modules/photoswipe/dist/umd/photoswipe.umd.min.js"
+    target = "assets/js/photoswipe.js"
+
+    [[module.mounts]]
+    source = "node_modules/photoswipe/dist/umd/photoswipe-lightbox.umd.min.js"
+    target = "assets/js/photoswipe-lightbox.js"
+
+    [[module.mounts]]
+    source = "node_modules/photoswipe/dist/photoswipe.css"
+    target = "assets/css/photoswipe.css"
+
+
 [imaging]
     bgColor = "#111111"
     hint = 'photo'
