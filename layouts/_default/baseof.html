@@ -4,6 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+        {{- if .IsHome -}}
+            <meta name="description" content="{{ site.Params.Description }}" />
+        {{- else -}}
+            <meta name="description" content="{{ .Params.Description }}" />
+        {{- end }}
+
         {{ $featured_img := "" }}
         {{ if (.IsPage) }}
             <!-- Prepare a compressed version of the feature image to use if on a post -->
