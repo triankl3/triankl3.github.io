@@ -188,6 +188,9 @@ nav {
     text-transform: uppercase;
     mix-blend-mode: difference;
 
+    position: relative;
+    z-index: 99;
+
     #nav-left, #nav-right {
         position: fixed;
         top: 5%;
