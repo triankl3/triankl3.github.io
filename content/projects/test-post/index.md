@@ -73,6 +73,6 @@ In your command prompt you should type: `npm run serve`.
 
 {{< img src="background.webp" alt="This is how alt-text / figure captions look apparently." >}}
 
-{% include youtube.html id="iUtnZpzkbG8" %}
+{{< youtube id="iUtnZpzkbG8" >}}
 
 {% include video.html path="/assets/vid/example.mp4" %}
