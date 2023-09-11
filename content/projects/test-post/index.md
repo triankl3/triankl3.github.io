@@ -76,6 +76,6 @@ In your command prompt you should type: `npm run serve`.
 
 {{< img src="exampleimg1.webp" alt="This is how alt-text / figure captions look apparently." >}}
 
-{{< youtube id="iUtnZpzkbG8" >}}
+<!-- {{< youtube id="iUtnZpzkbG8" >}} -->
 
 {{< video src="examplevid1.mp4" >}}
