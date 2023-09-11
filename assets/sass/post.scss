@@ -98,6 +98,7 @@ article {
                 transform: translateX(-50%);
 
                 .post-tag {
+                    border-width: 0;
                     font-size: 14px;
                 }
             }
@@ -251,6 +252,7 @@ article {
         left: 0;
         width: 100%;
         height: 720px;
+        margin: 32px 0;
 
         background-position: center;
         background-size: cover;
@@ -258,6 +260,6 @@ article {
         background-attachment: fixed;
     }
     .wideimg-spacer {
-        height: 720px;
+        height: 752px;
     }
 }
