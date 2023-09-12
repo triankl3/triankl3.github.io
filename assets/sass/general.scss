@@ -179,7 +179,7 @@ $cube-color: $color-text;
 
 .content-wrapper {
     max-width: $content-width;
-    padding: 32px;
+    padding: $content-spacer;
     margin: 0 auto;
 }
 

@@ -1,7 +1,7 @@
 article {
     .content-wrapper {
         background-color: lighten($color-background, 0);
-        padding: 32px;
+        padding: $content-spacer / 4 $content-spacer;
     }
 
     header {
@@ -9,6 +9,7 @@ article {
 
         .content-wrapper {
             box-shadow: none;
+            padding: $content-spacer;
         }
 
         #featured-image {
@@ -135,7 +136,7 @@ article {
     
     h1, h2, h3, h4, h5, h6 {
         padding: 0;
-        margin: $content-spacer 0 $content-spacer / 4 0;
+        margin: $content-spacer / 4 0 $content-spacer / 4 0;
     
         font-family: 'Oswald', sans-serif;
         font-weight: 800;
