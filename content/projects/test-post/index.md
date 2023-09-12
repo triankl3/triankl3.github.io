@@ -4,7 +4,7 @@ title: "The biography of a test post"
 date: 2023-08-07T18:54:11+02:00
 description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore recusandae aperiam rerum ipsa accusantium reiciendis doloremque voluptas, officia dolorem et expedita quaerat nam explicabo non iure? Cupiditate, ea nulla?"
 tags: ["test", "post"]
-image: "featured1.webp"
+image: "featured2.webp"
 ---
 
 There might be other markdown elements which are *technically supported*, but are not here. This means the blog is not accounting for them and you should avoid using them with this theme. There are a bunch of shortcodes which can be used to create interesting layouts in your blogpost, use them wisely. This is a paragraph.
@@ -75,6 +75,13 @@ In your command prompt you should type: `npm run serve`.
 ```
 
 {{< img src="exampleimg1.webp" alt="This is how alt-text / figure captions look apparently." >}}
+
+{{< img src="exampleimg1.webp" >}}
+{{< gallery >}}
+    {{< img src="exampleimg1.webp" >}}
+    {{< img src="exampleimg2.webp" >}}
+    {{< img src="exampleimg1.webp" >}}
+{{< /gallery >}}
 
 <!-- {{< youtube id="iUtnZpzkbG8" >}} -->
 

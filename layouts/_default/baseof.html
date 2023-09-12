@@ -119,26 +119,33 @@
     <script src="{{ $photoswipe_lightbox_js.RelPermalink }}"></script>
 
     <script> // Initialize scripts here
-        var elem = document.querySelector('.msnry-grid');
-        var msnry = new Masonry(elem, {
-            itemSelector: '.msnry-grid-item',
-            columnWidth: 200
+        // Masonry for post galleries
+        document.querySelectorAll('.gallery').forEach((elem) => {
+            new Masonry(elem, {
+                itemSelector: '.tilt-img',
+
+            });
         });
 
-        VanillaTilt.init(document.querySelector(".tilt-img"), {
-            reverse: true,
-            max: 15,
-            scale: 0.95,
-            speed: 1000,
+        // Init/Apply tilt effect
+        document.querySelectorAll('.tilt-img').forEach((elem) => {
+            VanillaTilt.init(elem, {
+                reverse: true,
+                max: 15,
+                scale: 0.95,
+                speed: 1000,
+            });
+        });
+        document.querySelectorAll('.tilt-post').forEach((elem) => {
+            VanillaTilt.init(elem, {
+                reverse: true,
+                max: 10,
+                scale: 0.95,
+                speed: 1000,
+            });
         });
 
-        VanillaTilt.init(document.querySelector(".tilt-post"), {
-            reverse: true,
-            max: 10,
-            scale: 0.95,
-            speed: 1000,
-        });
-
+        // Initialize lightbox script
         const lightbox = new PhotoSwipeLightbox({
             gallery: '.pspw-lightbox',
             children: 'a',
@@ -151,8 +158,7 @@
             hideAnimationDuration: 200,
 
             pswpModule: PhotoSwipe
-        });
-        
+        }); 
         lightbox.init();          
     </script>
 </html>

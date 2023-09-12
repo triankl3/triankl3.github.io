@@ -262,4 +262,14 @@ article {
     .wideimg-spacer {
         height: 752px;
     }
+
+    .gallery {
+        width: 100%;
+        margin-top: $content-spacer / 2;
+
+        img {
+            width: 33.333333%;
+            height: auto;
+        }
+    }
 }
