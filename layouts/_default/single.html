@@ -17,8 +17,8 @@
         {{ partial "cube.html" "cube2" }}
         <!-- Apply post featured color to grid and cube --> 
         <style> 
-            .noise-bg {
-                display: none;
+            .content-wrapper {
+                box-shadow: 0 0 256px 128px rgba({{ $featured_color_rgb_2 }}, 0.5);
             }
 
             .grid-lines {

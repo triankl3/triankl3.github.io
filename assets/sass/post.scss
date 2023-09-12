@@ -1,11 +1,15 @@
 article {
     .content-wrapper {
-        background-color: $color-background;
+        background-color: lighten($color-background, 0);
         padding: 32px;
     }
 
     header {
         height: 512px;
+
+        .content-wrapper {
+            box-shadow: none;
+        }
 
         #featured-image {
             position: absolute;
