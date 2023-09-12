@@ -194,6 +194,7 @@ article {
     }
 
     figure {
+        transform: scale(1.1);
         margin: 0;
         padding: 0;
     }
@@ -259,6 +260,7 @@ article {
 
     video {
         width: 100%;
+        transform: scale(1.1);
         margin: $content-spacer 0;
     }
 
@@ -279,9 +281,6 @@ article {
     }
 
     .gallery {
-        width: 100%;
-        margin-top: -4px;
-
         img {
             width: 33.333333%;
             height: auto;
