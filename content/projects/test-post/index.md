@@ -4,12 +4,13 @@ title: "The biography of a test post"
 date: 2023-08-07T18:54:11+02:00
 description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore recusandae aperiam rerum ipsa accusantium reiciendis doloremque voluptas, officia dolorem et expedita quaerat nam explicabo non iure? Cupiditate, ea nulla?"
 tags: ["test", "post"]
-image: "featured2.webp"
+image: "featured1.webp"
 ---
+
+# Heading level one
 
 There might be other markdown elements which are *technically supported*, but are not here. This means the blog is not accounting for them and you should avoid using them with this theme. There are a bunch of shortcodes which can be used to create interesting layouts in your blogpost, use them wisely. This is a paragraph.
 
-# Heading level one
 ## Heading level two
 ### Heading level three
 #### Heading level four
@@ -32,8 +33,6 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore recusa
 
 Emoji's work :skull:.
 
-Here's a simple footnote,[^1] and here's a another one.[^textnote]
-
 1. First item
 2. Second item
 3. Third item
@@ -43,10 +42,6 @@ Here's a simple footnote,[^1] and here's a another one.[^textnote]
     - An unordered indented item
     - We can mix and match
         - And go even deeper :moai:
-
-[^1]: This is the first footnote.
-
-[^textnote]: This is the other footnote.
 
 | Syntax      | Description | Test Text     |
 | :---        |    :----:   |          ---: |
