@@ -159,9 +159,16 @@ article {
 
     blockquote {
         margin: 0;
-        padding: 2px 2px 2px $content-spacer;
+        padding: 2px 2px 2px $content-spacer / 2;
+        
         background-color: $color-text;
         color: $color-background;
+        
+        // border-left: $color-background $content-spacer / 2 solid;
+        
+        font-family: 'Michroma', sans-serif;
+        font-weight: 600;
+        font-size: 14px;
         * {
             font-weight: 600;
         }
