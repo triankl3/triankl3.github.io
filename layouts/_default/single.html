@@ -18,7 +18,7 @@
         <!-- Apply post featured color to grid and cube --> 
         <style> 
             .content-wrapper {
-                box-shadow: 0 0 256px 128px rgba({{ $featured_color_rgb_2 }}, 0.5);
+                box-shadow: 0 0 256px 128px rgba({{ $featured_color_rgb }}, 0.5);
             }
 
             .grid-lines {
@@ -63,7 +63,7 @@
         </div>
     </header>
 
-    <div class="content-wrapper">    
+    <div class="content-wrapper content">    
         {{ .Content }}
     </div>
 </article>

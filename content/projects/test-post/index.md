@@ -4,7 +4,7 @@ title: "The biography of a test post"
 date: 2023-08-07T18:54:11+02:00
 description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore recusandae aperiam rerum ipsa accusantium reiciendis doloremque voluptas, officia dolorem et expedita quaerat nam explicabo non iure? Cupiditate, ea nulla?"
 tags: ["test", "post"]
-image: "featured1.webp"
+image: "featured2.webp"
 ---
 
 # Heading level one
@@ -68,8 +68,6 @@ In your command prompt you should type: `npm run serve`.
 
     return module
 ```
-
-{{< img src="exampleimg1.webp" alt="This is how alt-text / figure captions look apparently." >}}
 
 {{< img src="exampleimg1.webp" >}}
 {{< gallery >}}

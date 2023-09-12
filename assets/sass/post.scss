@@ -110,6 +110,13 @@ article {
         }
     }
 
+    p {
+        font-weight: 400;
+        * { // Apply to other elements too
+            font-weight: 400;
+        }
+    }
+
     h1 {
         font-size: 64px;
     }
@@ -141,10 +148,13 @@ article {
         font-family: 'Oswald', sans-serif;
         font-weight: 800;
         text-transform: uppercase;
+        letter-spacing: 2px;
     }
 
     strong {
         font-weight: 800;
+        font-family: 'Michroma', sans-serif;
+        font-size: 14px;
     }
 
     blockquote {
@@ -270,7 +280,7 @@ article {
 
     .gallery {
         width: 100%;
-        margin-top: $content-spacer / 2;
+        margin-top: -4px;
 
         img {
             width: 33.333333%;
