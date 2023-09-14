@@ -17,10 +17,6 @@
         {{ partial "cube.html" "cube2" }}
         <!-- Apply post featured color to grid and cube --> 
         <style> 
-            .content-wrapper {
-                box-shadow: 0 0 256px 128px rgba({{ $featured_color_rgb }}, 0.5);
-            }
-
             .grid-lines {
                 background-image: linear-gradient(to right, {{ $featured_color_2 }} 2px, transparent 0), 
                 linear-gradient(to bottom, {{ $featured_color_2 }} 2px, transparent 0);
