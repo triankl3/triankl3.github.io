@@ -58,39 +58,20 @@
         <div class="noise-bg"></div>
 
         <nav>
-            <div id="nav-left"> <!-- Use JS for navigation here  -->
-                <a href="/"><img src="/img/logo.svg"></a>
-                <ul id="nav-home">
-                    {{ if (.IsHome) }} <!-- If on home page, use JS to scroll to sections -->
-                        <li onclick="scrollToElement('#about', {offset: -64, duration:750})">about</li>
-                        <li onclick="scrollToElement('#projects', {offset: -64, duration:750})">projects</li>
-                        <li onclick="scrollToElement('#contact', {offset: -64, duration:750})">contact</li>
-                    {{ end }}
-                </ul>
+            <ul>
+                <li><a href="/"><img src="/img/logo.svg"></a></li>
 
-                <ul id="nav-post">
-                    {{ if (.IsPage) }} <!-- If on blog post/regular page, use JS to scroll to headings -->
-                        {{- range .Fragments.Headings }}
-                            <li onclick="scrollToElement('#{{ anchorize .ID }}', {offset: -8, duration:750})">{{ .Title }}</li>
-                            {{- range .Headings }}
-                                {{- if .Headings }}
-                                    <ul>
-                                        <li onclick="scrollToElement('#{{ anchorize .ID }}', {offset: -8, duration:750})">{{ .Title }}</li>
-                                    </ul>
-                                {{- end }}
-                            {{- end }}
-                        {{- end }}
-                    {{ end }}
-                </ul>
-            </div>
-            <div id="nav-right">
-                <ul>
-                    <li><a target="_blank" href="{{ site.Params.contact.github }}"><img src="/img/github.svg"></a></li>
-                    <li><a target="_blank" href="{{ site.Params.contact.linkedin }}"><img src="/img/linkedin.svg"></a></li>
-                    <li><a target="_blank" href="{{ site.Params.contact.twitter }}"><img src="/img/twitter.svg"></a></li>
-                    <li><a href="mailto:{{ site.Params.contact.email }}"><img src="/img/email.svg"></a></li>
-                </ul>
-            </div>
+                {{ if (.IsHome) }} <!-- If on home page, use JS to scroll to sections -->
+                    <li onclick="scrollToElement('#about', {offset: -64, duration:750})">about</li>
+                    <li onclick="scrollToElement('#projects', {offset: -64, duration:750})">projects</li>
+                    <li onclick="scrollToElement('#contact', {offset: -64, duration:750})">contact</li>
+                {{ end }}
+
+                <li><a target="_blank" href="{{ site.Params.contact.github }}">github</a></li>
+                <li><a target="_blank" href="{{ site.Params.contact.linkedin }}">linkedin</a></li>
+                <li><a target="_blank" href="{{ site.Params.contact.twitter }}">twitter</a></li>
+                <li><a href="mailto:{{ site.Params.contact.email }}">e-mail</a></li>
+            </ul>
         </nav>
 
         {{ block "main" . }}{{ end }}

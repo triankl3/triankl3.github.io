@@ -1,15 +1,10 @@
 article {
-    .content-wrapper {
-        background-color: lighten($color-background, 0);
-        padding: $content-spacer / 4 $content-spacer;
-    }
-
     header {
         height: 512px;
 
         .content-wrapper {
             box-shadow: none;
-            padding: $content-spacer;
+            padding: $content-padding;
         }
 
         #featured-image {
@@ -62,7 +57,7 @@ article {
             }
 
             h1 {
-                margin: 0 0 $content-spacer 0;
+                margin: 0 0 $content-padding 0;
                 
                 font-family: 'Oswald', sans-serif;
                 font-weight: 800;
@@ -143,7 +138,7 @@ article {
     
     h1, h2, h3, h4, h5, h6 {
         padding: 0;
-        margin: $content-spacer / 4 0 $content-spacer / 4 0;
+        margin: $content-padding / 4 0 $content-padding / 4 0;
     
         font-family: 'Oswald', sans-serif;
         font-weight: 800;
@@ -159,12 +154,12 @@ article {
 
     blockquote {
         margin: 0;
-        padding: 2px 2px 2px $content-spacer / 2;
+        padding: 2px 2px 2px $content-padding / 2;
         
         background-color: $color-text;
         color: $color-background;
         
-        // border-left: $color-background $content-spacer / 2 solid;
+        // border-left: $color-background $content-padding / 2 solid;
         
         font-family: 'Michroma', sans-serif;
         font-weight: 600;
@@ -176,7 +171,7 @@ article {
 
     ol, ul {
         margin: 0;
-        padding: 4px 4px 4px $content-spacer;
+        padding: 4px 4px 4px $content-padding;
     }
     li {
         margin: 0;
@@ -190,7 +185,7 @@ article {
 
         th, td {
             border: 1px solid $color-text;
-            padding: $content-spacer / 4 $content-spacer / 2 $content-spacer / 4 $content-spacer / 2;
+            padding: $content-padding / 4 $content-padding / 2 $content-padding / 4 $content-padding / 2;
         }
 
         th {
@@ -222,7 +217,7 @@ article {
     
     .highlight {
         padding: 1px 0;
-        margin: $content-spacer 0;
+        margin: $content-padding 0;
         background-color: lighten($color-background, 2.5%);
 
         code {
@@ -239,7 +234,7 @@ article {
         overflow: hidden;
         width: 100%;
         padding-top: 56.25%;
-        margin-top: $content-spacer;
+        margin-top: $content-padding;
       
         iframe {
             position: absolute;
@@ -268,7 +263,7 @@ article {
     video {
         width: 100%;
         transform: scale(1.1);
-        margin: $content-spacer 0;
+        margin: $content-padding 0;
     }
 
     .wideimg {

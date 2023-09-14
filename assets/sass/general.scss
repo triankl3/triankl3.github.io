@@ -16,11 +16,10 @@ a, a:visited, a:hover {
     transition: font-weight .1s ease-in-out;
 }
 a:hover {   
-    font-weight: 600;
+    font-weight: 500;
 }
 
 footer {
-    padding: 24px;
     text-align: center;
 }
 
@@ -179,106 +178,72 @@ $cube-color: $color-text;
 
 .content-wrapper {
     max-width: $content-width;
-    padding: $content-spacer;
+    padding: $content-padding $content-padding $content-padding ($content-padding + ($nav-size * 2));
     margin: 0 auto;
 }
 
 nav {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $nav-size * 2;
+    padding: $nav-size / 2;
+    
     font-family: 'Oswald', sans-serif;
+    font-size: $nav-size;
     text-transform: uppercase;
+
+    transform-origin: top left;
+    transform: rotate(90deg) translateY(-100%);
+
+    border-top: $color-text 1px solid;
+
     mix-blend-mode: difference;
 
-    position: relative;
-    z-index: 99;
-
-    #nav-left, #nav-right {
-        position: fixed;
-        top: 5%;
-
-        width: $nav-width;
-        padding: 0;
-        margin: 0;
-    }
-
     ul {
-        list-style: none;
-        padding: 0;
         margin: 0;
-    }
+        padding: 0;
+        
+        list-style: none;
 
-    li {
-        width: 100%;
-        user-select: none;
-        font-weight: 400;
-    }
+        li {
+            padding: 0 $nav-size / 4;
+            margin: 0;
+            display: inline-block;
 
+            user-select: none;
+            cursor: pointer;
 
-    #nav-left { // Logo(Homepage), Home navigation or Post ToC
-        left: calc(50% - (#{$content-width} / 2) - #{$nav-margin} - #{$nav-width});
-        text-align: right;
+            font-weight: 200;
 
-        img {
-            width: $nav-width;
+            transition: font-weight .1s ease-in-out;
 
-            transform-origin: center left;
-            transition: transform .1s ease-in-out;
-        }
-        img:hover {
-            transform: scale(1.05);
-        }
-
-        #nav-home {
-            li {
-                font-size: 32px;
-                line-height: 40px;
-                text-align: justify;
-                transition: font-weight .1s ease-in-out;
-            }
-            li:hover {
-                font-weight: 600;
-            }
-        }
-    
-        #nav-post {
-            li {
-                font-size: 14px;
-                padding: 8px 0 8px 0;
-                text-align: left;
-
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-
+            img {
+                transform: rotate(-90deg);
                 transition: transform .1s ease-in-out;
             }
-            li:hover {
-                transform: scale(1.05);
+            img:hover{
+                transform: scale(1.2);
             }
 
-            ul {
-                li {
-                    padding: 0 0 4px 8px;
-                }
+            a {
+                text-decoration: none;
+                font-weight: 200;
+                font-size: $nav-size * 0.75;
+            }
+            a:hover {
+                text-decoration: none;
+                font-weight: 400;
+            }
+
+            img {
+                height: $nav-size;
             }
         }
-    }
-
-    #nav-right { // Socials
-        right: calc(50% - (#{$content-width} / 2) - #{$nav-margin} - #{$nav-width});
-
-        ul {
-            text-align: center;
-            line-height: 40px;
-        }
-
-        img {
-            height: 24px;
-            transform-origin: center;
-            transition: transform .1s ease-in-out;
-        }
-
-        img:hover {
-            transform: scale(1.1);
+        li:hover {
+            font-weight: 400;
         }
     }
 }
@@ -339,28 +304,14 @@ nav {
 }
 
 // Small screen optimizations
-@media screen and (max-width: calc((#{$nav-width} + (#{$nav-margin} * 2)) * 2 + #{$content-width})) {
+@media screen and (max-width: #{$content-width}) {
     .content-wrapper {
         max-width: $content-width-narrow;
     }
-
-    nav {
-        #nav-left {
-            left: calc(50% - (#{$content-width-narrow} / 2) - #{$nav-margin} - #{$nav-width});
-        }
-        
-        #nav-right {
-            right: calc(50% - (#{$content-width-narrow} / 2) - #{$nav-margin} - #{$nav-width});
-        }
-    }
 }
 
-@media screen and (max-width: calc((#{$nav-width} + (#{$nav-margin} * 2)) * 2 + #{$content-width-narrow})) {
+@media screen and (max-width: #{$content-width-narrow}) {
     .content-wrapper {
         max-width: $content-width;
-    }
-
-    nav {
-        display: none; //CHANGE THIS (TEMPORARY FIX)
     }
 }
