@@ -3,11 +3,9 @@ $color-background: #111111;
 
 $content-width: 1024px;
 $content-width-narrow: 820px;
+$content-padding: 16px;
 
-$nav-width: 128px;
-$nav-margin: $nav-width / 4;
-
-$content-spacer: 32px;
+$nav-size: 24px;
 
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700'); //Oswald
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800'); //Manrope

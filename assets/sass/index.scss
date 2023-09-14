@@ -178,13 +178,13 @@
 
     ul {
         width: 100%;
-        margin: $content-spacer 0;
+        margin: $content-padding 0;
 
         list-style: none;
         text-align: center;
 
         li {
-            margin: 0 $content-spacer / 2;
+            margin: 0 $content-padding / 2;
 
             display: inline-block;
             img {
