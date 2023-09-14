@@ -198,8 +198,6 @@ nav {
     transform-origin: top left;
     transform: rotate(90deg) translateY(-100%);
 
-    border-top: $color-text 1px solid;
-
     mix-blend-mode: difference;
 
     ul {
@@ -231,7 +229,7 @@ nav {
             a {
                 text-decoration: none;
                 font-weight: 200;
-                font-size: $nav-size * 0.75;
+                font-size: $nav-size * 0.8;
             }
             a:hover {
                 text-decoration: none;
