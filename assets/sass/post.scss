@@ -1,4 +1,9 @@
 article {
+    .content-wrapper {
+        background-color: lighten($color-background, 0);
+        padding: $content-spacer / 4 $content-spacer;
+    }
+
     header {
         height: 512px;
 
