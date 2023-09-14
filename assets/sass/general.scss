@@ -188,17 +188,34 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    height: $nav-size * 2;
+    height: $nav-size * 3;
     padding: $nav-size / 2;
     
-    font-family: 'Oswald', sans-serif;
-    font-size: $nav-size;
+    font-family: 'Michroma', sans-serif;
+    font-size: $nav-size * 0.8;
     text-transform: uppercase;
 
     transform-origin: top left;
     transform: rotate(90deg) translateY(-100%);
 
     mix-blend-mode: difference;
+
+    #nav-socials {
+        li {
+            padding: 0 $nav-size * 0.1;
+        }
+    }
+
+    img {
+        float: left;
+        height: $nav-size * 2;
+        transform: rotate(-90deg);
+        transition: transform .1s ease-in-out;
+        margin: 0 $nav-size / 2;
+    }
+    img:hover{
+        transform: scale(1.2);
+    }
 
     ul {
         margin: 0;
@@ -207,41 +224,29 @@ nav {
         list-style: none;
 
         li {
-            padding: 0 $nav-size / 4;
+            padding: 0 $nav-size * 0.25;
             margin: 0;
             display: inline-block;
 
             user-select: none;
             cursor: pointer;
 
-            font-weight: 200;
+            font-weight: 400;
 
-            transition: font-weight .1s ease-in-out;
-
-            img {
-                transform: rotate(-90deg);
-                transition: transform .1s ease-in-out;
-            }
-            img:hover{
-                transform: scale(1.2);
-            }
+            transition: transform .1s ease-in-out;
 
             a {
                 text-decoration: none;
-                font-weight: 200;
-                font-size: $nav-size * 0.8;
+                font-weight: 400;
+                font-size: $nav-size * 0.6;
             }
             a:hover {
                 text-decoration: none;
                 font-weight: 400;
             }
-
-            img {
-                height: $nav-size;
-            }
         }
         li:hover {
-            font-weight: 400;
+            transform: scale(1.05);
         }
     }
 }
