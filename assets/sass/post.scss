@@ -51,11 +51,9 @@ article {
             z-index: -115;
         }
 
-        .content-wrapper {
+        .content-wrapper-wide {
             position: relative;
             height: 512px;
-
-            background-color: initial;
             
             h1, time, .post-tags {
                 text-align: center;
@@ -66,7 +64,7 @@ article {
                 
                 font-family: 'Oswald', sans-serif;
                 font-weight: 800;
-                font-size: 84px;
+                font-size: 96px;
 
                 letter-spacing: 8px;
 
@@ -82,15 +80,15 @@ article {
             }
 
             p {
-                width: 75%;
+                max-width: 720px;
                 margin: 0 auto;
 
                 font-size: 14px;
                 text-align: justify;
                 letter-spacing: 1px;
 
-                background-color: rgba($color-background, 0.6);
-                box-shadow: 0 0 32px 32px rgba($color-background, 0.6);
+                // background-color: rgba($color-background, 0.6);
+                // box-shadow: 0 0 32px 32px rgba($color-background, 0.6);
             }
             
             .post-tags {
