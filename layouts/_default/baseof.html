@@ -57,29 +57,6 @@
     <body>
         <div class="noise-bg"></div>
 
-        <nav>
-            <a href="/"><img src="/img/logo.svg"></a>    
-            <ul id="nav-socials">
-                <li><a target="_blank" href="{{ site.Params.contact.github }}">github</a></li>
-                <li><a target="_blank" href="{{ site.Params.contact.linkedin }}">linkedin</a></li>
-                <li><a target="_blank" href="{{ site.Params.contact.twitter }}">twitter</a></li>
-                <li><a href="mailto:{{ site.Params.contact.email }}">e-mail</a></li>
-            </ul>
-            {{ if (.IsHome) }} <!-- If on home page, use JS to scroll to sections -->
-                <ul id="nav-home">
-                    <li onclick="scrollToElement('#about', {offset: -64, duration:750})">about</li>
-                    <li onclick="scrollToElement('#projects', {offset: -64, duration:750})">projects</li>
-                    <li onclick="scrollToElement('#contact', {offset: -64, duration:750})">contact</li>
-                </ul>
-            {{ else }}
-                <style>
-                    #nav-socials {
-                        margin-top: 24px;
-                    }
-                </style>
-            {{ end }}
-        </nav>
-
         {{ block "main" . }}{{ end }}
 
         <footer>

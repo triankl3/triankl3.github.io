@@ -1,4 +1,14 @@
 article {
+    #nav-socials {
+        top: $nav-size;
+        left: initial;
+        right: $nav-size;
+    }
+    #nav-logo {
+        top: $nav-size;
+        left: $nav-size;
+    }
+
     header {
         height: 512px;
 
