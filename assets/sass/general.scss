@@ -188,6 +188,12 @@ $cube-color: $color-text;
     margin: 0 auto;
 }
 
+.content-wrapper-narrow {
+    max-width: $content-width-narrow;
+    padding: $content-padding;
+    margin: 0 auto;
+}
+
 #nav-logo, #nav-socials, #nav-index {
     position: fixed;
     z-index: 99;
