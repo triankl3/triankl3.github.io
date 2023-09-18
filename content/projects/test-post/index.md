@@ -34,7 +34,7 @@ Links are also automagically created like this https://example.com.
 {{% /section-column %}}
 
 <!-- Splash just supports setting an image -->
-{{< section-splash img="exampleimg1.webp" >}}
+{{< section-splash img="exampleimg1.webp" filter="invert(0.95)">}}
 
 <!-- Jumbo just supports setting it's text -->
 {{< section-jumbo text="This is a huge jumbo text! Thank you for reading." background="white" grid="64px" >}}
