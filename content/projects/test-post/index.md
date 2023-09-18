@@ -31,16 +31,13 @@ We **love using bold** text sometimes. Using *italic* is also really interesting
 Have you ever used [github](https://github.com/)?  
 Links are also automagically created like this https://example.com.
 
-<!-- Markdown is set to unsafe rendering, adding shortcodes in markdown text is supported -->
-{{< img src="exampleimg2.webp" >}}
-
 {{% /section-column %}}
 
 <!-- Splash just supports setting an image -->
 {{< section-splash img="exampleimg1.webp" >}}
 
 <!-- Jumbo just supports setting it's text -->
-{{< section-jumbo text="This is a huge jumbo text! Thank you for reading." background="white" grid="true" >}}
+{{< section-jumbo text="This is a huge jumbo text! Thank you for reading." background="white" grid="64px" >}}
 
 <!-- Two column sections are wrapped in the section-two-column shortcode, with the left and right inside -->
 <!-- You can apply the same properties as with section-column to the parent section-two-column shortcode -->
@@ -63,13 +60,13 @@ Emoji's work :skull:.
 
 {{< video src="examplevid1.mp4" >}}
 
-{{% /section-two-column-left %}}
-{{% section-two-column-right %}}
-
 | Syntax      | Description | Test Text     |
 | :---        |    :----:   |          ---: |
 | Header      | Title       | Here's this   |
 | Paragraph   | Text        | And more      |
+
+{{% /section-two-column-left %}}
+{{% section-two-column-right %}}
 
 In your command prompt you should type: `npm run serve`.
 
@@ -92,12 +89,15 @@ In your command prompt you should type: `npm run serve`.
     return module
 ```
 
+<!-- Markdown is set to unsafe rendering, adding shortcodes in markdown text is supported -->
+{{< img src="exampleimg2.webp" >}}
+
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore recusandae aperiam rerum ipsa accusantium reiciendis doloremque voluptas, officia dolorem et expedita quaerat nam explicabo non iure? Cupiditate, ea nulla?
 
 {{% /section-two-column-right %}}
 {{< /section-two-column >}}
 
-{{< section-gallery background="#1d2" >}}
+{{< section-gallery background="white" grid="48px" >}}
 
 {{< img src="exampleimg1.webp" >}}
 {{< img src="exampleimg2.webp" >}}
