@@ -176,22 +176,21 @@ $cube-color: $color-text;
 	}
 }
 
-.content-wrapper {    
-    max-width: $content-width;
+.content-wrapper, .content-wrapper-max, .content-wrapper-narrow {
     padding: $content-padding;
     margin: 0 auto;
 }
 
-.content-wrapper-wide {
-    max-width: calc(100% - #{$nav-size * 10});
-    padding: $content-padding;
-    margin: 0 auto;
+.content-wrapper {    
+    max-width: $content-width;
+}
+
+.content-wrapper-max {
+    max-width: $content-width-max
 }
 
 .content-wrapper-narrow {
     max-width: $content-width-narrow;
-    padding: $content-padding;
-    margin: 0 auto;
 }
 
 #nav-logo, #nav-socials, #nav-index {

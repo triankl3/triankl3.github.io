@@ -1,7 +1,0 @@
-{{- $res := .Page.Resources.GetMatch (printf "*%s*" (.Get "src")) -}}
-{{- $res := $res.Resize "x1080" -}}
-{{- $res_color := index $res.Colors 0 -}}
-{{- $res_color_rgb := partial "hextorgb.html" $res_color | print | safeCSS -}}
-
-<div class="wideimg" style="background-image: url('{{ $res.Permalink }}'); box-shadow: 0 0 64px 32px rgba({{ $res_color_rgb }}, 1)"></div>
-<div class="wideimg-spacer"></div>

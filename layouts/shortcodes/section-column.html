@@ -1,0 +1,39 @@
+{{- $title := .Get "title" -}}
+{{- $side := .Get "side" -}}
+
+{{- $background := .Get "background" -}}
+{{- $unique_id := (print "_" (delimit (shuffle (split (md5 .Inner) "" )) ""))}}
+{{ partial "background-func.html" (dict "context" . "background" $background "unique_id" $unique_id) }}
+
+<style>
+    #{{ $unique_id }} {
+        {{- if in $side "left" -}}
+            text-align: left;
+            .content-wrapper {
+                margin: 0 auto 0 0;
+            }
+        {{- else if in $side "right" -}}
+            text-align: right;
+            .content-wrapper {
+                margin: 0 0 0 auto;
+            }
+        {{- else -}}
+            text-align: center;
+            .content-wrapper {
+                text-align: left;
+            }
+            .content-wrapper p {
+                text-align: justify;
+            }
+        {{- end -}}
+    }
+</style>
+
+<div class="section-column" id="{{ $unique_id }}">
+<div class="content-wrapper-max">
+<h1 class="section-column-title">{{ $title }}</h1>
+<div class="content-wrapper">
+{{ .Inner }}
+</div>
+</div>
+</div>

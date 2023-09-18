@@ -1,0 +1,9 @@
+{{- $background := .Get "background" -}}
+{{- $unique_id := (print "_" (delimit (shuffle (split (md5 .Inner) "" )) ""))}}
+{{ partial "background-func.html" (dict "context" . "background" $background "unique_id" $unique_id) }}
+
+<div class="section-gallery" id="{{ $unique_id }}">
+    <div class="msnry-grid pspw-gallery content-wrapper">
+        {{ .Inner }}
+    </div>
+</div>

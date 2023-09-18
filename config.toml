@@ -19,6 +19,9 @@ enableEmoji = true
     projects = "/:filename/"
 
 [markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+
   [markup.tableOfContents]
     pre = ""
     post = ""

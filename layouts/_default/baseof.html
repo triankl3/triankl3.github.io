@@ -84,10 +84,9 @@
 
     <script> // Initialize scripts here
         // Masonry for post galleries
-        document.querySelectorAll('.gallery').forEach((elem) => {
+        document.querySelectorAll('.msnry-grid').forEach((elem) => {
             new Masonry(elem, {
-                itemSelector: '.tilt-img',
-
+                itemSelector: 'figure',
             });
         });
 

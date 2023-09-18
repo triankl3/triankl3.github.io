@@ -1,0 +1,14 @@
+{{- $title := .Get "title" -}}
+
+{{- $background := .Get "background" -}}
+{{- $unique_id := (print "_" (delimit (shuffle (split (md5 .Inner) "" )) ""))}}
+{{ partial "background-func.html" (dict "context" . "background" $background "unique_id" $unique_id) }}
+
+<div class="section-two-column" id="{{ $unique_id }}" style="overflow: auto">
+    <div class="content-wrapper-max">
+        <h1 class="section-column-title">{{ $title }}</h1>
+        {{ .Inner }}
+    </div>
+</div>
+
+<div style="clear: both;"></div> <!-- Clearfix -->

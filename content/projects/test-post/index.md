@@ -4,13 +4,18 @@ title: "The biography of a test post"
 date: 2023-08-07T18:54:11+02:00
 description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore recusandae aperiam rerum ipsa accusantium reiciendis doloremque voluptas, officia dolorem et expedita quaerat nam explicabo non iure? Cupiditate, ea nulla?"
 tags: ["test", "post"]
-image: "featured2.webp"
+image: "featured1.webp"
 ---
 
+<!-- When available you can set a sections background with the following options: background=black(default)/white/#111/IMG.(webp/png/jpg) -->
+
+<!-- Use section column to create one vertical column. Chose alignment sides with side=center(default)/left/right . -->
+<!-- title="text" is available to set a huge title for the section -->
+{{% section-column title="Section column title" side="center" background="" %}}
+
+There might be other markdown elements which are *technically supported*, but are not here. This means the blog is not accounting for them and you should avoid using them with this theme. There are a bunch of shortcodes which can be used to create interesting layouts in your blogpost, view the markdown file in your editor to see more usage examples and all variations. This is a paragraph.
+
 # Heading level one
-
-There might be other markdown elements which are *technically supported*, but are not here. This means the blog is not accounting for them and you should avoid using them with this theme. There are a bunch of shortcodes which can be used to create interesting layouts in your blogpost, use them wisely. This is a paragraph.
-
 ## Heading level two
 ### Heading level three
 #### Heading level four
@@ -26,9 +31,22 @@ We **love using bold** text sometimes. Using *italic* is also really interesting
 Have you ever used [github](https://github.com/)?  
 Links are also automagically created like this https://example.com.
 
-{{< wideimg src="exampleimg2.webp" >}}
+<!-- Markdown is set to unsafe rendering, adding shortcodes in markdown text is supported -->
+{{< img src="exampleimg2.webp" alt="Hello world" >}}
 
-# First chapter title
+{{% /section-column %}}
+
+<!-- Splash just supports setting an image -->
+{{< section-splash img="exampleimg2.webp" >}}
+
+<!-- Jumbo just supports setting it's text -->
+{{< section-jumbo text="This is a huge jumbo text! Thank you for reading." background="white" >}}
+
+<!-- Two column sections are wrapped in the section-two-column shortcode, with the left and right inside -->
+<!-- You can apply the same properties as with section-column to the parent section-two-column shortcode -->
+{{< section-two-column title="This is a two column section" background="" >}}
+{{% section-two-column-left %}}
+
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore recusandae aperiam rerum ipsa accusantium reiciendis doloremque voluptas, officia dolorem et expedita quaerat nam explicabo non iure? Cupiditate, ea nulla?
 
 Emoji's work :skull:.
@@ -42,6 +60,11 @@ Emoji's work :skull:.
     - An unordered indented item
     - We can mix and match
         - And go even deeper :moai:
+
+{{< video src="examplevid1.mp4" >}}
+
+{{% /section-two-column-left %}}
+{{% section-two-column-right %}}
 
 | Syntax      | Description | Test Text     |
 | :---        |    :----:   |          ---: |
@@ -69,13 +92,18 @@ In your command prompt you should type: `npm run serve`.
     return module
 ```
 
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore recusandae aperiam rerum ipsa accusantium reiciendis doloremque voluptas, officia dolorem et expedita quaerat nam explicabo non iure? Cupiditate, ea nulla?
+
+{{% /section-two-column-right %}}
+{{< /section-two-column >}}
+
+{{< section-gallery background="" >}}
+
 {{< img src="exampleimg1.webp" >}}
-{{< gallery >}}
-    {{< img src="exampleimg1.webp" >}}
-    {{< img src="exampleimg2.webp" >}}
-    {{< img src="exampleimg1.webp" >}}
-{{< /gallery >}}
+{{< img src="exampleimg2.webp" >}}
+{{< img src="exampleimg1.webp" >}}
+{{< img src="exampleimg1.webp" >}}
+{{< img src="exampleimg2.webp" >}}
+{{< img src="exampleimg2.webp" >}}
 
-<!-- {{< youtube id="iUtnZpzkbG8" >}} -->
-
-{{< video src="examplevid1.mp4" >}}
+{{< /section-gallery >}}

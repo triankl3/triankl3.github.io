@@ -1,4 +1,5 @@
 article {
+    // Customize navbar to be out of the way as much as possible
     #nav-socials {
         top: $nav-size;
         left: initial;
@@ -9,14 +10,16 @@ article {
         left: $nav-size;
     }
 
+    // Header section with featured image, title, date, description and tags
+    $post-header-height: 512px;
     header {
-        height: 512px;
+        height: $post-header-height;
 
         #featured-image {
             position: absolute;
             top: 0;
             left: 0;
-            height: 512px;
+            height: $post-header-height;
             width: 100%;
 
             background-position: center bottom;
@@ -30,7 +33,7 @@ article {
             position: absolute;
             top: 0;
             left: 0;
-            height: 512px;
+            height: $post-header-height;
             width: 100%;
 
             opacity: 0.5;
@@ -46,14 +49,16 @@ article {
             top: 0;
             left: 0;
             width: 100%;
-            height: 512px;
+            height: $post-header-height;
 
             z-index: -115;
         }
 
-        .content-wrapper-wide {
+        .content-wrapper-max {
+            padding: $content-padding $nav-size * 4 + $content-padding;
+
             position: relative;
-            height: 512px;
+            height: $post-header-height;
             
             h1, time, .post-tags {
                 text-align: center;
@@ -86,9 +91,6 @@ article {
                 font-size: 14px;
                 text-align: justify;
                 letter-spacing: 1px;
-
-                // background-color: rgba($color-background, 0.6);
-                // box-shadow: 0 0 32px 32px rgba($color-background, 0.6);
             }
             
             .post-tags {
@@ -101,26 +103,36 @@ article {
                 transform: translateX(-50%);
 
                 .post-tag {
-                    border-width: 0;
-                    font-size: 14px;
+                    background-color: rgba($color-background, 1);
+                    font-size: 15px;
                 }
             }
         }
     }
 
+
+    // Standard markdown elements
     p {
-        font-weight: 400;
-        * { // Apply to other elements too
-            font-weight: 400;
-        }
+
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        padding: 0;
+        margin: $content-padding / 4 0 $content-padding / 4 0;
+    
+        font-family: 'Oswald', sans-serif;
+        font-weight: 800;
+        text-transform: uppercase;
     }
 
     h1 {
-        font-size: 64px;
+        font-size: 92px;
+        letter-spacing: 2px;
     }
     
     h2 {
         font-size: 56px;
+        letter-spacing: 1px;
     }
     
     h3 {
@@ -138,31 +150,17 @@ article {
     h6 {
         font-size: 24px;
     }
-    
-    h1, h2, h3, h4, h5, h6 {
-        padding: 0;
-        margin: $content-padding / 4 0 $content-padding / 4 0;
-    
-        font-family: 'Oswald', sans-serif;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-    }
 
     strong {
         font-weight: 800;
-        font-family: 'Michroma', sans-serif;
-        font-size: 14px;
     }
 
     blockquote {
         margin: 0;
         padding: 2px 2px 2px $content-padding / 2;
         
-        background-color: $color-text;
-        color: $color-background;
-        
-        // border-left: $color-background $content-padding / 2 solid;
+        border: $color-text 4px solid;
+        border-left: $color-text 16px solid;
         
         font-family: 'Michroma', sans-serif;
         font-weight: 600;
@@ -199,12 +197,11 @@ article {
     }
 
     figure {
-        transform: scale(1.1);
         margin: 0;
         padding: 0;
     }
 
-    img {
+    .pspw-lightbox {
         cursor: pointer;
     }
 
@@ -212,19 +209,19 @@ article {
         white-space: pre-wrap;
         word-break: break-word;
     }
-
     code {
         padding: 3px;
-        background-color: lighten($color-background, 2.5%);
+        border: $color-text 1px solid;
     }
-    
     .highlight {
+        font-size: 15px;
         padding: 1px 0;
         margin: $content-padding 0;
         background-color: lighten($color-background, 2.5%);
 
         code {
             padding: 0;
+            border: none;
         }
 
         * {
@@ -250,45 +247,76 @@ article {
         }
     }
 
-    .footnotes {
-        border-top: $color-text 22px solid;
-
-        hr {
-            display: none;
-        }
-
-        li {
-            padding: 0;
-            margin: 0;
-        }
-    }
-
     video {
         width: 100%;
-        transform: scale(1.1);
+        height: auto;
         margin: $content-padding 0;
     }
 
-    .wideimg {
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 720px;
-        margin: 32px 0;
+    // Sections used to organize and style content in blogposts into visually attractive pieces
+    .section-column, .section-two-column, .section-jumbo, .section-gallery {
+        padding: $content-padding * 4 $nav-size * 4;
+    }
 
-        background-position: center;
+    .section-column {
+        .section-column-title {
+            margin: 0;
+            padding: 0;
+
+            font-size: 112px;
+        }
+    }
+
+    .section-splash {
+        width: 100%;
+        height: 80vh;
+
+        background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
     }
-    .wideimg-spacer {
-        height: 752px;
+
+    .section-jumbo {
+        width: 100%;
+        min-height: 80vh;
+
+        display: flex;
+        align-items:center;
+        justify-content:center;
+        
+        h1 {
+            font-family: 'Manrope', sans-serif;
+            text-transform: initial;
+            font-size: 156px;
+        }
     }
 
-    .gallery {
+    .section-two-column {
+        .section-column-title {
+            margin: 0;
+            padding: 0;
+
+            text-align: left;
+
+            font-size: 112px;
+        }
+    }
+    .section-two-column-left, .section-two-column-right {
+        width: 50%;
+    }
+    .section-two-column-left {
+        float: left;
+        padding: $content-padding $content-padding $content-padding 0;
+    }
+    .section-two-column-right {
+        float: right;
+        padding: $content-padding 0 $content-padding $content-padding;
+    }
+
+    .section-gallery {
         img {
-            width: 33.333333%;
-            height: auto;
+            width: ($content-width - $content-padding * 2) / 3;
         }
     }
 }

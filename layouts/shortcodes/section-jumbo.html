@@ -1,0 +1,11 @@
+{{- $text := .Get "text" -}}
+
+{{- $background := .Get "background" -}}
+{{- $unique_id := (print "_" (delimit (shuffle (split (md5 $text) "" )) ""))}}
+{{ partial "background-func.html" (dict "context" . "background" $background "unique_id" $unique_id) }}
+
+<div class="section-jumbo" id="{{ $unique_id }}">
+    <div class="content-wrapper-max">
+        <h1>{{ $text }}</h1>
+    </div>
+</div>

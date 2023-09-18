@@ -1,0 +1,105 @@
+{{ $background := .background }}
+{{ $unique_id := .unique_id }}
+
+{{ $default_color := "#dddddd" }}
+{{ $default_bg_color := "#111111" }}
+{{ $final_color := $default_color }}
+{{ $final_bg_color := $default_bg_color }}
+{{ $bg_img := "" }}
+
+{{ if in $background "white" }} {{/* Use white background */}}
+    {{ $final_color = $default_bg_color }}
+    {{ $final_bg_color = $default_color }}
+{{ else if in $background "black" }} {{/* Using black background */}}
+    {{ $final_color = $default_color }}
+    {{ $final_bg_color = $default_bg_color }}
+{{ else if hasPrefix $background "#" }} {{/* Using color as background */}}
+    {{ $final_bg_color = $background }}
+{{ else if hasSuffix $background ".webp" }} {{/* Using image as background */}}
+    {{ $bg_img = $background}}
+{{ else if hasSuffix $background ".png" }} {{/* Using image as background */}}
+    {{ $bg_img = $background}}
+{{ else if hasSuffix $background ".jpg" }} {{/* Using image as background */}}
+    {{ $bg_img = $background}}
+{{ end }}
+
+<style>
+    #{{ $unique_id }} {
+        background-color: {{ $final_bg_color }};
+        color: {{ $final_color }};
+
+        {{ if not (in $bg_img "") }}
+            {{- $bg_img = .context.Page.Resources.GetMatch (printf "*%s*" $bg_img) -}}
+            {{- $bg_img = $bg_img.Resize "x1080" -}}
+
+            background: url('{{ $bg_img.RelPermalink }}');
+            background-position: center center;
+            background-size: cover;
+        {{ end }}
+    }
+    #{{ $unique_id }} a {
+        color: {{ $final_color }};
+    }
+    #{{ $unique_id }} blockquote {
+        border-color: {{ $final_color }};
+    }
+    #{{ $unique_id }} code {
+        border-color: {{ $final_color }};
+    }
+    #{{ $unique_id }} table td {
+        border-color: {{ $final_color }};
+    }
+    #{{ $unique_id }} table th {
+        border-color: {{ $final_color }};
+        color: {{ $final_bg_color }};
+        background-color: {{ $final_color }};
+    }
+
+    {{ if hasPrefix $background "#" }}
+        #{{ $unique_id }} p {
+            mix-blend-mode: difference;
+        }
+        #{{ $unique_id }} h1 {
+            mix-blend-mode: difference;
+        }
+        #{{ $unique_id }} h2 {
+            mix-blend-mode: difference;
+        }
+        #{{ $unique_id }} h3 {
+            mix-blend-mode: difference;
+        }
+        #{{ $unique_id }} h4 {
+            mix-blend-mode: difference;
+        }
+        #{{ $unique_id }} h5 {
+            mix-blend-mode: difference;
+        }
+        #{{ $unique_id }} h6 {
+            mix-blend-mode: difference;
+        }
+        #{{ $unique_id }} blockquote {
+            mix-blend-mode: difference;
+        }
+        #{{ $unique_id }} ol {
+            mix-blend-mode: difference;
+        }
+        #{{ $unique_id }} ul {
+            mix-blend-mode: difference;
+        }
+        #{{ $unique_id }} code {
+            mix-blend-mode: difference;
+        }
+        #{{ $unique_id }} .highlight code {
+            mix-blend-mode: initial;
+        }
+        #{{ $unique_id }} table {
+            mix-blend-mode: difference;
+        }
+        #{{ $unique_id }} a {
+            mix-blend-mode: difference;
+        }
+        #{{ $unique_id }} figure a {
+            mix-blend-mode: initial;
+        }
+    {{ end }}
+</style>

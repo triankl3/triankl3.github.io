@@ -1,0 +1,4 @@
+{{- $img := .Page.Resources.GetMatch (printf "*%s*" (.Get "img")) -}}
+{{- $img := $img.Resize "x1080" -}}
+
+<div class="section-splash" style="background-image: url('{{ $img.RelPermalink }}');"></div>

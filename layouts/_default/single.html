@@ -40,35 +40,28 @@
                 top: 256px;
                 right: 20%;
             }
-
-            strong {
-                color: color-mix(in srgb, {{ $featured_color }} 50%, white);
-            }
-
-            blockquote {
-                border-left: color-mix(in srgb, {{ $featured_color }} 50%, white) 16px solid;
-            }
         </style>
 
-        <div class="content-wrapper-wide">
+        <div class="content-wrapper-max">
             <time style="color: color-mix(in srgb, {{ $featured_color }} 50%, white)">{{ .Date.Format "Mon Jan 2, 2006" }}</time>
             <h1 style="-webkit-text-stroke: 2px color-mix(in srgb, {{ $featured_color }} 50%, white)">{{ .Title }}</h1>
+            <p style="color: color-mix(in srgb, {{ $featured_color_2 }} 35%, white)">{{ .Description }}</p>
             <ul class="post-tags">
                 {{- with .Params.tags -}}
                 {{- if ge (len .) 1 -}}
                 {{- range . -}}
-                <li style="background-color: rgba({{ $featured_color_rgb_2 }}, 1)" class="post-tag">{{ . }}</li>
+                <li class="post-tag">{{ . }}</li>
                 {{ end -}}
                 {{- end -}}
                 {{- end -}}
             </ul>
-            <p style="color: color-mix(in srgb, {{ $featured_color_2 }} 35%, white)">{{ .Description }}</p>
         </div>
+
+        <div style="width: 100%; height: 128px; box-shadow: 0 -128px 64px 64px rgba({{ $featured_color_rgb }}, 0.5); position: absolute;"></div>
     </header>
 
-    <div style="width: 100%; height: 128px; box-shadow: 0 -128px 64px 64px rgba({{ $featured_color_rgb }}, 0.5); position: absolute;"></div>
 
-    <div class="content-wrapper-narrow">
+    <div>
         {{ .Content }}
     </div>
 </article>
