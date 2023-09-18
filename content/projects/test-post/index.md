@@ -32,15 +32,15 @@ Have you ever used [github](https://github.com/)?
 Links are also automagically created like this https://example.com.
 
 <!-- Markdown is set to unsafe rendering, adding shortcodes in markdown text is supported -->
-{{< img src="exampleimg2.webp" alt="Hello world" >}}
+{{< img src="exampleimg2.webp" >}}
 
 {{% /section-column %}}
 
 <!-- Splash just supports setting an image -->
-{{< section-splash img="exampleimg2.webp" >}}
+{{< section-splash img="exampleimg1.webp" >}}
 
 <!-- Jumbo just supports setting it's text -->
-{{< section-jumbo text="This is a huge jumbo text! Thank you for reading." background="white" >}}
+{{< section-jumbo text="This is a huge jumbo text! Thank you for reading." background="white" grid="true" >}}
 
 <!-- Two column sections are wrapped in the section-two-column shortcode, with the left and right inside -->
 <!-- You can apply the same properties as with section-column to the parent section-two-column shortcode -->
@@ -97,7 +97,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore recusa
 {{% /section-two-column-right %}}
 {{< /section-two-column >}}
 
-{{< section-gallery background="" >}}
+{{< section-gallery background="#1d2" >}}
 
 {{< img src="exampleimg1.webp" >}}
 {{< img src="exampleimg2.webp" >}}

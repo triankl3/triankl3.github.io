@@ -1,4 +1,5 @@
 {{ $background := .background }}
+{{ $grid := .grid}}
 {{ $unique_id := .unique_id }}
 
 {{ $default_color := "#dddddd" }}
@@ -35,6 +36,14 @@
             background: url('{{ $bg_img.RelPermalink }}');
             background-position: center center;
             background-size: cover;
+        {{ end }}
+
+        {{ if in $grid "true" }}
+            {{ $final_color_rgb := partial "hextorgb.html" $final_color | print | safeCSS }}
+            background-size: 48px 48px;
+            background-image:
+            linear-gradient(to right, rgba({{ $final_color_rgb }}, 0.25) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba({{ $final_color_rgb }}, 0.25) 1px, transparent 1px);
         {{ end }}
     }
     #{{ $unique_id }} a {
