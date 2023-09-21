@@ -304,10 +304,7 @@ $cube-color: $color-text;
     mix-blend-mode: difference;
     font-family: 'Oswald', sans-serif;
     text-align: center;
-
-    fit-text {
-        font-weight: 800;
-    }
+    text-transform: uppercase;
 }
 
 .post-tags {
