@@ -7,7 +7,8 @@ tags: ["test", "post"]
 image: "featured1.webp"
 ---
 
-<!-- When available you can set a sections background with the following options: background=black(default)/white/#111/IMG.(webp/png/jpg) -->
+<!-- When available you can set a sections background with the following options: background="black(default)/white/#hexhex" -->
+<!-- When available you can set add a grid to a sections background with the following option: grid="Xpx" , with X being any number -->
 
 <!-- Use section column to create one vertical column. Chose alignment sides with side=center(default)/left/right . -->
 <!-- title="text" is available to set a huge title for the section -->
@@ -33,10 +34,10 @@ Links are also automagically created like this https://example.com.
 
 {{% /section-column %}}
 
-<!-- Splash just supports setting an image -->
+<!-- Splash supports setting an image and applying CSS filters directly on them -->
 {{< section-splash img="exampleimg1.webp" filter="invert(0.95)">}}
 
-<!-- Jumbo just supports setting it's text -->
+<!-- Jumbo supports setting it's text, alongisde the usual background options -->
 {{< section-jumbo text="This is a huge jumbo text! Thank you for reading." background="white" grid="64px" >}}
 
 <!-- Two column sections are wrapped in the section-two-column shortcode, with the left and right inside -->
@@ -97,6 +98,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore recusa
 {{% /section-two-column-right %}}
 {{< /section-two-column >}}
 
+<!-- You can use the gallery to support showing a grid of images in a gallery format -->
 {{< section-gallery background="white" grid="48px" >}}
 
 {{< img src="exampleimg1.webp" >}}
