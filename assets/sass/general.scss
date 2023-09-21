@@ -10,6 +10,10 @@ body {
     background-color: $color-background;
 }
 
+:root {
+    color-scheme: dark;
+}
+
 a, a:visited, a:hover {
     color: $color-text;
     text-decoration: underline;
