@@ -3,9 +3,9 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 2048 2048" style="enable-background:new 0 0 2048 2048;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#FFFFFF;}
+	.st0{fill:#DDDDDD;}
 </style>
-<image style="display:none;overflow:visible;" width="635" height="540" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnsAAAIcCAYAAACOxWh1AAAACXBIWXMAAC4jAAAuIwF4pT92AAAg
+<image style="display:none;overflow:visible;enable-background:new    ;" width="635" height="540" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnsAAAIcCAYAAACOxWh1AAAACXBIWXMAAC4jAAAuIwF4pT92AAAg
 AElEQVR4nO3dzXEbSZ7w4ZyJvkuvBdTeFidxLBDHAITogajT1m3YFohtwbBvuA1lwVILA5qyYMgT
 jktZsKIF/UZSCQnCB4mPKqDqX88TgdAsyZZQBcXqF5mVmX/5888/0yENqvHLlNJxeb0sr+ODvikA
 6J6vKaXbmV9vJ6PhV58je4+9QTV+lVI6mXkdLfwQAFCHLyX8rlNKN5PR8N5d7Z+9xF4ZvTsrr9cL
@@ -151,7 +151,7 @@ jb2pMnR6Vl7L5ssBgObdlci5avMq1H0oo2lXa8xCTu/ZdR2jfWWq9qSsczha+IGffSpTyzt9VnuJ
 vVnl5p6U3a2P17hQAGA7X8rChMdX1OfxdlHOwL1Ys0em9/N2+noqxErzvCq9M428df+cs7pGXfce
 e/PKqN/0Jryc+RUAWN99eX1dJ0T4obTI+Y67ityVe/9qh4GsL+V5wVpXBh889tp2UN8AAABdSURB
 VAAA2mDmsbN1pljrdFeeD2xk+xexBwAwZ2bxxGlDewh/KVvBXDW5CCSJPQCAp5VFFaflmbvjLePv
-Ye75yUYDb5bYAwDYwMx6g+kCjFVy0D0+Q3mw5ydTSv8foyEK3BaDSLAAAAAASUVORK5CYII=" transform="matrix(3.8278 0 0 3.8278 -3 0)">
+Ye75yUYDb5bYAwDYwMx6g+kCjFVy0D0+Q3mw5ydTSv8foyEK3BaDSLAAAAAASUVORK5CYII=" transform="matrix(3.8278 0 0 3.8278 -3 4.805917e-05)">
 </image>
 <path class="st0" d="M1908.45,0H139.55C62.48,0,0,62.48,0,139.55v1768.89C0,1985.52,62.48,2048,139.55,2048h1768.89
 	c77.07,0,139.55-62.48,139.55-139.55V139.55C2048,62.48,1985.52,0,1908.45,0z M610,1746H308V769h302V1746z M460,640
