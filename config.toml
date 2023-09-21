@@ -60,6 +60,10 @@ enableEmoji = true
     target = "assets/js/vanillaTilt.js"
 
     [[module.mounts]]
+    source = "node_modules/motion/dist/motion.min.js"
+    target = "assets/js/motion.js"
+
+    [[module.mounts]]
     source = "node_modules/photoswipe/dist/umd/photoswipe.umd.min.js"
     target = "assets/js/photoswipe.js"
 

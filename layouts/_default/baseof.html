@@ -83,6 +83,9 @@
     {{ $photoswipe_lightbox_js := resources.Get "js/photoswipe-lightbox.js" | minify }}
     <script src="{{ $photoswipe_lightbox_js.RelPermalink }}"></script>
 
+    {{ $motion_js := resources.Get "js/motion.js" | minify }}
+    <script src="{{ $motion_js.RelPermalink }}"></script>
+
     <script> // Initialize scripts here
         // Masonry for post galleries
         document.querySelectorAll('.msnry-grid').forEach((elem) => {
@@ -123,6 +126,13 @@
 
             pswpModule: PhotoSwipe
         }); 
-        lightbox.init();          
+        lightbox.init();
+
+        Motion.inView(document.querySelectorAll('.animate-visibility-slow'), (enterInfo) => {
+            Motion.animate(enterInfo.target, {opacity: [0.5, 1], translateY: ["-128px", "0"]}, {duration: 1});
+        })
+        Motion.inView(document.querySelectorAll('.animate-visibility'), (enterInfo) => {
+            Motion.animate(enterInfo.target, {opacity: [0.5, 1], translateY: ["-128px", "0"]}, {duration: 0.5});
+        })
     </script>
 </html>
