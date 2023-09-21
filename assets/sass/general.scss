@@ -22,11 +22,11 @@ body {
     // background-color: $color-text;
     mix-blend-mode: difference;
     z-index: 999;
-    animation: reveal-anim 1.25s ease-in-out forwards;
+    animation: reveal-anim 1s ease-in-out forwards;
 }
 @keyframes reveal-anim {
     0% {
-        background-color: $color-text;
+        background-color: darken($color-text, 30%);
     }
     50% {
         background-color: darken($color-text, 60%);
@@ -303,25 +303,10 @@ $cube-color: $color-text;
     padding: 0;
     mix-blend-mode: difference;
     font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
     text-align: center;
 
-    padding: 32px;
-
-    h1, h2, h3 {
-        padding: 0;
-        margin: 0;
-    }
-
-    h1 {
-        font-size: 160px;
-        text-align: center;
-    }
-    h2 {
-        font-size: 24px;
-    }
-    h3 {
-        font-size: 24px;
+    fit-text {
+        font-weight: 800;
     }
 }
 
