@@ -160,15 +160,16 @@ article {
         margin: 0;
         padding: 2px 2px 2px $content-padding / 2;
         
-        border: $color-text 4px solid;
-        border-left: $color-text 16px solid;
+        border: $color-text 2px solid;
+        border-left: $color-text 8px solid;
         
         font-family: 'Michroma', sans-serif;
         font-weight: 600;
-        font-size: 14px;
+        font-size: 12px;
         * {
             font-weight: 600;
         }
+        text-transform: uppercase;
     }
 
     ol, ul {
