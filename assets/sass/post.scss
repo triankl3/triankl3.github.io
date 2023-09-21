@@ -212,8 +212,9 @@ article {
         word-break: break-word;
     }
     code {
-        padding: 3px;
-        border: $color-text 1px solid;
+        padding: 4px;
+        background-color: lighten($color-background, 2.5%);
+        color: $color-text;
     }
     .highlight {
         font-size: 15px;
