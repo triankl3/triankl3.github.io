@@ -25,7 +25,7 @@
     </div>
 
     <div id="projects">
-        <div class="posts-showcase animate-visibility-slow">
+        <div class="posts-showcase animate-visibility">
             <div class="posts-showcase-alltags">
                 <ul class="post-tags">
                     <li class="post-tag post-tag-selected">all</li>
@@ -85,19 +85,5 @@
         </ul>
     </div>
 </div>
-
-<script>
-    var hiddenArray = [document.querySelector('#landing'), document.querySelector('#projects')]
-
-    Motion.inView(document.querySelectorAll('#contact'), (enterInfo) => {
-        Motion.animate(hiddenArray, {opacity: [1, 0]}, {duration: 0.5});
-        Motion.animate(enterInfo.target, {translateY: [0, "-128px"]}, {duration: 1})
-
-        return (leaveInfo) => {
-            Motion.animate(hiddenArray, {opacity: [0, 1]}, {duration: 0.5});
-            Motion.animate(enterInfo.target, {translateY: ["-128px", 0]}, {duration: 1})
-        }
-    })
-</script>
 
 {{ end }}
