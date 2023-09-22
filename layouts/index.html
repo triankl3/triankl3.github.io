@@ -91,11 +91,11 @@
 
     Motion.inView(document.querySelectorAll('#contact'), (enterInfo) => {
         Motion.animate(hiddenArray, {opacity: [1, 0]}, {duration: 0.5});
-        Motion.animate(enterInfo.target, {translateY: [0, "-256px"]}, {duration: 1})
+        Motion.animate(enterInfo.target, {translateY: [0, "-128px"]}, {duration: 1})
 
         return (leaveInfo) => {
             Motion.animate(hiddenArray, {opacity: [0, 1]}, {duration: 0.5});
-            Motion.animate(enterInfo.target, {translateY: ["-256px", 0]}, {duration: 1})
+            Motion.animate(enterInfo.target, {translateY: ["-128px", 0]}, {duration: 1})
         }
     })
 </script>
