@@ -50,6 +50,9 @@
         {{ $photoswipe_style := resources.Get "css/photoswipe.css"  | resources.Minify }}
         <link rel="stylesheet" href="{{ $photoswipe_style.RelPermalink }}">
 
+        {{ $motion_js := resources.Get "js/motion.js" | minify }}
+        <script src="{{ $motion_js.RelPermalink }}"></script>
+
         <title>
             {{- $pageTitle -}}
         </title> 
@@ -82,9 +85,6 @@
 
     {{ $photoswipe_lightbox_js := resources.Get "js/photoswipe-lightbox.js" | minify }}
     <script src="{{ $photoswipe_lightbox_js.RelPermalink }}"></script>
-
-    {{ $motion_js := resources.Get "js/motion.js" | minify }}
-    <script src="{{ $motion_js.RelPermalink }}"></script>
 
     <script> // Initialize scripts here
         // Masonry for post galleries
@@ -128,6 +128,7 @@
         }); 
         lightbox.init();
 
+        // General motion animations
         Motion.inView(document.querySelectorAll('.animate-visibility-slow'), (enterInfo) => {
             Motion.animate(enterInfo.target, {opacity: [0.5, 1], translateY: ["-64px", "0"]}, {duration: 1});
         })

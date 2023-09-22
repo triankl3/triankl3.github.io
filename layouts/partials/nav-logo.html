@@ -1,5 +1,9 @@
 <nav id="nav-logo">
     <ul>
-        <li><a href="/"><img src="/img/logo.svg"></a></li>
+        {{if (.IsHome) }}
+            <li onclick="scrollToElement('#landing', {offset: -64, duration:750})"><img src="/img/logo.svg"></li>
+        {{ else }}
+            <li><a href="/"><img src="/img/logo.svg"></a></li>
+        {{ end }}
     </ul>
 </nav>

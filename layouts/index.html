@@ -15,15 +15,15 @@
     }
 </style>
 
-{{ partial "nav-logo.html" }}
+{{ partial "nav-logo.html" . }}
 {{ partial "nav-socials.html" }}
 {{ partial "nav-index.html" }}
 
 <div class="content-wrapper">
-    <div id="about">
+    <div id="landing">
         <img src="/img/about-main.svg" style="user-select: none;" draggable="false">
     </div>
-    
+
     <div id="projects">
         <div class="posts-showcase animate-visibility-slow">
             <div class="posts-showcase-alltags">
@@ -65,11 +65,13 @@
             {{ end }}
         </div>
 
-        <img id="about-extended" src="/img/about-extended.svg" style="user-select: none;" draggable="false">
+        <img id="landing-extended" src="/img/about-extended.svg" style="user-select: none;" draggable="false">
     </div>
-    
-    <div id="contact" class="animate-visibility-slow">
-        <fit-text>CONTACT <span>ME</span></fit-text>
+</div>
+
+<div id="contact">
+    <div class="content-wrapper">
+        <img src="/img/contact.svg" style="user-select: none;" draggable="false">
         <p>
             The best method to reach me is via e-mail at <a href="mailto:{{ .Site.Params.contact.email }}">{{ .Site.Params.contact.email }}</a>, 
             for more urgent inquires you can contact me through Discord <span style="font-weight: 400;">{{ .Site.Params.contact.discord }}</span>.
@@ -83,5 +85,19 @@
         </ul>
     </div>
 </div>
+
+<script>
+    var hiddenArray = [document.querySelector('#landing'), document.querySelector('#projects')]
+
+    Motion.inView(document.querySelectorAll('#contact'), (enterInfo) => {
+        Motion.animate(hiddenArray, {opacity: [1, 0]}, {duration: 0.5});
+        Motion.animate(enterInfo.target, {translateY: [0, "-256px"]}, {duration: 1})
+
+        return (leaveInfo) => {
+            Motion.animate(hiddenArray, {opacity: [0, 1]}, {duration: 0.5});
+            Motion.animate(enterInfo.target, {translateY: ["-256px", 0]}, {duration: 1})
+        }
+    })
+</script>
 
 {{ end }}

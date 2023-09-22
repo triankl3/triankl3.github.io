@@ -276,7 +276,7 @@ $cube-color: $color-text;
 }
 
 #nav-index {
-    top: $content-padding * 8;
+    top: $nav-size * 5;
     right: calc(50% + #{($content-width / 2)});
 
     font-family: 'Oswald', sans-serif;
