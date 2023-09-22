@@ -28,15 +28,18 @@ defaults:
 
 jobs:
   # Build job
+  dependencies:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: npm ci
+
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Install Node.js dependencies
-        run: "npm ci package-lock.json"
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          submodules: recursive
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
