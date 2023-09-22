@@ -64,7 +64,7 @@
         {{ block "main" . }}{{ end }}
 
         <footer>
-            <p>{{ .Site.Copyright }}</p>
+            <p>{{ .Site.Copyright }} <a href="{{ .Site.Params.source }}" target="_blank">Source code available on GitHub.</a></p>
         </footer>
     </body>
 

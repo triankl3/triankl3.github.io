@@ -8,6 +8,7 @@ enableEmoji = true
 
 [params]
     description = 'Personal blog and portfolio in one. Showcasing projects and celebrating the process alongside the solution.'
+    source = 'https://github.com/triankl3/triankl3.github.io'
     [params.contact]
         github = 'https://github.com/triankl3'
         twitter = 'https://twitter.com/triankl3'
