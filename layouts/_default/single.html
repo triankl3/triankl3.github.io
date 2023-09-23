@@ -1,9 +1,6 @@
 {{ define "main" }}
 
 <article>
-    {{ partial "nav-logo.html" . }}
-    {{ partial "nav-socials.html" }}
-
     <header>        
         {{ $featured_img := .Scratch.Get "featured_img" }}
         {{ $featured_color := (index $featured_img.Colors 1) }}

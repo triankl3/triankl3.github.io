@@ -64,6 +64,22 @@
         <div id="effect-reveal"></div>
         <div id="effect-noise"></div>
 
+        <nav>
+            <a id="nav-logo" href="/"><img src="/img/logo.svg"></a>
+            <ul id="nav-pages">
+                <li><a href="/projects">projects</a></li>
+                <li><a href="/blog">blog</a></li>
+                <li><a href="/about">about</a></li>
+                <li><a href="/contact">contact</a></li>
+            </ul>
+            <ul id="nav-socials">
+                <li><a target="_blank" href="{{ site.Params.contact.github }}"><img src="/img/github.svg"></a></li>
+                <li><a target="_blank" href="{{ site.Params.contact.linkedin }}"><img src="/img/linkedin.svg"></a></li>
+                <li><a target="_blank" href="{{ site.Params.contact.twitter }}"><img src="/img/twitter.svg"></a></li>
+                <li><a href="mailto:{{ site.Params.contact.email }}"><img src="/img/email.svg"></a></li>
+            </ul>
+        </nav>
+
         <main>
             {{ block "main" . }}{{ end }}
         </main>
