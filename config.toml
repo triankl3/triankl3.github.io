@@ -46,24 +46,8 @@ enableEmoji = true
     target = "assets/css/modern-normalize.css"
 
     [[module.mounts]]
-    source = "node_modules/masonry-layout/dist/masonry.pkgd.min.js"
-    target = "assets/js/masonry.js"
-
-    [[module.mounts]]
-    source = "node_modules/fit-text-webcomponent/dist/index.min.js"
-    target = "assets/js/fitTextWebComponent.js"
-
-    [[module.mounts]]
-    source = "node_modules/scroll-to-element/build/scrollToElement.js"
-    target = "assets/js/scrollToElement.js"
-
-    [[module.mounts]]
     source = "node_modules/vanilla-tilt/dist/vanilla-tilt.min.js"
     target = "assets/js/vanillaTilt.js"
-
-    [[module.mounts]]
-    source = "node_modules/motion/dist/motion.min.js"
-    target = "assets/js/motion.js"
 
     [[module.mounts]]
     source = "node_modules/photoswipe/dist/umd/photoswipe.umd.min.js"

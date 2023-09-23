@@ -4,12 +4,17 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        {{- if .IsHome -}}
-            <meta name="description" content="{{ site.Params.Description }}" />
-        {{- else -}}
+        {{/*  OPENGRAPH / TWITTER META  */}}
+        {{/*  Use post description in posts, otherwise use main website description.  */}}
+        {{- if eq .Section "blog" -}}
             <meta name="description" content="{{ .Params.Description }}" />
-        {{- end }}
+        {{- else if eq .Section "projects" -}}
+            <meta name="description" content="{{ .Params.Description }}" />
+        {{- else -}}
+            <meta name="description" content="{{ site.Params.Description }}" />
+        {{- end -}}
 
+        {{/*  Determine featured image if it exists  */}}
         {{ $featured_img := "" }}
         {{ if (.IsPage) }}
             <!-- Prepare a compressed version of the feature image to use if on a post -->
@@ -20,6 +25,7 @@
             {{ .Scratch.Set "featured_img" $featured_img }}
         {{- end -}}
 
+        {{/*  Determine page title  */}}
         {{ $pageTitle := .Site.Title }}
         {{ if (.IsHome) }}
             {{ $pageTitle = print "Home | " .Site.Title }}
@@ -41,6 +47,7 @@
         <meta name="twitter:description" content="{{- if (.IsPage) -}} {{- .Description -}} {{- else -}} {{- .Site.Params.Description -}} {{- end -}}">
         <meta name="twitter:image" content="{{- if (.IsPage) -}} {{- $featured_img.Permalink -}} {{ end -}}">
 
+        {{/* Load needed CSS */}}
         {{ $normalize_style := resources.Get "css/modern-normalize.css" | resources.Minify }}
         <link rel="stylesheet" href="{{ $normalize_style.RelPermalink }}">
 
@@ -49,9 +56,6 @@
 
         {{ $photoswipe_style := resources.Get "css/photoswipe.css"  | resources.Minify }}
         <link rel="stylesheet" href="{{ $photoswipe_style.RelPermalink }}">
-
-        {{ $motion_js := resources.Get "js/motion.js" | minify }}
-        <script src="{{ $motion_js.RelPermalink }}"></script>
 
         <title>
             {{- $pageTitle -}}
@@ -68,15 +72,6 @@
         </footer>
     </body>
 
-    {{ $masonry_js := resources.Get "js/masonry.js" | minify }}
-    <script src="{{ $masonry_js.RelPermalink }}"></script>
-
-    {{ $fitTextWebComponent_js := resources.Get "js/fitTextWebComponent.js" | minify }}
-    <script src="{{ $fitTextWebComponent_js.RelPermalink }}"></script>
-
-    {{ $scrollToElement_js := resources.Get "js/scrollToElement.js" | minify }}
-    <script src="{{ $scrollToElement_js.RelPermalink }}"></script>
-
     {{ $vanillaTilt_js := resources.Get "js/vanillaTilt.js" | minify }}
     <script src="{{ $vanillaTilt_js.RelPermalink }}"></script>
 
@@ -87,13 +82,6 @@
     <script src="{{ $photoswipe_lightbox_js.RelPermalink }}"></script>
 
     <script> // Initialize scripts here
-        // Masonry for post galleries
-        document.querySelectorAll('.msnry-grid').forEach((elem) => {
-            new Masonry(elem, {
-                itemSelector: 'figure',
-            });
-        });
-
         // Init/Apply tilt effect
         document.querySelectorAll('.tilt-img').forEach((elem) => {
             VanillaTilt.init(elem, {
@@ -127,13 +115,5 @@
             pswpModule: PhotoSwipe
         }); 
         lightbox.init();
-
-        // General motion animations
-        Motion.inView(document.querySelectorAll('.animate-visibility-slow'), (enterInfo) => {
-            Motion.animate(enterInfo.target, {opacity: [0.5, 1], translateY: ["-64px", "0"]}, {duration: 1});
-        })
-        Motion.inView(document.querySelectorAll('.animate-visibility'), (enterInfo) => {
-            Motion.animate(enterInfo.target, {opacity: [0.5, 1], translateY: ["-64px", "0"]}, {duration: 0.5});
-        })
     </script>
 </html>
