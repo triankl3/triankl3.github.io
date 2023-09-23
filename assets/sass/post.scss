@@ -1,15 +1,4 @@
 article {
-    // Customize navbar to be out of the way as much as possible
-    #nav-socials {
-        top: $nav-size / 2;
-        left: initial;
-        right: $nav-size / 2;
-    }
-    #nav-logo {
-        top: $nav-size / 2;
-        left: $nav-size / 2;
-    }
-
     // Header section with featured image, title, date, description and tags
     $post-header-height: 512px;
     header {

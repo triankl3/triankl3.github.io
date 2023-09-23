@@ -4,11 +4,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+        {{ $pageType := "" }}
+        {{- if eq .Section "blog" -}}
+            {{- $pageType = "article" -}}
+        {{- else if eq .Section "projects" -}}
+            {{- $pageType = "article" -}}
+        {{- end -}}
+
         {{/*  OPENGRAPH / TWITTER META  */}}
         {{/*  Use post description in posts, otherwise use main website description.  */}}
-        {{- if eq .Section "blog" -}}
-            <meta name="description" content="{{ .Params.Description }}" />
-        {{- else if eq .Section "projects" -}}
+        {{- if in $pageType "article" -}}
             <meta name="description" content="{{ .Params.Description }}" />
         {{- else -}}
             <meta name="description" content="{{ site.Params.Description }}" />
@@ -64,7 +69,7 @@
         <div id="effect-reveal"></div>
         <div id="effect-noise"></div>
 
-        <nav>
+        <nav {{ if in $pageType "article" }} class="nav-wide" {{ end }}>
             <a id="nav-logo" href="/"><img src="/img/logo.svg"></a>
             <ul id="nav-pages">
                 <li><a href="/projects">projects</a></li>

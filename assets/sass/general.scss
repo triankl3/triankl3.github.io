@@ -47,6 +47,7 @@ footer {
     max-width: $content-width-narrow;
 }
 
+$nav-offset: $content-padding * 2;
 nav {
     #nav-logo, #nav-socials, #nav-pages {
         position: fixed;
@@ -62,10 +63,10 @@ nav {
     }
 
     #nav-logo {
-        top: $nav-size * 2;
+        top: $nav-offset;
         right: calc(50% + #{($content-width / 2)});
-        height: $nav-size * 3;
-        width: $nav-size * 3;
+        width: $nav-size;
+        height: $nav-size;
 
         transform-origin: center right;
         transition: transform .15s ease-in-out;
@@ -75,14 +76,12 @@ nav {
     }
     
     #nav-socials {
-        top: $nav-size * 2;
+        top: $nav-offset;
         left: calc(50% + #{($content-width / 2)});
-        width: $nav-size * 2;
         height: 100%;
-        padding: 0 $nav-size / 2;
         
         li {
-            margin-top: $nav-size * 0.5;
+            margin-bottom: $nav-font-size / 2;
             transform-origin: center center;
             transition: transform .15s ease-in-out;
         }
@@ -91,17 +90,17 @@ nav {
         }
     
         img {
-            width: $nav-size;
-            height: $nav-size;
+            width: $nav-font-size;
+            height: $nav-font-size;
         }
     }
 
     #nav-pages {
-        top: $nav-size * 5;
+        top: $nav-offset + $nav-size + $nav-font-size / 2;
         right: calc(50% + #{($content-width / 2)});
     
         font-family: 'Oswald', sans-serif;
-        font-size: $nav-size;
+        font-size: $nav-font-size;
         text-transform: uppercase;
     
         li {
@@ -115,7 +114,32 @@ nav {
         }
     }
 }
+.nav-wide {
+    #nav-logo {
+        left: $nav-offset;
+        transform-origin: center left;
+    }
+    #nav-pages {
+        left: $nav-offset;
+        right: initial;
 
+        li {
+            text-align: left;
+        }
+    }
+    #nav-socials {
+        right: $nav-offset;
+        left: initial;
+    }
+}
+
+@media (max-width: $content-width + $content-padding * 4 + $nav-size * 2) {
+    nav {
+        #nav-logo {
+            background: red;
+        }
+    }
+}
 ._404 {
     font-family: 'Oswald', sans-serif;
     text-align: center;
