@@ -40,7 +40,7 @@ footer {
 }
 
 .content-wrapper-max {
-    max-width: $content-width-max
+    max-width: $content-width-max;
 }
 
 .content-wrapper-narrow {
@@ -140,6 +140,7 @@ nav {
         }
     }
 }
+
 ._404 {
     font-family: 'Oswald', sans-serif;
     text-align: center;
