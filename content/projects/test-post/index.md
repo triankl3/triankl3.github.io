@@ -3,7 +3,7 @@ draft: false
 title: "The biography of a test post"
 date: 2023-08-07T18:54:11+02:00
 description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore recusandae aperiam rerum ipsa accusantium reiciendis doloremque voluptas, officia dolorem et expedita quaerat nam explicabo non iure? Cupiditate, ea nulla?"
-tags: ["test", "post"]
+tags: ["project", "testpost"]
 image: "featured1.webp"
 ---
 

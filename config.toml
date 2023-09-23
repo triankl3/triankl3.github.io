@@ -17,7 +17,8 @@ enableEmoji = true
         email = 'triankl3@gmail.com'
 
 [permalinks]
-    projects = "/:filename/"
+    projects = "/projects/:filename/"
+    blog = "/blog/:filename/"
 
 [markup]
   [markup.goldmark.renderer]
