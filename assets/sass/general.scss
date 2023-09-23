@@ -47,81 +47,73 @@ footer {
     max-width: $content-width-narrow;
 }
 
-#nav-logo, #nav-socials, #nav-index {
-    position: fixed;
-    z-index: 99;
+nav {
+    #nav-logo, #nav-socials, #nav-pages {
+        position: fixed;
+        z-index: 99;
 
-    mix-blend-mode: difference;
-
-    user-select: none;
-
-    ul {
         margin: 0;
         padding: 0;
 
         list-style: none;
-    }
-}
 
-#nav-logo, #nav-socials {
-    li {
-        transform-origin: center center;
+        mix-blend-mode: difference;
+        user-select: none;
+    }
+
+    #nav-logo {
+        top: $nav-size * 2;
+        right: calc(50% + #{($content-width / 2)});
+        height: $nav-size * 3;
+        width: $nav-size * 3;
+
+        transform-origin: center right;
         transition: transform .15s ease-in-out;
     }
-    li:hover {
+    #nav-logo:hover {
         transform: scale(1.1);
     }
-}
-
-#nav-logo {
-    top: $nav-size * 2;
-    right: calc(50% + #{($content-width / 2)});
-    height: $nav-size * 3;
-    width: $nav-size * 3;
-
-    img {
-        width: $nav-size * 3;
-    }
-}
-
-#nav-socials {
-    top: $nav-size * 2;
-    left: calc(50% + #{($content-width / 2)});
-    width: $nav-size * 2;
-    height: 100%;
-    padding: 0 $nav-size / 2;
     
-    li {
-        margin-top: $nav-size * 0.5;
-    }
-
-    img {
-        width: $nav-size;
-        height: $nav-size;
-    }
-}
-
-#nav-index {
-    top: $nav-size * 5;
-    right: calc(50% + #{($content-width / 2)});
-
-    font-family: 'Oswald', sans-serif;
-    font-size: $nav-size * 1.25;
-
-    li {
-        font-family: 'Oswald', sans-serif;
-        font-weight: 400;
-        text-align: right;
+    #nav-socials {
+        top: $nav-size * 2;
+        left: calc(50% + #{($content-width / 2)});
+        width: $nav-size * 2;
+        height: 100%;
+        padding: 0 $nav-size / 2;
         
-        cursor: pointer;
+        li {
+            margin-top: $nav-size * 0.5;
+            transform-origin: center center;
+            transition: transform .15s ease-in-out;
+        }
+        li:hover {
+            transform: scale(1.1);
+        }
+    
+        img {
+            width: $nav-size;
+            height: $nav-size;
+        }
+    }
 
-        transform-origin: center left;
-        transition: font-weight .15s ease-in-out;
+    #nav-pages {
+        top: $nav-size * 5;
+        right: calc(50% + #{($content-width / 2)});
+    
+        font-family: 'Oswald', sans-serif;
+        font-size: $nav-size;
+        text-transform: uppercase;
+    
+        li {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 400;
+            text-align: right;
+            
+            a {
+                text-decoration: none;
+            }
+        }
     }
-    li:hover {
-        font-weight: 800;
-    }
-    text-transform: uppercase;
 }
 
 ._404 {
