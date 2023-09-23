@@ -15,15 +15,6 @@ body {
     color-scheme: dark;
 }
 
-a, a:visited, a:hover {
-    color: $color-text;
-    text-decoration: underline;
-    transition: font-weight .1s ease-in-out;
-}
-a:hover {   
-    font-weight: 500;
-}
-
 main {
     min-height: calc(100vh);
 }
@@ -134,12 +125,11 @@ footer {
 }
 
 ._404 {
-    height: 80vh;
-    padding: 0;
-    mix-blend-mode: difference;
     font-family: 'Oswald', sans-serif;
     text-align: center;
     text-transform: uppercase;
+    
+    mix-blend-mode: difference;
 
     h1 {
         margin: 0;
@@ -177,4 +167,13 @@ footer {
         user-select: none;
         transition: all .2s ease-in-out;
     }
+}
+
+a, a:visited, a:hover {
+    color: $color-text;
+    text-decoration: underline;
+    transition: font-weight .1s ease-in-out;
+}
+a:hover {   
+    font-weight: 500;
 }
