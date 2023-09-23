@@ -27,7 +27,7 @@ article {
 
             opacity: 0.5;
 
-            .grid {
+            .effect-grid {
                 height: 100%;
             }
         }
@@ -44,8 +44,7 @@ article {
         }
 
         .content-wrapper-max {
-            padding: $content-padding $nav-size * 4 + $content-padding;
-            max-width: $content-width-max * 0.8;
+            padding: $content-padding $nav-size * 2 + $content-padding;
 
             position: relative;
             height: $post-header-height;
@@ -247,7 +246,7 @@ article {
 
     // Sections used to organize and style content in blogposts into visually attractive pieces
     .section-column, .section-two-column, .section-jumbo, .section-gallery {
-        padding: $content-padding * 4 $nav-size * 4;
+        padding: $content-padding * 4 $nav-size * 2;
     }
 
     .section-column {
