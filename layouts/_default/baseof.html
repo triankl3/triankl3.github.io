@@ -32,6 +32,9 @@
         {{ else if (.Page.Title) }}
             {{ $pageTitle = print .Page.Title " | " .Site.Title }}
         {{- end -}}
+        <title>
+            {{- $pageTitle -}}
+        </title> 
 
         <!-- Facebook Meta Tags -->
         <meta property="og:title" content="{{ $pageTitle }}">
@@ -56,15 +59,10 @@
 
         {{ $photoswipe_style := resources.Get "css/photoswipe.css"  | resources.Minify }}
         <link rel="stylesheet" href="{{ $photoswipe_style.RelPermalink }}">
-
-        <title>
-            {{- $pageTitle -}}
-        </title> 
     </head>
     <body>
         <div id="effect-reveal"></div>
         <div id="effect-noise"></div>
-
 
         <main>
             {{ block "main" . }}{{ end }}
@@ -75,6 +73,7 @@
         </footer>
     </body>
 
+    {{/* Load needed JS */}}
     {{ $vanillaTilt_js := resources.Get "js/vanillaTilt.js" | minify }}
     <script src="{{ $vanillaTilt_js.RelPermalink }}"></script>
 
