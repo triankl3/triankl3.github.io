@@ -12,12 +12,13 @@
         {{ $featured_color_rgb_2 := partial "hextorgb.html" $featured_color_2 | print | safeCSS }}
         <div id="featured-image" style="background-image: url('{{ $featured_img.RelPermalink }}')"></div>
 
-        {{ partial "grid.html" . }}
-
         <div id="header-shadow"></div>
+        
+        {{ partial "effect-grid.html" }}
+        
+        {{ partial "effect-cube.html" "cube1" }}
+        {{ partial "effect-cube.html" "cube2" }}
 
-        {{ partial "cube.html" "cube1" }}
-        {{ partial "cube.html" "cube2" }}
         <!-- Apply post featured color to grid and cube --> 
         <style>            
             .grid-lines {
@@ -29,7 +30,7 @@
                 .cube-side {
                     border: 1px solid rgba({{ $featured_color_rgb_2 }}, 0.4 );
                     background-color: rgba({{ $featured_color_rgb }}, 0.8 );
-                    box-shadow: rgba({{ $featured_color_rgb }}, 1 ) 0px 0px 100px 15px;
+                    box-shadow: rgba({{ $featured_color_rgb }}, 0.8 ) 0 0 128px 0;
                 }
             }
             #cube1 {

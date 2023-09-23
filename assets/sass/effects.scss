@@ -1,4 +1,5 @@
-#reveal-anim {
+// Use mix-blend-mode to create a hue shift effect when opening a page
+#effect-reveal {
     position: fixed;
     top: 0;
     left: 0;
@@ -7,12 +8,11 @@
 
     pointer-events: none;
 
-    // background-color: $color-text;
     mix-blend-mode: difference;
     z-index: 999;
-    animation: reveal-anim 1s ease-in-out forwards;
+    animation: animation-effect-reveal 1s ease-in-out forwards;
 }
-@keyframes reveal-anim {
+@keyframes animation-effect-reveal {
     0% {
         background-color: darken($color-text, 30%);
     }
@@ -24,7 +24,8 @@
     }
 }
 
-.noise-bg {
+// Animated background noise effect
+#effect-noise {
     position: fixed;
     top: -50%;
     left: -50%;
@@ -34,11 +35,11 @@
     height: 200vh;
     background: transparent url('/img/noise-transparent.png') repeat 0 0;
     background-repeat: repeat;
-    animation: noise-bg-animation 0.5s infinite;
+    animation: animation-effect-noise 0.5s infinite;
     z-index: -101;
 }
 
-@keyframes noise-bg-animation {
+@keyframes animation-effect-noise {
     0% { transform: translate(0,0) }
     10% { transform: translate(-5%,-5%) }
     20% { transform: translate(-10%,5%) }
@@ -52,11 +53,11 @@
     100% { transform: translate(5%,0) }
 }
 
+/// 
 $cube-size: 128px;
 $cube-size-half: $cube-size/2;
 $animation-time: 15s;
-$cube-color: $color-text;
-.cube-container {
+.effect-cube-container {
 	width: $cube-size;
 	height: $cube-size;
 	perspective: $cube-size*4;
@@ -65,15 +66,15 @@ $cube-color: $color-text;
     position: absolute;
     z-index: -110;
 
-    .cube {
+    .effect-cube {
         position: relative;
         width: 100%;
         height: 100%;
         transform: translate(0,0);
         transform-style: preserve-3d;
-        animation: cube-animation $animation-time infinite linear;
+        animation: animation-effect-cube $animation-time infinite linear;
     }
-    .cube-side {
+    .effect-cube-side {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -82,8 +83,8 @@ $cube-color: $color-text;
         height: 100%;
         transform-origin: center center;
         border: 1px solid rgba($color-background, 0.4);
-        background-color: rgba($cube-color, 0.8);
-        box-shadow: rgba($cube-color, 1) 0 0 128px 0;
+        background-color: rgba($color-text, 0.8);
+        box-shadow: rgba($color-text, 0.8) 0 0 $cube-size 0;
     }
 
     .back {
@@ -115,7 +116,7 @@ $cube-color: $color-text;
     }
 }
 
-@keyframes cube-animation {
+@keyframes animation-effect-cube {
 	0%{
 		transform: rotateY(45deg) rotateX(60deg); 
 	}
@@ -133,42 +134,44 @@ $cube-color: $color-text;
 	}
 }
 
-.grid-container {
+.effect-grid-container {
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100vw;
     z-index: -120;
-}
-.grid {
-	width: 100%;
-	height: 100vh;
-	overflow: hidden;
-	perspective: (100vh * .75);
-}
-.grid-fade {	
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	z-index: 1;
-	background: radial-gradient(ellipse at 50% 50%,
-		rgba($color-background, 0%) 0%,
-		rgba($color-background, 100%) 80%);
-}
-.grid-lines {
-	width: 100%;
-	height: 200%;
-	background-image:
-    linear-gradient(to right, $color-text 1px, transparent 0),
-    linear-gradient(to bottom, $color-text 1px, transparent 0);
-	background-size: 45px 30px;
-	background-repeat: repeat;
-	transform-origin: 100% 0 0;
-	animation: grid-animation 45s linear infinite;
-}
 
-@keyframes grid-animation {
+    .effect-grid {
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        perspective: (100vh * .75);
+    
+        .effect-grid-fade {	
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 1;
+            background: radial-gradient(ellipse at 50% 50%,
+                rgba($color-background, 0%) 0%,
+                rgba($color-background, 100%) 80%);
+        }
+    
+        .effect-grid-lines {
+            width: 100%;
+            height: 200%;
+            background-image:
+            linear-gradient(to right, $color-text 1px, transparent 0),
+            linear-gradient(to bottom, $color-text 1px, transparent 0);
+            background-size: 45px 30px;
+            background-repeat: repeat;
+            transform-origin: 100% 0 0;
+            animation: effect-grid-animation 45s linear infinite;
+        }
+    }
+}
+@keyframes effect-grid-animation {
 	0% {
 		transform: rotateX(45deg) translateY(-50%);
 	}
