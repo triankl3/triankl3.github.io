@@ -65,7 +65,9 @@
         <div id="reveal-anim"></div>
         <div class="noise-bg"></div>
 
-        {{ block "main" . }}{{ end }}
+        <main>
+            {{ block "main" . }}{{ end }}
+        </main>
 
         <footer>
             <p>{{ .Site.Copyright }} <a href="{{ .Site.Params.source }}" target="_blank">License and source code available on GitHub.</a></p>

@@ -24,18 +24,13 @@ a:hover {
     font-weight: 500;
 }
 
+main {
+    min-height: calc(100vh);
+}
+
 footer {
-    padding: $content-padding / 2 0 $content-padding 0;
-    box-shadow: 0 0 $content-padding / 2 $content-padding $color-text;
-    background-color: $color-text;
-    
-    * {
-        font-weight: 600;
-        color: $color-background;
-    }
-    a:visited {
-        color: $color-background;
-    }
+    padding: $content-padding 0;
+    background-color: $color-background;
 
     p {
         text-align: center;
