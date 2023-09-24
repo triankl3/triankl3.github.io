@@ -189,6 +189,8 @@ article {
     figure {
         margin: 0;
         padding: 0;
+
+        filter: drop-shadow(0 0 16px rgba($color-background, 1));
     }
 
     .pspw-lightbox {
@@ -242,6 +244,8 @@ article {
         width: 100%;
         height: auto;
         margin: $content-padding 0;
+
+        filter: drop-shadow(0 0 16px rgba($color-background, 1));
     }
 
     // Sections used to organize and style content in blogposts into visually attractive pieces
