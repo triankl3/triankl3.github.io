@@ -133,14 +133,6 @@ nav {
     }
 }
 
-@media (max-width: $content-width + $content-padding * 4 + $nav-size * 2) {
-    nav {
-        #nav-logo {
-            background: red;
-        }
-    }
-}
-
 ._404 {
     font-family: 'Oswald', sans-serif;
     text-align: center;
@@ -193,4 +185,41 @@ a, a:visited, a:hover {
 }
 a:hover {   
     font-weight: 500;
+}
+
+@media (max-width: $max-width-tablet) {
+    .content-wrapper {
+        max-width: $content-width-narrow;
+    }
+
+    nav {
+        #nav-logo, #nav-pages {
+            right: calc(50% + #{($content-width-narrow / 2)});
+        }
+        #nav-logo {
+            width: $nav-size * 0.6;
+            height: $nav-size * 0.6;
+        }
+        #nav-pages {
+            top: $nav-offset + $nav-size * 0.6 + $nav-font-size / 2;
+            font-size: $nav-font-size * 0.6;
+        }
+        #nav-socials {
+            left: calc(50% + #{($content-width-narrow / 2)});
+
+            img {
+                width: $nav-font-size * 0.6;
+                height: $nav-font-size * 0.6;
+            }
+        }
+    }
+}
+
+// Mobile
+@media (max-width: $max-width-mobile) {
+    // Switch top top navbar
+    
+    #nav-logo {
+        background: red;
+    }
 }

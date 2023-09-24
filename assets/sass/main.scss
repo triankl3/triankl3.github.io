@@ -6,12 +6,16 @@ $content-width-max: 1920px;
 $content-width-narrow: 720px;
 $content-padding: 16px;
  
-$nav-size: 72px;
-$nav-font-size: 20px;
+$nav-size: 92px;
+$nav-font-size: 26px;
+
+$max-width-tablet: $content-width + $content-padding * 4 + $nav-size * 2;
+$max-width-mobile: $content-width-narrow + $content-padding * 4 + $nav-size * 1.2;
 
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700'); //Oswald
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800'); //Manrope
 @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap'); //Michroma
+
 @import
     "general",
     "index",
