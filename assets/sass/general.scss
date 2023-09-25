@@ -249,14 +249,14 @@ nav {
         transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
     }
 
-    h1, time, p {
+    h1, h2, p {
         margin: 0;
         padding: 0;
     }
     
-    time { // Date
+    h2 { // Date
         font-family: 'Michroma', sans-serif;
-        font-size: 10px;
+        font-size: 12px;
         text-transform: uppercase;
     }
 

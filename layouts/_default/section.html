@@ -59,7 +59,7 @@
                 <a href=" {{ .RelPermalink }} " class="tf-filter-item" data-tags="{{ with .Params.tags }} {{ range . }} {{ . }} {{ end }} {{ end }}">
                     <div class="posts-showcase-post tilt-img" onmouseenter="updateGradientColor({{ $featured_color_list }})" onmouseleave="resetGradientColor()">
                         <div style="background-image: url('{{ $featured_img.RelPermalink }}')"></div>
-                        <time>{{ .Date.Format "Jan 2, 2006" }}</time>
+                        <h2>{{ .Date.Format "Jan 2, 2006" }} // {{ .Section }}</h2>
                         <h1 style=" -webkit-text-stroke: 1px color-mix(in srgb, {{ $featured_color }} 50%, white)">{{ .Title }}</h1>
                         <p>{{ .Description | truncate 96 }}</p>
                         
