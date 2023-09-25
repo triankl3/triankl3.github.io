@@ -87,8 +87,10 @@ article {
                 transform: translateX(-50%);
 
                 .post-tag {
-                    background-color: rgba($color-background, 1);
-                    font-size: 15px;
+                    border: none;
+                    background-color: rgba($color-text, 1);
+                    color: $color-background;
+                    font-size: 16px;
                 }
             }
         }
