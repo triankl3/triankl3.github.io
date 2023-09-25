@@ -364,3 +364,60 @@ nav {
         background: red;
     }
 }
+
+#landing img, #landing-extended {
+    mix-blend-mode: difference;
+}
+
+#contact-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $color-text;
+    mix-blend-mode: difference;
+
+    z-index: -1;
+}
+#contact {
+    color: $color-background;
+    height: calc(100vh - #{$footer-height});
+
+    * {
+        color: $color-background;
+    }
+
+    p {
+        font-family: 'Manrope', sans-serif;
+        font-size: 20px;
+        text-align: justify;
+        letter-spacing: -1px;
+        font-weight: 400;
+    }
+
+    ul {
+        width: 100%;
+        margin: $content-padding 0;
+
+        list-style: none;
+        text-align: center;
+
+        li {
+            margin: 0 $content-padding / 2;
+
+            display: inline-block;
+            img {
+                height: 32px;
+                transition: transform .2s ease-in-out;
+
+                filter: invert(1);
+            }
+        }
+        li:hover {
+            img {
+                transform: scale(1.2);
+            }
+        }
+    }
+}
