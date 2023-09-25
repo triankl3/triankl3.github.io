@@ -1,6 +1,5 @@
 {{ define "main" }}
 
-{{ partial "effect-grid.html" }}
 {{ partial "effect-cube.html" "cube1" }}
 {{ partial "effect-cube.html" "cube2" }}
 <style>
@@ -17,67 +16,7 @@
 <div class="content-wrapper">
     <div id="landing">
         <img src="/img/about-main.svg" style="user-select: none;" draggable="false">
-    </div>
-
-    <div id="projects">
-        <div class="posts-showcase animate-visibility">
-            <div class="posts-showcase-alltags">
-                <ul class="post-tags">
-                    <li class="post-tag post-tag-selected">all</li>
-                    {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-                        <li class="post-tag">{{ $name }}</li>
-                    {{ end }}
-                </ul>
-            </div>
-
-            {{ range (where .Site.Pages "Section" "projects") }}
-                {{ range .Pages }}
-                    <!-- Prepare a compressed version of the feature image to use as a background/thumbnail -->
-                    {{ $featured_img_path := print "img/" .Params.image }}
-                    {{ $featured_img := resources.Get $featured_img_path}}
-                    {{ $featured_img := $featured_img.Resize "x480" }}
-                    {{ $featured_color := (index $featured_img.Colors 1) }}
-
-                    <a href=" {{ .RelPermalink }} ">
-                        <div class="posts-showcase-post tilt-img">
-                            <div style="background-image: url('{{ $featured_img.RelPermalink }}')"></div>
-                            <time>{{ .Date.Format "Mon Jan 2, 2006" }}</time>
-                            <h1 style=" -webkit-text-stroke: 1px color-mix(in srgb, {{ $featured_color }} 50%, white)">{{ .Title }}</h1>
-                            <p>{{ .Description | truncate 96 }}</p>
-                            
-                            <ul class="post-tags">
-                                {{- with .Params.tags -}}
-                                    {{- if ge (len .) 1 -}}
-                                        {{- range . -}}
-                                        <li class="post-tag">{{ . }}</li>
-                                        {{ end -}}
-                                    {{- end -}}
-                                {{- end -}}
-                            </ul>
-                        </div>
-                    </a>
-                {{ end }}
-            {{ end }}
-        </div>
-
         <img id="landing-extended" src="/img/about-extended.svg" style="user-select: none;" draggable="false">
-    </div>
-</div>
-
-<div id="contact">
-    <div class="content-wrapper">
-        <img src="/img/contact.svg" style="user-select: none;" draggable="false">
-        <p>
-            The best method to reach me is via e-mail at <a href="mailto:{{ .Site.Params.contact.email }}">{{ .Site.Params.contact.email }}</a>, 
-            for more urgent inquires you can contact me through Discord <span style="font-weight: 400;">{{ .Site.Params.contact.discord }}</span>.
-            You can also find me on the following platforms:
-        </p>
-
-        <ul>
-            <li><a target="_blank" href="{{ site.Params.contact.github }}"><img src="/img/github.svg"></a></li>
-            <li><a target="_blank" href="{{ site.Params.contact.linkedin }}"><img src="/img/linkedin.svg"></a></li>
-            <li><a target="_blank" href="{{ site.Params.contact.twitter }}"><img src="/img/twitter.svg"></a></li>
-        </ul>
     </div>
 </div>
 

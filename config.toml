@@ -5,6 +5,7 @@ copyright = 'Design and content subject to copyright triankl3.com(Nikola Peševi
 disableKinds = ["RSS"]
 enableRobotsTXT = true
 enableEmoji = true
+pluralizelisttitles = false
 
 [params]
     description = 'Personal blog and portfolio in one. Showcasing projects and celebrating the process alongside the solution.'
@@ -15,10 +16,6 @@ enableEmoji = true
         linkedin = 'https://www.linkedin.com/in/triankl3/'
         discord = '@triankl3'
         email = 'triankl3@gmail.com'
-
-[permalinks]
-    projects = "/projects/:filename/"
-    blog = "/blog/:filename/"
 
 [markup]
   [markup.goldmark.renderer]

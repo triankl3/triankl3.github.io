@@ -4,16 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        {{ $pageType := "" }}
-        {{- if eq .Section "blog" -}}
-            {{- $pageType = "article" -}}
-        {{- else if eq .Section "projects" -}}
-            {{- $pageType = "article" -}}
-        {{- end -}}
-
         {{/*  OPENGRAPH / TWITTER META  */}}
-        {{/*  Use post description in posts, otherwise use main website description.  */}}
-        {{- if in $pageType "article" -}}
+        {{/*  Use frontmatter description when available, otherwise use main website description.  */}}
+        {{- if isset .Params "Description" -}}
             <meta name="description" content="{{ .Params.Description }}" />
         {{- else -}}
             <meta name="description" content="{{ site.Params.Description }}" />
@@ -21,7 +14,7 @@
 
         {{/*  Determine featured image if it exists  */}}
         {{ $featured_img := "" }}
-        {{ if (.IsPage) }}
+        {{ if isset .Params "image" }}
             <!-- Prepare a compressed version of the feature image to use if on a post -->
             {{ $featured_img_path := print "img/" .Params.image }}
             {{ $featured_img = resources.Get $featured_img_path }}
@@ -43,8 +36,8 @@
 
         <!-- Facebook Meta Tags -->
         <meta property="og:title" content="{{ $pageTitle }}">
-        <meta property="og:description" content="{{- if (.IsPage) -}} {{- .Description -}} {{- else -}} {{- .Site.Params.Description -}} {{- end -}}">
-        <meta property="og:image" content='{{- if (.IsPage) -}} {{- $featured_img.Permalink -}} {{- end -}}'>
+        <meta property="og:description" content='{{- if isset .Params "description" -}} {{- .Description -}} {{- else -}} {{- .Site.Params.Description -}} {{- end -}}'>
+        <meta property="og:image" content='{{- if isset .Params "image" -}} {{- $featured_img.Permalink -}} {{- end -}}'>
         <meta property="og:url" content="{{ .Page.Permalink }}">
         <meta property="og:site_name" content="{{ .Site.Title }}">
         <meta property="og:type" content="article">
@@ -52,8 +45,8 @@
         <!-- Twitter Meta Tags -->
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="{{ .Page.Title }}">
-        <meta name="twitter:description" content="{{- if (.IsPage) -}} {{- .Description -}} {{- else -}} {{- .Site.Params.Description -}} {{- end -}}">
-        <meta name="twitter:image" content="{{- if (.IsPage) -}} {{- $featured_img.Permalink -}} {{ end -}}">
+        <meta name="twitter:description" content='{{- if isset .Params "description" -}} {{- .Description -}} {{- else -}} {{- .Site.Params.Description -}} {{- end -}}'>
+        <meta name="twitter:image" content='{{- if isset .Params "image" -}} {{- $featured_img.Permalink -}} {{ end -}}'>
 
         {{/* Load needed CSS */}}
         {{ $normalize_style := resources.Get "css/modern-normalize.css" | resources.Minify }}
@@ -69,11 +62,17 @@
         <div id="effect-reveal"></div>
         <div id="effect-noise"></div>
         <div id="effect-gradient"></div>
+        <div class="effect-grid-container">
+            <div class="effect-grid">
+                <div class="effect-grid-fade"></div>
+                <div class="effect-grid-lines"></div>
+            </div>
+        </div>
 
-        <nav {{ if in $pageType "article" }} class="nav-wide" {{ end }}>
+        <nav {{ if not .IsHome }} {{ if not (eq .Parent .Site.Home) }} class="nav-wide" {{ end }} {{ end }}>
             <a id="nav-logo" href="/"><img src="/img/logo.svg"></a>
             <ul id="nav-pages">
-                <li><a href="/projects">projects</a></li>
+                <li><a href="/project">projects</a></li>
                 <li><a href="/blog">blog</a></li>
                 <li><a href="/about">about</a></li>
                 <li><a href="/contact">contact</a></li>

@@ -1,0 +1,66 @@
+{{ define "main" }}
+
+<div class="content-wrapper">
+    <div class="posts-showcase">
+        <div class="posts-showcase-alltags">
+            <ul class="post-tags">
+                <li class="post-tag post-tag-selected">all</li>
+        
+                {{ $section_tags := slice }}
+                {{- range (where .Site.Pages "Section" .Section) -}}
+                    {{- range .Pages -}}
+                        {{- with .Params.tags -}}
+                            {{- if ge (len .) 1 -}}
+                                {{- range . -}}
+                                    {{- if not (in $section_tags .) -}}
+                                        {{- $section_tags = $section_tags | append . -}}
+                                    {{- end -}}
+                                {{ end -}}
+                            {{- end -}}
+                        {{- end -}}
+                    {{- end -}}
+                {{- end -}}
+        
+                {{- range $index, $tag := $section_tags -}}
+                    <li class="post-tag">{{ $tag }}</li>
+                {{- end -}}
+            </ul>
+        </div>
+    
+        {{- range (where .Site.Pages "Section" .Section) -}}
+            {{- range .Pages -}}
+                <!-- Prepare a compressed version of the feature image to use as a background/thumbnail -->
+                {{- $featured_img_path := print "img/" .Params.image -}}
+                {{- $featured_img := resources.Get $featured_img_path -}}
+                {{- $featured_img := $featured_img.Resize "x480" -}}
+                {{- $featured_color := (index $featured_img.Colors 1) -}}
+    
+                <a href=" {{ .RelPermalink }} ">
+                    <div class="posts-showcase-post tilt-img">
+                        <div style="background-image: url('{{ $featured_img.RelPermalink }}')"></div>
+                        <time>{{ .Date.Format "Mon Jan 2, 2006" }}</time>
+                        <h1 style=" -webkit-text-stroke: 1px color-mix(in srgb, {{ $featured_color }} 50%, white)">{{ .Title }}</h1>
+                        <p>{{ .Description | truncate 96 }}</p>
+                        
+                        <ul class="post-tags">
+                            {{- with .Params.tags -}}
+                                {{- if ge (len .) 1 -}}
+                                    {{- range . -}}
+    
+                                    {{- if not (in $section_tags .) -}}
+                                        {{- $section_tags = $section_tags | append . -}}
+                                    {{- end -}}
+    
+                                    <li class="post-tag">{{ . }}</li>
+                                    {{ end -}}
+                                {{- end -}}
+                            {{- end -}}
+                        </ul>
+                    </div>
+                </a>
+            {{- end -}}
+        {{- end -}}
+    </div>
+</div>
+
+{{ end }}
