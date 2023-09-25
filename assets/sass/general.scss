@@ -21,6 +21,10 @@ a, a:visited {
     font-weight: 600;
     transition: background-color .25s ease-in-out;
 }
+a:hover {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.25);
+}
 
 $footer-height: 96px;
 main {
@@ -42,11 +46,6 @@ footer {
         text-align: left;
         padding: 0;
         margin: 0;
-
-        a:hover {
-            text-decoration: none;
-            background-color: rgba(255, 255, 255, 0.25);
-        }
     }
 }
 
@@ -69,6 +68,10 @@ footer {
 
 $nav-offset: $content-padding * 2;
 nav {
+    a:hover {
+        background-color: initial;
+    }
+
     #nav-logo, #nav-socials, #nav-pages {
         position: fixed;
         z-index: 99;
@@ -177,6 +180,7 @@ nav {
 .posts-showcase {
     a, a:hover {
         text-decoration: none;
+        background-color: initial;
     }
 }
 
