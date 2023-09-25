@@ -271,7 +271,7 @@ nav {
         letter-spacing: 2px;
 
         filter: saturate(0) brightness(2);
-        transition: all .2s ease-in-out;
+        transition: font-weight .2s ease-in-out, filter .2s ease-in-out, color .2s ease-in-out;
     }
 
     .post-tags { // Position post tags at the bottom left
@@ -328,7 +328,7 @@ nav {
         border-style: solid;
     
         user-select: none;
-        transition: all .2s ease-in-out;
+        transition: color .2s ease-in-out, background-color .2s ease-in-out;
     }
 }
 
