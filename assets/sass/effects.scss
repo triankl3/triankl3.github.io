@@ -189,7 +189,7 @@ $gradient-colors: lighten($color-background, 25%), $color-background;
 	background: linear-gradient(270deg, $gradient-colors);
 	background-size: 200% 200%;
 
-	animation: animation-effect-gradient 15s linear infinite;
+	animation: animation-effect-gradient 7.5s linear infinite;
 }
 
 @keyframes animation-effect-gradient { 
