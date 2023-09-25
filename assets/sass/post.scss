@@ -49,21 +49,15 @@ article {
             position: relative;
             height: $post-header-height;
             
-            h1, time, .post-tags {
-                text-align: center;
-            }
-
             h1 {
                 margin: 0 0 $content-padding 0;
                 
                 font-family: 'Oswald', sans-serif;
                 font-weight: 800;
                 font-size: 92px;
-
-                color: rgba(0,0,0,0);
             }
 
-            time {
+            h2 {
                 margin-top: $content-padding;
                 display: block;
                 font-size: 16px;
@@ -74,7 +68,6 @@ article {
 
             p {
                 max-width: $content-width-narrow;
-                margin: 0 auto;
             }
             
             .post-tags {
@@ -83,13 +76,12 @@ article {
 
                 position: absolute;
                 bottom: $content-padding * 2;
-                left: 50%;
-                transform: translateX(-50%);
+                z-index: 1;
 
                 .post-tag {
                     border: none;
-                    background-color: rgba($color-text, 1);
-                    color: $color-background;
+                    // background-color: rgba($color-text, 1);
+                    color: $color-text;
                     font-size: 16px;
                 }
             }
