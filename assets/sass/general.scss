@@ -23,7 +23,7 @@ a, a:visited {
 }
 a:hover {
     text-decoration: none;
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 $footer-height: 96px;
@@ -90,12 +90,14 @@ nav {
         right: calc(50% + #{($content-width / 2)});
         width: $nav-size;
         height: $nav-size;
+        padding: 4px;
 
-        transform-origin: center right;
-        transition: transform .15s ease-in-out;
+        // transform-origin: center center;
+        transition: background-color .15s ease-in-out;
     }
     #nav-logo:hover {
-        transform: scale(1.1);
+        // transform: scale(1.05);
+        background-color: rgba(255, 255, 255, 0.2);
     }
     
     #nav-socials {
@@ -104,16 +106,18 @@ nav {
         height: 100%;
         
         li {
-            margin-bottom: $nav-font-size / 2;
+            height: $nav-font-size * 1.5;
+
+            margin-bottom: $nav-font-size * 0.25;
             transform-origin: center center;
-            transition: transform .15s ease-in-out;
+            transition: background-color .15s ease-in-out;
+            padding: $nav-font-size * 0.25;
         }
         li:hover {
-            transform: scale(1.1);
+            background-color: rgba(255, 255, 255, 0.2);
         }
     
         img {
-            width: $nav-font-size;
             height: $nav-font-size;
         }
     }
@@ -127,24 +131,25 @@ nav {
         text-transform: uppercase;
     
         li {
+            padding: 2px;
             font-family: 'Oswald', sans-serif;
             text-align: right;
+
+            transition: background-color .15s ease-in-out;
             
             a {
                 font-weight: 400;
                 text-decoration: none;
-                transition: font-weight .15s ease-in-out;
             }
-            a:hover {
-                font-weight: 600;
-            }
+        }
+        li:hover {
+            background-color: rgba(255, 255, 255, 0.2);
         }
     }
 }
 .nav-wide {
     #nav-logo {
         left: $nav-offset;
-        transform-origin: center left;
     }
     #nav-pages {
         left: $nav-offset;
@@ -236,7 +241,7 @@ nav {
 
         background-position: left;
         background-repeat: no-repeat;
-        background-size:cover;
+        background-size: 120%;
 
         transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
     }
