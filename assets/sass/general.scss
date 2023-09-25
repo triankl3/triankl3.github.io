@@ -15,18 +15,38 @@ body {
     color-scheme: dark;
 }
 
-main {
-    min-height: calc(100vh);
+a, a:visited {
+    color: $color-text;
+    text-decoration: underline;
+    font-weight: 600;
+    transition: background-color .25s ease-in-out;
 }
 
+$footer-height: 96px;
+main {
+    min-height: calc(100vh - #{$footer-height});
+}
 footer {
-    padding: $content-padding 0;
-    background-color: $color-background;
+    padding: $content-padding;
+    // background-color: $color-background;
+    height: $footer-height;
+
+    display: flex;
+    justify-content: center; /* align item horizontally */
+    align-items: center; /* align item vertically */
 
     p {
-        text-align: center;
+        font-weight: 600;
+
+        text-transform: uppercase;
+        text-align: left;
         padding: 0;
         margin: 0;
+
+        a:hover {
+            text-decoration: none;
+            background-color: rgba(255, 255, 255, 0.25);
+        }
     }
 }
 
@@ -105,11 +125,15 @@ nav {
     
         li {
             font-family: 'Oswald', sans-serif;
-            font-weight: 400;
             text-align: right;
             
             a {
+                font-weight: 400;
                 text-decoration: none;
+                transition: font-weight .15s ease-in-out;
+            }
+            a:hover {
+                font-weight: 600;
             }
         }
     }
@@ -302,15 +326,6 @@ nav {
         user-select: none;
         transition: all .2s ease-in-out;
     }
-}
-
-a, a:visited, a:hover {
-    color: $color-text;
-    text-decoration: underline;
-    transition: font-weight .1s ease-in-out;
-}
-a:hover {   
-    font-weight: 500;
 }
 
 @media (max-width: $max-width-tablet) {
