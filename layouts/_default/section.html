@@ -1,6 +1,7 @@
 {{ define "main" }}
 
 <script>
+    // This script handles changing the color gradient when hovering over a post
     var effectGradient = document.getElementById('effect-gradient');
     function updateGradientColor(colorArray) {
         effectGradient.setAttribute("style", "background: linear-gradient(90deg, " + colorArray + "); background-size: 200% 200%; opacity: 1;");
@@ -10,11 +11,20 @@
     }
 </script>
 
+<style>
+    .tf-filter-item {
+        display: none;
+    }
+    .tf-show-item {
+        display: initial;
+    }
+</style>
+
 <div class="content-wrapper">
     <div class="posts-showcase">
         <div class="posts-showcase-alltags">
             <ul class="post-tags">
-                <li class="post-tag post-tag-selected">all</li>
+                <li class="post-tag tag-button" id="selectAllTags" onclick="htf.showAll('tags')">all</li>
         
                 {{ $section_tags := slice }}
                 {{- range (where .Site.Pages "Section" .Section) -}}
@@ -32,7 +42,7 @@
                 {{- end -}}
         
                 {{- range $index, $tag := $section_tags -}}
-                    <li class="post-tag">{{ $tag }}</li>
+                    <li class="post-tag tag-button" id="tag-{{ $tag | safeJS }}" onclick="htf.checkFilter('{{ $tag | safeJS }}', 'tag-')">{{ $tag }}</li>
                 {{- end -}}
             </ul>
         </div>
@@ -46,7 +56,7 @@
                 {{- $featured_color := (index $featured_img.Colors 1) -}}
                 {{- $featured_color_list := delimit $featured_img.Colors ", " }}
     
-                <a href=" {{ .RelPermalink }} ">
+                <a href=" {{ .RelPermalink }} " class="tf-filter-item" data-tags="{{ with .Params.tags }} {{ range . }} {{ . }} {{ end }} {{ end }}">
                     <div class="posts-showcase-post tilt-img" onmouseenter="updateGradientColor({{ $featured_color_list }})" onmouseleave="resetGradientColor()">
                         <div style="background-image: url('{{ $featured_img.RelPermalink }}')"></div>
                         <time>{{ .Date.Format "Jan 2, 2006" }}</time>
@@ -57,12 +67,7 @@
                             {{- with .Params.tags -}}
                                 {{- if ge (len .) 1 -}}
                                     {{- range . -}}
-    
-                                    {{- if not (in $section_tags .) -}}
-                                        {{- $section_tags = $section_tags | append . -}}
-                                    {{- end -}}
-    
-                                    <li class="post-tag">{{ . }}</li>
+                                        <li class="post-tag">{{ . }}</li>
                                     {{ end -}}
                                 {{- end -}}
                             {{- end -}}
@@ -73,5 +78,25 @@
         {{- end -}}
     </div>
 </div>
+
+{{ $hugo_tags_filter_js := resources.Get "js/hugo-tags-filter-1.2.2.js" | minify }}
+<script src="{{ $hugo_tags_filter_js.RelPermalink }}"></script>
+<script>
+        // This script handles the tag filtering
+        var htf = new HugoTagsFilter({
+            filters: [
+                {
+                    name: 'tags',
+                    prefix: 'tag-',
+                    buttonClass: 'tag-button',
+                    allSelector: '#selectAllTags',
+                    attrName: 'data-tags',
+                }
+            ],
+            showItemClass: "tf-show-item",
+            filterItemClass: "tf-filter-item",
+            activeButtonClass: "post-tag-selected"
+        })
+</script>
 
 {{ end }}

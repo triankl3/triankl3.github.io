@@ -189,20 +189,20 @@ nav {
     }
 }
 
-.posts-showcase-alltags { // Add custom styling for tag selector
+.posts-showcase-alltags {
     .post-tags {
         .post-tag {
             margin-right: 12px;
             
             font-size: 18px;
-            font-weight: 400;
+            font-weight: 600;
 
             border-style: dashed;
             color: $color-text;
             background-color: rgba($color-background, 0.75);
         }
         .post-tag:hover {
-            font-weight: 800;
+            background-color: rgba(255, 255, 255, 0.2);
         }
         .post-tag-selected {
             border-style: solid;
@@ -210,7 +210,10 @@ nav {
             font-weight: 800;
         
             color: $color-background;
-            background-color: rgba($color-text, 1);
+            background-color: $color-text;
+        }
+        .post-tag-selected:hover {
+            background-color: $color-text;
         }
     }
 }
