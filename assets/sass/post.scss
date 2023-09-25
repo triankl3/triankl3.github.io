@@ -166,6 +166,10 @@ article {
         padding: 0;
 
         filter: drop-shadow(0 0 16px rgba($color-background, 1));
+
+        a:hover {
+            background-color: initial;  
+        }
     }
 
     .pspw-lightbox {
