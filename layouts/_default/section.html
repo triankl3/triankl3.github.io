@@ -38,7 +38,7 @@
                 <a href=" {{ .RelPermalink }} ">
                     <div class="posts-showcase-post tilt-img">
                         <div style="background-image: url('{{ $featured_img.RelPermalink }}')"></div>
-                        <time>{{ .Date.Format "Mon Jan 2, 2006" }}</time>
+                        <time>{{ .Date.Format "Jan 2, 2006" }}</time>
                         <h1 style=" -webkit-text-stroke: 1px color-mix(in srgb, {{ $featured_color }} 50%, white)">{{ .Title }}</h1>
                         <p>{{ .Description | truncate 96 }}</p>
                         
