@@ -5,7 +5,7 @@ It has been built from scratch, with the use of NPM for managing dependencies an
 
 ## LICENSE & COPYRIGHT
 Source Code is licensed under CC BY-NC-SA 4.0. See [LICENSE](LICENSE) for more information.
-All content available on the website including but not limited to: visual identity and design, text, images, videos, 3D assets and code samples are subject to copyright and owned by triankl3.com(Nikola Pešević), unless noted otherwise.
+All content available on the website including but not limited to: visual identity and design, text, images, videos, 3D assets and code samples are subject to copyright and owned by Nikola Pešević(triankl3.com), unless noted otherwise.
 
 ## Todo
 - [ ] Mobile & small screen optimizations (Currently website is broken on small screens)

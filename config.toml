@@ -1,11 +1,15 @@
 baseURL = 'https://triankl3.com/'
 languageCode = 'en-us'
 title = 'triankl3'
-copyright = 'Design and content subject to copyright triankl3.com(Nikola Pešević).'
+copyright = 'Design and content subject to copyright © 2023 Nikola Pešević(triankl3.com).'
 disableKinds = ["RSS"]
 enableRobotsTXT = true
 enableEmoji = true
 pluralizelisttitles = false
+
+[author]
+  email = 'triankl3@gmail.com'
+  name = 'Nikola Pešević'
 
 [params]
     description = 'Personal blog and portfolio in one. Showcasing projects and celebrating the process alongside the solution.'
