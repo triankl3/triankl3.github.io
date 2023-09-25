@@ -58,9 +58,7 @@ article {
                 
                 font-family: 'Oswald', sans-serif;
                 font-weight: 800;
-                font-size: 96px;
-
-                letter-spacing: 8px;
+                font-size: 92px;
 
                 color: rgba(0,0,0,0);
             }
@@ -76,10 +74,6 @@ article {
             p {
                 max-width: $content-width-narrow;
                 margin: 0 auto;
-
-                font-size: 14px;
-                text-align: justify;
-                letter-spacing: 1px;
             }
             
             .post-tags {
@@ -102,41 +96,28 @@ article {
 
     // Standard markdown elements
     p {
-
+        font-size: 16px;
+        line-height: 22px;
     }
 
     h1, h2, h3, h4, h5, h6 {
         padding: 0;
         margin: $content-padding / 4 0 $content-padding / 4 0;
     
-        font-family: 'Oswald', sans-serif;
+        font-family: 'Michroma', sans-serif;
         font-weight: 800;
         text-transform: uppercase;
     }
 
     h1 {
-        font-size: 92px;
-        letter-spacing: 2px;
-    }
-    
-    h2 {
-        font-size: 56px;
-        letter-spacing: 1px;
-    }
-    
-    h3 {
         font-size: 48px;
     }
     
-    h4 {
-        font-size: 40px;
-    }
-    
-    h5 {
+    h2 {
         font-size: 32px;
     }
     
-    h6 {
+    h3, h4, h5, h6 {
         font-size: 24px;
     }
 
@@ -153,8 +134,8 @@ article {
         
         font-family: 'Michroma', sans-serif;
         font-weight: 600;
-        font-size: 12px;
         * {
+            font-size: 12px;
             font-weight: 600;
         }
         text-transform: uppercase;
@@ -235,13 +216,12 @@ article {
         padding: $content-padding * 4 $nav-size * 2;
     }
 
-    .section-column {
-        .section-column-title {
-            margin: 0;
-            padding: 0;
+    .section-column-title {
+        margin: 0;
+        padding: 0;
 
-            font-size: 112px;
-        }
+        font-family: 'Michroma', sans-serif;
+        font-size: 72px;
     }
 
     .section-splash {
@@ -263,20 +243,15 @@ article {
         justify-content:center;
         
         h1 {
-            font-family: 'Manrope', sans-serif;
+            font-family: 'Michroma', sans-serif;
             text-transform: initial;
-            font-size: 156px;
+            font-size: 128px;
         }
     }
 
     .section-two-column {
         .section-column-title {
-            margin: 0;
-            padding: 0;
-
             text-align: left;
-
-            font-size: 112px;
         }
     }
     .section-two-column-left, .section-two-column-right {
@@ -305,7 +280,7 @@ article {
                 padding: $content-padding $nav-size * 1.2 + $content-padding;
 
                 h1 {
-                    font-size: 64px;
+                    font-size: 56px;
                 }
                 time {
                     font-size: 14px;
@@ -313,6 +288,7 @@ article {
                 p {
                     max-width: 65%;
                     font-size: 12px;
+                    line-height: 16px;
                 }
 
                 .post-tags {

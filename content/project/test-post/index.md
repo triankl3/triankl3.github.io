@@ -19,9 +19,6 @@ There might be other markdown elements which are *technically supported*, but ar
 # Heading level one
 ## Heading level two
 ### Heading level three
-#### Heading level four
-##### Heading level five
-###### Heading level six
 
 To create lines with breaks simply leave two spaces after a line.  
 We **love using bold** text sometimes. Using *italic* is also really interesting. But together they are ***fabulous***!  
