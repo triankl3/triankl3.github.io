@@ -138,6 +138,8 @@ nav {
             transition: background-color .15s ease-in-out;
             
             a {
+                display: inline-block;
+                width: 100%;
                 font-weight: 400;
                 text-decoration: none;
             }
