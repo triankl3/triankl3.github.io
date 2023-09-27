@@ -19,16 +19,12 @@ pluralizelisttitles = false
         twitter = 'https://twitter.com/triankl3'
         linkedin = 'https://www.linkedin.com/in/triankl3/'
         talenthub = 'https://create.roblox.com/talent/creators/1421670437'
-        discord = '@triankl3'
         email = 'triankl3@gmail.com'
 
 [markup]
   [markup.goldmark.renderer]
     unsafe = true
 
-  [markup.tableOfContents]
-    pre = ""
-    post = ""
   [markup.highlight]
     lineNos = true
     lineNumbersInTable = false
