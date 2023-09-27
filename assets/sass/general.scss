@@ -385,7 +385,7 @@ nav {
     mix-blend-mode: difference;
 }
 
-#contact-background {
+#contact-background, #about-background {
     position: fixed;
     top: 0;
     left: 0;
@@ -396,9 +396,8 @@ nav {
 
     z-index: -1;
 }
-#contact {
+#contact, #about {
     color: $color-background;
-    height: calc(100vh - #{$footer-height});
 
     * {
         color: $color-background;
@@ -414,10 +413,8 @@ nav {
 
     p {
         font-family: 'Manrope', sans-serif;
-        font-size: 20px;
-        text-align: justify;
-        letter-spacing: -1px;
-        font-weight: 400;
+        font-size: 18px;
+        font-weight: 500;
 
         margin: 0;
     }
