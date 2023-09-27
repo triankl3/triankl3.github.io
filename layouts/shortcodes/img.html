@@ -24,7 +24,7 @@
 
 <figure {{ if not (in $zoomable "false") }} class="pspw-lightbox" {{ end }}>
 {{ if not (in $zoomable "false") }}<a href="{{ $res.RelPermalink }}" data-pswp-width="{{ $res.Width }}" data-pswp-height="{{ $res.Height }}" target="_blank">{{- end -}}
-<img {{ if not (in $zoomable "false") }} class="tilt-img" {{ end }} srcset="{{ $set }}" sizes="(max-width: 720px) 720px, 100vw" src="{{ $res.RelPermalink }}" alt="{{ $alt }}" width="100%" height="auto"/>
+<img {{ if not (in $zoomable "false") }} class="vanilla-tilt" {{ end }} srcset="{{ $set }}" sizes="(max-width: 720px) 720px, 100vw" src="{{ $res.RelPermalink }}" alt="{{ $alt }}" width="100%" height="auto"/>
 {{ if not (in $zoomable "false") }}</a>{{ end }}
 <figcaption>{{ $alt }}</figcaption>
 </figure>

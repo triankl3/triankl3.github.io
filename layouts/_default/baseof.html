@@ -106,20 +106,13 @@
 
     <script> // Initialize scripts here
         // Init/Apply tilt effect
-        document.querySelectorAll('.tilt-img').forEach((elem) => {
+        document.querySelectorAll('.vanilla-tilt').forEach((elem) => {
             VanillaTilt.init(elem, {
-                reverse: false,
-                max: 10,
-                scale: 0.95,    
-                speed: 2000,
-            });
-        });
-        document.querySelectorAll('.tilt-post').forEach((elem) => {
-            VanillaTilt.init(elem, {
-                reverse: true,
                 max: 10,
                 scale: 0.95,
-                speed: 1000,
+                speed: 3000,
+                glare: true,
+                "max-glare": 0.2
             });
         });
 
