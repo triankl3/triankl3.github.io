@@ -404,36 +404,32 @@ nav {
         color: $color-background;
     }
 
+    h1 {
+        font-family: 'Oswald', sans-serif;
+        font-weight: 800;
+        font-size: 24px;
+        text-transform: uppercase;
+        margin: 24px 0 0 0;
+    }
+
     p {
         font-family: 'Manrope', sans-serif;
         font-size: 20px;
         text-align: justify;
         letter-spacing: -1px;
         font-weight: 400;
+
+        margin: 0;
     }
 
     ul {
-        width: 100%;
-        margin: $content-padding 0;
+        margin: 0;
+        padding: 0;
 
         list-style: none;
-        text-align: center;
 
         li {
-            margin: 0 $content-padding / 2;
-
-            display: inline-block;
-            img {
-                height: 32px;
-                transition: transform .2s ease-in-out;
-
-                filter: invert(1);
-            }
-        }
-        li:hover {
-            img {
-                transform: scale(1.2);
-            }
+            margin-top: 8px;
         }
     }
 }

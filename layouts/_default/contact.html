@@ -10,16 +10,20 @@
     <div id="contact-background"></div>
     <div class="content-wrapper">
         <img src="/img/contact.svg" style="user-select: none;" draggable="false">
-        <p>
-            The best method to reach me is via e-mail at <a href="mailto:{{ .Site.Params.contact.email }}">{{ .Site.Params.contact.email }}</a>, 
-            for more urgent inquires you can contact me through Discord <span style="font-weight: 400;">{{ .Site.Params.contact.discord }}</span>.
-            You can also find me on the following platforms:
-        </p>
 
+        <h1>Work inquiries</h1>
+        <p>The best method to reach me for work inquires is:</p>
         <ul>
-            <li><a target="_blank" href="{{ site.Params.contact.github }}"><img src="/img/github.svg"></a></li>
-            <li><a target="_blank" href="{{ site.Params.contact.linkedin }}"><img src="/img/linkedin.svg"></a></li>
-            <li><a target="_blank" href="{{ site.Params.contact.twitter }}"><img src="/img/x.svg"></a></li>
+            <li><a href="mailto:{{ site.Params.contact.email }}">triankl3@gmail.com</a></li>
+        </ul>
+
+        <h1>Other platforms</h1>
+        <p>You can also find me on the following platforms:</p>
+        <ul>
+            <li><a target="_blank" href="{{ site.Params.contact.github }}">GitHub</a></li>
+            <li><a target="_blank" href="{{ site.Params.contact.linkedin }}">LinkedIn</a></li>
+            <li><a target="_blank" href="{{ site.Params.contact.twitter }}">Twitter</a></li>
+            <li><a target="_blank" href="{{ site.Params.contact.talenthub}}">TalentHub</a></li>
         </ul>
     </div>
 </div>
