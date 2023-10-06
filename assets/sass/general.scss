@@ -346,7 +346,6 @@ nav {
 
 @media (max-width: $max-width-tablet) {
     // Switch top top navbar
-    
     #nav-logo {
         background: red;
     }
@@ -354,7 +353,9 @@ nav {
 
 // Mobile
 @media (max-width: $max-width-mobile) {
-
+    .effect-cube-container {
+        display: none;
+    }
 }
 
 #landing img, #landing-extended {
