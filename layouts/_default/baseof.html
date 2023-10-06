@@ -6,11 +6,11 @@
 
         {{/*  OPENGRAPH / TWITTER META  */}}
         {{/*  Use frontmatter description when available, otherwise use main website description.  */}}
-        {{- if isset .Params "Description" -}}
+        {{ if isset .Params "Description" }}
             <meta name="description" content="{{ .Params.Description }}" />
-        {{- else -}}
+        {{ else }}
             <meta name="description" content="{{ site.Params.Description }}" />
-        {{- end -}}
+        {{ end }}
 
         {{/*  Determine featured image if it exists  */}}
         {{ $featured_img := "" }}
@@ -18,10 +18,10 @@
             <!-- Prepare a compressed version of the feature image to use if on a post -->
             {{ $featured_img_path := print "img/" .Params.image }}
             {{ $featured_img = resources.Get $featured_img_path }}
-            {{ $featured_img = $featured_img.Resize "x1024"}}
+            {{ $featured_img = $featured_img.Resize "x1024" }}
 
             {{ .Scratch.Set "featured_img" $featured_img }}
-        {{- end -}}
+        {{ end }}
 
         {{/*  Determine page title  */}}
         {{ $pageTitle := .Site.Title }}
@@ -29,15 +29,15 @@
             {{ $pageTitle = print "Home | " .Site.Title }}
         {{ else if (.Page.Title) }}
             {{ $pageTitle = print .Page.Title " | " .Site.Title }}
-        {{- end -}}
+        {{ end }}
         <title>
-            {{- $pageTitle -}}
+            {{ $pageTitle }}
         </title> 
 
         <!-- Facebook Meta Tags -->
         <meta property="og:title" content="{{ $pageTitle }}">
-        <meta property="og:description" content='{{- if isset .Params "description" -}} {{- .Description -}} {{- else -}} {{- .Site.Params.Description -}} {{- end -}}'>
-        <meta property="og:image" content='{{- if isset .Params "image" -}} {{- $featured_img.Permalink -}} {{- end -}}'>
+        <meta property="og:description" content='{{ if isset .Params "description" }} {{ .Description }} {{ else }} {{ .Site.Params.Description }} {{ end }}'>
+        <meta property="og:image" content='{{ if isset .Params "image" }} {{ $featured_img.Permalink }} {{ end }}'>
         <meta property="og:url" content="{{ .Page.Permalink }}">
         <meta property="og:site_name" content="{{ .Site.Title }}">
         <meta property="og:type" content="article">
@@ -45,8 +45,8 @@
         <!-- Twitter Meta Tags -->
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="{{ .Page.Title }}">
-        <meta name="twitter:description" content='{{- if isset .Params "description" -}} {{- .Description -}} {{- else -}} {{- .Site.Params.Description -}} {{- end -}}'>
-        <meta name="twitter:image" content='{{- if isset .Params "image" -}} {{- $featured_img.Permalink -}} {{ end -}}'>
+        <meta name="twitter:description" content='{{ if isset .Params "description" }} {{ .Description }} {{ else }} {{ .Site.Params.Description }} {{ end }}'>
+        <meta name="twitter:image" content='{{ if isset .Params "image" }} {{ $featured_img.Permalink }} {{ end }}'>
 
         {{/* Load needed CSS */}}
         {{ $normalize_style := resources.Get "css/modern-normalize.css" | resources.Minify }}
@@ -104,8 +104,7 @@
     {{ $photoswipe_lightbox_js := resources.Get "js/photoswipe-lightbox.js" | minify }}
     <script src="{{ $photoswipe_lightbox_js.RelPermalink }}"></script>
 
-    <script> // Initialize scripts here
-        // Init/Apply tilt effect
+    <script>
         document.querySelectorAll('.vanilla-tilt').forEach((elem) => {
             VanillaTilt.init(elem, {
                 max: 10,
@@ -116,7 +115,6 @@
             });
         });
 
-        // Initialize lightbox script
         const lightbox = new PhotoSwipeLightbox({
             gallery: '.pspw-lightbox',
             children: 'a',

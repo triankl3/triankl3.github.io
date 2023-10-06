@@ -2,12 +2,12 @@
 {{/*  Creates a tumbnail scale of image and large image based on context */}}
 {{/*  Also creates lightbox + figure wrapper if used outside of gallery section */}}
 
-{{- $alt := .Get "alt" -}}
-{{- $src := .Page.Resources.GetMatch (printf "*%s*" (.Get "src")) -}}
-{{- $src_thumb := $src.Resize "x720" -}}
-{{- $src_full := $src.Resize "x1440" -}}
+{{ $alt := .Get "alt" }}
+{{ $src := .Page.Resources.GetMatch (printf "*%s*" (.Get "src")) }}
+{{ $src_thumb := $src.Resize "x720" }}
+{{ $src_full := $src.Resize "x1440" }}
 
-{{- if not (in .Parent.Name "section-gallery") -}}
+{{ if not (in .Parent.Name "section-gallery") }}
 
 <div class="pspw-lightbox">
 <a href="{{ $src_full.RelPermalink }}" data-pswp-width="{{ $src_full.Width }}" data-pswp-height="{{ $src_full.Height }}" target="_blank">
@@ -18,10 +18,10 @@
 </a>
 </div>
 
-{{- else -}}
+{{ else }}
 
 <a href="{{ $src_full.RelPermalink }}" data-pswp-width="{{ $src_full.Width }}" data-pswp-height="{{ $src_full.Height }}" target="_blank">
 <div class="vanilla-tilt" style="background-image: url(' {{ $src_thumb.RelPermalink }}')"></div>
 </a>
 
-{{- end -}}
+{{ end }}

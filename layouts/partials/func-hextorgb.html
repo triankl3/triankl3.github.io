@@ -7,7 +7,10 @@
   {{ $mod := mod $i 2 }}
   {{ $dec := index $convMap $c }}
   {{ $val = add $val ( mul $dec ( cond (eq $mod 0) 16 1 ) ) }}
-  {{ if $mod }}{{ $out = $out | append $val}}{{ $val = 0}}{{end}}
+  {{ if $mod }}
+    {{ $out = $out | append $val }}
+    {{ $val = 0 }}
+  {{ end }}
 {{ end }}
 
 {{ return (print (index $out 0) ", " (index $out 1) ", " (index $out 2)) }}

@@ -1,8 +1,8 @@
-{{- $text := .Get "text" -}}
+{{ $text := .Get "text" }}
 
-{{- $background := .Get "background" -}}
-{{- $grid := .Get "grid" -}}
-{{- $unique_id := (print "_" (delimit (shuffle (split (md5 $text) "" )) ""))}}
+{{ $background := .Get "background" }}
+{{ $grid := .Get "grid" }}
+{{ $unique_id := (print "_" (delimit (shuffle (split (md5 $text) "" )) "")) }}
 {{ partial "func-background.html" (dict "context" . "background" $background "grid" $grid "unique_id" $unique_id) }}
 
 <div class="section-jumbo" id="{{ $unique_id }}">
