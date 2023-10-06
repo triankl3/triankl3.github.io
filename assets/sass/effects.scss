@@ -179,6 +179,7 @@ $animation-time: 15s;
 	}
 }
 
+// Animated gradient background
 $gradient-colors: lighten($color-background, 25%), $color-background;
 #effect-gradient {
 	position: fixed;
