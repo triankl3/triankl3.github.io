@@ -12,7 +12,7 @@
 <div class="pspw-lightbox">
 <a href="{{ $src_full.RelPermalink }}" data-pswp-width="{{ $src_full.Width }}" data-pswp-height="{{ $src_full.Height }}" target="_blank">
 <figure>
-<img class="vanilla-tilt" src="{{ $src_thumb }}" alt="{{ $alt }}" width="100%" height="auto"/>
+<img class="vanilla-tilt" src="{{ $src_thumb.RelPermalink }}" alt="{{ $alt }}" width="100%" height="auto"/>
 <figcaption>{{ $alt }}</figcaption>
 </figure>
 </a>
@@ -21,7 +21,7 @@
 {{- else -}}
 
 <a href="{{ $src_full.RelPermalink }}" data-pswp-width="{{ $src_full.Width }}" data-pswp-height="{{ $src_full.Height }}" target="_blank">
-<div class="vanilla-tilt" style="background-image: url(' {{ $src_thumb }}')"></div>
+<div class="vanilla-tilt" style="background-image: url(' {{ $src_thumb.RelPermalink }}')"></div>
 </a>
 
 {{- end -}}
