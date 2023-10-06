@@ -15,7 +15,7 @@
         {{/*  Determine featured image if it exists  */}}
         {{ $featured_img := "" }}
         {{ if isset .Params "image" }}
-            <!-- Prepare a compressed version of the feature image to use if on a post -->
+            {{/*  Prepare a compressed version of the feature image to use if on a post  */}}
             {{ $featured_img_path := print "img/" .Params.image }}
             {{ $featured_img = resources.Get $featured_img_path }}
             {{ $featured_img = $featured_img.Resize "x1024" }}
@@ -34,7 +34,7 @@
             {{ $pageTitle }}
         </title> 
 
-        <!-- Facebook Meta Tags -->
+        {{/* Facebook meta tags  */}}
         <meta property="og:title" content="{{ $pageTitle }}">
         <meta property="og:description" content='{{ if isset .Params "description" }} {{ .Description }} {{ else }} {{ .Site.Params.Description }} {{ end }}'>
         <meta property="og:image" content='{{ if isset .Params "image" }} {{ $featured_img.Permalink }} {{ end }}'>
@@ -42,7 +42,7 @@
         <meta property="og:site_name" content="{{ .Site.Title }}">
         <meta property="og:type" content="article">
                 
-        <!-- Twitter Meta Tags -->
+        {{/*  Twitter meta tags  */}}
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="{{ .Page.Title }}">
         <meta name="twitter:description" content='{{ if isset .Params "description" }} {{ .Description }} {{ else }} {{ .Site.Params.Description }} {{ end }}'>
