@@ -177,7 +177,7 @@ article {
         word-break: break-word;
     }
     code {
-        font-family: 'Jetbrains Mono', sans-serif;
+        font-family: 'Jetbrains Mono', monospace;
         font-size: 14px;
 
         padding: 4px;
@@ -298,36 +298,28 @@ article {
     article {
         header {
             .content-wrapper-max {
-                padding: $content-padding $nav-size * 1.2 + $content-padding;
 
                 h1 {
-                    font-size: 56px;
-                }
-                time {
-                    font-size: 14px;
-                }
-                p {
-                    max-width: 65%;
-                    font-size: 12px;
-                    line-height: 16px;
-                }
-
-                .post-tags {
-                    .post-tag {
-                        font-size: 12px;
-                    }
+                    font-size: 64px;
                 }
             }
         }
 
         .section-column, .section-two-column, .section-jumbo, .section-gallery {
-            padding: $content-padding * 4 $nav-size * 1.2;
+            padding: $content-padding;
         }
 
-        .section-column {
-            .section-column-title {
-                font-size: 64px;
+        .section-jumbo {
+            h1 {
+                font-size: 92px;
             }
+        }
+
+        .section-two-column-left, .section-two-column-right {
+            float: none;
+            width: initial;
+            max-width: $content-width;
+            padding: 0;
         }
     }
 }
@@ -336,12 +328,18 @@ article {
     article {
         header {
             .content-wrapper-max {
-                padding: $content-padding $content-padding;
+                padding: $content-padding;
             }
         }
 
-        .section-column, .section-two-column, .section-jumbo, .section-gallery {
-            padding: $content-padding 0;
+        .section-column-title {
+            text-align: left;
+        }
+
+        .section-jumbo {
+            h1 {
+                font-size: 72px;
+            }
         }
     }
 }
