@@ -9,7 +9,6 @@ All content available on the website including but not limited to: visual identi
 
 ## Todo
 - [ ] Mobile & small screen optimizations (Currently website is broken on small screens)
-- [ ] Finish gallery section
 - [ ] Finish featured posts on homepage
 - [ ] Create logo and favicon
 - [ ] Add proper resume PDF

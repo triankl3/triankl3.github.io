@@ -4,7 +4,9 @@
 {{ partial "func-background.html" (dict "context" . "background" $background "grid" $grid "unique_id" $unique_id) }}
 
 <div class="section-gallery" id="{{ $unique_id }}">
-    <div class="pspw-gallery content-wrapper">
-        {{ .Inner }}
+    <div class="content-wrapper-max">
+        <div class="pspw-lightbox">
+            {{ .Inner }}
+        </div>
     </div>
 </div>

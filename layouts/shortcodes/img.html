@@ -1,30 +1,27 @@
 {{/*  Image shortcode, use this to properly display images in markdown  */}}
-{{/*  Uses figure and sourceset to set different sizes, while scaling the images using HuGo Image Processing */}}
-{{/*  Use alt to also specify a figcaption, use zoomable="false" to disable lightbox effects */}}
+{{/*  Creates a tumbnail scale of image and large image based on context */}}
+{{/*  Also creates lightbox + figure wrapper if used outside of gallery section */}}
 
 {{- $alt := .Get "alt" -}}
-{{- $res := .Page.Resources.GetMatch (printf "*%s*" (.Get "src")) -}}
-{{- $zoomable := .Get "zoomable" -}}
+{{- $src := .Page.Resources.GetMatch (printf "*%s*" (.Get "src")) -}}
+{{- $src_thumb := $src.Resize "x720" -}}
+{{- $src_full := $src.Resize "x1440" -}}
 
-{{- $ws := slice 720 1080 2160 2560 -}}
+{{- if not (in .Parent.Name "section-gallery") -}}
 
-{{- $srcset := slice -}}
-    {{- range $ws -}}
-
-    {{/* To avoid creating an image that is larger than the source */}}
-    {{- if (le . $res.Width) -}}
-        {{- $w := printf "%dx" . -}}
-        {{- $url := ($res.Resize $w).RelPermalink | safeURL -}}
-        {{- $fmt := printf "%s %dw" $url . -}}
-        {{- $srcset = $srcset | append $fmt -}}
-    {{- end -}}
-{{- end -}}
-
-{{- $set := delimit $srcset "," -}}
-
-<figure {{ if not (in $zoomable "false") }} class="pspw-lightbox" {{ end }}>
-{{ if not (in $zoomable "false") }}<a href="{{ $res.RelPermalink }}" data-pswp-width="{{ $res.Width }}" data-pswp-height="{{ $res.Height }}" target="_blank">{{- end -}}
-<img {{ if not (in $zoomable "false") }} class="vanilla-tilt" {{ end }} srcset="{{ $set }}" sizes="(max-width: 720px) 720px, 100vw" src="{{ $res.RelPermalink }}" alt="{{ $alt }}" width="100%" height="auto"/>
-{{ if not (in $zoomable "false") }}</a>{{ end }}
+<div class="pspw-lightbox">
+<a href="{{ $src_full.RelPermalink }}" data-pswp-width="{{ $src_full.Width }}" data-pswp-height="{{ $src_full.Height }}" target="_blank">
+<figure>
+<img class="vanilla-tilt" src="{{ $src_thumb }}" alt="{{ $alt }}" width="100%" height="auto"/>
 <figcaption>{{ $alt }}</figcaption>
 </figure>
+</a>
+</div>
+
+{{- else -}}
+
+<a href="{{ $src_full.RelPermalink }}" data-pswp-width="{{ $src_full.Width }}" data-pswp-height="{{ $src_full.Height }}" target="_blank">
+<div class="vanilla-tilt" style="background-image: url(' {{ $src_thumb }}')"></div>
+</a>
+
+{{- end -}}
