@@ -214,6 +214,12 @@ article {
         padding: $content-padding * 4 $nav-size * 2;
     }
 
+    .section-column {
+        .content-wrapper { // This prevents adding double content padding
+            padding: 0;
+        }
+    }
+
     .section-column-title {
         margin: 0;
         padding: 0;
@@ -298,6 +304,7 @@ article {
     article {
         header {
             .content-wrapper-max {
+                padding: $content-padding;
 
                 h1 {
                     font-size: 64px;
@@ -328,12 +335,15 @@ article {
     article {
         header {
             .content-wrapper-max {
-                padding: $content-padding;
+                h1 {
+                    font-size: 48px;
+                }
             }
         }
 
         .section-column-title {
             text-align: left;
+            font-size: 52px;
         }
 
         .section-jumbo {
