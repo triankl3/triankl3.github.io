@@ -334,6 +334,10 @@ article {
 @media (max-width: $max-width-mobile) {
     article {
         header {
+            #featured-image {
+                background-attachment: revert;
+            }
+
             .content-wrapper-max {
                 h1 {
                     font-size: 48px;
@@ -350,6 +354,10 @@ article {
             h1 {
                 font-size: 72px;
             }
+        }
+
+        .section-splash {
+            background-attachment: revert;
         }
     }
 }
