@@ -8,9 +8,10 @@ $content-padding: 16px;
  
 $nav-size: 94px;
 $nav-font-size: 24px;
+$nav-offset: $content-padding * 2;
 
-$max-width-tablet: $content-width + $content-padding * 4 + $nav-size * 2;
-$max-width-mobile: $content-width-narrow + $content-padding * 4 + $nav-size * 1.2;
+$max-width-tablet: $content-width + $content-padding * 2 + $nav-offset + $nav-size * 2;
+$max-width-mobile: $content-width-narrow + $content-padding * 2 + $nav-offset + $nav-size * 1.2;
 
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700'); //Oswald
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800'); //Manrope

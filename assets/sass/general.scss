@@ -23,7 +23,7 @@ a, a:visited {
 }
 a:hover {
     text-decoration: none;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.25);
 }
 
 $footer-height: 96px;
@@ -66,7 +66,8 @@ footer {
     max-width: $content-width-narrow;
 }
 
-$nav-offset: $content-padding * 2;
+// Style navbar
+// $nav-offset: $content-padding * 2;
 nav {
     a:hover {
         background-color: initial;
@@ -167,23 +168,7 @@ nav {
     }
 }
 
-._404 {
-    font-family: 'Oswald', sans-serif;
-    text-align: center;
-    text-transform: uppercase;
-    
-    mix-blend-mode: difference;
-
-    h1 {
-        margin: 0;
-        font-size: 96px;
-    }
-
-    h2 {
-        font-size: 24px;
-    }
-}
-
+// Style post showcases
 .posts-showcase {
     a, a:hover {
         text-decoration: none;
@@ -316,6 +301,7 @@ nav {
     }
 }
 
+// General styling for tags
 .post-tags {
     margin: 24px 0 24px 0;
     padding: 0;
@@ -344,24 +330,12 @@ nav {
     }
 }
 
-@media (max-width: $max-width-tablet) {
-    // Switch top top navbar
-    #nav-logo {
-        background: red;
-    }
-}
-
-// Mobile
-@media (max-width: $max-width-mobile) {
-    .effect-cube-container {
-        display: none;
-    }
-}
-
+// Landing is the main div located on the index page
 #landing img, #landing-extended {
     mix-blend-mode: difference;
 }
 
+// Style the other two static/fixed pages (contact and about)
 #contact-background, #about-background {
     position: fixed;
     top: 0;
@@ -408,5 +382,35 @@ nav {
         li {
             margin-top: 8px;
         }
+    }
+}
+
+#_404 {
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    
+    mix-blend-mode: difference;
+
+    h1 {
+        margin: 0;
+        font-size: 96px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+}
+
+// Small screen optimizations
+@media (max-width: $max-width-tablet) {
+    // Switch top top navbar
+    #nav-logo {
+        background: red;
+    }
+}
+@media (max-width: $max-width-mobile) {
+    .effect-cube-container {
+        display: none;
     }
 }
