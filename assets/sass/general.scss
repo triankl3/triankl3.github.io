@@ -21,10 +21,10 @@ a, a:visited {
     font-weight: 600;
     transition: background-color .25s ease-in-out;
 }
-a:hover {
+@media (hover: hover) { a:hover {
     text-decoration: none;
     background-color: rgba(255, 255, 255, 0.25);
-}
+}}
 
 $footer-height: 96px;
 main {
@@ -69,9 +69,9 @@ footer {
 // Style navbar
 // $nav-offset: $content-padding * 2;
 nav {
-    a:hover {
+    @media (hover: hover) { a:hover {
         background-color: initial;
-    }
+    }}
 
     #nav-logo, #nav-socials, #nav-pages {
         position: fixed;
@@ -96,10 +96,10 @@ nav {
         // transform-origin: center center;
         transition: background-color .15s ease-in-out;
     }
-    #nav-logo:hover {
+    @media (hover: hover) { #nav-logo:hover {
         // transform: scale(1.05);
         background-color: rgba(255, 255, 255, 0.2);
-    }
+    }}
     
     #nav-socials {
         top: $nav-offset;
@@ -114,9 +114,9 @@ nav {
             transition: background-color .15s ease-in-out;
             padding: $nav-font-size * 0.25;
         }
-        li:hover {
+        @media (hover: hover) { li:hover {
             background-color: rgba(255, 255, 255, 0.2);
-        }
+        }}
     
         img {
             height: $nav-font-size;
@@ -145,9 +145,9 @@ nav {
                 text-decoration: none;
             }
         }
-        li:hover {
+        @media (hover: hover) { li:hover {
             background-color: rgba(255, 255, 255, 0.2);
-        }
+        }}
     }
 }
 .nav-wide {
@@ -190,9 +190,9 @@ nav {
             color: $color-text;
             background-color: rgba($color-background, 0.75);
         }
-        .post-tag:hover {
+        @media (hover: hover) { .post-tag:hover {
             background-color: rgba(255, 255, 255, 0.2);
-        }
+        }}
         .post-tag-selected {
             border-style: solid;
         
@@ -201,9 +201,9 @@ nav {
             color: $color-background;
             background-color: $color-text;
         }
-        .post-tag-selected:hover {
+        @media (hover: hover) { .post-tag-selected:hover {
             background-color: $color-text;
-        }
+        }}
     }
 }
 
@@ -277,7 +277,7 @@ nav {
         padding: 0;
     }
 }
-.posts-showcase-post:hover { // Apply effects on hover
+@media (hover: hover) { .posts-showcase-post:hover { // Apply effects on hover
     div { // Backgrond
         filter: none;
         box-shadow: inset 0 60px 60px 0 rgba($color-background, 0.8);
@@ -299,7 +299,7 @@ nav {
             background-color: rgba($color-text, 1);
         }
     }
-}
+}}
 
 // General styling for tags
 .post-tags {
