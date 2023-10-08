@@ -48,10 +48,11 @@ footer {
     align-items: center; /* align item vertically */
 
     p {
+        font-size: 14px;
         font-weight: 600;
 
         text-transform: uppercase;
-        text-align: left;
+        text-align: justify;
         padding: 0;
         margin: 0;
     }
@@ -420,5 +421,11 @@ nav {
 @media (max-width: $max-width-mobile) {
     .effect-cube-container {
         display: none;
+    }
+
+    .posts-showcase-post {
+        h1 {
+            font-size: 24px;
+        }
     }
 }
