@@ -8,7 +8,6 @@ Source Code is licensed under CC BY-NC-SA 4.0. See [LICENSE](LICENSE) for more i
 All content available on the website including but not limited to: visual identity and design, text, images, videos, 3D assets and code samples are subject to copyright and owned by Nikola Pešević(triankl3.com), unless noted otherwise.
 
 ## Todo
-- [ ] Mobile & small screen optimizations (Currently website is broken on small screens)
 - [ ] Finish featured posts on homepage
 - [ ] Create logo and favicon
 - [ ] Add proper resume PDF
