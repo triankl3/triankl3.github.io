@@ -494,6 +494,12 @@ nav {
             }
         }
     }
+
+    footer {
+        p {
+            font-size: 12px;
+        }
+    }
 }
 @media (max-width: $max-width-mobile) {
     .effect-cube-container {
