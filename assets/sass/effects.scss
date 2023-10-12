@@ -36,7 +36,9 @@
     background: transparent url('/img/noise-transparent.png') repeat 0 0;
     background-repeat: repeat;
     animation: animation-effect-noise 0.5s infinite;
-    z-index: -101;
+    z-index: 999;
+
+    pointer-events: none;
 }
 @keyframes animation-effect-noise {
     0% { transform: translate(0,0) }

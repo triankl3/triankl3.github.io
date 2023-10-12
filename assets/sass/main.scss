@@ -1,27 +1,28 @@
+// Dark scheme by default
 $color-text: #dddddd;
 $color-background: #111111;
 
+$footer-height: 96px;
+$post-header-height: 384px;
+
+$content-padding: 16px;
 $content-width: 1024px;
 $content-width-max: 1920px;
 $content-width-narrow: 720px;
-$content-padding: 16px;
- 
-$nav-size: 94px;
-$nav-font-size: 24px;
+
 $nav-offset: $content-padding * 2;
+$nav-size: 84px;
+$nav-font-size: 16px;
 $nav-top-size: $content-padding;
 $nav-top-font-size: 32px;
 
 $max-width-tablet: $content-width + $content-padding * 2 + $nav-offset + $nav-size * 2;
 $max-width-mobile: $content-width-narrow + $content-padding * 2 + $nav-offset + $nav-size * 1.2;
 
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700'); //Oswald
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800'); //Manrope
-@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap'); //Michroma
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=JetBrains+Mono&display=swap'); //Jetbrains Mono
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap');
 
 @import
     "general",
-    "post",
+    "single",
     "effects"
 ;

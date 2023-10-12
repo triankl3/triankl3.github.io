@@ -1,14 +1,10 @@
-article {
-    // Header section with featured image, title, date, description and tags
-    $post-header-height: 512px;
-    header {
-        height: $post-header-height;
-
+article { // We can determine if the element is inside of an single page/post using the article element
+    header { // The header/top section of a post, pretty self explanatory
         #featured-image {
             position: absolute;
             top: 0;
             left: 0;
-            height: $post-header-height + $nav-size;
+            height: 100%;
             width: 100%;
 
             background-position: center bottom;
@@ -24,43 +20,41 @@ article {
             top: 0;
             left: 0;
             width: 100%;
-            height: $post-header-height;
+            height: 100%;
 
             z-index: -115;
         }
 
         .content-wrapper-max {
+            min-height: $post-header-height;
             padding: $content-padding $nav-size * 2 + $content-padding;
 
             position: relative;
-            height: $post-header-height;
+            // height: $post-header-height;
             
-            h1 {
+            h1 { // Title
                 margin: 0 0 $content-padding 0;
                 
-                font-family: 'Oswald', sans-serif;
+                font-family: 'Syne', sans-serif;
+                font-size: 64px;
                 font-weight: 800;
-                font-size: 92px;
+
+                mix-blend-mode: difference;
             }
 
-            h2 {
+            h2 { // Date
                 margin-top: $content-padding;
                 display: block;
                 font-size: 16px;
-                font-weight: 800;
-                font-family: 'Michroma', sans-serif;
+                font-weight: 600;
                 text-transform: uppercase;
             }
 
-            p {
+            p { // Description
                 max-width: $content-width-narrow;
             }
             
             .post-tags {
-                margin: 0;
-                padding: 0;
-
-                position: absolute;
                 bottom: $content-padding * 2;
                 z-index: 1;
 
@@ -72,127 +66,6 @@ article {
                 }
             }
         }
-    }
-
-    // Standard markdown elements
-    p {
-        font-size: 17px;
-        line-height: 23px;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-        padding: 0;
-        margin: $content-padding / 4 0 $content-padding / 4 0;
-    
-        font-family: 'Oswald', sans-serif;
-        font-weight: 800;
-        text-transform: uppercase;
-    }
-
-    h1 {
-        font-size: 48px;
-    }
-    
-    h2 {
-        font-size: 32px;
-    }
-    
-    h3, h4, h5, h6 {
-        font-size: 24px;
-    }
-
-    strong {
-        font-weight: 800;
-    }
-
-    blockquote {
-        margin: 0;
-        padding: 2px 2px 2px $content-padding / 2;
-        
-        border: $color-text 2px solid;
-        border-left: $color-text 8px solid;
-        
-        font-family: 'Michroma', sans-serif;
-        font-weight: 600;
-        * {
-            font-size: 12px;
-            font-weight: 600;
-        }
-        text-transform: uppercase;
-    }
-
-    ol, ul {
-        margin: 0;
-        padding: 4px 4px 4px $content-padding;
-    }
-    li {
-        margin: 0;
-        padding: 0 4px 4px 4px;
-    }
-
-    table {
-        width: 100%;
-    
-        border-collapse: collapse;
-
-        th, td {
-            border: 1px solid $color-text;
-            padding: $content-padding / 4 $content-padding / 2 $content-padding / 4 $content-padding / 2;
-        }
-
-        th {
-            font-weight: 800;
-            color: $color-background;
-            background-color: $color-text;
-        }
-    }
-
-    figure {
-        margin: 0;
-        padding: 0;
-
-        filter: drop-shadow(0 0 16px rgba($color-background, 1));
-
-        a:hover {
-            background-color: initial;  
-        }
-    }
-
-    div.highlight pre {
-        white-space: pre-wrap;
-        word-break: break-word;
-    }
-    code {
-        font-family: 'Jetbrains Mono', monospace;
-        font-size: 14px;
-
-        padding: 4px;
-
-        background-color: lighten($color-background, 2.5%);
-        color: $color-text;
-    }
-    .highlight {
-        padding: 1px 0;
-        margin: $content-padding 0;
-
-        background-color: lighten($color-background, 2.5%);
-
-        code {
-            padding: 0;
-            border: none;
-        }
-
-        * {
-            background-color: lighten($color-background, 2.5%);
-        }
-    }
-
-    video {
-        width: 100%;
-        height: auto;
-        margin: $content-padding 0;
-
-        filter: drop-shadow(0 0 16px rgba($color-background, 1));
     }
 
     // Sections used to organize and style content in blogposts into visually attractive pieces
@@ -210,8 +83,7 @@ article {
         margin: 0;
         padding: 0;
 
-        font-family: 'Oswald', sans-serif;
-        font-size: 72px;
+        font-size: 56px;
     }
 
     .section-splash {
@@ -226,16 +98,15 @@ article {
 
     .section-jumbo {
         width: 100%;
-        min-height: 80vh;
+        min-height: 60vh;
 
         display: flex;
         align-items:center;
         justify-content:center;
         
         h1 {
-            font-family: 'Michroma', sans-serif;
             text-transform: initial;
-            font-size: 128px;
+            font-size: 96px;
         }
     }
 
@@ -293,7 +164,7 @@ article {
                 padding: $content-padding;
 
                 h1 {
-                    font-size: 64px;
+                    font-size: 48px;
                 }
             }
         }
@@ -304,7 +175,7 @@ article {
 
         .section-jumbo {
             h1 {
-                font-size: 92px;
+                font-size: 64px;
             }
         }
 
@@ -326,24 +197,34 @@ article {
 
             .content-wrapper-max {
                 h1 {
-                    font-size: 48px;
+                    font-size: 32px;
                 }
             }
         }
 
         .section-column-title {
             text-align: left;
-            font-size: 52px;
+            font-size: 36px;
         }
 
         .section-jumbo {
             h1 {
-                font-size: 72px;
+                font-size: 48px;
             }
         }
 
         .section-splash {
             background-attachment: revert;
+        }
+
+        h1 {
+            font-size: 32px;
+        }
+        h2 {
+            font-size: 24px;
+        }
+        h3 {
+            font-size: 16px;
         }
     }
 }

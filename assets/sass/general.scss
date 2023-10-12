@@ -1,32 +1,10 @@
-body {
-    font-family: 'Manrope', sans-serif;
-    font-size: 16px;
-    
-    * {
-        font-weight: 300;
-    }
-
-    color: $color-text;
-    background-color: $color-background;
-}
-
 // Dark mode for browser (scrollbars/forms/etc...)
 :root {
     color-scheme: dark;
 }
 
-a, a:visited {
-    color: $color-text;
-    text-decoration: underline;
-    font-weight: 600;
-    transition: background-color .25s ease-in-out;
-}
-@media (hover: hover) { a:hover {
-    text-decoration: none;
-    background-color: rgba(255, 255, 255, 0.25);
-}}
-
-.hide-vanilla-tilt {
+// Used to disable and hide vanilla tilt on small devices
+.disable-vanilla-tilt {
     transform: inherit !important;
 
     .js-tilt-glare {
@@ -34,53 +12,189 @@ a, a:visited {
     }
 }
 
-$footer-height: 96px;
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    
+    * {
+        font-weight: 400;
+    }
+
+    color: $color-text;
+    background-color: $color-background;
+}
+
+// All of the actual content is contained within main, thus it is offset by the height of the footer
 main {
     min-height: calc(100vh - #{$footer-height});
 }
 footer {
-    padding: $content-padding;
-    // background-color: $color-background;
     height: $footer-height;
+    padding: $content-padding;
 
     display: flex;
-    justify-content: center; /* align item horizontally */
-    align-items: center; /* align item vertically */
+    justify-content: center;
+    align-items: center;
 
-    p {
-        font-size: 14px;
-        font-weight: 600;
-
-        text-transform: uppercase;
-        text-align: justify;
-        padding: 0;
-        margin: 0;
+    * {
+        font-weight: 400;
     }
+    text-transform: uppercase;
 }
 
+// Content wrappers used all around the website to position and scale content
 .content-wrapper, .content-wrapper-max, .content-wrapper-narrow {
     padding: $content-padding;
     margin: 0 auto;
 }
+.content-wrapper { max-width: $content-width; }
+.content-wrapper-max { max-width: $content-width-max; }
+.content-wrapper-narrow { max-width: $content-width-narrow; }
 
-.content-wrapper {    
-    max-width: $content-width;
+// General element styling
+a, a:visited {
+    color: $color-text;
+    text-decoration: underline;
+    font-weight: 600;
+    transition: background-color .1s ease-in-out;
+}
+@media (hover: hover) { a:hover {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.25);
+}}
+
+// Standard markdown elements
+p {
+    font-size: 17px;
+    line-height: 22px;
 }
 
-.content-wrapper-max {
-    max-width: $content-width-max;
+h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: $content-padding / 4 0 $content-padding / 4 0;
+
+    font-weight: 800;
+    text-transform: uppercase;
 }
 
-.content-wrapper-narrow {
-    max-width: $content-width-narrow;
+h1 {
+    font-family: 'Syne';
+    font-weight: 800;
+    font-size: 48px;
 }
 
-// Style navbar
-// $nav-offset: $content-padding * 2;
+h2 {
+    font-family: 'Syne';
+    font-weight: 800;
+    font-size: 36px;
+}
+
+h3, h4, h5, h6 {
+    font-family: 'Syne';
+    font-weight: 800;
+    font-size: 24px;
+}
+
+strong {
+    font-weight: 800;
+}
+
+blockquote {
+    margin: 0;
+    padding: 2px 2px 2px $content-padding / 2;
+    
+    border: $color-text 2px solid;
+    border-left: $color-text 8px solid;
+    
+    * {
+        font-size: 16px;
+        font-weight: 800;
+    }
+    text-transform: uppercase;
+}
+
+ol, ul {
+    margin: 0;
+    padding: 4px 4px 4px $content-padding;
+}
+li {
+    margin: 0;
+    padding: 0 4px 4px 4px;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    th, td {
+        border: 2px solid $color-text;
+        padding: $content-padding / 4 $content-padding / 2 $content-padding / 4 $content-padding / 2;
+    }
+
+    th {
+        font-weight: 800;
+        color: $color-background;
+        background-color: $color-text;
+    }
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+
+    a:hover {
+        background-color: initial;  
+    }
+}
+
+div.highlight pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+code {
+    font-size: 14px;
+
+    padding: 4px;
+
+    background-color: lighten($color-background, 2.5%);
+    color: $color-text;
+}
+.highlight {
+    padding: 1px 0;
+    margin: $content-padding 0;
+
+    background-color: lighten($color-background, 2.5%);
+
+    code {
+        padding: 0;
+        border: none;
+    }
+
+    * {
+        background-color: lighten($color-background, 2.5%);
+    }
+}
+
+video {
+    width: 100%;
+    height: auto;
+    margin: $content-padding 0;
+}
+
+// Main navigation
 nav {
-    @media (hover: hover) { a:hover {
-        background-color: initial;
-    }}
+    a {
+        display: block;
+        width: 100%;
+
+        font-weight: 400;
+        text-decoration: none;
+    }
+
+    // Hide menu button by default
+    #nav-menu {
+        display: none;
+    }
 
     #nav-logo, #nav-socials, #nav-pages {
         position: fixed;
@@ -97,104 +211,94 @@ nav {
 
     #nav-logo {
         top: $nav-offset;
-        right: calc(50% + #{($content-width / 2)});
+        left: calc(50% - #{($content-width / 2)} - #{$nav-size});
         width: $nav-size;
-
-        // transform-origin: center center;
-        transition: background-color .15s ease-in-out;
     }
-    @media (hover: hover) { #nav-logo:hover {
-        // transform: scale(1.05);
-        background-color: rgba(255, 255, 255, 0.2);
-    }}
-    
+
     #nav-socials {
         top: $nav-offset;
-        left: calc(50% + #{($content-width / 2)});
-        height: 100%;
+        right: calc(50% - #{($content-width / 2)} - #{$nav-size});
         
         li {
-            height: $nav-font-size * 1.5;
-
-            margin-bottom: $nav-font-size * 0.25;
-            transform-origin: center center;
-            transition: background-color .15s ease-in-out;
-            padding: $nav-font-size * 0.25;
+            height: $nav-font-size;
+            margin-bottom: $nav-font-size;
         }
-        @media (hover: hover) { li:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }}
     
         img {
-            height: $nav-font-size;
+            vertical-align: middle;
+            width: $nav-font-size;
+        }
+
+        a {
+            padding: 4px;
         }
     }
 
     #nav-pages {
         top: $nav-offset + $nav-size + $nav-font-size / 2;
-        right: calc(50% + #{($content-width / 2)});
-    
-        font-family: 'Oswald', sans-serif;
-        font-size: $nav-font-size;
+        left: calc(50% - #{($content-width / 2)} - #{$nav-size});
+
         text-transform: uppercase;
     
         li {
-            padding: 2px;
-            font-family: 'Oswald', sans-serif;
+            font-size: $nav-font-size;
             text-align: right;
-
-            transition: background-color .15s ease-in-out;
-            
-            a {
-                display: inline-block;
-                width: 100%;
-                font-weight: 400;
-                text-decoration: none;
-            }
         }
-        @media (hover: hover) { li:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }}
-    }
-
-    #nav-menu {
-        display: none;
     }
 }
-.nav-wide {
+nav.nav-wide {
     #nav-logo {
         left: $nav-offset;
     }
+    #nav-socials {
+        right: $nav-offset;
+    }
     #nav-pages {
         left: $nav-offset;
-        right: initial;
 
         li {
             text-align: left;
         }
     }
-    #nav-socials {
-        right: $nav-offset;
-        left: initial;
+}
+
+// General styling for displaying interactive and non interactive tags
+.post-tags {
+    padding: 0;
+
+    list-style: none;
+
+    .post-tag {
+        display: inline;
+        margin-right: 4px;
+        padding: 4px 12px;
+    
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        
+        color: $color-text;
+        background-color: rgba($color-background, 0.75);
+        
+        border-width: 1px;
+        border-color: $color-text;
+        border-style: solid;
+    
+        user-select: none;
+        transition: color .1s ease-in-out, background-color .1s ease-in-out;
     }
 }
 
-// Style post showcases
-.posts-showcase {
-    a, a:hover {
+.post-list {
+    a, a:hover { // Disable default link effects
         text-decoration: none;
         background-color: initial;
     }
 }
 
-.posts-showcase-alltags {
+.post-list-alltags {
     .post-tags {
         .post-tag {
-            margin-right: 12px;
-            
-            font-size: 18px;
-            font-weight: 600;
-
             cursor: pointer;
 
             border-style: dashed;
@@ -202,29 +306,25 @@ nav {
             background-color: rgba($color-background, 0.75);
         }
         @media (hover: hover) { .post-tag:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.25);
         }}
+
         .post-tag-selected {
             border-style: solid;
-        
-            font-weight: 800;
-        
+
             color: $color-background;
             background-color: $color-text;
         }
-        @media (hover: hover) { .post-tag-selected:hover {
+        .post-tag-selected:hover { // Just disable the above hover effect on already selected tags
             background-color: $color-text;
-        }}
+        }
     }
 }
 
-.posts-showcase-post {
-    position: relative;
-
+.post-list-card {
     width: 100%;
-
-    padding: 8px 16px;
-    margin: 0 0 24px 0;
+    padding: 16px 16px;
+    margin-bottom: $content-padding;
 
     user-select: none;
     cursor: pointer;
@@ -240,108 +340,67 @@ nav {
         z-index: -1;
 
         filter: saturate(40%);
-        opacity: 0.9;
+        opacity: 0.75;
 
         background-position: left;
         background-repeat: no-repeat;
-        background-size: 120%;
+        background-size: 125%;
 
-        transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+        transition: transform .25s ease-in-out, box-shadow .25s ease-in-out;
     }
 
     h1, h2, p {
         margin: 0;
         padding: 0;
     }
-    
+
+    h1 { // Title
+        font-family: 'Syne', sans-serif;
+        font-size: 24px;
+        text-transform: uppercase;
+        font-weight: 800;
+        letter-spacing: 1px;
+        color: $color-text;
+
+        filter: saturate(0) brightness(2);
+        transition: font-weight .2s ease-in-out, filter .2s ease-in-out, color .2s ease-in-out;
+    }
+
     h2 { // Date
-        font-family: 'Michroma', sans-serif;
-        font-size: 12px;
+        font-size: 14px;
+        font-weight: 600;
         text-transform: uppercase;
     }
 
     p { // Description
         font-size: 14px;
-        text-align: justify;
         letter-spacing: 1px;
 
         background-color: rgba($color-background, 0.6);
         box-shadow: 0 0 32px 32px rgba($color-background, 0.6);
     }
 
-    h1 { // Title
-        font-size: 32px;
-        text-transform: uppercase;
-        font-weight: 600;
-        font-family: 'Oswald', sans-serif;
-
-        color: $color-text;
-        letter-spacing: 2px;
-
-        filter: saturate(0) brightness(2);
-        transition: font-weight .2s ease-in-out, filter .2s ease-in-out, color .2s ease-in-out;
-    }
-
     .post-tags { // Position post tags at the bottom left
-        list-style: none;
-        margin: 32px 0 8px 0;
-        padding: 0;
+        margin-bottom: 0;
     }
 }
-@media (hover: hover) { .posts-showcase-post:hover { // Apply effects on hover
+@media (hover: hover) { .post-list-card:hover {
     div { // Backgrond
         filter: none;
         box-shadow: inset 0 60px 60px 0 rgba($color-background, 0.8);
         opacity: 1;
         background-position: right;
 
-        transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out, background-position 10s linear;
+        transition: transform .1s ease-in-out, box-shadow .1s ease-in-out, background-position 10s linear;
     }
 
     h1 { // Title
-        font-weight: 800;
         filter: saturate(1);
         color: rgba(0, 0, 0, 0);
     }
-
-    .post-tags {
-        .post-tag {
-            color: $color-background;
-            background-color: rgba($color-text, 1);
-        }
-    }
 }}
 
-// General styling for tags
-.post-tags {
-    margin: 24px 0 24px 0;
-    padding: 0;
-
-    list-style: none;
-
-    .post-tag {
-        display: inline;
-        margin-right: 6px;
-        padding: 3px 12px;
-    
-        font-family: 'Oswald', sans-serif;
-        font-size: 12px;
-        font-weight: 600;
-        text-transform: uppercase;
-        
-        color: $color-text;
-        background-color: rgba($color-background, 0.75);
-        
-        border-width: 1px;
-        border-color: $color-text;
-        border-style: solid;
-    
-        user-select: none;
-        transition: color .2s ease-in-out, background-color .2s ease-in-out;
-    }
-}
-
-// Landing is the main div located on the index page
+// Landing/Home page styling
 #landing img, #landing-extended {
     mix-blend-mode: difference;
 }
@@ -365,22 +424,7 @@ nav {
         color: $color-background;
     }
 
-    h1 {
-        font-family: 'Oswald', sans-serif;
-        font-weight: 800;
-        font-size: 24px;
-        text-transform: uppercase;
-        margin: 24px 0 0 0;
-    }
-
     p {
-        font-family: 'Manrope', sans-serif;
-        font-size: 18px;
-        font-weight: 500;
-        * {
-            font-weight: 500;
-        }
-
         margin: 0;
     }
 
@@ -391,25 +435,23 @@ nav {
         list-style: none;
 
         li {
-            margin-top: 8px;
+            margin-top: 4px;
         }
     }
 }
 
 #_404 {
-    font-family: 'Oswald', sans-serif;
     text-align: center;
     text-transform: uppercase;
     
-    mix-blend-mode: difference;
-
+    mix-blend-mode: color-dodge;
+    
     h1 {
         margin: 0;
-        font-size: 96px;
+        font-size: 72px;
     }
-
-    h2 {
-        font-size: 24px;
+    p {
+        margin: 0;
     }
 }
 
@@ -494,19 +536,13 @@ nav {
             }
         }
     }
-
-    footer {
-        p {
-            font-size: 12px;
-        }
-    }
 }
 @media (max-width: $max-width-mobile) {
     .effect-cube-container {
         display: none;
     }
 
-    .posts-showcase-post {
+    .post-list-card {
         h1 {
             font-size: 24px;
         }
