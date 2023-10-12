@@ -9,6 +9,8 @@ $content-padding: 16px;
 $nav-size: 94px;
 $nav-font-size: 24px;
 $nav-offset: $content-padding * 2;
+$nav-top-size: $content-padding;
+$nav-top-font-size: 32px;
 
 $max-width-tablet: $content-width + $content-padding * 2 + $nav-offset + $nav-size * 2;
 $max-width-mobile: $content-width-narrow + $content-padding * 2 + $nav-offset + $nav-size * 1.2;

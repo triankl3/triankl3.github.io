@@ -8,7 +8,7 @@ article {
             position: absolute;
             top: 0;
             left: 0;
-            height: $post-header-height;
+            height: $post-header-height + $nav-size;
             width: 100%;
 
             background-position: center bottom;
@@ -16,20 +16,6 @@ article {
             background-repeat: no-repeat;
             background-attachment: fixed;
             z-index: -999;
-        }
-
-        #effect-grid-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: $post-header-height;
-            width: 100%;
-
-            opacity: 0.5;
-
-            #effect-grid {
-                height: 100%;
-            }
         }
 
         #header-shadow {

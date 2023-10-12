@@ -3,13 +3,15 @@
 {{ partial "effect-cube.html" "cube1" }}
 {{ partial "effect-cube.html" "cube2" }}
 <style>
+    #cube1, #cube2 {
+        top: 50%;
+        left: 50%;
+    }
     #cube1 {
-        bottom: 20%;
-        left: 20%;
+        transform: translate(256px, -224px);
     }
     #cube2 {
-        top: 20%;
-        right: 25%;
+        transform: translate(-384px, 42px);
     }
 </style>
 
