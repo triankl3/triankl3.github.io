@@ -32,14 +32,14 @@ Links are also automagically created like this https://example.com.
 {{% /section-column %}}
 
 <!-- Splash supports setting an image and applying CSS filters directly on them -->
-{{< section-splash img="exampleimg1.webp" filter="invert(0.95)">}}
+{{< section-splash img="exampleimg1.webp" filter="invert(1)">}}
 
 <!-- Jumbo supports setting it's text, alongisde the usual background options -->
-{{< section-jumbo text="This is a huge jumbo text! Thank you for reading." background="white" grid="64px" >}}
+{{< section-jumbo text="This is a huge jumbo text! Thank you for reading." background="#FFA500" >}}
 
 <!-- Two column sections are wrapped in the section-two-column shortcode, with the left and right inside -->
 <!-- You can apply the same properties as with section-column to the parent section-two-column shortcode -->
-{{< section-two-column title="This is a two column section" background="" >}}
+{{< section-two-column title="This is a two column section" background="white" grid="64px" >}}
 {{% section-two-column-left %}}
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore recusandae aperiam rerum ipsa accusantium reiciendis doloremque voluptas, officia dolorem et expedita quaerat nam explicabo non iure? Cupiditate, ea nulla?
@@ -96,7 +96,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore recusa
 {{< /section-two-column >}}
 
 <!-- You can use the gallery to support showing a grid of images in a gallery format -->
-{{< section-gallery background="white" grid="48px" >}}
+{{< section-gallery background="" >}}
 
 {{< img src="exampleimg1.webp" >}}
 {{< img src="exampleimg2.webp" >}}

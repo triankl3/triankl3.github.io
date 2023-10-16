@@ -3,7 +3,7 @@ $color-text: #dddddd;
 $color-background: #111111;
 
 $footer-height: 96px;
-$post-header-height: 384px;
+$post-header-height: 256px;
 
 $content-padding: 16px;
 $content-width: 1024px;
@@ -11,16 +11,15 @@ $content-width-max: 1920px;
 $content-width-narrow: 720px;
 
 $nav-offset: $content-padding * 2;
-$nav-size: 84px;
-$nav-font-size: 16px;
+$nav-size: 90px;
+$nav-font-size: 18px;
 $nav-top-size: $content-padding;
 $nav-top-font-size: 32px;
 
 $max-width-tablet: $content-width + $content-padding * 2 + $nav-offset + $nav-size * 2;
 $max-width-mobile: $content-width-narrow + $content-padding * 2 + $nav-offset + $nav-size * 1.2;
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Oswald:wght@700&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Syne:wght@800&display=swap');
 @import
     "general",
     "single",

@@ -36,7 +36,7 @@
     background: transparent url('/img/noise-transparent.png') repeat 0 0;
     background-repeat: repeat;
     animation: animation-effect-noise 0.5s infinite;
-    z-index: 999;
+    z-index: -100;
 
     pointer-events: none;
 }
@@ -55,10 +55,10 @@
 }
 
 // Rotating 3D cubes in CSS
-$cube-size: 128px;
+$cube-size: 220px;
 $cube-size-half: $cube-size/2;
 $animation-time: 15s;
-.effect-cube-container {
+#effect-cube-container {
 	width: $cube-size;
 	height: $cube-size;
 	perspective: $cube-size*4;
@@ -67,7 +67,7 @@ $animation-time: 15s;
     position: absolute;
     z-index: -110;
 
-    .effect-cube {
+    #effect-cube {
         position: relative;
         width: 100%;
         height: 100%;

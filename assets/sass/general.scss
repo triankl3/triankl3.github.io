@@ -72,25 +72,20 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0;
     margin: $content-padding / 4 0 $content-padding / 4 0;
 
+    font-family: 'Oswald', sans-serif;
     font-weight: 800;
     text-transform: uppercase;
 }
 
 h1 {
-    font-family: 'Syne';
-    font-weight: 800;
     font-size: 48px;
 }
 
 h2 {
-    font-family: 'Syne';
-    font-weight: 800;
     font-size: 36px;
 }
 
 h3, h4, h5, h6 {
-    font-family: 'Syne';
-    font-weight: 800;
     font-size: 24px;
 }
 
@@ -152,6 +147,7 @@ div.highlight pre {
     word-break: break-word;
 }
 code {
+    font-family: 'Space Mono', monospace;
     font-size: 14px;
 
     padding: 4px;
@@ -218,18 +214,19 @@ nav {
     #nav-socials {
         top: $nav-offset;
         right: calc(50% - #{($content-width / 2)} - #{$nav-size});
-        
+        width: $nav-size;
+
         li {
-            height: $nav-font-size;
-            margin-bottom: $nav-font-size;
+            margin-bottom: $nav-font-size / 2;
         }
-    
+        
         img {
             vertical-align: middle;
-            width: $nav-font-size;
         }
-
+        
         a {
+            height: $nav-font-size + 8px;
+            width: $nav-font-size + 8px;
             padding: 4px;
         }
     }
@@ -251,6 +248,7 @@ nav.nav-wide {
         left: $nav-offset;
     }
     #nav-socials {
+        width: auto;
         right: $nav-offset;
     }
     #nav-pages {
@@ -267,6 +265,7 @@ nav.nav-wide {
     padding: 0;
 
     list-style: none;
+    margin: $content-padding 0;
 
     .post-tag {
         display: inline;
@@ -355,9 +354,9 @@ nav.nav-wide {
     }
 
     h1 { // Title
-        font-family: 'Syne', sans-serif;
         font-size: 24px;
         text-transform: uppercase;
+        font-family: 'Syne', sans-serif;
         font-weight: 800;
         letter-spacing: 1px;
         color: $color-text;
@@ -367,21 +366,21 @@ nav.nav-wide {
     }
 
     h2 { // Date
-        font-size: 14px;
+        font-family: 'Michroma', sans-serif;
+        font-size: 10px;
         font-weight: 600;
         text-transform: uppercase;
     }
 
     p { // Description
         font-size: 14px;
-        letter-spacing: 1px;
 
         background-color: rgba($color-background, 0.6);
         box-shadow: 0 0 32px 32px rgba($color-background, 0.6);
     }
 
     .post-tags { // Position post tags at the bottom left
-        margin-bottom: 0;
+        margin: $content-padding / 2 0 0 0 ;
     }
 }
 @media (hover: hover) { .post-list-card:hover {

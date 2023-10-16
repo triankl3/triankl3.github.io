@@ -1,17 +1,11 @@
 {{ define "main" }}
 
-{{ partial "effect-cube.html" "cube1" }}
-{{ partial "effect-cube.html" "cube2" }}
+{{ partial "effect-cube.html" }}
 <style>
-    #cube1, #cube2 {
+    #effect-cube-container {
         top: 50%;
         left: 50%;
-    }
-    #cube1 {
-        transform: translate(256px, -224px);
-    }
-    #cube2 {
-        transform: translate(-384px, 42px);
+        transform: translate(-50%, -50%);
     }
 </style>
 
