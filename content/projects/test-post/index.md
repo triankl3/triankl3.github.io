@@ -69,22 +69,22 @@ Emoji's work :skull:.
 In your command prompt you should type: `npm run serve`.
 
 ```lua
-    --please don't take this code seriously
-    local module = {}
+--please don't take this code seriously
+local module = {}
 
-    local TREE_HEIGHT_RANGE = NumberRange.new(10, 40)
+local TREE_HEIGHT_RANGE = NumberRange.new(10, 40)
 
-    --this is a really useless function, but it works!
-    function module.randomTreeStats()
-        return math.random(TREE_HEIGHT_RANGE.Min, TREE_HEIGHT_RANGE.Max)
-    end
+--this is a really useless function, but it works!
+function module.randomTreeStats()
+    return math.random(TREE_HEIGHT_RANGE.Min, TREE_HEIGHT_RANGE.Max)
+end
 
-    --here is an example of a very long line
-    function module.boxRegion3(pos, size)
-        return Region3.new(pos - Vector3.new(size.X / 2, size.Y / 2, size.Z / 2), pos + Vector3.new(size.X / 2, size.Y / 2, size.Z / 2))
-    end
+--here is an example of a very long line
+function module.boxRegion3(pos, size)
+    return Region3.new(pos - Vector3.new(size.X / 2, size.Y / 2, size.Z / 2), pos + Vector3.new(size.X / 2, size.Y / 2, size.Z / 2))
+end
 
-    return module
+return module
 ```
 
 <!-- Markdown is set to unsafe rendering, adding shortcodes in markdown text is supported -->

@@ -143,10 +143,13 @@ figure {
 }
 
 div.highlight pre {
-    white-space: pre-wrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: pre;
     word-break: break-word;
 }
 code {
+    display: inline-block;
     font-family: 'Space Mono', monospace;
     font-size: 14px;
 
@@ -154,21 +157,6 @@ code {
 
     background-color: lighten($color-background, 2.5%);
     color: $color-text;
-}
-.highlight {
-    padding: 1px 0;
-    margin: $content-padding 0;
-
-    background-color: lighten($color-background, 2.5%);
-
-    code {
-        padding: 0;
-        border: none;
-    }
-
-    * {
-        background-color: lighten($color-background, 2.5%);
-    }
 }
 
 video {
