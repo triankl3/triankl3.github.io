@@ -34,6 +34,10 @@
             {{ $pageTitle | upper }}
         </title> 
 
+        {{/*  Set favicon  */}}
+        <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
+        <link rel="icon" type="image/png" href="/img/favicon.png">
+
         {{/* Facebook meta tags  */}}
         <meta property="og:title" content="{{ $pageTitle }}">
         <meta property="og:description" content='{{ if isset .Params "description" }} {{ .Description }} {{ else }} {{ .Site.Params.Description }} {{ end }}'>
