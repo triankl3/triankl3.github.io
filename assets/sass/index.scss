@@ -3,3 +3,23 @@
 #landing img, #landing-extended {
     mix-blend-mode: difference;
 }
+
+
+@media (max-width: $content-width) {
+
+    #landing > img {
+        display: none;
+    }
+        
+    #landing::before {
+        content: url("/img/landing-compact.svg");
+        mix-blend-mode: difference;
+    }
+}
+
+@media (max-width: $max-width-scaled) {
+    #landing::before {
+        mix-blend-mode: normal;
+        opacity: 0.7;
+    }
+}

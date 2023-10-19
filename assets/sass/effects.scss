@@ -174,12 +174,12 @@ $animation-time: 15s;
         }
         @media (max-width: $max-width-full) {
             #effect-grid-lines {
-                background-size: 35px 20px;
+                background-size: 55px 40px;
             }
         }
         @media (max-width: $max-width-scaled) {
             #effect-grid-lines {
-                background-size: 25px 15px;
+                background-size: 65px 50px;
             }
         }
     }
