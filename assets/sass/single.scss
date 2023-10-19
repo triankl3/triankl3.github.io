@@ -77,8 +77,32 @@ article { // We can determine if the element is inside of an single page/post us
         }
     }
 
+    .gallery {
+        a {
+            display: block;
+            width: 50%;
+            height: 128px;
+            padding: 4px;
+            float: left;
+
+            div {
+                height: 100%;
+                width: 100%;
+                
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+        a:hover {
+            background-color: initial;
+        }
+
+        overflow: auto;
+    }
+
     // Sections used to organize and style content in blogposts into visually attractive pieces
-    .section-column, .section-two-column, .section-jumbo, .section-gallery {
+    .section-column, .section-two-column, .section-jumbo {
         padding: $content-padding * 4 $nav-size * 2;
     }
 
@@ -136,38 +160,9 @@ article { // We can determine if the element is inside of an single page/post us
         float: right;
         padding: $content-padding 0 $content-padding $content-padding;
     }
-
-    $max-gallery-items-per-row: 6;
-    $max-gallery-item-width: ($content-width-max - $content-padding * 2 - $content-padding * $max-gallery-items-per-row) / $max-gallery-items-per-row;
-    .section-gallery {
-        .content-wrapper-max {
-            text-align: center;
-
-            .pspw-lightbox {
-                a {
-                    display: inline-block;
-                    width: $max-gallery-item-width;
-                    height: $max-gallery-item-width / 2;
-                    margin: $content-padding * 0.4;
-                    
-                    div {
-                        height: 100%;
-                        width: 100%;
-                        
-                        background-position: center;
-                        background-size: cover;
-                        background-repeat: no-repeat;
-                    }
-                }
-                a:hover {
-                    background-color: initial;
-                }
-            }
-        }
-    }
 }
 
-@media (max-width: $max-width-tablet) {
+@media (max-width: $max-width-full) {
     article {
         header {
             .content-wrapper-max {
@@ -179,7 +174,7 @@ article { // We can determine if the element is inside of an single page/post us
             }
         }
 
-        .section-column, .section-two-column, .section-jumbo, .section-gallery {
+        .section-column, .section-two-column, .section-jumbo {
             padding: $content-padding;
         }
 
@@ -198,32 +193,40 @@ article { // We can determine if the element is inside of an single page/post us
     }
 }
 
-@media (max-width: $max-width-mobile) {
+@media (max-width: $max-width-scaled) {
     article {
         header {
-            #featured-image {
+            #featured-image { // Remove parallax effects
                 background-attachment: revert;
             }
 
-            .content-wrapper-max {
+            .content-wrapper-max { // Even smaller font sizes to make sure everything fits on screen
                 h1 {
-                    font-size: 32px;
+                    font-size: 24px;
+                }
+
+                h2 {
+                    font-size: 10px;
                 }
             }
         }
 
+        .section-column, .section-two-column, .section-jumbo {
+            padding: 0;
+        }
+
         .section-column-title {
             text-align: left;
-            font-size: 36px;
+            font-size: 32px;
         }
 
         .section-jumbo {
             h1 {
-                font-size: 48px;
+                font-size: 32px;
             }
         }
 
-        .section-splash {
+        .section-splash { // Remove parallax effects
             background-attachment: revert;
         }
 
@@ -231,10 +234,10 @@ article { // We can determine if the element is inside of an single page/post us
             font-size: 32px;
         }
         h2 {
-            font-size: 24px;
+            font-size: 32px;
         }
         h3 {
-            font-size: 16px;
+            font-size: 32px;
         }
     }
 }

@@ -58,11 +58,6 @@ Emoji's work :skull:.
 
 {{< video src="examplevid1.mp4" >}}
 
-| Syntax      | Description | Test Text     |
-| :---        |    :----:   |          ---: |
-| Header      | Title       | Here's this   |
-| Paragraph   | Text        | And more      |
-
 {{% /section-two-column-left %}}
 {{% section-two-column-right %}}
 
@@ -88,21 +83,16 @@ return module
 ```
 
 <!-- Markdown is set to unsafe rendering, adding shortcodes in markdown text is supported -->
+{{< gallery >}} <!-- You can use the gallery to support showing a grid of images in a gallery format -->
+
+{{< img src="exampleimg1.webp" >}}
+{{< img src="exampleimg2.webp" >}}
+{{< img src="exampleimg1.webp" >}}
+{{< img src="exampleimg1.webp" >}}
+{{< img src="exampleimg2.webp" >}}
 {{< img src="exampleimg2.webp" >}}
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore recusandae aperiam rerum ipsa accusantium reiciendis doloremque voluptas, officia dolorem et expedita quaerat nam explicabo non iure? Cupiditate, ea nulla?
+{{< /gallery >}}
 
 {{% /section-two-column-right %}}
 {{< /section-two-column >}}
-
-<!-- You can use the gallery to support showing a grid of images in a gallery format -->
-{{< section-gallery background="" >}}
-
-{{< img src="exampleimg1.webp" >}}
-{{< img src="exampleimg2.webp" >}}
-{{< img src="exampleimg1.webp" >}}
-{{< img src="exampleimg1.webp" >}}
-{{< img src="exampleimg2.webp" >}}
-{{< img src="exampleimg2.webp" >}}
-
-{{< /section-gallery >}}

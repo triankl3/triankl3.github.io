@@ -7,7 +7,7 @@
 {{ $src_thumb := $src.Resize "x720" }}
 {{ $src_full := $src.Resize "x1440" }}
 
-{{ if not (in .Parent.Name "section-gallery") }}
+{{ if not (in .Parent.Name "gallery") }}
 
 <div class="pspw-lightbox">
 <a href="{{ $src_full.RelPermalink }}" data-pswp-width="{{ $src_full.Width }}" data-pswp-height="{{ $src_full.Height }}" target="_blank">

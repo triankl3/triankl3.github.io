@@ -69,13 +69,7 @@
             </div>
         </div>
 
-        <script>
-            function toggleNavigation(menuButton) {
-                document.getElementsByTagName("nav")[0].classList.toggle("nav-show");
-            }
-        </script>
         <nav {{ if not .IsHome }} {{ if not (eq .Parent .Site.Home) }} class="nav-wide" {{ end }} {{ end }}>
-            <a id="nav-menu" onclick="toggleNavigation(this)"><img src="/img/menu.svg"></a>
             <a id="nav-logo" href="/"><img src="/img/logo.svg"></a>
             <ul id="nav-pages">
                 <li><a href="/projects">projects</a></li>
