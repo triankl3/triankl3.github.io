@@ -269,6 +269,8 @@ nav.nav-wide {
 
 .post-list-alltags {
     .post-tags {
+        margin-top: 0;
+
         .post-tag {
             cursor: pointer;
 
@@ -313,7 +315,7 @@ nav.nav-wide {
         filter: saturate(40%);
         opacity: 0.75;
 
-        background-position: left;
+        background-position: left center;
         background-repeat: no-repeat;
         background-size: 125%;
 
@@ -432,8 +434,12 @@ nav.nav-wide {
     }
 
     .post-list-card {
+        div {
+            background-size: cover;
+        }
+
         h1 {
-            font-size: 24px;
+            font-size: 20px;
         }
     }
 }
