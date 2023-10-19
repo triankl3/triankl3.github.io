@@ -170,6 +170,16 @@ $animation-time: 15s;
             transform-origin: 100% 0 0;
             animation: effect-grid-animation 45s linear infinite;
         }
+        @media (max-width: $max-width-full) {
+            #effect-grid-lines {
+                background-size: 35px 20px;
+            }
+        }
+        @media (max-width: $max-width-scaled) {
+            #effect-grid-lines {
+                background-size: 25px 15px;
+            }
+        }
     }
 }
 @keyframes effect-grid-animation {
