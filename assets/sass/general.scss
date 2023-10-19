@@ -204,6 +204,10 @@ nav {
     }
 
     #nav-pages {
+        #nav-pages-home {
+            display: none;
+        }
+
         top: $nav-offset + $nav-size + $nav-font-size / 2;
         left: calc(50% - #{($content-width / 2)} - #{$nav-size});
 
@@ -376,10 +380,10 @@ nav.nav-wide {
 // Small screen optimizations
 @media (max-width: $max-width-full) {
     nav {
-        margin: $content-padding / 2 0 0 $content-padding;
+        margin-top: $content-padding / 2;
 
         display: flex; 
-        justify-content: left;
+        justify-content: center;
         align-items: center;
         flex-wrap: wrap;
 
@@ -393,19 +397,19 @@ nav.nav-wide {
             }
         }
 
-        #nav-logo {
-            img {
-                text-align: left;
+        #nav-pages {
+            #nav-pages-home {
+                display: inline-block;
             }
 
-            padding: 4px;
+            text-align: center;
+        }
 
-            height: $nav-font-size * 2;
-            width: $nav-font-size * 2;
+        #nav-logo {
+            display: none;
         }
 
         #nav-socials {
-
             float: right;
 
             height: $nav-font-size;
