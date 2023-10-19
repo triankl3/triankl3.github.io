@@ -18,8 +18,6 @@
                 {{ end }}
             {{ end }}
 
-            <br>
-
             {{/*  Loop over latest(first) 3 posts in both sections and add dummy cards to go to full section pages  */}}
             {{ with .Site.GetPage "/projects" }}
                 {{ range .Pages | first 3}}
@@ -33,8 +31,6 @@
                     <p>Browse all projects by date and tags.</p>
                 </a>
             </div>
-
-            <br>
 
             {{ with .Site.GetPage "/blog" }}
                 {{ range .Pages | first 3}}

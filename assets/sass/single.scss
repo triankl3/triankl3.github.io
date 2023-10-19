@@ -56,7 +56,7 @@ header { // The header/top section of a post, pretty self explanatory
 
     .content-wrapper-max {
         position: relative;
-        min-height: $post-header-height;
+        // min-height: $post-header-height;
         padding: $content-padding * 2 $nav-size * 2 + $content-padding;
 
         h1, h2, p {
@@ -239,7 +239,7 @@ header { // The header/top section of a post, pretty self explanatory
 
     .section-jumbo {
         h1 {
-            font-size: 32px;
+            font-size: 52px;
         }
     }
 
@@ -251,9 +251,9 @@ header { // The header/top section of a post, pretty self explanatory
         font-size: 32px;
     }
     h2 {
-        font-size: 32px;
+        font-size: 24px;
     }
     h3 {
-        font-size: 32px;
+        font-size: 18px;
     }
 }

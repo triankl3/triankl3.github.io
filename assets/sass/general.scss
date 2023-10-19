@@ -15,6 +15,7 @@
 }
 
 body {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.25);
     font-family: 'Space Grotesk', sans-serif;
     
     * {
@@ -44,7 +45,7 @@ footer {
     * {
         font-weight: 400;
     }
-    text-transform: uppercase;
+    // text-transform: uppercase;
 }
 
 // Content wrappers used all around the website to position and scale content
@@ -244,9 +245,9 @@ nav.nav-wide {
     margin: $content-padding 0;
 
     .post-tag {
-        display: inline;
+        display: inline-block;
         margin-right: 4px;
-        padding: 4px 12px;
+        padding: 6px 12px;
     
         font-size: 12px;
         font-weight: 700;
@@ -300,7 +301,7 @@ nav.nav-wide {
 
 .post-list-card {
     width: 100%;
-    padding: 16px 16px;
+    padding: 16px;
     margin-bottom: $content-padding;
 
     user-select: none;
@@ -352,13 +353,14 @@ nav.nav-wide {
 
     p { // Description
         font-size: 14px;
+        line-height: 16px;
 
         background-color: rgba($color-background, 0.6);
         box-shadow: 0 0 32px 32px rgba($color-background, 0.6);
     }
 
     .post-tags { // Position post tags at the bottom left
-        margin: $content-padding / 2 0 0 0 ;
+        margin: 8px 0 0 0;
     }
 }
 @media (hover: hover) { .post-list-card:hover {
@@ -433,17 +435,21 @@ nav.nav-wide {
     }
 }
 @media (max-width: $max-width-scaled) {
-    #effect-cube-container {
-        display: none;
+    .content-wrapper, .content-wrapper-max, .content-wrapper-narrow {
+        padding: $content-padding $content-padding * 0.5;
     }
 
     .post-list-card {
+        margin-bottom: $content-padding / 2;
+        
         div {
             background-size: cover;
+            filter: none;
+            opacity: 1;
         }
 
         h1 {
-            font-size: 20px;
+            font-size: 16px;
         }
     }
 }

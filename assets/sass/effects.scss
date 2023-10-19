@@ -135,6 +135,11 @@ $animation-time: 15s;
 		transform: rotateY(405deg) rotateX(420deg);
 	}
 }
+@media (max-width: $content-width) {
+    #effect-cube-container {
+        display: none;
+    }
+}
 
 // Moving 3D grid in CSS
 #effect-grid-container {
