@@ -1,24 +1,6 @@
 {{ define "main" }}
 
-<script>
-    // This script handles changing the color gradient when hovering over a post
-    var effectGradient = document.getElementById('effect-gradient');
-    function updateGradientColor(colorArray) {
-        effectGradient.setAttribute("style", "background: linear-gradient(90deg, " + colorArray + "); background-size: 200% 200%; opacity: 1;");
-    }
-    function resetGradientColor() {
-        effectGradient.style.opacity = 0;
-    }
-</script>
-
-<style>
-    .tf-filter-item {
-        display: none;
-    }
-    .tf-show-item {
-        display: initial;
-    }
-</style>
+{{ partial "func-scss.html" "section" }}
 
 <div class="content-wrapper">
     <div class="post-list">
@@ -49,31 +31,7 @@
     
         {{ range (where .Site.Pages "Section" .Section) }}
             {{ range .Pages }}
-                {{/*  Prepare a compressed version of the featured image to use as a thumbnail  */}}
-                {{ $featured_img_path := print "img/" .Params.image }}
-                {{ $featured_img := resources.Get $featured_img_path }}
-                {{ $featured_img := $featured_img.Resize "x480" }}
-                {{ $featured_color := (index $featured_img.Colors 1) }}
-                {{ $featured_color_list := delimit $featured_img.Colors ", " }}
-    
-                <div class="post-list-card vanilla-tilt" onmouseenter="updateGradientColor({{ $featured_color_list }})" onmouseleave="resetGradientColor()">
-                        <a href=" {{ .RelPermalink }} " class="tf-filter-item" data-tags="{{ with .Params.tags }} {{ range . }} {{ . }} {{ end }} {{ end }}">
-                        <div style="background-image: url('{{ $featured_img.RelPermalink }}')"></div>
-                        <h2>{{ .Date.Format "Jan 2, 2006" }} // {{ .Section }}</h2>
-                        <h1 style=" -webkit-text-stroke: 1px color-mix(in srgb, {{ $featured_color }} 50%, white)">{{ .Title }}</h1>
-                        <p>{{ .Description | truncate 96 }}</p>
-                        
-                        <ul class="post-tags">
-                            {{ with .Params.tags }}
-                                {{ if ge (len .) 1 }}
-                                    {{ range . }}
-                                        <li class="post-tag">{{ . }}</li>
-                                    {{ end }}
-                                {{ end }}
-                            {{ end }}
-                        </ul>
-                    </a>
-                    </div>
+                {{ partial "post-list-card.html" . }}
             {{ end }}
         {{ end }}
     </div>

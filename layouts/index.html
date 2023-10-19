@@ -3,18 +3,31 @@
 {{ partial "func-scss.html" "index" }}
 {{ partial "effect-cube.html" }}
 
-<style>
-    #effect-cube-container {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-</style>
-
 <div class="content-wrapper">
     <div id="landing">
         <img src="/img/landing-main.svg" style="user-select: none;" draggable="false">
         <img id="landing-extended" src="/img/landing-extended.svg" style="user-select: none;" draggable="false">
+        <div class="post-list">
+            {{/*  Loop over posts in featured array  */}}
+            {{ $site := . }}
+            {{ range .Site.Params.featuredPosts }}
+                {{ with $site.GetPage . }}
+                    {{ partial "post-list-card.html" . }}
+                {{ end }}
+            {{ end }}
+
+            {{/*  Loop over latest(first) 3 posts in both sections  */}}
+            {{ with .Site.GetPage "/projects" }}
+                {{ range .Pages | first 3}}
+                    {{ partial "post-list-card.html" . }}
+                {{ end }}
+            {{ end }}
+            {{ with .Site.GetPage "/blog" }}
+                {{ range .Pages | first 3}}
+                    {{ partial "post-list-card.html" . }}
+                {{ end }}
+            {{ end }}
+        </div>
     </div>
 </div>
 
