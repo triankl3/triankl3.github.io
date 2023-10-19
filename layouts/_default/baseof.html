@@ -26,12 +26,12 @@
         {{/*  Determine page title  */}}
         {{ $pageTitle := .Site.Title }}
         {{ if (.IsHome) }}
-            {{ $pageTitle = print "Home | " .Site.Title }}
+            {{ $pageTitle = print .Site.Title ".com" }}
         {{ else if (.Page.Title) }}
-            {{ $pageTitle = print .Page.Title " | " .Site.Title }}
+            {{ $pageTitle = print .Page.Title " | " .Site.Title ".com" }}
         {{ end }}
         <title>
-            {{ $pageTitle }}
+            {{ $pageTitle | upper }}
         </title> 
 
         {{/* Facebook meta tags  */}}
