@@ -6,7 +6,9 @@
 <div class="content-wrapper">
     <div id="landing">
         <img src="/img/landing-main.svg" style="user-select: none;" draggable="false">
-        <img id="landing-extended" src="/img/landing-extended.svg" style="user-select: none;" draggable="false">
+    </div>
+    <div id="landing-extended">
+        <img src="/img/landing-extended.svg" style="user-select: none;" draggable="false">
         <div class="post-list">
             {{/*  Loop over posts in featured array  */}}
             {{ $site := . }}
@@ -16,17 +18,36 @@
                 {{ end }}
             {{ end }}
 
-            {{/*  Loop over latest(first) 3 posts in both sections  */}}
+            <br>
+
+            {{/*  Loop over latest(first) 3 posts in both sections and add dummy cards to go to full section pages  */}}
             {{ with .Site.GetPage "/projects" }}
                 {{ range .Pages | first 3}}
                     {{ partial "post-list-card.html" . }}
                 {{ end }}
             {{ end }}
+            <div class="post-list-card vanilla-tilt">
+                <a href="/projects">
+                    <div style="background-color: #111111"></div>
+                    <h1 style=" -webkit-text-stroke: 1px #dddddd">Projects</h1>
+                    <p>Browse all projects by date and tags.</p>
+                </a>
+            </div>
+
+            <br>
+
             {{ with .Site.GetPage "/blog" }}
                 {{ range .Pages | first 3}}
                     {{ partial "post-list-card.html" . }}
                 {{ end }}
             {{ end }}
+            <div class="post-list-card vanilla-tilt">
+                <a href="/blog">
+                    <div style="background-color: #111111"></div>
+                    <h1 style=" -webkit-text-stroke: 1px #dddddd">Blog</h1>
+                    <p>Browse all blog posts by date and tags.</p>
+                </a>
+            </div>
         </div>
     </div>
 </div>
