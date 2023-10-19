@@ -1,0 +1,44 @@
+@import "variables";
+
+footer {
+    mix-blend-mode: difference;
+}
+
+#effect-grid {
+    opacity: 0.1;
+}
+
+#static-page-wrapper {
+    #static-page-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: $color-text;
+        mix-blend-mode: difference;
+    
+        z-index: -1;
+    }
+
+    color: $color-background;
+
+    * {
+        color: $color-background;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+
+        li {
+            margin-top: 4px;
+        }
+    }
+}

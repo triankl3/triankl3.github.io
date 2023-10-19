@@ -1,3 +1,5 @@
+@import "variables";
+
 // Dark mode for browser (scrollbars/forms/etc...)
 :root {
     color-scheme: dark;
@@ -365,61 +367,6 @@ nav.nav-wide {
     }
 }}
 
-// Landing/Home page styling
-#landing img, #landing-extended {
-    mix-blend-mode: difference;
-}
-
-// Style the other two static/fixed pages (contact and about)
-#contact-background, #about-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: $color-text;
-    mix-blend-mode: difference;
-
-    z-index: -1;
-}
-#contact, #about {
-    color: $color-background;
-
-    * {
-        color: $color-background;
-    }
-
-    p {
-        margin: 0;
-    }
-
-    ul {
-        margin: 0;
-        padding: 0;
-
-        list-style: none;
-
-        li {
-            margin-top: 4px;
-        }
-    }
-}
-
-#_404 {
-    text-align: center;
-    text-transform: uppercase;
-    
-    mix-blend-mode: color-dodge;
-    
-    h1 {
-        margin: 0;
-        font-size: 72px;
-    }
-    p {
-        margin: 0;
-    }
-}
-
 // Small screen optimizations
 @media (max-width: $max-width-full) {
     nav {
@@ -474,13 +421,6 @@ nav.nav-wide {
             }
         }
     }
-    // nav.nav-wide {
-    //     #nav-pages {
-    //         li {
-    //             text-align: left;
-    //         }
-    //     }
-    // }
 }
 @media (max-width: $max-width-scaled) {
     #effect-cube-container {

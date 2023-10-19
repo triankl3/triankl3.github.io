@@ -1,0 +1,7 @@
+{{/*  Handles building SASS and linking it by simply providing it's name  */}}
+
+{{ $input_name := print "sass/" . ".scss" }}
+{{ $parsed_name := print . "_parsed.scss" }}
+{{ $output_name := print "css/" . "_output.css" }}
+{{ $final_style := resources.Get $input_name | resources.ExecuteAsTemplate $parsed_name . | resources.ToCSS (dict "targetPath" $output_name "outputStyle" "compressed") | resources.Minify }}
+<link rel="stylesheet" href="{{ $final_style.RelPermalink }}">

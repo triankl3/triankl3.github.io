@@ -1,0 +1,22 @@
+@import "variables";
+
+#effect-gradient {
+    background: linear-gradient(90deg, #FFBB5C, #FF9B50, #E25E3E, #C63D2F); 
+    background-size: 200% 200%; 
+    opacity: 1;
+}
+
+#_404 {
+    text-align: center;
+    text-transform: uppercase;
+    
+    mix-blend-mode: color-dodge;
+    
+    h1 {
+        margin: 0;
+        font-size: 72px;
+    }
+    p {
+        margin: 0;
+    }
+}

@@ -1,243 +1,259 @@
-article { // We can determine if the element is inside of an single page/post using the article element
-    header { // The header/top section of a post, pretty self explanatory
-        #featured-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
+@import "variables";
 
-            background-position: center bottom;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            z-index: -999;
-        }
+#effect-grid-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
 
-        #header-shadow-top {
-            box-shadow: inset 0px 384px 128px -128px rgba($color-background, 0.8);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+#effect-cube-container {
+    top: 5%;
+    left: 20%;
+    transform: translate(-50%, 0);
+}
 
-            z-index: -115;
-        }
+footer {
+    background-color: #111111;
+}
 
-        #header-shadow-bottom {
-            position: absolute;
-            width: 100%;
-            height: 128px;
+#effect-gradient {
+    display: none;
+}
 
-            pointer-events: none;
-        }
-
-        .content-wrapper-max {
-            position: relative;
-            min-height: $post-header-height;
-            padding: $content-padding * 2 $nav-size * 2 + $content-padding;
-
-            h1, h2, p {
-                margin: 0;
-                padding: 0;
-            }
-
-            h1 { // Title
-                font-family: 'Syne', sans-serif;
-                font-size: 72px;
-                font-weight: 800;
-
-                mix-blend-mode: difference;
-            }
-
-            h2 { // Date
-                font-family: 'Michroma', sans-serif;
-                display: block;
-                font-size: 14px;
-                font-weight: 600;
-                text-transform: uppercase;
-            }
-
-            p { // Description
-                max-width: $content-width-narrow;
-            }
-            
-            .post-tags {
-                bottom: $content-padding * 2;
-                z-index: 1;
-
-                .post-tag {
-                    border: none;
-                    // background-color: rgba($color-text, 1);
-                    color: $color-text;
-                    font-size: 16px;
-                }
-            }
-        }
-    }
-
-    .gallery {
-        a {
-            display: block;
-            width: 50%;
-            height: 128px;
-            padding: 4px;
-            float: left;
-
-            div {
-                height: 100%;
-                width: 100%;
-                
-                background-position: center;
-                background-size: cover;
-                background-repeat: no-repeat;
-            }
-        }
-        a:hover {
-            background-color: initial;
-        }
-
-        overflow: auto;
-    }
-
-    // Sections used to organize and style content in blogposts into visually attractive pieces
-    .section-column, .section-two-column, .section-jumbo {
-        padding: $content-padding * 4 $nav-size * 2;
-    }
-
-    .section-column {
-        .content-wrapper { // This prevents adding double content padding
-            padding: 0;
-        }
-    }
-
-    .section-column-title {
-        margin: 0;
-        padding: 0;
-
-        font-size: 56px;
-    }
-
-    .section-splash {
+header { // The header/top section of a post, pretty self explanatory
+    #featured-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
         width: 100%;
-        height: 80vh;
 
-        background-position: center center;
+        background-position: center bottom;
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
+        z-index: -999;
     }
 
-    .section-jumbo {
+    #header-shadow-top {
+        box-shadow: inset 0px 384px 128px -128px rgba($color-background, 0.8);
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
-        min-height: 60vh;
+        height: 100%;
 
-        display: flex;
-        align-items:center;
-        justify-content:center;
-        
-        h1 {
+        z-index: -115;
+    }
+
+    #header-shadow-bottom {
+        position: absolute;
+        width: 100%;
+        height: 128px;
+
+        pointer-events: none;
+    }
+
+    .content-wrapper-max {
+        position: relative;
+        min-height: $post-header-height;
+        padding: $content-padding * 2 $nav-size * 2 + $content-padding;
+
+        h1, h2, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 { // Title
             font-family: 'Syne', sans-serif;
-            text-transform: initial;
-            font-size: 96px;
-        }
-    }
+            font-size: 72px;
+            font-weight: 800;
 
-    .section-two-column {
-        .section-column-title {
-            text-align: left;
+            mix-blend-mode: difference;
         }
-    }
-    .section-two-column-left, .section-two-column-right {
-        width: 50%;
-    }
-    .section-two-column-left {
-        float: left;
-        padding: $content-padding $content-padding $content-padding 0;
-    }
-    .section-two-column-right {
-        float: right;
-        padding: $content-padding 0 $content-padding $content-padding;
+
+        h2 { // Date
+            font-family: 'Michroma', sans-serif;
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        p { // Description
+            max-width: $content-width-narrow;
+        }
+        
+        .post-tags {
+            bottom: $content-padding * 2;
+            z-index: 1;
+
+            .post-tag {
+                border: none;
+                // background-color: rgba($color-text, 1);
+                color: $color-text;
+                font-size: 16px;
+            }
+        }
     }
 }
 
+.gallery {
+    a {
+        display: block;
+        width: 50%;
+        height: 128px;
+        padding: 4px;
+        float: left;
+
+        div {
+            height: 100%;
+            width: 100%;
+            
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    }
+    a:hover {
+        background-color: initial;
+    }
+
+    overflow: auto;
+}
+
+// Sections used to organize and style content in blogposts into visually attractive pieces
+.section-column, .section-two-column, .section-jumbo {
+    padding: $content-padding * 4 $nav-size * 2;
+}
+
+.section-column {
+    .content-wrapper { // This prevents adding double content padding
+        padding: 0;
+    }
+}
+
+.section-column-title {
+    margin: 0;
+    padding: 0;
+
+    font-size: 56px;
+}
+
+.section-splash {
+    width: 100%;
+    height: 80vh;
+
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.section-jumbo {
+    width: 100%;
+    min-height: 60vh;
+
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    
+    h1 {
+        font-family: 'Syne', sans-serif;
+        text-transform: initial;
+        font-size: 96px;
+    }
+}
+
+.section-two-column {
+    .section-column-title {
+        text-align: left;
+    }
+}
+.section-two-column-left, .section-two-column-right {
+    width: 50%;
+}
+.section-two-column-left {
+    float: left;
+    padding: $content-padding $content-padding $content-padding 0;
+}
+.section-two-column-right {
+    float: right;
+    padding: $content-padding 0 $content-padding $content-padding;
+}
+
 @media (max-width: $max-width-full) {
-    article {
-        header {
-            .content-wrapper-max {
-                padding: $content-padding;
-
-                h1 {
-                    font-size: 48px;
-                }
-            }
-        }
-
-        .section-column, .section-two-column, .section-jumbo {
+    header {
+        .content-wrapper-max {
             padding: $content-padding;
-        }
 
-        .section-jumbo {
             h1 {
-                font-size: 64px;
+                font-size: 48px;
             }
         }
+    }
 
-        .section-two-column-left, .section-two-column-right {
-            float: none;
-            width: initial;
-            max-width: $content-width;
-            padding: 0;
+    .section-column, .section-two-column, .section-jumbo {
+        padding: $content-padding;
+    }
+
+    .section-jumbo {
+        h1 {
+            font-size: 64px;
         }
+    }
+
+    .section-two-column-left, .section-two-column-right {
+        float: none;
+        width: initial;
+        max-width: $content-width;
+        padding: 0;
     }
 }
 
 @media (max-width: $max-width-scaled) {
-    article {
-        header {
-            #featured-image { // Remove parallax effects
-                background-attachment: revert;
-            }
-
-            .content-wrapper-max { // Even smaller font sizes to make sure everything fits on screen
-                h1 {
-                    font-size: 24px;
-                }
-
-                h2 {
-                    font-size: 10px;
-                }
-            }
-        }
-
-        .section-column, .section-two-column, .section-jumbo {
-            padding: 0;
-        }
-
-        .section-column-title {
-            text-align: left;
-            font-size: 32px;
-        }
-
-        .section-jumbo {
-            h1 {
-                font-size: 32px;
-            }
-        }
-
-        .section-splash { // Remove parallax effects
+    header {
+        #featured-image { // Remove parallax effects
             background-attachment: revert;
         }
 
+        .content-wrapper-max { // Even smaller font sizes to make sure everything fits on screen
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 10px;
+            }
+        }
+    }
+
+    .section-column, .section-two-column, .section-jumbo {
+        padding: 0;
+    }
+
+    .section-column-title {
+        text-align: left;
+        font-size: 32px;
+    }
+
+    .section-jumbo {
         h1 {
             font-size: 32px;
         }
-        h2 {
-            font-size: 32px;
-        }
-        h3 {
-            font-size: 32px;
-        }
+    }
+
+    .section-splash { // Remove parallax effects
+        background-attachment: revert;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+    h2 {
+        font-size: 32px;
+    }
+    h3 {
+        font-size: 32px;
     }
 }

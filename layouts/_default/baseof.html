@@ -52,8 +52,8 @@
         {{ $normalize_style := resources.Get "css/modern-normalize.css" | resources.Minify }}
         <link rel="stylesheet" href="{{ $normalize_style.RelPermalink }}">
 
-        {{ $main_style := resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "main_parsed.scss" . | resources.ToCSS (dict "targetPath" "css/site.css" "outputStyle" "compressed") | resources.Minify }}
-        <link rel="stylesheet" href="{{ $main_style.RelPermalink }}">
+        {{ partial "func-scss.html" "general" }}
+        {{ partial "func-scss.html" "effects" }}
 
         {{ $photoswipe_style := resources.Get "css/photoswipe.css"  | resources.Minify }}
         <link rel="stylesheet" href="{{ $photoswipe_style.RelPermalink }}">

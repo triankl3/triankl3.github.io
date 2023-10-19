@@ -1,68 +1,50 @@
 {{ define "main" }}
 
-<article>
-    <header>        
-        {{ $featured_img := .Scratch.Get "featured_img" }}
-        {{ $featured_color := (index $featured_img.Colors 1) }}
-        {{ $featured_color_2 := (index $featured_img.Colors 2) }}
-        {{ $featured_color_rgb := partial "func-hextorgb.html" $featured_color | print | safeCSS }}
-        {{ $featured_color_rgb_2 := partial "func-hextorgb.html" $featured_color_2 | print | safeCSS }}
-        <div id="featured-image" style="background-image: url('{{ $featured_img.RelPermalink }}')"></div>
+{{ partial "func-scss.html" "single" }}
 
-        <div id="header-shadow-top"></div>
-        
-        {{ partial "effect-cube.html" }}
-        <style>            
-            #effect-grid-container {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-            }
-            #effect-grid-container #effect-grid #effect-grid-lines {
-                background-image: linear-gradient(to right, {{ $featured_color_2 }} 1px, transparent 0), 
-                linear-gradient(to bottom, {{ $featured_color_2 }} 1px, transparent 0);
-            }
+<header>        
+    {{ $featured_img := .Scratch.Get "featured_img" }}
+    {{ $featured_color := (index $featured_img.Colors 1) }}
+    {{ $featured_color_2 := (index $featured_img.Colors 2) }}
+    {{ $featured_color_rgb := partial "func-hextorgb.html" $featured_color | print | safeCSS }}
+    {{ $featured_color_rgb_2 := partial "func-hextorgb.html" $featured_color_2 | print | safeCSS }}
+    <div id="featured-image" style="background-image: url('{{ $featured_img.RelPermalink }}')"></div>
 
-            #effect-cube-container {
-                top: 5%;
-                left: 20%;
-                transform: translate(-50%, 0);
-            }
-            #effect-cube-container .effect-cube-side {
-                border: 1px solid rgba({{ $featured_color_rgb_2 }}, 0.4 );
-                background-color: rgba({{ $featured_color_rgb }}, 0.8 );
-                box-shadow: rgba({{ $featured_color_rgb }}, 0.8 ) 0 0 128px 0;
-            }
+    <div id="header-shadow-top"></div>
+    
+    {{ partial "effect-cube.html" }}
+    <style>            
+        #effect-grid-container #effect-grid #effect-grid-lines {
+            background-image: linear-gradient(to right, {{ $featured_color_2 }} 1px, transparent 0), 
+            linear-gradient(to bottom, {{ $featured_color_2 }} 1px, transparent 0);
+        }
 
-            #effect-gradient {
-                display: none;
-            }
+        #effect-cube-container .effect-cube-side {
+            border: 1px solid rgba({{ $featured_color_rgb_2 }}, 0.4 );
+            background-color: rgba({{ $featured_color_rgb }}, 0.8 );
+            box-shadow: rgba({{ $featured_color_rgb }}, 0.8 ) 0 0 128px 0;
+        }
+    </style>
 
-            footer {
-                background-color: #111111;
-            }
-        </style>
+    <div class="content-wrapper-max">
+        <h2 style="color: color-mix(in srgb, {{ $featured_color }} 50%, white)">{{ .Date.Format "Jan 2, 2006" }} // {{ .Section }}</h2>
+        <h1 style="color: color-mix(in srgb, {{ $featured_color }} 50%, white)">{{ .Title }}</h1>
+        <p style="color: color-mix(in srgb, {{ $featured_color_2 }} 35%, white)">{{ .Description }}</p>
+        <ul class="post-tags">
+            {{ with .Params.tags }}
+            {{ if ge (len .) 1 }}
+            {{ range . }}
+            <li class="post-tag" style="background-color: color-mix(in srgb, {{ $featured_color }} 50%, black)">{{ . }}</li>
+            {{ end }}
+            {{ end }}
+            {{ end }}
+        </ul>
+    </div>
 
-        <div class="content-wrapper-max">
-            <h2 style="color: color-mix(in srgb, {{ $featured_color }} 50%, white)">{{ .Date.Format "Jan 2, 2006" }} // {{ .Section }}</h2>
-            <h1 style="color: color-mix(in srgb, {{ $featured_color }} 50%, white)">{{ .Title }}</h1>
-            <p style="color: color-mix(in srgb, {{ $featured_color_2 }} 35%, white)">{{ .Description }}</p>
-            <ul class="post-tags">
-                {{ with .Params.tags }}
-                {{ if ge (len .) 1 }}
-                {{ range . }}
-                <li class="post-tag" style="background-color: color-mix(in srgb, {{ $featured_color }} 50%, black)">{{ . }}</li>
-                {{ end }}
-                {{ end }}
-                {{ end }}
-            </ul>
-        </div>
+    {{/*  Header bottom gradient shadow  */}}
+    <div id="header-shadow-bottom" style="box-shadow: 0 -128px 64px 64px rgba({{ $featured_color_rgb }}, 0.5);"></div>
+</header>
 
-        {{/*  Header bottom gradient shadow  */}}
-        <div id="header-shadow-bottom" style="box-shadow: 0 -128px 64px 64px rgba({{ $featured_color_rgb }}, 0.5);"></div>
-    </header>
-
-    {{ .Content }}
-</article>
+{{ .Content }}
 
 {{ end }}
