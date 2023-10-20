@@ -31,7 +31,6 @@ header { // The header/top section of a post, pretty self explanatory
         background-position: center bottom;
         background-size: cover;
         background-repeat: no-repeat;
-        background-attachment: fixed;
         z-index: -999;
     }
 
@@ -147,7 +146,6 @@ header { // The header/top section of a post, pretty self explanatory
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 .section-jumbo {
@@ -213,10 +211,6 @@ header { // The header/top section of a post, pretty self explanatory
 
 @media (max-width: $max-width-scaled) {
     header {
-        #featured-image { // Remove parallax effects
-            background-attachment: revert;
-        }
-
         .content-wrapper-max { // Even smaller font sizes to make sure everything fits on screen
             h1 {
                 font-size: 24px;
@@ -241,10 +235,6 @@ header { // The header/top section of a post, pretty self explanatory
         h1 {
             font-size: 52px;
         }
-    }
-
-    .section-splash { // Remove parallax effects
-        background-attachment: revert;
     }
 
     h1 {
