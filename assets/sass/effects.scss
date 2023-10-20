@@ -18,11 +18,9 @@
     0% {
         background-color: darken($color-text, 40%);
     }
-    50% {
-        background-color: darken($color-text, 60%);
-    }
     100% {
-        opacity: 0;
+        background-color: darken($color-text, 100%);
+        display: none;
     }
 }
 
