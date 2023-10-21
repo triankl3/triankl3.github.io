@@ -51,6 +51,8 @@ header { // The header/top section of a post, pretty self explanatory
         height: 128px;
 
         pointer-events: none;
+
+        z-index: -115;
     }
 
     .content-wrapper-max {
@@ -67,8 +69,6 @@ header { // The header/top section of a post, pretty self explanatory
             font-family: 'Orbitron', sans-serif;
             font-size: 96px;
             font-weight: 900;
-
-            mix-blend-mode: difference;
         }
 
         h2 { // Date
