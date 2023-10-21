@@ -14,7 +14,7 @@
     .effect-cube-side {
         border: 1px solid rgba(#C63D2F, 0.4 );
         background-color: rgba(#FFBB5C, 0.8 );
-        box-shadow: rgba(#FFBB5C, 0.8 ) 0 0 128px 0;
+        box-shadow: rgba(#FFBB5C, 0.8 ) 0 0 $effect-cube-size 0;
     }
 }
 

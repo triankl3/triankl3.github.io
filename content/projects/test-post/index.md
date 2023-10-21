@@ -35,11 +35,11 @@ Links are also automagically created like this https://example.com.
 {{< section-splash img="exampleimg1.webp" filter="invert(1)">}}
 
 <!-- Jumbo supports setting it's text, alongisde the usual background options -->
-{{< section-jumbo text="This is a huge jumbo text! Thank you for reading." background="#FFA500" >}}
+{{< section-jumbo text="This is a huge jumbo text! Thank you for reading." background="#FFA500" grid="64px" >}}
 
 <!-- Two column sections are wrapped in the section-two-column shortcode, with the left and right inside -->
 <!-- You can apply the same properties as with section-column to the parent section-two-column shortcode -->
-{{< section-two-column title="This is a two column section" background="white" grid="64px" >}}
+{{< section-two-column title="This is a two column section" background="white" >}}
 {{% section-two-column-left %}}
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore recusandae aperiam rerum ipsa accusantium reiciendis doloremque voluptas, officia dolorem et expedita quaerat nam explicabo non iure? Cupiditate, ea nulla?

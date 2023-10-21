@@ -19,5 +19,10 @@ $max-width-full: $content-width + $content-padding * 2 + $nav-offset + $nav-size
 // Under this width the website needs additional scaling to fit on mobile/tiny screens
 $max-width-scaled: 520px;
 
-// Michroma(Special text), Oswald(Titles), Space Grotesk(Text), Space Mono(monospace/code) and Syne(Huge titles)
-@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Oswald:wght@700&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Syne:wght@800&display=swap');
+$effect-cube-size: 220px;
+$effect-cube-size-half: $effect-cube-size / 2;
+$effect-cube-animation-time: 15s;
+$effect-gradient-colors-default: $color-background;
+
+// Michroma(Special text), Oswald(Headers), Space Grotesk(Text), Space Mono(monospace/code) and Orbitron(Titles)
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Orbitron:wght@900&family=Oswald:wght@700&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');

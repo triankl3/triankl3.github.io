@@ -45,7 +45,6 @@ footer {
     * {
         font-weight: 400;
     }
-    // text-transform: uppercase;
 }
 
 // Content wrappers used all around the website to position and scale content
@@ -216,6 +215,9 @@ nav {
     
         li {
             font-size: $nav-font-size;
+            * {
+                font-weight: 700;
+            }
             text-align: right;
         }
     }
@@ -334,8 +336,8 @@ nav.nav-wide {
 
     h1 { // Title
         font-size: 24px;
-        text-transform: uppercase;
-        font-family: 'Syne', sans-serif;
+        // text-transform: uppercase;
+        font-family: 'Orbitron', sans-serif;
         font-weight: 800;
         letter-spacing: 1px;
         color: $color-text;

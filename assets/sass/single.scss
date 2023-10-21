@@ -64,9 +64,9 @@ header { // The header/top section of a post, pretty self explanatory
         }
 
         h1 { // Title
-            font-family: 'Syne', sans-serif;
-            font-size: 72px;
-            font-weight: 800;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 96px;
+            font-weight: 900;
 
             mix-blend-mode: difference;
         }
@@ -157,9 +157,10 @@ header { // The header/top section of a post, pretty self explanatory
     justify-content:center;
     
     h1 {
-        font-family: 'Syne', sans-serif;
+        font-family: 'Orbitron', sans-serif;
+        font-weight: 900;
         text-transform: initial;
-        font-size: 96px;
+        font-size: 128px;
     }
 }
 
