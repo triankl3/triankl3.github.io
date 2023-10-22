@@ -16,6 +16,8 @@ image: "featured1.webp"
 
 There might be other markdown elements which are *technically supported*, but are not here. This means the blog is not accounting for them and you should avoid using them with this theme. There are a bunch of shortcodes which can be used to create interesting layouts in your blogpost, view the markdown file in your editor to see more usage examples and all variations. This is a paragraph.
 
+{{< img src="exampleimg1.webp" >}}
+
 # Heading level one
 ## Heading level two
 ### Heading level three
