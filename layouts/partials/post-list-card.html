@@ -3,7 +3,7 @@
 {{/*  Prepare a compressed version of the featured image to use as a thumbnail  */}}
 {{ $featured_img_path := print "img/" .Params.image }}
 {{ $featured_img := resources.Get $featured_img_path }}
-{{ $featured_img := $featured_img.Resize "x480" }}
+{{ $featured_img := $featured_img.Resize "720x" }}
 {{ $featured_color := (index $featured_img.Colors 1) }}
 {{ $featured_color_list := delimit $featured_img.Colors ", " }}
 

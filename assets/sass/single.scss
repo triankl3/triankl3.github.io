@@ -31,7 +31,6 @@ header { // The header/top section of a post, pretty self explanatory
         background-position: center bottom;
         background-size: cover;
         background-repeat: no-repeat;
-        background-attachment: fixed;
         z-index: -999;
     }
 
@@ -52,6 +51,8 @@ header { // The header/top section of a post, pretty self explanatory
         height: 128px;
 
         pointer-events: none;
+
+        z-index: -115;
     }
 
     .content-wrapper-max {
@@ -65,11 +66,9 @@ header { // The header/top section of a post, pretty self explanatory
         }
 
         h1 { // Title
-            font-family: 'Syne', sans-serif;
-            font-size: 72px;
-            font-weight: 800;
-
-            mix-blend-mode: difference;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 96px;
+            font-weight: 900;
         }
 
         h2 { // Date
@@ -147,7 +146,6 @@ header { // The header/top section of a post, pretty self explanatory
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 .section-jumbo {
@@ -159,27 +157,48 @@ header { // The header/top section of a post, pretty self explanatory
     justify-content:center;
     
     h1 {
-        font-family: 'Syne', sans-serif;
+        font-family: 'Orbitron', sans-serif;
+        font-weight: 900;
         text-transform: initial;
-        font-size: 96px;
+        font-size: 128px;
     }
 }
 
 .section-two-column {
+    .content-wrapper-max {
+        max-width: $content-width * 1.5;
+    }
+
     .section-column-title {
         text-align: left;
     }
 }
-.section-two-column-left, .section-two-column-right {
-    width: 50%;
-}
 .section-two-column-left {
+    min-width: $content-width * 0.5;
+    max-width: calc(100% - #{$content-width * 0.5});
     float: left;
-    padding: $content-padding $content-padding $content-padding 0;
+    padding-right: $content-padding;
 }
 .section-two-column-right {
+    width: $content-width * 0.5;
     float: right;
-    padding: $content-padding 0 $content-padding $content-padding;
+}
+
+@media (max-width: ($content-width * 1.5 + $content-padding * 2)) {
+    .section-two-column {
+        .content-wrapper-max {
+            max-width: $content-width;
+        }
+    }
+
+    .section-two-column-left, .section-two-column-right {
+        float: none;
+        max-width: $content-width;
+        min-width: initial;
+        width: initial;
+        padding: 0;
+    }
+
 }
 
 @media (max-width: $max-width-full) {
@@ -188,7 +207,7 @@ header { // The header/top section of a post, pretty self explanatory
             padding: $content-padding;
 
             h1 {
-                font-size: 48px;
+                font-size: 62px;
             }
         }
     }
@@ -199,27 +218,16 @@ header { // The header/top section of a post, pretty self explanatory
 
     .section-jumbo {
         h1 {
-            font-size: 64px;
+            font-size: 96px;
         }
-    }
-
-    .section-two-column-left, .section-two-column-right {
-        float: none;
-        width: initial;
-        max-width: $content-width;
-        padding: 0;
     }
 }
 
 @media (max-width: $max-width-scaled) {
     header {
-        #featured-image { // Remove parallax effects
-            background-attachment: revert;
-        }
-
         .content-wrapper-max { // Even smaller font sizes to make sure everything fits on screen
             h1 {
-                font-size: 24px;
+                font-size: 32px;
             }
 
             h2 {
@@ -239,12 +247,8 @@ header { // The header/top section of a post, pretty self explanatory
 
     .section-jumbo {
         h1 {
-            font-size: 52px;
+            font-size: 84px;
         }
-    }
-
-    .section-splash { // Remove parallax effects
-        background-attachment: revert;
     }
 
     h1 {

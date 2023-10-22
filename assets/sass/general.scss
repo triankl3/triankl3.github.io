@@ -45,7 +45,6 @@ footer {
     * {
         font-weight: 400;
     }
-    // text-transform: uppercase;
 }
 
 // Content wrappers used all around the website to position and scale content
@@ -137,6 +136,8 @@ div.highlight pre {
     overflow-y: hidden;
     white-space: pre;
     word-break: break-word;
+
+    background-color: lighten($color-background, 2.5%) !important; // To override generated in-line styling
 }
 code {
     display: inline-block;
@@ -168,7 +169,11 @@ nav {
     #nav-logo, #nav-socials, #nav-pages {
         position: fixed;
         z-index: 99;
-
+    }
+    #nav-small {
+        display: none;
+    }
+    #nav-logo, #nav-socials, #nav-pages, #nav-small {
         margin: 0;
         padding: 0;
 
@@ -205,17 +210,16 @@ nav {
     }
 
     #nav-pages {
-        #nav-pages-home {
-            display: none;
-        }
-
         top: $nav-offset + $nav-size + $nav-font-size / 2;
         left: calc(50% - #{($content-width / 2)} - #{$nav-size});
-
+    }
+    #nav-pages, #nav-small {
         text-transform: uppercase;
-    
         li {
             font-size: $nav-font-size;
+            * {
+                font-weight: 700;
+            }
             text-align: right;
         }
     }
@@ -334,8 +338,8 @@ nav.nav-wide {
 
     h1 { // Title
         font-size: 24px;
-        text-transform: uppercase;
-        font-family: 'Syne', sans-serif;
+        // text-transform: uppercase;
+        font-family: 'Orbitron', sans-serif;
         font-weight: 800;
         letter-spacing: 1px;
         color: $color-text;
@@ -390,33 +394,16 @@ nav.nav-wide {
         flex-wrap: wrap;
 
         #nav-logo, #nav-pages, #nav-socials {
-            position: initial;
-
-            width: auto;
-            li {
-                height: $nav-font-size;
-                display: inline-block;
-            }
-        }
-
-        #nav-pages {
-            #nav-pages-home {
-                display: inline-block;
-            }
-
-            text-align: center;
-        }
-
-        #nav-logo {
             display: none;
         }
 
-        #nav-socials {
-            float: right;
-
-            height: $nav-font-size;
+        #nav-small {
+            display: block;
+            text-align: center;
 
             li {
+                height: $nav-font-size;
+                display: inline-block;
                 margin-bottom: 0;
             }
 
@@ -428,7 +415,6 @@ nav.nav-wide {
 
             a {
                 height: $nav-font-size;
-                width: $nav-font-size;
                 padding: 0;
             }
         }

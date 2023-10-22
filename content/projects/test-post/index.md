@@ -16,6 +16,8 @@ image: "featured1.webp"
 
 There might be other markdown elements which are *technically supported*, but are not here. This means the blog is not accounting for them and you should avoid using them with this theme. There are a bunch of shortcodes which can be used to create interesting layouts in your blogpost, view the markdown file in your editor to see more usage examples and all variations. This is a paragraph.
 
+{{< img src="exampleimg1.webp" >}}
+
 # Heading level one
 ## Heading level two
 ### Heading level three
@@ -35,11 +37,11 @@ Links are also automagically created like this https://example.com.
 {{< section-splash img="exampleimg1.webp" filter="invert(1)">}}
 
 <!-- Jumbo supports setting it's text, alongisde the usual background options -->
-{{< section-jumbo text="This is a huge jumbo text! Thank you for reading." background="#FFA500" >}}
+{{< section-jumbo text="This is a huge jumbo text! Thank you for reading." background="#FFA500" grid="64px" >}}
 
 <!-- Two column sections are wrapped in the section-two-column shortcode, with the left and right inside -->
 <!-- You can apply the same properties as with section-column to the parent section-two-column shortcode -->
-{{< section-two-column title="This is a two column section" background="white" grid="64px" >}}
+{{< section-two-column title="This is a two column section" background="white" >}}
 {{% section-two-column-left %}}
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore recusandae aperiam rerum ipsa accusantium reiciendis doloremque voluptas, officia dolorem et expedita quaerat nam explicabo non iure? Cupiditate, ea nulla?

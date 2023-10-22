@@ -72,17 +72,37 @@
                 <div id="effect-grid-lines"></div>
             </div>
         </div>
+        <div id="effect-cube-container">
+            <div id="effect-cube">
+                <div class="effect-cube-side front"></div>
+                <div class="effect-cube-side back"></div>
+                <div class="effect-cube-side top"></div>
+                <div class="effect-cube-side bottom"></div>
+                <div class="effect-cube-side left"></div>
+                <div class="effect-cube-side right"></div>
+            </div>
+        </div>
 
         <nav {{ if not .IsHome }} {{ if not (eq .Parent .Site.Home) }} class="nav-wide" {{ end }} {{ end }}>
             <a id="nav-logo" href="/"><img src="/img/logo.svg"></a>
             <ul id="nav-pages">
-                <li id="nav-pages-home"><a href="/">triankl3.com</a></li>
                 <li><a href="/projects">projects</a></li>
                 <li><a href="/blog">blog</a></li>
                 <li><a href="/about">about</a></li>
                 <li><a href="/contact">contact</a></li>
             </ul>
             <ul id="nav-socials">
+                <li><a target="_blank" href="{{ site.Params.contact.github }}"><img src="/img/github.svg"></a></li>
+                <li><a target="_blank" href="{{ site.Params.contact.linkedin }}"><img src="/img/linkedin.svg"></a></li>
+                <li><a target="_blank" href="{{ site.Params.contact.twitter }}"><img src="/img/x.svg"></a></li>
+                <li><a href="mailto:{{ site.Params.contact.email }}"><img src="/img/email.svg"></a></li>
+            </ul>
+            <ul id="nav-small">
+                <li><a href="/">triankl3.com</a></li>
+                <li><a href="/projects">projects</a></li>
+                <li><a href="/blog">blog</a></li>
+                <li><a href="/about">about</a></li>
+                <li><a href="/contact">contact</a></li>
                 <li><a target="_blank" href="{{ site.Params.contact.github }}"><img src="/img/github.svg"></a></li>
                 <li><a target="_blank" href="{{ site.Params.contact.linkedin }}"><img src="/img/linkedin.svg"></a></li>
                 <li><a target="_blank" href="{{ site.Params.contact.twitter }}"><img src="/img/x.svg"></a></li>

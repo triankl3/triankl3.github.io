@@ -6,15 +6,27 @@
     opacity: 1;
 }
 
+#effect-cube-container {
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .effect-cube-side {
+        border: 1px solid rgba(#C63D2F, 0.4 );
+        background-color: rgba(#FFBB5C, 0.8 );
+        box-shadow: rgba(#FFBB5C, 0.8 ) 0 0 $effect-cube-size 0;
+    }
+}
+
 #_404 {
     text-align: center;
     text-transform: uppercase;
     
-    mix-blend-mode: color-dodge;
+    mix-blend-mode: difference;
     
     h1 {
         margin: 0;
-        font-size: 72px;
+        font-size: 96px;
     }
     p {
         margin: 0;

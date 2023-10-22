@@ -8,7 +8,6 @@
 {{ $default_bg_color := "#111111" }}
 {{ $final_color := $default_color }}
 {{ $final_bg_color := $default_bg_color }}
-{{ $final_bg_alpha := "0.95" }}
 
 {{ if in $background "white" }} {{/* Use white background */}}
     {{ $final_color = $default_bg_color }}
@@ -18,12 +17,11 @@
     {{ $final_bg_color = $default_bg_color }}
 {{ else if hasPrefix $background "#" }} {{/* Using color as background */}}
     {{ $final_bg_color = $background }}
-    {{ $final_bg_alpha = "1" }}
 {{ end }}
 
 <style>
     #{{ $unique_id }} {
-        background-color: rgba({{ partial "func-hextorgb.html" $final_bg_color | print | safeCSS }}, {{ $final_bg_alpha }});
+        background-color: {{ $final_bg_color }};
         color: {{ $final_color }};
 
         {{ if hasSuffix $grid "px" }}
