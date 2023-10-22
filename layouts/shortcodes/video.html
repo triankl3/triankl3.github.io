@@ -1,5 +1,5 @@
 {{ $src := .Page.Resources.GetMatch (printf "*%s*" (.Get "src")) }}
 
-<video width="100%" height="auto" autoplay muted loop>
+<video width="100%" height="auto" autoplay muted loop controls>
     <source src="{{ $src }}" type="video/mp4">
 </video>
