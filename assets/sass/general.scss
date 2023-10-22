@@ -136,6 +136,8 @@ div.highlight pre {
     overflow-y: hidden;
     white-space: pre;
     word-break: break-word;
+
+    background-color: lighten($color-background, 2.5%) !important; // To override generated in-line styling
 }
 code {
     display: inline-block;
