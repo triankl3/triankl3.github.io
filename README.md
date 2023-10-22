@@ -4,6 +4,3 @@ Built from scratch using [HUGO](https://gohugo.io) for SSG and NPM for dependenc
 ## LICENSE & COPYRIGHT
 Source Code is licensed under CC BY-NC-SA 4.0. See [LICENSE](LICENSE) for more information.
 All content available on the website including but not limited to: visual identity and design, text, images, videos, 3D assets and code samples are subject to copyright and owned by Nikola Pešević(triankl3.com), unless noted otherwise.
-
-## Todo
-- [ ] Add proper resume PDF
