@@ -165,20 +165,40 @@ header { // The header/top section of a post, pretty self explanatory
 }
 
 .section-two-column {
+    .content-wrapper-max {
+        max-width: $content-width * 1.5;
+    }
+
     .section-column-title {
         text-align: left;
     }
 }
-.section-two-column-left, .section-two-column-right {
-    width: 50%;
-}
 .section-two-column-left {
+    min-width: $content-width * 0.5;
+    max-width: calc(100% - #{$content-width * 0.5});
     float: left;
-    padding: $content-padding $content-padding $content-padding 0;
+    padding-right: $content-padding;
 }
 .section-two-column-right {
+    width: $content-width * 0.5;
     float: right;
-    padding: $content-padding 0 $content-padding $content-padding;
+}
+
+@media (max-width: ($content-width * 1.5 + $content-padding * 2)) {
+    .section-two-column {
+        .content-wrapper-max {
+            max-width: $content-width;
+        }
+    }
+
+    .section-two-column-left, .section-two-column-right {
+        float: none;
+        max-width: $content-width;
+        min-width: initial;
+        width: initial;
+        padding: 0;
+    }
+
 }
 
 @media (max-width: $max-width-full) {
@@ -200,13 +220,6 @@ header { // The header/top section of a post, pretty self explanatory
         h1 {
             font-size: 64px;
         }
-    }
-
-    .section-two-column-left, .section-two-column-right {
-        float: none;
-        width: initial;
-        max-width: $content-width;
-        padding: 0;
     }
 }
 
