@@ -61,6 +61,10 @@ pluralizelisttitles = false
     source = "node_modules/photoswipe/dist/photoswipe.css"
     target = "assets/css/photoswipe.css"
 
+    [[module.mounts]]
+    source = "node_modules/ismobilejs/dist/isMobile.min.js"
+    target = "assets/js/ismobile.js"
+
 
 [imaging]
     bgColor = "#111111"

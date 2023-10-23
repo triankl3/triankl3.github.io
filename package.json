@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "hugo-extended": "^0.111.3",
-    "masonry-layout": "^4.2.2",
+    "ismobilejs": "^1.1.1",
     "modern-normalize": "^2.0.0",
     "photoswipe": "^5.3.9",
     "vanilla-tilt": "^1.8.1"
