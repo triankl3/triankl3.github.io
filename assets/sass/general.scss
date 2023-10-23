@@ -127,6 +127,11 @@ figure {
     margin: 0;
     padding: 0;
 
+    img {
+        max-height: 384px;
+        width: auto;
+    }
+
     a:hover {
         background-color: initial;  
     }
@@ -152,8 +157,7 @@ code {
 }
 
 video {
-    width: 100%;
-    height: auto;
+    max-height: 384px;
     margin: $content-padding 0;
 }
 
