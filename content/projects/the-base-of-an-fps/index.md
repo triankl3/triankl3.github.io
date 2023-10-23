@@ -1,17 +1,17 @@
 ---
 draft: false
-title: "The base of an FPS game"
-date: 2023-10-22
-description: "This is how I went about creating the base of an FPS game in Roblox from scratch based on previous experience and pitfalls."
-tags: ["project", "testpost"]
+title: "The foundation of an FPS game in Roblox"
+date: 2022-04-01
+description: "Devblog with insight into creating the foundation of an FPS framework in Roblox, from scratch, based on previous experience and pitfalls."
+tags: ["lua", "roblox", "game-design", "programming", "multiplayer"]
 image: "featured1.webp"
 ---
 
 {{% section-column title="Important Edit" side="" background="" grid="128px" %}}
 
-This post is a rewrite of a previous devblog, which was written while the game was still in active development early 2022. Since then, progress had halted due to a lack of time and resources with the game eventually being canceled.
+This post is a re-write of a previous devblog, which was written while the game was still in active development early 2022. Since then, progress had halted due to a lack of time and resources, and the game was eventually canceled.
 
-Nonetheless, this post is a great overview of the development process and the game's key features, so I decided to port it from the old studio website. Some sentences have been edited to reflect the current state of the game, but most of the information is still relevant.
+Nonetheless, this post is a great overview of the development process and the key features, so I decided to port it from the old studio website. Some sentences have been edited to reflect the current state of the game, but most of the information is still relevant.
 
 {{% /section-column %}}
 
@@ -325,3 +325,13 @@ I also added a classic F3 menu which allows you to see some debug info on the ge
 {{< /section-two-column >}}
 
 {{< section-splash img="wide4.webp" filter="">}}
+
+{{% section-column title="Just the surface" side="center" background="" grid="" %}}
+
+**This is just the tip of the iceberg, but it's already too long.** It's an overly simplified highlight of some the most important components I had to initially develop for the game. A lot of these systems and tools have been improved upon since then, and many more were added. This post is more technical in nature, and does not explain the game design decisions made. 
+
+Furthermore, certain elements that are very visible such as procedural generation are not explained here, but instead released as separate projects now. Take a look at [Procedural cave generation](/projects/procedural-cave-generation) and [Procedural island generation](/projects/procedural-island-generation). 
+
+The game was eventually discontinued, and I have abandoned development of personal projects on Roblox. You can read all about it in this blogpost: [The end of an era](/blog/the-end-of-an-era).
+
+{{% /section-column %}}
