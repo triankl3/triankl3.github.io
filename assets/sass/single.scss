@@ -123,7 +123,7 @@ header { // The header/top section of a post, pretty self explanatory
 
 // Sections used to organize and style content in blogposts into visually attractive pieces
 .section-column, .section-two-column, .section-jumbo {
-    padding: $content-padding * 4 $nav-size * 2;
+    padding: $content-padding * 2 $nav-size * 2;
 }
 
 .section-column {
