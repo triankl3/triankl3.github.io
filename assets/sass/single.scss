@@ -89,9 +89,9 @@ header { // The header/top section of a post, pretty self explanatory
 
             .post-tag {
                 border: none;
-                // background-color: rgba($color-text, 1);
                 color: $color-text;
-                font-size: 16px;
+                padding: 6px 12px;
+                font-size: 12px;
             }
         }
     }
