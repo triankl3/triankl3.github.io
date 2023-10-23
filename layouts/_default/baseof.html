@@ -169,16 +169,15 @@
 
         // Color effects based on a color list
         const effectGradient = document.getElementById('effect-gradient');
-        const cubeEffect = document.getElementById('effect-cube-container');
         document.querySelectorAll('.color-effects').forEach((elem) => {
             var colorList = elem.getAttribute("color-list");
 
             if (isMobile.any == false) {
                 elem.addEventListener("mouseenter", (event) => {
-                    document.getElementById('effect-gradient').setAttribute('style', 'background: linear-gradient(90deg, ' + colorList + '); background-size: 200% 200%; opacity: 1;');
+                    effectGradient.setAttribute('style', 'background: linear-gradient(90deg, ' + colorList + '); background-size: 200% 200%; opacity: 1;');
                 });
                 elem.addEventListener("mouseleave", (event) => {
-                    document.getElementById('effect-gradient').style.opacity = 0;
+                    effectGradient.style.opacity = 0;
                 });
             };
         });
