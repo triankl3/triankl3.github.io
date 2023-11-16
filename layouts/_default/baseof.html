@@ -132,6 +132,8 @@
     {{ $ismobile_js := resources.Get "js/ismobile.js" | minify }}
     <script src="{{ $ismobile_js.RelPermalink }}"></script>
 
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
+
     <script>
         // Vanilla tilt setup
         document.querySelectorAll('.vanilla-tilt').forEach((elem) => {

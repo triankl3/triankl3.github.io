@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 title: "The biography of a test post"
 date: 2023-08-07T18:54:11+02:00
 description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore recusandae aperiam rerum ipsa accusantium reiciendis doloremque voluptas, officia dolorem et expedita quaerat nam explicabo non iure? Cupiditate, ea nulla?"
@@ -7,7 +7,7 @@ tags: ["project", "testpost"]
 image: "featured1.webp"
 ---
 
-<!-- When available you can set a sections background with the following options: background="black(default)/white/#hexhex" -->
+<!-- When available you can set a sections background with the following options: background="black(default)/white/#hexhex  " -->
 <!-- When available you can set add a grid to a sections background with the following option: grid="Xpx" , with X being any number -->
 
 <!-- Use section column to create one vertical column. Chose alignment sides with side=center(default)/left/right . -->
@@ -30,6 +30,8 @@ We **love using bold** text sometimes. Using *italic* is also really interesting
 
 Have you ever used [github](https://github.com/)?  
 Links are also automagically created like this https://example.com.
+
+{{< model alt="Default suzanne monkey model from the Blender software." src="suzanne.glb" preview="suzanne-preview.png" >}}
 
 {{% /section-column %}}
 

@@ -161,6 +161,11 @@ video {
     margin: $content-padding 0;
 }
 
+model-viewer {
+    width: 100%;
+    height: 512px;
+}
+
 // Main navigation
 nav {
     a {
