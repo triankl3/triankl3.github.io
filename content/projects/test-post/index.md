@@ -31,7 +31,7 @@ We **love using bold** text sometimes. Using *italic* is also really interesting
 Have you ever used [github](https://github.com/)?  
 Links are also automagically created like this https://example.com.
 
-{{< model alt="Default suzanne monkey model from the Blender software." src="suzanne.glb" preview="suzanne-preview.png" >}}
+{{< model alt="Default suzanne monkey model from the Blender software." src="rat.glb" preview="exampleimg1.webp" >}}
 
 {{% /section-column %}}
 
