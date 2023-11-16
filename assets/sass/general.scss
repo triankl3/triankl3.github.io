@@ -128,8 +128,7 @@ figure {
     padding: 0;
 
     img {
-        max-height: 384px;
-        width: auto;
+        width: 100%;
     }
 
     a:hover {
@@ -157,8 +156,7 @@ code {
 }
 
 video {
-    max-height: 384px;
-    margin: $content-padding 0;
+    width: 100%;
 }
 
 model-viewer {
