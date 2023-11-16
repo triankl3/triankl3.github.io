@@ -2,4 +2,4 @@
 {{ $src := .Page.Resources.GetMatch (printf "*%s*" (.Get "src")) }}
 {{ $preview := .Page.Resources.GetMatch (printf "*%s*" (.Get "preview")) }}
 
-<model-viewer src="{{ $src.RelPermalink }}" alt="{{ $alt }}" poster="{{ $preview.RelPermalink}}" environment-image="/img/environment.hdr" shadow-intensity="0.5" shadow-softness="0.5" camera-controls></model-viewer>
+<model-viewer src="{{ $src.RelPermalink }}" alt="{{ $alt }}" poster="{{ $preview.RelPermalink}}" environment-image="/img/environment.hdr" shadow-intensity="0.8" shadow-softness="0.25" camera-controls></model-viewer>
