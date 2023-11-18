@@ -5,6 +5,7 @@ date: 2023-08-07T18:54:11+02:00
 description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore recusandae aperiam rerum ipsa accusantium reiciendis doloremque voluptas, officia dolorem et expedita quaerat nam explicabo non iure? Cupiditate, ea nulla?"
 tags: ["project", "testpost"]
 image: "featured1.webp"
+model: "rat.glb"
 ---
 
 <!-- When available you can set a sections background with the following options: background="black(default)/white/#hexhex  " -->
@@ -31,7 +32,7 @@ We **love using bold** text sometimes. Using *italic* is also really interesting
 Have you ever used [github](https://github.com/)?  
 Links are also automagically created like this https://example.com.
 
-{{< model alt="Default suzanne monkey model from the Blender software." src="rat.glb" preview="exampleimg1.webp" >}}
+{{< model alt="Default suzanne monkey model from the Blender software." src="rat.glb" >}}
 
 {{% /section-column %}}
 

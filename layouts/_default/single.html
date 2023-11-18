@@ -12,17 +12,31 @@
 
     <div id="header-shadow-top"></div>
 
+    {{ if isset .Params "model" }}
+        {{ $model_path := print "model/" .Params.model }}
+        {{ $model := resources.Get $model_path }}
+        <model-viewer src="{{ $model.RelPermalink }}" alt="" environment-image="/img/environment.hdr" shadow-intensity="2" shadow-softness="0.5" exposure="1.5" auto-rotate auto-rotate-delay="0" rotation-per-second="45deg" loading="eager">
+            <span slot="progress-bar"></span>
+        </model-viewer>
+    {{ end }}
+
     <style>            
         #effect-grid-container #effect-grid #effect-grid-lines {
             background-image: linear-gradient(to right, {{ $featured_color_2 }} 1px, transparent 0), 
             linear-gradient(to bottom, {{ $featured_color_2 }} 1px, transparent 0);
         }
 
+        {{ if isset .Params "model" }}
+        #effect-cube-container {
+            display: none;
+        }
+        {{ else }}
         #effect-cube-container .effect-cube-side {
             border: 1px solid rgba({{ $featured_color_rgb_2 }}, 0.4 );
             background-color: rgba({{ $featured_color_rgb }}, 0.8 );
             box-shadow: rgba({{ $featured_color_rgb }}, 0.8 ) 0 0 128px 0;
         }
+        {{ end }}
     </style>
 
     <div class="content-wrapper-max">

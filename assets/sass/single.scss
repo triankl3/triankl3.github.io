@@ -55,10 +55,24 @@ header { // The header/top section of a post, pretty self explanatory
         z-index: -115;
     }
 
+    model-viewer {
+        // mix-blend-mode: difference;
+        // border: 1px solid red;
+        z-index: -110;
+        position: absolute;
+        width: 384px;
+        height: 384px;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+    }
+
     .content-wrapper-max {
         position: relative;
         // min-height: $post-header-height;
         padding: $content-padding * 2 $nav-size * 2 + $content-padding;
+        max-width: calc(80%);
+        margin: 0 auto 0 0;
 
         h1, h2, p {
             margin: 0;
