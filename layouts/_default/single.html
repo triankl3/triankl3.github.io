@@ -3,7 +3,8 @@
 {{ partial "func-scss.html" "single" }}
 
 <header>        
-    {{ $featured_img := .Scratch.Get "featured_img" }}
+    {{ $featured_img := .Page.Resources.GetMatch .Params.image }}
+    {{ $featured_img := $featured_img.Resize "1280x" }}
     {{ $featured_color := (index $featured_img.Colors 1) }}
     {{ $featured_color_2 := (index $featured_img.Colors 2) }}
     {{ $featured_color_rgb := partial "func-hextorgb.html" $featured_color | print | safeCSS }}
@@ -13,9 +14,8 @@
     <div id="header-shadow-top"></div>
 
     {{ if isset .Params "model" }}
-        {{ $model_path := print "model/" .Params.model }}
-        {{ $model := resources.Get $model_path }}
-        <model-viewer src="{{ $model.RelPermalink }}" alt="" environment-image="/img/environment.hdr" shadow-intensity="2" shadow-softness="0.5" exposure="1.5" auto-rotate auto-rotate-delay="0" rotation-per-second="45deg" loading="eager">
+        {{ $model := .Page.Resources.GetMatch .Params.model }}
+        <model-viewer src="{{ $model.RelPermalink }}" alt="" shadow-intensity="2" shadow-softness="0.5" exposure="1.5" auto-rotate auto-rotate-delay="0" rotation-per-second="45deg" loading="eager">
             <span slot="progress-bar"></span>
         </model-viewer>
     {{ end }}

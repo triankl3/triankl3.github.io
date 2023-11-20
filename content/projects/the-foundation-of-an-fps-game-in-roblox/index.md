@@ -4,7 +4,7 @@ title: "The foundation of an FPS game in Roblox"
 date: 2022-04-01
 description: "Devblog with insight into creating the foundation of an FPS framework in Roblox, from scratch, based on previous experience and pitfalls."
 tags: ["lua", "roblox", "game-design", "programming", "multiplayer"]
-image: "featured1.webp"
+image: "wide5.webp"
 ---
 
 {{% section-column title="Important Edit" side="" background="" grid="128px" %}}

@@ -4,7 +4,7 @@ title: "Blog test post"
 date: 2023-08-07T18:54:11+02:00
 description: "This is an alternative testing post for the blog section to make sure it works as intended."
 tags: ["blog", "testpost"]
-image: "featured2.webp"
+image: "exampleimg1.webp"
 ---
 
 {{% section-column title="Test section" side="left" background="" %}}

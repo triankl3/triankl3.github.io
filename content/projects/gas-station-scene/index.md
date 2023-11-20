@@ -4,7 +4,7 @@ title: "Gas station scene"
 date: 2019-02-20
 description: "Gas station scene created in Source Engine/Garry's Mod pushing the limits of the engine."
 tags: ["source-engine", "level-design"]
-image: "featured3.webp"
+image: "background.webp"
 ---
 
 {{% section-column title="" side="center" background="" grid="" %}}
