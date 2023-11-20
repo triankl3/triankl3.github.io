@@ -9,8 +9,7 @@ image: "background.webp"
 
 {{% section-column title="" side="center" background="" grid="" %}}
 
-Created in early 2019 as a piece for my freelancing portfolio at the time, it turned out better than I anticipated.
-It pushes the limits of an old engine that was nearly 20 years old at the time. It's a mashup of the available assets from all Source Engine games and other packages created by the community.
+Created in early 2019 as a piece for my freelancing portfolio at the time. A mashup of the available assets from all Source Engine games and other community made assets pushing the limits of a 20 year old engine. The gas station was constructed from photo reference [originally found in this reddit post](https://www.reddit.com/r/AbandonedPorn/comments/2vrjiu/abandoned_gas_station_in_naujoji_vilnia_lithuania/).
 
 {{< gallery >}}
 
@@ -21,8 +20,6 @@ It pushes the limits of an old engine that was nearly 20 years old at the time. 
 
 {{< /gallery >}}
 
+{{< img src="gas-station-reference.webp" >}}
 
-*The architecture was constructed from photo reference, [originally found in this reddit post](https://www.reddit.com/r/AbandonedPorn/comments/2vrjiu/abandoned_gas_station_in_naujoji_vilnia_lithuania/).*
 {{% /section-column %}}
-
-{{< section-splash img="gas-station-reference.webp" filter="">}}
