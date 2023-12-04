@@ -41,6 +41,8 @@ Links are also automagically created like this https://example.com.
 <!-- Jumbo supports setting it's text, alongisde the usual background options -->
 {{< section-jumbo text="This is a huge jumbo text! Thank you for reading." background="#FFA500" >}}
 
+{{< section-splash-model src="rat.glb" >}}
+
 <!-- Two column sections are wrapped in the section-two-column shortcode, with the left and right inside -->
 <!-- You can apply the same properties as with section-column to the parent section-two-column shortcode -->
 {{< section-two-column title="This is a two column section" background="white" >}}

@@ -1,0 +1,7 @@
+{{ $src := .Page.Resources.GetMatch (printf "*%s*" (.Get "src")) }}
+
+<div class="section-splash-model">
+    <model-viewer src="{{ $src.RelPermalink }}" alt="" shadow-intensity="2" shadow-softness="0.5" exposure="1.5" auto-rotate auto-rotate-delay="0" rotation-per-second="45deg" loading="eager">
+        <span slot="progress-bar"></span>
+    </model-viewer>
+</div>
