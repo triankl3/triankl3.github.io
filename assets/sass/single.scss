@@ -50,8 +50,6 @@ header { // The header/top section of a post, pretty self explanatory
     }
 
     model-viewer {
-        // mix-blend-mode: difference;
-        // border: 1px solid red;
         z-index: -110;
         position: absolute;
         width: 384px;
@@ -59,6 +57,7 @@ header { // The header/top section of a post, pretty self explanatory
         left: 50%;
         top: 0;
         transform: translateX(-50%);
+        opacity: 0.8;
     }
 
     .content-wrapper-max {
