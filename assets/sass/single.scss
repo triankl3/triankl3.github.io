@@ -202,6 +202,17 @@ header { // The header/top section of a post, pretty self explanatory
     float: right;
 }
 
+.section-background-img {
+    position: absolute;
+    z-index: -999;
+    width: 100%;
+    height: 100vh;
+
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 @media (max-width: ($content-width * 1.5 + $content-padding * 2)) {
     .section-two-column {
         .content-wrapper-max {

@@ -1,9 +1,10 @@
 {{ $title := .Get "title" }}
 
-{{ $background := .Get "background" }}
+{{ $background_color := .Get "background_color" }}
+{{ $background_img := .Get "background_img" }}
 {{ $color := .Get "color" }}
 {{ $unique_id := (print "_" (delimit (shuffle (split (md5 .Inner) "" )) "")) }}
-{{ partial "func-background.html" (dict "context" . "background" $background "color" $color "unique_id" $unique_id) }}
+{{ partial "func-background.html" (dict "context" . "background_color" $background_color "background_img" $background_img "color" $color "unique_id" $unique_id) }}
 
 <div class="section-two-column" id="{{ $unique_id }}" style="overflow: auto">
     <div class="content-wrapper-max">

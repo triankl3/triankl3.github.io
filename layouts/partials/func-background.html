@@ -1,33 +1,38 @@
 {{/*  Handles changing background colors in post sections, used from inside shortcodes usually, relying on a unique ID passed for the container element in question */}}
 
-{{ $background := .background }}
+{{ $context := .context }}
+{{ $background_color := .background_color }}
+{{ $background_img := $context.Page.Resources.GetMatch .background_img }}
 {{ $color := .color }}
 {{ $unique_id := .unique_id }}
 
 {{ $default_color := "#dddddd" }}
 {{ $default_bg_color := "#111111" }}
-{{ $final_color := $default_color }}
+{{ $default_opacity := 0.9 }}
+{{ $final_color := $default_color }} {{/* Use black background by default */}}
 {{ $final_bg_color := $default_bg_color }}
+{{ $final_opacity := $default_opacity }}
 
-{{ if in $background "white" }} {{/* Use white background */}}
+{{ if in $background_color "white" }} {{/* Use white background and flip both colors */}}
     {{ $final_color = $default_bg_color }}
     {{ $final_bg_color = $default_color }}
-{{ else if in $background "black" }} {{/* Using black background */}}
-    {{ $final_color = $default_color }}
-    {{ $final_bg_color = $default_bg_color }}
-{{ else if hasPrefix $background "#" }} {{/* Using color as background */}}
-    {{ $final_bg_color = $background }}
+{{ else if hasPrefix $background_color "#" }} {{/* Using color as background */}}
+    {{ $final_bg_color = $background_color }}
 {{ end }}
 
-{{ if hasPrefix $color "#" }}
+{{ if hasPrefix $color "#" }} {{/* Apply custom (text) color */}}
     {{ $final_color = $color }}
 {{ end }}
 
-{{ $final_bg_color_rgb := partial "func-hextorgb.html" $final_bg_color | print | safeCSS }}
+{{ if ne $background_img nil }}
+{{ $background_img := $background_img.Resize "x1080" }}
+{{ $final_opacity = 0.75 }}
+<div class="section-background-img" style="background-image: linear-gradient(to bottom, transparent 0%, #111111 80%), url('{{ $background_img.RelPermalink }}');"></div>
+{{ end }}
 
 <style>
     #{{ $unique_id }} {
-        background-color: rgba({{ $final_bg_color_rgb }}, 0.9);
+        background-color: rgba({{ partial "func-hextorgb.html" $final_bg_color | print | safeCSS }}, {{ $final_opacity }});
         color: {{ $final_color }};
     }
     #{{ $unique_id }} a {
@@ -35,13 +40,5 @@
     }
     #{{ $unique_id }} blockquote {
         border-color: {{ $final_color }};
-    }
-    #{{ $unique_id }} table td {
-        border-color: {{ $final_color }};
-    }
-    #{{ $unique_id }} table th {
-        border-color: {{ $final_color }};
-        color: {{ $final_bg_color }};
-        background-color: {{ $final_color }};
     }
 </style>
