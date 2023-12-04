@@ -2,9 +2,9 @@
 {{ $side := .Get "side" }}
 
 {{ $background := .Get "background" }}
-{{ $grid := .Get "grid" }}
+{{ $color := .Get "color" }}
 {{ $unique_id := (print "_" (delimit (shuffle (split (md5 .Inner) "" )) "")) }}
-{{ partial "func-background.html" (dict "context" . "background" $background "grid" $grid "unique_id" $unique_id) }}
+{{ partial "func-background.html" (dict "context" . "background" $background "color" $color "unique_id" $unique_id) }}
 
 <style>
     #{{ $unique_id }} {
