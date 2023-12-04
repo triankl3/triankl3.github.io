@@ -18,9 +18,11 @@
     {{ $final_bg_color = $background }}
 {{ end }}
 
+{{ $final_bg_color_rgb := partial "func-hextorgb.html" $final_bg_color | print | safeCSS }}
+
 <style>
     #{{ $unique_id }} {
-        background-color: {{ $final_bg_color }};
+        background-color: rgba({{ $final_bg_color_rgb }}, 0.9);
         color: {{ $final_color }};
     }
     #{{ $unique_id }} a {
