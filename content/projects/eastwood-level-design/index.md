@@ -5,6 +5,7 @@ date: 2020-01-06
 description: "Level design for a Source Engine/Garry's Mod map based on real world heightmap data."
 tags: ["source-engine", "level-design"]
 image: "house.webp"
+color: ["#3d362d", "#d5ccb2"]
 ---
 
 {{% section-column title="Heightmap based terrain" side="center" background="white" %}}

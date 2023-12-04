@@ -3,8 +3,15 @@
 {{/*  Prepare a compressed version of the featured image to use as a thumbnail  */}}
 {{ $featured_img := .Page.Resources.GetMatch .Params.image }}
 {{ $featured_img := $featured_img.Resize "720x" }}
-{{ $featured_color := (index $featured_img.Colors 1) }}
-{{ $featured_color_list := delimit $featured_img.Colors ", " }}
+{{ $featured_color := "#fff" }}
+{{ $featured_color_list := slice }}
+{{ if isset .Params "color" }}
+    {{ $featured_color = (index .Params.color 0) }}
+    {{ $featured_color_list = delimit .Params.Color ", " }}
+{{ else }}
+    {{ $featured_color = (index $featured_img.Colors 1) }}
+    {{ $featured_color_list = delimit $featured_img.Colors ", " }}
+{{ end }}
 
 <div 
     class="post-list-card vanilla-tilt color-effects" color-list="{{ $featured_color_list }}">

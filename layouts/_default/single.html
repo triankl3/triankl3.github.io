@@ -5,8 +5,15 @@
 <header>        
     {{ $featured_img := .Page.Resources.GetMatch .Params.image }}
     {{ $featured_img := $featured_img.Resize "1280x" }}
-    {{ $featured_color := (index $featured_img.Colors 1) }}
-    {{ $featured_color_2 := (index $featured_img.Colors 2) }}
+    {{ $featured_color := "#fff" }}
+    {{ $featured_color_2 := "#fff"}}
+    {{ if isset .Params "color" }}
+        {{ $featured_color = (index .Params.color 0) }}
+        {{ $featured_color_2 = (index .Params.color 1) }}
+    {{ else }}
+        {{ $featured_color = (index $featured_img.Colors 1) }}
+        {{ $featured_color_2 = (index $featured_img.Colors 2) }}
+    {{ end }}
     {{ $featured_color_rgb := partial "func-hextorgb.html" $featured_color | print | safeCSS }}
     {{ $featured_color_rgb_2 := partial "func-hextorgb.html" $featured_color_2 | print | safeCSS }}
     <div id="featured-image" style="background-image: linear-gradient(to bottom, transparent 0%, #111111 80%), url('{{ $featured_img.RelPermalink }}');"></div>
