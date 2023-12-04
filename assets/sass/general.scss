@@ -101,8 +101,8 @@ strong {
 }
 
 blockquote {
-    margin: 0;
-    padding: 2px 2px 2px $content-padding / 2;
+    margin: 0 0 1em 0;
+    padding: 8px 8px 8px $content-padding / 2;
     
     border: $color-text 2px solid;
     border-left: $color-text 8px solid;
@@ -111,6 +111,10 @@ blockquote {
         font-size: 16px;
         font-weight: 800;
     }
+    p {
+        margin-bottom: 0;
+    }
+
     text-transform: uppercase;
 }
 
@@ -124,15 +128,17 @@ li {
 }
 
 figure {
-    margin: 0;
+    margin: 0 0 1em 0;
     padding: 0;
 
     img {
         width: 100%;
     }
-
-    a:hover {
-        background-color: initial;  
+}
+.pspw-lightbox a {
+    text-decoration: none;
+    * {
+        font-weight: 600;
     }
 }
 
@@ -156,6 +162,7 @@ code {
 }
 
 video {
+    margin: 0 0 1em 0;
     width: 100%;
 }
 
