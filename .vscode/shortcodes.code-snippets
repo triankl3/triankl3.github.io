@@ -51,7 +51,7 @@
 		"scope": "markdown",
 		"prefix": "section-splash",
 		"body": [
-			"{{< section-splash img=\"$1\" filter=\"\">}}"
+			"{{< section-splash src=\"$1\" >}}"
 		],
 		"description": "Shortcode for image splash section"
 	},

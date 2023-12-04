@@ -15,7 +15,7 @@ Nonetheless, this post is a great overview of the development process and the ke
 
 {{% /section-column %}}
 
-{{< section-splash img="wide1.webp" filter="">}}
+{{< section-splash src="wide1.webp" >}}
 
 {{% section-column title="Quick history lesson" side="left" background="" %}}
 
@@ -63,7 +63,7 @@ or a game mode is a breeze.
 
 {{% /section-column %}}
 
-{{< section-splash img="wide2.webp" filter="">}}
+{{< section-splash src="wide2.webp" >}}
 
 {{< section-two-column title="Character Model" background="" >}}
 {{% section-two-column-left %}}
@@ -133,7 +133,7 @@ As visible above, the viewmodel has animations for both jumping and landing, str
 {{% /section-two-column-right %}}
 {{< /section-two-column >}}
 
-{{< section-splash img="wide3.webp" filter="">}}
+{{< section-splash src="wide3.webp" >}}
 
 {{< section-two-column title="The arsenal" background="white" >}}
 {{% section-two-column-left %}}
@@ -267,7 +267,7 @@ Its new name is Grappler, and it has been given an actual tool model alongside i
 {{% /section-two-column-right %}}
 {{< /section-two-column >}}
 
-{{< section-splash img="wide5.webp" filter="">}}
+{{< section-splash src="wide5.webp" >}}
 
 {{< section-two-column title="Hit the boxes" background="" >}}
 {{% section-two-column-left %}}
@@ -324,7 +324,7 @@ I also added a classic F3 menu which allows you to see some debug info on the ge
 {{% /section-two-column-right %}}
 {{< /section-two-column >}}
 
-{{< section-splash img="wide4.webp" filter="">}}
+{{< section-splash src="wide4.webp" >}}
 
 {{% section-column title="Just the surface" side="center" background="" %}}
 

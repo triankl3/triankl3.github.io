@@ -156,8 +156,13 @@ header { // The header/top section of a post, pretty self explanatory
     background-repeat: no-repeat;
 }
 
+.section-splash {
+    opacity: 0.95;
+}
+
 .section-splash-model {
     model-viewer {
+        opacity: 0.8;
         height: 100%;
     }
 }

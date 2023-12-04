@@ -24,7 +24,7 @@ It is largely downscaled in reality and edited to fit better with the demands of
 
 {{% /section-column %}}
 
-{{< section-splash img="skyline1.webp" filter="">}}
+{{< section-splash src="skyline1.webp" >}}
 
 {{% section-column title="Nature strikes" side="center" background="" %}}
 
@@ -60,7 +60,7 @@ The beach is decorated with reeds and logs, a fishing hut and hunting tower, wit
 
 {{% /section-column %}}
 
-{{< section-splash img="house.webp" filter="">}}
+{{< section-splash src="house.webp" >}}
 
 {{% section-column title="Buildings" side="center" background="" %}}
 
@@ -90,7 +90,7 @@ All of this also had to be connected by some roads, which are also created from 
 
 {{% /section-column %}}
 
-{{< section-splash img="skyline2.webp" filter="">}}
+{{< section-splash src="skyline2.webp" >}}
 
 {{% section-column title="The elusive city" side="center" background="" %}}
 

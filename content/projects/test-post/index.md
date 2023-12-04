@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 title: "The biography of a test post"
 date: 2023-08-07T18:54:11+02:00
 description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempore recusandae aperiam rerum ipsa accusantium reiciendis doloremque voluptas, officia dolorem et expedita quaerat nam explicabo non iure? Cupiditate, ea nulla?"
@@ -36,7 +36,7 @@ Links are also automagically created like this https://example.com.
 {{% /section-column %}}
 
 <!-- Splash supports setting an image and applying CSS filters directly on them -->
-{{< section-splash img="exampleimg1.webp" filter="invert(1)">}}
+{{< section-splash src="exampleimg1.webp">}}
 
 <!-- Jumbo supports setting it's text, alongisde the usual background options -->
 {{< section-jumbo text="This is a huge jumbo text! Thank you for reading." background="#FFA500" >}}
