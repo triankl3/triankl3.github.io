@@ -7,7 +7,7 @@ tags: ["lua", "roblox", "game-design", "programming", "multiplayer"]
 image: "wide5.webp"
 ---
 
-{{% section-column title="Important Edit" side="" background="" grid="128px" %}}
+{{% section-column title="Important Edit" side="" background="" %}}
 
 This post is a re-write of a previous devblog, which was written while the game was still in active development early 2022. Since then, progress had halted due to a lack of time and resources, and the game was eventually canceled.
 
@@ -17,7 +17,7 @@ Nonetheless, this post is a great overview of the development process and the ke
 
 {{< section-splash img="wide1.webp" filter="">}}
 
-{{% section-column title="Quick history lesson" side="left" background="" grid="" %}}
+{{% section-column title="Quick history lesson" side="left" background="" %}}
 
 Originally CASHMINER began as a side-project in 2020. I spent a year learning LUA and Roblox Development by creating a game that would be a mesh of a casual FPS and a movement shooter. The idea was to create a game that would be easy to pick up and play, but hard to master, while also exploring unique gameplay mechanics.
 
@@ -27,7 +27,7 @@ The game was way outside it's porting window, and deciding to completely re-crea
 
 {{% /section-column %}}
 
-{{% section-column title="First things first" side="left" background="white" grid="" %}}
+{{% section-column title="First things first" side="left" background="white" %}}
 
 ## Toolchain & Pipeline
 
@@ -65,7 +65,7 @@ or a game mode is a breeze.
 
 {{< section-splash img="wide2.webp" filter="">}}
 
-{{< section-two-column title="Character Model" background="" grid="" >}}
+{{< section-two-column title="Character Model" background="" >}}
 {{% section-two-column-left %}}
 
 **There are two competing teams in CASHMINER, yellow and green.**
@@ -92,7 +92,7 @@ Note that in Roblox there are two built-in character types, the older 6 part(box
 {{% /section-two-column-right %}}
 {{< /section-two-column >}}
 
-{{< section-two-column title="Character Animations" background="" grid="" >}}
+{{< section-two-column title="Character Animations" background="" >}}
 {{% section-two-column-left %}}
 
 I wanted the character animations to feel rigid and actually fit the characters. They are far from perfect, but they look cute enough for an alpha version. There are five key movement animation implemented: *idle, walk, jump, fall and land*. 
@@ -112,7 +112,7 @@ their flashlight shining. This also lights the map up conveniently in the later 
 {{% /section-two-column-right %}}
 {{< /section-two-column >}}
 
-{{< section-two-column title="Mom get the camera" background="" grid="" >}}
+{{< section-two-column title="Mom get the camera" background="" >}}
 {{% section-two-column-left %}}
 
 Roblox has a single built-in camera you manipulate, which means I need a centralized way of knowing what the player's perspective is set to and a way to set it when needed. Writing a camera wrapper was necessary to achieve this, however that was the easy part. The viewmodel is more complicated and requires a lot more work.
@@ -135,7 +135,7 @@ As visible above, the viewmodel has animations for both jumping and landing, str
 
 {{< section-splash img="wide3.webp" filter="">}}
 
-{{< section-two-column title="The arsenal" background="white" grid="48px" >}}
+{{< section-two-column title="The arsenal" background="white" >}}
 {{% section-two-column-left %}}
 Building upon the original concept of CASHMINER as an FPS, I've decided to split tools into four categories and three were planned to be customizable at release.
 
@@ -165,7 +165,7 @@ Navigating caves is already hard as is, but navigating floating caves is insanel
 {{% /section-two-column-right %}}
 {{< /section-two-column >}}
 
-{{< section-two-column title="Component based tools" background="white" grid="48px" >}}
+{{< section-two-column title="Component based tools" background="white" >}}
 {{% section-two-column-left %}}
 
 Most FPS games, at least ones with similar guns across the board have a some sort of rigid configuration file that simply changes the parameters of how the weapon behaves. However, this is not an option in CASHMINER as tools are meant to fulfill many roles and playstyles.
@@ -197,7 +197,7 @@ This allows tools to have many editable properties, such as but not limited to:
 {{% /section-two-column-right %}}
 {{< /section-two-column >}}
 
-{{% section-column title="Player input" side="center" background="" grid="" %}}
+{{% section-column title="Player input" side="center" background="" %}}
 
 Instead of going the standard route of switching your equipped tools using numbers or slots I created an optimized control scheme.
 
@@ -211,7 +211,7 @@ Instead of going the standard route of switching your equipped tools using numbe
 
 {{% /section-column %}}
 
-{{< section-two-column title="Recoil" background="white" grid="" >}}
+{{< section-two-column title="Recoil" background="white" >}}
 {{% section-two-column-left %}}
 
 One of the most important parts of how an FPS feels is the recoil. While I did not want the recoil to be over the top, I also didn't want it to be non-existent.
@@ -228,7 +228,7 @@ For extra balancing purposes, to prevent certain weapons from being accurate at 
 {{% /section-two-column-right %}}
 {{< /section-two-column >}}
 
-{{% section-column title="" side="center" background="" grid="" %}}
+{{% section-column title="" side="center" background="" %}}
 
 # Help the server
 
@@ -252,7 +252,7 @@ This allows for more granular control over the damage properties of all weapons,
 
 {{% /section-column %}}
 
-{{< section-two-column title="Grappler" background="white" grid="" >}}
+{{< section-two-column title="Grappler" background="white" >}}
 {{% section-two-column-left %}}
 
 Previously the grappling hook was implemented straight into the character, however now it is a separate tool to allow for more movement options down the road.
@@ -269,7 +269,7 @@ Its new name is Grappler, and it has been given an actual tool model alongside i
 
 {{< section-splash img="wide5.webp" filter="">}}
 
-{{< section-two-column title="Hit the boxes" background="" grid="" >}}
+{{< section-two-column title="Hit the boxes" background="" >}}
 {{% section-two-column-left %}}
 
 Ping/latency compensation and hitboxes are mandatory to have a good feeling FPS. The way this is achieved in CASHMINER is by saving the last second of character limb positions(hitboxes) at 20hz/fps. Then, overly simplified, the following happens once a player fires a tool:
@@ -292,7 +292,7 @@ Most importantly the main issue with Hitboxes in the previous version of the gam
 {{% /section-two-column-right %}}
 {{< /section-two-column >}}
 
-{{< section-two-column title="Tool creation plugin" background="" grid="" >}}
+{{< section-two-column title="Tool creation plugin" background="" >}}
 {{% section-two-column-left %}}
 
 While Roblox has a built-in tool instance, 90% of its features are not useful to me. I've already got a custom character, custom animations and a viewmodel, so why not tools! However, for tools to remain consistent visually and to prevent issues with any missing attributes/properties I bodged together a Roblox Studio plugin that helps me with everything tool related.
@@ -307,7 +307,7 @@ It's far from perfect, but it's usable enough, it's there simply to prevent me f
 {{% /section-two-column-right %}}
 {{< /section-two-column >}}
 
-{{< section-two-column title="Debug tools" background="" grid="" >}}
+{{< section-two-column title="Debug tools" background="" >}}
 {{% section-two-column-left %}}
 
 Being able to know what your code is doing and visualizing it or being able to execute debugging code/options is something mandatory. I built the **Debug controller** to do exactly that! It allows for visualization of anything using primitives and text. This makes visualizing the trajectory of a weapon effortless as well as seeing where the hitboxes are being calculated.
@@ -326,7 +326,7 @@ I also added a classic F3 menu which allows you to see some debug info on the ge
 
 {{< section-splash img="wide4.webp" filter="">}}
 
-{{% section-column title="Just the surface" side="center" background="" grid="" %}}
+{{% section-column title="Just the surface" side="center" background="" %}}
 
 **This is just the tip of the iceberg, but it's already too long.** It's an overly simplified highlight of some the most important components I had to initially develop for the game. A lot of these systems and tools have been improved upon since then, and many more were added. This post is more technical in nature, and does not explain the game design decisions made. 
 

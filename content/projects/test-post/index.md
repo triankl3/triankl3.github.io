@@ -9,7 +9,6 @@ model: "rat.glb"
 ---
 
 <!-- When available you can set a sections background with the following options: background="black(default)/white/#hexhex  " -->
-<!-- When available you can set add a grid to a sections background with the following option: grid="Xpx" , with X being any number -->
 
 <!-- Use section column to create one vertical column. Chose alignment sides with side=center(default)/left/right . -->
 <!-- title="text" is available to set a huge title for the section -->
@@ -40,7 +39,7 @@ Links are also automagically created like this https://example.com.
 {{< section-splash img="exampleimg1.webp" filter="invert(1)">}}
 
 <!-- Jumbo supports setting it's text, alongisde the usual background options -->
-{{< section-jumbo text="This is a huge jumbo text! Thank you for reading." background="#FFA500" grid="64px" >}}
+{{< section-jumbo text="This is a huge jumbo text! Thank you for reading." background="#FFA500" >}}
 
 <!-- Two column sections are wrapped in the section-two-column shortcode, with the left and right inside -->
 <!-- You can apply the same properties as with section-column to the parent section-two-column shortcode -->

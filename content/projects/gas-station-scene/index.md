@@ -7,7 +7,7 @@ tags: ["source-engine", "level-design"]
 image: "background.webp"
 ---
 
-{{% section-column title="" side="center" background="" grid="" %}}
+{{% section-column title="" side="center" background="" %}}
 
 Created in early 2019 as a piece for my freelancing portfolio at the time. A mashup of the available assets from all Source Engine games and other community made assets pushing the limits of a 20 year old engine. The gas station was constructed from photo reference [originally found in this reddit post](https://www.reddit.com/r/AbandonedPorn/comments/2vrjiu/abandoned_gas_station_in_naujoji_vilnia_lithuania/).
 

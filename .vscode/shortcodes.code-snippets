@@ -20,7 +20,7 @@
 		"scope": "markdown",
 		"prefix": "section-column",
 		"body": [
-			"{{% section-column title=\"$1\" side=\"center\" background=\"\" grid=\"\" %}}",
+			"{{% section-column title=\"$1\" side=\"center\" background=\"\" %}}",
 			"",
 			"",
 			"",
@@ -32,7 +32,7 @@
 		"scope": "markdown",
 		"prefix": "section-two-column",
 		"body": [
-			"{{< section-two-column title=\"$1\" background=\"\" grid=\"\" >}}",
+			"{{< section-two-column title=\"$1\" background=\"\" >}}",
 			"{{% section-two-column-left %}}",
 			"",
 			"",
@@ -59,7 +59,7 @@
 		"scope": "markdown",
 		"prefix": "section-jumbo",
 		"body": [
-			"{{< section-jumbo text=\"$1\" background=\"\" grid=\"\" >}}"
+			"{{< section-jumbo text=\"$1\" background=\"\" >}}"
 		],
 		"description": "Shortcode for text jumbo section"
 	},

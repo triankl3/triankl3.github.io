@@ -1,7 +1,6 @@
 {{/*  Handles changing background colors in post sections, used from inside shortcodes usually, relying on a unique ID passed for the container element in question */}}
 
 {{ $background := .background }}
-{{ $grid := .grid }}
 {{ $unique_id := .unique_id }}
 
 {{ $default_color := "#dddddd" }}
@@ -23,14 +22,6 @@
     #{{ $unique_id }} {
         background-color: {{ $final_bg_color }};
         color: {{ $final_color }};
-
-        {{ if hasSuffix $grid "px" }}
-            {{ $final_color_rgb := partial "func-hextorgb.html" $final_color | print | safeCSS }}
-            background-size: {{ $grid }} {{ $grid }};
-            background-image:
-            linear-gradient(to right, rgba({{ $final_color_rgb }}, 0.1) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba({{ $final_color_rgb }}, 0.1) 1px, transparent 1px);
-        {{ end }}
     }
     #{{ $unique_id }} a {
         color: {{ $final_color }};
