@@ -330,7 +330,7 @@ I also added a classic F3 menu which allows you to see some debug info on the ge
 
 **This is just the tip of the iceberg, but it's already too long.** It's an overly simplified highlight of some the most important components I had to initially develop for the game. A lot of these systems and tools have been improved upon since then, and many more were added. This post is more technical in nature, and does not explain the game design decisions made. 
 
-Furthermore, certain elements that are very visible such as procedural generation are not explained here, but instead released as separate projects now. Take a look at [Procedural cave generation](/projects/procedural-cave-generation) and [Procedural island generation](/projects/procedural-island-generation). 
+Furthermore, certain elements that are very visible such as procedural generation are not explained here, but instead released as separate projects now. Take a look at [Procedural cave generation](/projects/procedural-cave-generation).
 
 The game was eventually discontinued, and I have abandoned development of personal projects on Roblox. You can read all about it in this blogpost: [The end of an era](/blog/the-end-of-an-era).
 
