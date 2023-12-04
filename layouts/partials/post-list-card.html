@@ -13,8 +13,7 @@
     {{ $featured_color_list = delimit $featured_img.Colors ", " }}
 {{ end }}
 
-<div 
-    class="post-list-card vanilla-tilt color-effects" color-list="{{ $featured_color_list }}">
+<div class="post-list-card vanilla-tilt color-effects" color-list="{{ $featured_color_list }}">
     <a href=" {{ .RelPermalink }} " class="tf-filter-item" data-tags="{{ with .Params.tags }} {{ range . }} {{ . }} {{ end }} {{ end }}">
         <div style="background-image: url('{{ $featured_img.RelPermalink }}')"></div>
         <h2>{{ .Date.Format "Jan 2, 2006" }} // {{ .Section }}</h2>

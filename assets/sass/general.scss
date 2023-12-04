@@ -323,7 +323,6 @@ nav.nav-wide {
 
 .post-list-card {
     width: 100%;
-    padding: 16px;
     margin-bottom: $content-padding;
 
     user-select: none;
@@ -351,12 +350,11 @@ nav.nav-wide {
 
     h1, h2, p {
         margin: 0;
-        padding: 0;
     }
 
     h1 { // Title
+        padding: 0 16px 0 16px;
         font-size: 24px;
-        // text-transform: uppercase;
         font-family: 'Orbitron', sans-serif;
         font-weight: 800;
         letter-spacing: 1px;
@@ -367,6 +365,7 @@ nav.nav-wide {
     }
 
     h2 { // Date
+        padding: 16px 16px 0 16px;
         font-family: 'Michroma', sans-serif;
         font-size: 10px;
         font-weight: 600;
@@ -374,6 +373,7 @@ nav.nav-wide {
     }
 
     p { // Description
+        padding: 0 16px 0 16px;
         font-size: 14px;
         line-height: 16px;
 
@@ -382,6 +382,7 @@ nav.nav-wide {
     }
 
     .post-tags { // Position post tags at the bottom left
+        padding: 0 16px 16px 16px;
         margin: 8px 0 0 0;
     }
 }
