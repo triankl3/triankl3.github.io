@@ -9,7 +9,7 @@
     {{ $featured_color_2 := (index $featured_img.Colors 2) }}
     {{ $featured_color_rgb := partial "func-hextorgb.html" $featured_color | print | safeCSS }}
     {{ $featured_color_rgb_2 := partial "func-hextorgb.html" $featured_color_2 | print | safeCSS }}
-    <div id="featured-image" style="background-image: url('{{ $featured_img.RelPermalink }}')"></div>
+    <div id="featured-image" style="background-image: linear-gradient(to bottom, transparent 0%, #111111 80%), url('{{ $featured_img.RelPermalink }}');"></div>
 
     <div id="header-shadow-top"></div>
 
