@@ -20,7 +20,7 @@
 		"scope": "markdown",
 		"prefix": "section-column",
 		"body": [
-			"{{% section-column title=\"$1\" side=\"center\" background=\"\" %}}",
+			"{{% section-column title=\"$1\" side=\"center\" %}}",
 			"",
 			"",
 			"",
@@ -32,7 +32,7 @@
 		"scope": "markdown",
 		"prefix": "section-two-column",
 		"body": [
-			"{{< section-two-column title=\"$1\" background=\"\" >}}",
+			"{{< section-two-column title=\"$1\" >}}",
 			"{{% section-two-column-left %}}",
 			"",
 			"",
@@ -55,11 +55,19 @@
 		],
 		"description": "Shortcode for image splash section"
 	},
+	"section-splash-model": {
+		"scope": "markdown",
+		"prefix": "section-splash-model",
+		"body": [
+			"{{< section-splash-model src=\"$1\" >}}"
+		],
+		"description": "Shortcode for model splash section"
+	},
 	"section-jumbo": {
 		"scope": "markdown",
 		"prefix": "section-jumbo",
 		"body": [
-			"{{< section-jumbo text=\"$1\" background=\"\" >}}"
+			"{{< section-jumbo text=\"$1\" >}}"
 		],
 		"description": "Shortcode for text jumbo section"
 	},
