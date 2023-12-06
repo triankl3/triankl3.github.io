@@ -15,7 +15,7 @@ Nonetheless, this post is a great overview of the development process and the ke
 
 {{% /section-column %}}
 
-{{< section-splash src="wide1.webp" >}}
+{{< section-splash src="wide3.webp" >}}
 
 {{% section-column title="Quick history lesson" side="left" %}}
 
@@ -65,7 +65,7 @@ or a game mode is a breeze.
 
 {{< section-splash src="wide2.webp" >}}
 
-{{< section-two-column title="Character Model" >}}
+{{< section-two-column title="Character Model" background_img="char-yellow1.webp" background_color="#6e3f0b" >}}
 {{% section-two-column-left %}}
 
 **There are two competing teams in CASHMINER, yellow and green.**
@@ -92,7 +92,7 @@ Note that in Roblox there are two built-in character types, the older 6 part(box
 {{% /section-two-column-right %}}
 {{< /section-two-column >}}
 
-{{< section-two-column title="Character Animations" >}}
+{{< section-two-column title="Character Animations" background_color="#522c0a" >}}
 {{% section-two-column-left %}}
 
 I wanted the character animations to feel rigid and actually fit the characters. They are far from perfect, but they look cute enough for an alpha version. There are five key movement animation implemented: *idle, walk, jump, fall and land*. 
@@ -112,7 +112,7 @@ their flashlight shining. This also lights the map up conveniently in the later 
 {{% /section-two-column-right %}}
 {{< /section-two-column >}}
 
-{{< section-two-column title="Mom get the camera" >}}
+{{< section-two-column title="Mom get the camera" background_color="#522c0a" >}}
 {{% section-two-column-left %}}
 
 Roblox has a single built-in camera you manipulate, which means I need a centralized way of knowing what the player's perspective is set to and a way to set it when needed. Writing a camera wrapper was necessary to achieve this, however that was the easy part. The viewmodel is more complicated and requires a lot more work.
@@ -133,9 +133,9 @@ As visible above, the viewmodel has animations for both jumping and landing, str
 {{% /section-two-column-right %}}
 {{< /section-two-column >}}
 
-{{< section-splash src="wide3.webp" >}}
+{{< section-splash src="wide1.webp" >}}
 
-{{< section-two-column title="The arsenal" background_color="white" >}}
+{{< section-two-column title="The arsenal" >}}
 {{% section-two-column-left %}}
 Building upon the original concept of CASHMINER as an FPS, I've decided to split tools into four categories and three were planned to be customizable at release.
 
@@ -197,7 +197,9 @@ This allows tools to have many editable properties, such as but not limited to:
 {{% /section-two-column-right %}}
 {{< /section-two-column >}}
 
-{{% section-column title="Player input" side="center" %}}
+{{% section-column title="" side="center" background_img="wide4.webp" %}}
+
+# Player input
 
 Instead of going the standard route of switching your equipped tools using numbers or slots I created an optimized control scheme.
 
@@ -208,27 +210,6 @@ Instead of going the standard route of switching your equipped tools using numbe
 - Pressing **R** will reload your weapon
 
 *This creates an ergonomic layout that's based on what you will use the most. It also simplifies the complex nature of having multiple tools, making it such that each tool only uses one key.*
-
-{{% /section-column %}}
-
-{{< section-two-column title="Recoil" background_color="white" >}}
-{{% section-two-column-left %}}
-
-One of the most important parts of how an FPS feels is the recoil. While I did not want the recoil to be over the top, I also didn't want it to be non-existent.
-
-It is calculated using multiple properties that are applied to each tool. There is a pre-determined recoil pattern that is repeated each consecutive shot unless the reset delay time has passed. Recoil recovery is also applied after a certain amount of time and the recovery amount can vary between tools. To make each shot less predictable a random amount of recoil is applied to each shot. Finally, to make the recoil feel more natural, a spring is applied to the camera.
-
-For extra balancing purposes, to prevent certain weapons from being accurate at range, a randomized amount of spread can be applied to each shot.
-
-{{% /section-two-column-left %}}
-{{% section-two-column-right %}}
-
-{{< video src="recoil2.mp4" >}}
-
-{{% /section-two-column-right %}}
-{{< /section-two-column >}}
-
-{{% section-column title="" side="center" %}}
 
 # Help the server
 
@@ -252,6 +233,23 @@ This allows for more granular control over the damage properties of all weapons,
 
 {{% /section-column %}}
 
+{{< section-two-column title="Recoil" background_color="white" >}}
+{{% section-two-column-left %}}
+
+One of the most important parts of how an FPS feels is the recoil. While I did not want the recoil to be over the top, I also didn't want it to be non-existent.
+
+It is calculated using multiple properties that are applied to each tool. There is a pre-determined recoil pattern that is repeated each consecutive shot unless the reset delay time has passed. Recoil recovery is also applied after a certain amount of time and the recovery amount can vary between tools. To make each shot less predictable a random amount of recoil is applied to each shot. Finally, to make the recoil feel more natural, a spring is applied to the camera.
+
+For extra balancing purposes, to prevent certain weapons from being accurate at range, a randomized amount of spread can be applied to each shot.
+
+{{% /section-two-column-left %}}
+{{% section-two-column-right %}}
+
+{{< video src="recoil2.mp4" >}}
+
+{{% /section-two-column-right %}}
+{{< /section-two-column >}}
+
 {{< section-two-column title="Grappler" background_color="white" >}}
 {{% section-two-column-left %}}
 
@@ -269,7 +267,7 @@ Its new name is Grappler, and it has been given an actual tool model alongside i
 
 {{< section-splash src="wide5.webp" >}}
 
-{{< section-two-column title="Hit the boxes" >}}
+{{< section-two-column title="Hit the boxes" background_img="char-hitboxes.webp" >}}
 {{% section-two-column-left %}}
 
 Ping/latency compensation and hitboxes are mandatory to have a good feeling FPS. The way this is achieved in CASHMINER is by saving the last second of character limb positions(hitboxes) at 20hz/fps. Then, overly simplified, the following happens once a player fires a tool:
