@@ -12,7 +12,7 @@ color: ["#1174d7", "#34c045"]
 
 **Currently available as an MIT Licensed open-source library for Roblox**, the project features a procedural cave generation system using 3D Perlin noise and a custom object placement algorithm. The full source code is available on [GitHub](https://github.com/triankl3/genesis) with a playable and editable demo place on [Roblox](https://www.roblox.com/games/15529154687/Genesis-Demo).
 
-The system has seen many revisions, and was originally created for the now discontinued FPS game CASHMINER. It was used to generate the the destructible environments in which players would fight. For more information about the game and it's development process you can read: [The foundation of an FPS game in Roblox](/projects/the-foundation-of-an-fps-game-in-roblox).
+The system has seen many revisions, and was originally created for the now discontinued FPS game CASHMINER. It was used to generate destructible environments in which players would fight for resources using advanced movement techniques. For more information about the game and it's development process you can read: [The foundation of an FPS game in Roblox](/projects/the-foundation-of-an-fps-game-in-roblox).
 
 This system grew organically over a few years as new requirements were added to the project. Nonetheless, the core goals of the system stayed the same:
 1. Procedurally generate cave environments
@@ -28,9 +28,9 @@ This system grew organically over a few years as new requirements were added to 
 
 {{% section-column title="3D Perlin" side="center" background_img="terrain1.png" %}}
 
-**Luckily Roblox has built-in voxel Terrain**. It is perfect for this kind of application and also it is completely editable at runtime which means we can generate, edit and destroy it on the fly. However, we need to generate the terrain first. I won't be going over the specific implementation, since there are much better sources for learning about Perlin noise and the source is availble for anyone interested.
+**Luckily Roblox has built-in voxel Terrain**. It is perfect for this kind of application and also it is completely editable at runtime which means we can generate, edit and destroy environments on the fly. But first things first, we need to generate the terrain. I won't be going over the specific implementation, since there are much better sources for learning about Perlin noise and the source is availble for anyone interested.
 
-In summary, we go over every position in the map and sample the result of perlin noise at that X, Y, Z position. We use those values determine the density of that point. If it surpasses a certain threshold we set the voxel at that position be solid, otherwise we leave it empty.
+In summary, we go over every position in the map and sample the result of perlin noise at that `X, Y, Z` position. We use those values determine the density of that point. If it surpasses a certain threshold we set the voxel at that position be solid, otherwise we leave it empty.
 
 {{< gallery >}}
 
@@ -73,12 +73,12 @@ Object generation is the most complex and unique problem that I had to solve in 
 
 Due to the fact that Roblox is a highly sandboxed engine and we don't get direct access to the way the voxel Terrain is constructed, I could not use the same approach most would when generating objects on a mesh. Instead, I had to come up with extra checks to determine which surfaces the objects can and will be placed on.
 
-1. When generating each terrain voxel determine if there has been a difference in occupancy compared to the previous `X, Y, Z` voxels.
-2. If so cache that difference and position to use as a *probe*.
-3. Go over each cached *probe* and use raycasts to determine the direction of the terrain change.
-4. Turn those *probes* into valid *object points* which are snapped to the terrain and categorized by material and floor, wall or ceiling.
-5. Construct *object prefabs* based on assets the specified configuration.
-6. Clone and place *object prefabs* on the determined valid *object points*, while also making sure objects don't overlap and respect the minimum distance between eachother.
+1. When generating each terrain voxel determine if there has been a difference in occupancy compared to the previous `X, Y, Z` voxels
+2. If so cache that difference and position to use as a *probe*
+3. Go over each cached *probe* and use raycasts to determine the direction of the terrain change
+4. Turn those *probes* into valid *object points* which are snapped to the terrain and categorized by material and floor, wall or ceiling
+5. Construct *object prefabs* based on assets and the specified configuration
+6. Clone and place *object prefabs* on the determined valid *object points*, while also making sure objects don't overlap and respect the minimum distance between each other
 
 Both the generation of objects and preparation of prefabs features a quite robust config allowing the user to modify built-in properties of Roblox instances per object, but also to randomize the rotation and the way the object is placed on the terrain. It also includes helpers for adding lighting and sound to objects.
 
@@ -103,7 +103,7 @@ Both the generation of objects and preparation of prefabs features a quite robus
 
 The final project has been wrapped into the Genesis library, because I might also release other generation types under the same project such as island generation. I highly encourage you to check out the [GitHub repository](https://github.com/triankl3/genesis) as this was a gross oversimplification of the project and there are many more features and options available. Also, the [demo](https://www.roblox.com/games/15529154687/Genesis-Demo) is quite fun and generates interesting results relatively quickly, give it a shot!
 
-**You might of noticed that one of the key demands of the system is missing.** Destruction was implemented in the game, however it is not available in the library as it was highly specific to the game and is out of scope as it features character/player systems. It shouldn't be a bother to implement if you see a need for it though, as the final result is a voxel terrain which can be edited at runtime and the objects are nothing but instances you can destroy and manipulate.
+**You might have noticed that one of the key demands of the system is missing.** Destruction was implemented in the game, however it is not available in the library as it was highly specific to the game and is out of scope as it features character/player systems. It shouldn't be bothersome to implement if you see a need for it though, as the final result is a voxel terrain which can be edited at runtime and the objects are nothing but instances you can destroy and manipulate.
 
 **I'll leave you with some beautiful screenshots of the final result.**
 
