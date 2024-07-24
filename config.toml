@@ -15,7 +15,7 @@ pluralizelisttitles = false
     featuredPosts = ['/blog/test-post']
     description = 'Personal blog and portfolio in one. Showcasing projects and celebrating the process alongside the solution.'
     source = 'https://github.com/triankl3/triankl3.github.io'
-    resumePDF = '/download/Nikola_Pesevic_public_resume_oct_2023.pdf'
+    resumePDF = '/download/Nikola_Pesevic_public_resume_july_2024.pdf'
     [params.contact]
         github = 'https://github.com/triankl3'
         twitter = 'https://twitter.com/triankl3'
