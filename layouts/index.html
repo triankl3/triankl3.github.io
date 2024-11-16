@@ -9,42 +9,56 @@
     <div id="landing-extended">
         <img src="/img/landing-extended.svg" style="user-select: none;" draggable="false">
         <div class="post-list">
-            {{/*  Loop over posts in featured array  */}}
-            {{ $site := . }}
-            {{ range .Site.Params.featuredPosts }}
-                {{ with $site.GetPage . }}
-                    {{ partial "post-list-card.html" . }}
-                {{ end }}
-            {{ end }}
-
-            {{/*  Loop over latest(first) 3 posts in both sections and add dummy cards to go to full section pages  */}}
+            <div class="post-list-alltags">
+                <ul class="post-tags">
+                    <li class="post-tag tag-button" id="selectAllTags" onclick="htf.showAll('tags')">all</li>
+            
+                    {{ $section_tags := slice }}
+                    {{ with .Site.GetPage "/projects" }}
+                        {{ range .Pages }}
+                            {{ with .Params.tags }}
+                                {{ if ge (len .) 1 }}
+                                    {{ range . }}
+                                        {{ if not (in $section_tags .) }}
+                                            {{ $section_tags = $section_tags | append . }}
+                                        {{ end }}
+                                    {{ end }}
+                                {{ end }}
+                            {{ end }}
+                        {{ end }}
+                    {{ end }}
+            
+                    {{ range $index, $tag := $section_tags }}
+                        <li class="post-tag tag-button" id="tag-{{ $tag | safeJS }}" onclick="htf.checkFilter('{{ $tag | safeJS }}', 'tag-')">{{ $tag }}</li>
+                    {{ end }}
+                </ul>
+            </div>
+        
             {{ with .Site.GetPage "/projects" }}
-                {{ range .Pages | first 3}}
+                {{ range .Pages }}
                     {{ partial "post-list-card.html" . }}
                 {{ end }}
             {{ end }}
-            <div class="post-list-card vanilla-tilt" style="padding: 16px 0 16px 0;">
-                <a href="/projects">
-                    <div style="background-color: #111111"></div>
-                    <h1 style=" -webkit-text-stroke: 1px #dddddd">Projects</h1>
-                    <p>Browse all projects by date and tags.</p>
-                </a>
-            </div>
-
-            {{ with .Site.GetPage "/blog" }}
-                {{ range .Pages | first 3}}
-                    {{ partial "post-list-card.html" . }}
-                {{ end }}
-            {{ end }}
-            <div class="post-list-card vanilla-tilt" style="padding: 16px 0 16px 0;">
-                <a href="/blog">
-                    <div style="background-color: #111111"></div>
-                    <h1 style=" -webkit-text-stroke: 1px #dddddd">Blog</h1>
-                    <p>Browse all blog posts by date and tags.</p>
-                </a>
-            </div>
         </div>
-    </div>
 </div>
+
+{{ $hugo_tags_filter_js := resources.Get "js/hugo-tags-filter-1.2.2.js" | minify }}
+<script src="{{ $hugo_tags_filter_js.RelPermalink }}"></script>
+<script>
+        var htf = new HugoTagsFilter({
+            filters: [
+                {
+                    name: 'tags',
+                    prefix: 'tag-',
+                    buttonClass: 'tag-button',
+                    allSelector: '#selectAllTags',
+                    attrName: 'data-tags',
+                }
+            ],
+            showItemClass: "tf-show-item",
+            filterItemClass: "tf-filter-item",
+            activeButtonClass: "post-tag-selected"
+        })
+</script>
 
 {{ end }}
