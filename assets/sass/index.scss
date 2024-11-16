@@ -18,6 +18,13 @@
     position: absolute;
     top: 0;
     width: 87%;
+
+    .tf-filter-item {
+        display: none;
+    }
+    .tf-show-item {
+        display: initial;
+    }
 }
 
 @media (max-width: $content-width) {
