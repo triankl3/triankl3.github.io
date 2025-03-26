@@ -1,7 +1,7 @@
 baseURL = 'https://triankl3.com/'
 languageCode = 'en-us'
 title = 'triankl3'
-copyright = 'Design and content subject to copyright © 2023 Nikola Pešević(triankl3.com).'
+copyright = 'Design and content subject to copyright © 2025 Nikola Pešević(triankl3.com).'
 disableKinds = ["RSS"]
 enableRobotsTXT = true
 enableEmoji = true
@@ -14,7 +14,7 @@ pluralizelisttitles = false
 [params]
     description = 'Personal blog and portfolio in one. Showcasing projects and celebrating the process alongside the solution.'
     source = 'https://github.com/triankl3/triankl3.github.io'
-    resumePDF = '/download/Nikola_Pesevic_public_resume_july_2024.pdf'
+    resumePDF = '/download/Nikola_Pesevic_public_resume_2025_mar.pdf'
     [params.contact]
         github = 'https://github.com/triankl3'
         twitter = 'https://twitter.com/triankl3'
