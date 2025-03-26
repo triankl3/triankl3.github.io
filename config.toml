@@ -13,7 +13,7 @@ pluralizelisttitles = false
 
 [params]
     description = 'Personal blog and portfolio in one. Showcasing projects and celebrating the process alongside the solution.'
-    source = 'https://github.com/triankl3/triankl3.github.io'
+    source = 'https://github.com/triankl3/triankl3.com'
     resumePDF = '/download/Nikola_Pesevic_public_resume_2025_mar.pdf'
     [params.contact]
         github = 'https://github.com/triankl3'
