@@ -7,10 +7,6 @@ enableRobotsTXT = true
 enableEmoji = true
 pluralizelisttitles = false
 
-[caches]
-  [caches.images]
-    dir = ':cacheDir/images'
-
 [author]
   email = 'triankl3@gmail.com'
   name = 'Nikola Pešević'
